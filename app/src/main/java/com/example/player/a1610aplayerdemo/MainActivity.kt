@@ -5,11 +5,14 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import com.example.player.a1610aplayerdemo.activity.HomeActivity
 import com.example.player.a1610aplayerdemo.adapter.guides.MyGuidesAdapter
+import com.example.player.a1610aplayerdemo.curriculum.CurriculumFragment
 import com.example.player.a1610aplayerdemo.url.Website
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
@@ -34,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             main_greet_tv.visibility = View.VISIBLE
             main_greet_tv.setOnClickListener(object:View.OnClickListener {
                 override fun onClick(p0: View?) {
-                    val intent:Intent = Intent(this@MainActivity,HomeActivity::class.java)
+                    val intent:Intent = Intent(this@MainActivity, HomeActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
