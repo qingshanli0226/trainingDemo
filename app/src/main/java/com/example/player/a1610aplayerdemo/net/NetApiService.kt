@@ -8,6 +8,8 @@ import retrofit2.http.Url
 
 
 interface NetApiService {
+
+    //http://api.immedc.com/restapi/loading/getHome
     @GET
-    fun getHomeDate(@Url url: String): Observable<XuanKeDateBean>
+    fun getXuanKeDate(@Url url: String): Observable<XuanKeDateBean>
 }

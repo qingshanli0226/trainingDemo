@@ -7,11 +7,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".ui.activy.MainActivity">
-    <com.example.player.a1610aplayerdemo.view.NoscorllPager android:layout_width="match_parent"
-                                                            android:layout_height="0dp"
-                                                            android:layout_weight="8.5"
-                                                            android:id="@+id/novpg"
+    <com.example.player.a1610aplayerdemo.view.NoscorllPager android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="9" android:id="@+id/novpg"
     ></com.example.player.a1610aplayerdemo.view.NoscorllPager>
+
 
     <RadioGroup android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal" android:id="@+id/grp">
 
@@ -21,4 +19,6 @@
         <RadioButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:id="@+id/rb4" android:background="@drawable/backwd" android:button="@null"/>
 
     </RadioGroup>
+
+
 </LinearLayout>
