@@ -2,11 +2,14 @@ package com.example.player.a1610aplayerdemo.ui.xuankeadapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseAdapter;
@@ -109,7 +112,27 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.banner, viewGroup,false);
             return new BannerViewHolder(inflate);
+        }else if (i == BIAOGE) {
+
+            View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.homecategory, viewGroup,false);
+            return new HomeCategoryHolder(inflate);
+
+        } else if (i == ZHUANLAM) {
+
+            View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.zhuanlan, viewGroup,false);
+            return new ZhuanLanHolder(inflate);
+
+        } else if (i == TUIJIAN) {
+
+            View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.tuijian, viewGroup,false);
+            return new TuiJianHolder(inflate);
+
+        }else if (i == DASHIKE) {
+
+            View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.dashike, viewGroup,false);
+            return new DaShiKeHolder(inflate);
         }
+
 
         return null;
     }
@@ -119,24 +142,107 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (getItemViewType(i)==BANNER){
             BannerViewHolder bannerViewHolder = (BannerViewHolder) viewHolder;
             bannerViewHolder.setData(bannerInfoBeanList);
+        }else if (getItemViewType(i)==BIAOGE){
+
+            HomeCategoryHolder channelViewHolder = (HomeCategoryHolder) viewHolder;
+            channelViewHolder.setDate(homeCategoryBeanList);
+
+        }else if (getItemViewType(i)==ZHUANLAM){
+
+            ZhuanLanHolder actViewHolder = (ZhuanLanHolder) viewHolder;
+            actViewHolder.setDate(zhuanlanList);
+        }
+        else if (getItemViewType(i)== TUIJIAN){
+
+            TuiJianHolder seckillViewHolder = (TuiJianHolder) viewHolder;
+            seckillViewHolder.setDate(tuijianlist);
+
+        }else if (getItemViewType(i) == DASHIKE){
+
+             DaShiKeHolder daShiKeHolder = (DaShiKeHolder) viewHolder;
+             daShiKeHolder.setDate(dashikeList);
         }
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return 5;
+    }
+
+    class DaShiKeHolder extends RecyclerView.ViewHolder {
+
+        ListView channel;
+
+        public DaShiKeHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+
+        public void setDate(List<XuanKeDateBean.DataBean.MasterLivesBean> channelInfoBeans){
+            DaShiKeAdp channelAdp = new DaShiKeAdp();
+            channelAdp.updateData(channelInfoBeans);
+            channel.setAdapter(channelAdp);
+
+        }
+
     }
 
 
+    class HomeCategoryHolder extends RecyclerView.ViewHolder {
 
+        GridView channel;
+        public HomeCategoryHolder(@NonNull View itemView) {
+            super(itemView);
+            channel = itemView.findViewById(R.id.category_gv);
+        }
 
+        public void setDate(List<XuanKeDateBean.DataBean.HomeCategoryBean> channelInfoBeans){
 
+            HomeCategoryAdp channelAdp = new HomeCategoryAdp();
+            channelAdp.updateData(channelInfoBeans);
+            channel.setAdapter(channelAdp);
 
+        }
 
+    }
 
+    class ZhuanLanHolder extends RecyclerView.ViewHolder {
 
+        GridView channel;
+        public ZhuanLanHolder(@NonNull View itemView) {
+            super(itemView);
+            channel = itemView.findViewById(R.id.zhuanlan_gv);
+        }
 
+        public void setDate(List<XuanKeDateBean.DataBean.ZlListBean> channelInfoBeans){
 
+            ZhuanLanAdp channelAdp = new ZhuanLanAdp();
+            channelAdp.updateData(channelInfoBeans);
+            channel.setAdapter(channelAdp);
+
+        }
+
+    }
+
+    class TuiJianHolder extends RecyclerView.ViewHolder{
+
+        RecyclerView recyclerView;
+        public TuiJianHolder(@NonNull View itemView) {
+            super(itemView);
+            recyclerView = itemView.findViewById(R.id.recy_tuijian);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MyApp.instance);
+            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+        }
+
+        public void setDate(List<XuanKeDateBean.DataBean.CourseRecommendsBean> channel){
+
+            TuiJianAdp adp = new TuiJianAdp();
+            adp.refreshData(channel);
+            recyclerView.setAdapter(adp);
+
+        }
+
+    }
 
 
 

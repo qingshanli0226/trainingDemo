@@ -16,30 +16,26 @@ import android.support.v7.widget.LinearLayoutManager
 import com.example.player.a1610aplayerdemo.ui.xuankeadapter.XuanKeAdp
 
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- *
- */
 class XuanKeFragment : BaseFragment(),XuanKeInterface.XuanKeView {
 
-    val  adp = XuanKeAdp();
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val layoutManager = LinearLayoutManager(activity)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var layoutManager = LinearLayoutManager(context)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
         xry.setLayoutManager(layoutManager);
 
         xry.adapter = adp
     }
 
+    val  adp = XuanKeAdp();
+
     override fun onGetDataSuccess(bean: XuanKeDateBean) {
         adp.addBannerDate(bean.data.homeBanner)
-
+        adp.addBean(bean.data.homeCategory)
+        adp.addZhuanLan(bean.data.zlList)
+        adp.addTuiJian(bean.data.courseRecommends)
+        adp.addDaShi(bean.data.masterLives)
 
     }
 
@@ -56,7 +52,9 @@ class XuanKeFragment : BaseFragment(),XuanKeInterface.XuanKeView {
     }
 
     override fun initView(): View? {
-        return View.inflate(context, com.example.player.a1610aplayerdemo.R.layout.fragment_xuan_ke,null);
+
+
+        return View.inflate(context, R.layout.fragment_xuan_ke,null);
     }
 
 

@@ -54,4 +54,9 @@ public class XuanKePresenterCompl implements XuanKeInterface.IxuankePresenter{
                 });
 
     }
+
+    @Override
+    public void detachView() {
+        xuanKeView = null;
+    }
 }

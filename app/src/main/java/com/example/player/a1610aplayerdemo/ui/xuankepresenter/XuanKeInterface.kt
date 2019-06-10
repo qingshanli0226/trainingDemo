@@ -6,11 +6,11 @@ import com.example.player.a1610aplayerdemo.view.BaseView
 class XuanKeInterface {
     interface IxuankePresenter {
         fun getXkData()
+        fun detachView()
     }
 
     interface XuanKeView : BaseView {
         fun onGetDataSuccess(bean: XuanKeDateBean)
-
         fun onGetDataFailed(errorMsg: String)
 
 

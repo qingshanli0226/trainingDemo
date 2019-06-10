@@ -28,9 +28,9 @@ public class RetrofitCreator {
     private static void createApiService() {
 
         FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
-                .showThreadInfo(true)  // (Optional) Whether to show thread info or not. Default true
-                .methodCount(2)         // (Optional) How many method line to show. Default 2
-                .methodOffset(7)        // (Optional) Hides internal method calls up to offset. Default 5
+                .showThreadInfo(true)
+                .methodCount(2)
+                .methodOffset(7)
                 .tag("SXZ")
                 .build();
 
@@ -42,6 +42,7 @@ public class RetrofitCreator {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(1, TimeUnit.SECONDS)
                 .addInterceptor(httpLoggingInterceptor)
+                .addInterceptor(new TokenInterceptor())
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
