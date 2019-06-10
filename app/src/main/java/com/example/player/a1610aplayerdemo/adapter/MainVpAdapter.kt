@@ -11,7 +11,7 @@ import com.example.player.a1610aplayerdemo.fragment.StudyFragment
 class MainVpAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
     private var list = listOf(Select_classFragment(),StudyFragment(),MemberFragment(),AboutMyFragment())
-    private var title = listOf<String>("选课","学习中心","会员","我的")
+
     override fun getItem(p0: Int): Fragment {
        return list.get(p0);
     }
@@ -20,7 +20,4 @@ class MainVpAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
      return list.count();
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
-        return title.get(position)
-    }
 }

@@ -7,5 +7,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+<!-- 主页面下面的radiobutton 导航栏 -->
+    <style name="radiobutton" >
+        <item name="android:button" >@null</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
 
 </resources>

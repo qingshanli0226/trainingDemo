@@ -12,13 +12,57 @@
            android:layout_width="match_parent"
            android:layout_height="match_parent">
    </android.support.v4.view.ViewPager>
-<android.support.design.widget.TabLayout
-        android:id="@+id/m_tb"
+<RadioGroup
+        android:id="@+id/m_rg"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-       android:layout_alignParentBottom="true">
+       android:layout_alignParentBottom="true"
+       android:orientation="horizontal"
+       android:background="#EEE8E8">
 
-</android.support.design.widget.TabLayout>
+   <RadioButton
+        android:id="@+id/rb_select_class"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        style="@style/radiobutton"
+        android:text="选课"
+        android:checked="true"
+        android:textColor="@drawable/radiobutton_select"
+        android:drawableTop="@drawable/ic_select_class"
+   />
+
+   <RadioButton
+           android:id="@+id/rb_study"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="match_parent"
+           style="@style/radiobutton"
+           android:text="学习中心"
+           android:textColor="@drawable/radiobutton_select"
+           android:drawableTop="@drawable/ic_select_class"
+   />
+   <RadioButton
+           android:id="@+id/rb_member"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="match_parent"
+           style="@style/radiobutton"
+           android:text="会员"
+           android:textColor="@drawable/radiobutton_select"
+           android:drawableTop="@drawable/ic_select_class"
+   />
+   <RadioButton
+           android:id="@+id/rb_aboutMy"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="match_parent"
+           style="@style/radiobutton"
+           android:text="我的"
+           android:textColor="@drawable/radiobutton_select"
+           android:drawableTop="@drawable/ic_select_class"
+   />
+</RadioGroup>
 
 
 </RelativeLayout>
