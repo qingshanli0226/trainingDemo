@@ -9,7 +9,7 @@ import com.example.player.a1610aplayerdemo.fragment.Select_classFragment
 import com.example.player.a1610aplayerdemo.fragment.StudyFragment
 
 class MainVpAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
-
+  // 存放 fragment 可读的集合
     private var list = listOf(Select_classFragment(),StudyFragment(),MemberFragment(),AboutMyFragment())
 
     override fun getItem(p0: Int): Fragment {
