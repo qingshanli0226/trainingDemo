@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo
 
+import android.content.res.Resources
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.widget.LinearLayout
 import android.widget.RadioButton
 import com.example.player.a1610aplayerdemo.main.MainViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout_titlebar.*
 
 class MainActivity : AppCompatActivity() {
     var linear_main_choice_flag: Boolean = true
@@ -20,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         main_vp.adapter = MainViewPagerAdapter(supportFragmentManager)
-
 
         fun setRadioButtonBg(flag: Boolean, img: ImageView, rb: RadioButton, linear: LinearLayout) {
             if (flag) {
@@ -87,7 +88,4 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
-
 }

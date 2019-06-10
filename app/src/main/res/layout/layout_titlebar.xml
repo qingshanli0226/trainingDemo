@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#59ACFF"
+>
+    <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/titlebar_left"
+            android:src="@drawable/ic_action_back"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+    />
+    <RelativeLayout
+            android:layout_marginLeft="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:id="@+id/titlebar_search"
+    >
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint=" 搜大师 搜课程"
+                android:gravity="center|start"
+        />
+        <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_action_search"
+                android:tint="#c0c0c0"
+        />
+
+
+    </RelativeLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="123"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"
+            android:id="@+id/titlebar_title"
+            android:visibility="gone"
+    />
+
+    <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/titlebar_right"
+            android:visibility="gone"
+    />
+
+
+</RelativeLayout>
