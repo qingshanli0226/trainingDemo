@@ -9,10 +9,24 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 这是一个适配器基类
+ * 我们不能确定布局和数据  所以需要子类来实现  其他的  都已经抽取出来   （也就是公共的部分）
+ * @param <T>
+ * @param <V>
+ */
 public abstract class BaseAdapter<T, V extends View> extends RecyclerView.Adapter<BaseViewHolder> {
 
     private List<T> list = new ArrayList<>();
-    private IMyClick iMyClick;
+    private IMyClick iMyClick;//点击事件的接口
+
+    //刷新数据
+    public void updataData(List<T> dataList){
+        this.list.clear();
+        this.list.addAll(dataList);
+        notifyDataSetChanged();
+    }
+
 
     public void setiMyClick(IMyClick iMyClick) {
         this.iMyClick = iMyClick;
@@ -29,7 +43,7 @@ public abstract class BaseAdapter<T, V extends View> extends RecyclerView.Adapte
 
     @Override
     public void onBindViewHolder(@NonNull final BaseViewHolder baseViewHolder, final int i) {
-        setItemView(baseViewHolder.itemView, i);
+        setItemView((V) (baseViewHolder.itemView), i);
 
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +55,7 @@ public abstract class BaseAdapter<T, V extends View> extends RecyclerView.Adapte
         });
     }
 
+    //去子类刷新view
     abstract void setItemView(View itemView, int i);
 
     @Override
