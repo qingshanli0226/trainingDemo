@@ -9,12 +9,11 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.runOnUiThread
 import org.jetbrains.anko.toast
 
-abstract class baseFragment:Fragment(),AnkoLogger {
+abstract class BaseFragment:Fragment(),AnkoLogger {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
-
     }
 
     /*

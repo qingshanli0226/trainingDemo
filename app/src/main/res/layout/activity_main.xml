@@ -17,6 +17,7 @@ android:orientation="vertical">
             android:layout_height="60dp"
             android:id="@+id/bottomBar"
             app:bb_behavior="shifting"
+            android:background="#8E002E"
             app:bb_tabXmlResource="@xml/bottombar_tabs"
     ></com.roughike.bottombar.BottomBar>
 
