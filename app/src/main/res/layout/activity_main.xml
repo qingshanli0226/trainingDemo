@@ -24,21 +24,30 @@
                       android:orientation="vertical"
                       android:gravity="center"
         >
-            <RadioButton
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:button="@null"
-                    android:id="@+id/main_choice"
-                    android:text="选课"
-                    android:drawableTop="@drawable/ic_action_main_choice"
-                    android:checked="true"
-                    android:hint="#000000"
-                    android:background="#59ACFF"
-                    android:textColor="#FFFFFF"
-
-            />
+            <LinearLayout android:layout_width="60dp" android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:gravity="center"
+                          android:background="#59ACFF"
+                          android:id="@+id/linear_main_choice"
+            >
+                <ImageView
+                        android:id="@+id/iv_main_choice"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:src="@drawable/ic_action_main_choice"
+                />
+                <RadioButton
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:id="@+id/rb_main_choice"
+                        android:text="选课"
+                        android:checked="true"
+                        android:textColor="#FFFFFF"
+                />
+            </LinearLayout>
         </LinearLayout>
+
         <LinearLayout android:layout_width="0dp"
                       android:layout_weight="1"
                       android:layout_height="match_parent"
@@ -46,48 +55,90 @@
                       android:gravity="center"
 
         >
-            <RadioButton android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:button="@null"
-                         android:id="@+id/main_study"
-                         android:text="学习中心"
-                         android:gravity="center"
-                         android:drawableTop="@drawable/ic_action_main_study"
+            <LinearLayout android:layout_width="60dp" android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:gravity="center"
+                          android:id="@+id/linear_main_study"
 
-            />
+            >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:src="@drawable/ic_action_main_study"
+                           android:tint="#c0c0c0"
+                           android:id="@+id/iv_main_study"
+                />
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:id="@+id/rb_main_study"
+                        android:text="学习中心"
+                        android:gravity="center"
+                        android:textColor="#c0c0c0"
+                        android:drawableTint="#000000"
+                />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout android:layout_width="0dp"
                       android:layout_weight="1"
                       android:layout_height="match_parent"
                       android:orientation="vertical"
                       android:gravity="center"
-
         >
-            <RadioButton android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:button="@null"
-                         android:id="@+id/main_VIP"
-                         android:text="会员"
-                         android:gravity="center"
-                         android:drawableTop="@drawable/ic_action_main_vip"
-            />
+            <LinearLayout android:layout_width="60dp" android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:gravity="center"
+                          android:id="@+id/linear_main_vip"
+
+            >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:src="@drawable/ic_action_main_vip"
+                           android:tint="#c0c0c0"
+                           android:id="@+id/iv_main_VIP"
+                />
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:id="@+id/rb_main_VIP"
+                        android:text="会员"
+                        android:gravity="center"
+                        android:textColor="#c0c0c0"
+                        android:drawableTint="#c0c0c0"
+                />
+            </LinearLayout>
+
         </LinearLayout>
         <LinearLayout android:layout_width="0dp"
                       android:layout_weight="1"
                       android:layout_height="match_parent"
                       android:orientation="vertical"
                       android:gravity="center"
-
         >
-            <RadioButton android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:button="@null"
-                         android:id="@+id/main_my"
-                         android:text="我的"
-                         android:gravity="center"
-                         android:drawableTop="@drawable/ic_action_main_my"
 
-            />
+            <LinearLayout android:layout_width="60dp" android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:gravity="center"
+                          android:id="@+id/linear_main_my"
+
+            >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:src="@drawable/ic_action_main_my"
+                           android:tint="#c0c0c0"
+                           android:id="@+id/iv_main_my"
+                />
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:text="我的"
+                        android:gravity="center"
+                        android:textColor="#c0c0c0"
+                        android:drawableTint="#c0c0c0"
+                        android:id="@+id/rb_main_my"
+                />
+            </LinearLayout>
+
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
