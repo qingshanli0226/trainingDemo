@@ -5,10 +5,62 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".mian.MainActivity"
+        android:orientation="vertical">
 
     <!--<android.support.v7.widget.RecyclerView android:layout_width="match_parent"-->
                                             <!--android:layout_height="match_parent"-->
     <!--android:id="@+id/rv_test"></android.support.v7.widget.RecyclerView>-->
+
+    <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:id="@+id/mainViewPager"></android.support.v4.view.ViewPager>
+
+    <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+        <RadioButton android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:button= "@null"
+                     android:drawableTop="@drawable/mian_radiobtn_select"
+                     android:checked="true"
+                     android:id="@+id/rb1"
+                     android:text="选课"
+                     android:textColor="@drawable/mani_radiobtn_text"
+                     android:gravity="center"/>
+        <RadioButton android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:button= "@null"
+                     android:drawableTop="@drawable/mian_radiobtn_select"
+                     android:id="@+id/rb2"
+                     android:text="学习中心"
+                     android:textColor="@drawable/mani_radiobtn_text"
+                     android:gravity="center"/>
+        <RadioButton android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:button= "@null"
+                     android:drawableTop="@drawable/mian_radiobtn_select"
+                     android:id="@+id/rb3"
+                     android:text="会员中心"
+                     android:textColor="@drawable/mani_radiobtn_text"
+                     android:gravity="center"/>
+        <RadioButton android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:button= "@null"
+                     android:drawableTop="@drawable/mian_radiobtn_select"
+                     android:id="@+id/rb4"
+                     android:text="我的"
+                     android:textColor="@drawable/mani_radiobtn_text"
+                     android:gravity="center"/>
+    </RadioGroup>
 
 </LinearLayout>
