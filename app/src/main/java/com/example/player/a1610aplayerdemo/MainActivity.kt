@@ -7,11 +7,11 @@ import android.support.v4.view.ViewPager
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
 import com.example.player.a1610aplayerdemo.fragment.*
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
-    private var vp: ViewPager? = null
-    private var nBar: BottomNavigationBar? = null
+
     private val list = ArrayList<Fragment>()
 //!!当前对象不为空
 //？当前对象可以为空
@@ -23,9 +23,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        vp = findViewById(R.id.vp) as ViewPager
-        nBar = findViewById(R.id.nBar) as BottomNavigationBar
-        nBar!!
+
+        nBar
             .setBarBackgroundColor("#FF80C0")
             .setActiveColor("#D9D9D9")
             .setInActiveColor("#8080C0")
@@ -42,23 +41,23 @@ class MainActivity : AppCompatActivity() {
         list.add(BlankFragment04())
 
         val fgAdapter = FGAdapter(supportFragmentManager, list)
-        vp!!.setAdapter(fgAdapter)
-        vp!!.setOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        vp.setAdapter(fgAdapter)
+        vp.setOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(i: Int, v: Float, i1: Int) {
 
             }
 
             override fun onPageSelected(i: Int) {
-                nBar!!.selectTab(i)
+                nBar.selectTab(i)
             }
 
             override fun onPageScrollStateChanged(i: Int) {
 
             }
         })
-        nBar!!.setTabSelectedListener(object : BottomNavigationBar.OnTabSelectedListener {
+        nBar.setTabSelectedListener(object : BottomNavigationBar.OnTabSelectedListener {
             override fun onTabSelected(position: Int) {
-                vp!!.setCurrentItem(position)
+                vp.setCurrentItem(position)
             }
 
             override fun onTabUnselected(position: Int) {
