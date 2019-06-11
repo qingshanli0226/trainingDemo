@@ -15,7 +15,8 @@
         <activity android:name=".ui.activity.MainActivity">
 
         </activity>
-        <activity android:name=".ui.activity.SplashActivity">
+        <activity android:name=".ui.activity.SplashActivity"
+            android:theme="@style/AppTheme.FullScorn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

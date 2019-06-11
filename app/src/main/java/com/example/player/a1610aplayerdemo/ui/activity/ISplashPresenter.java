@@ -7,6 +7,7 @@ import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.bean.FirstInBean;
+import com.example.player.a1610aplayerdemo.bean.SplashBean;
 import com.example.player.a1610aplayerdemo.utils.MVPObervice;
 import com.example.player.a1610aplayerdemo.utils.PhoneUtils;
 import com.example.player.a1610aplayerdemo.utils.RetrofitCreate;
@@ -25,9 +26,10 @@ import okhttp3.ResponseBody;
  * Created by Lmz on 2019/06/11
  *  引导页面获取数据
  */
-public class ISplashPresenter implements IBasePresenter<FirstInBean>{
+public class ISplashPresenter implements IBasePresenter<String>{
 
-    private IBaseView iBaseView;
+   // private IBaseView iBaseView;
+    private ISplashView iBaseView;
     @Override
     public void getData() {
         Map<String,String> map = new HashMap<>();
@@ -41,12 +43,17 @@ public class ISplashPresenter implements IBasePresenter<FirstInBean>{
         RetrofitCreate.getNetApiService().FirstInAndGetToken(map)
                                         .observeOn(AndroidSchedulers.mainThread())
                                         .subscribeOn(Schedulers.io())
-                                        .subscribe(new MVPObervice<FirstInBean>(){
+                                        .subscribe(new MVPObervice<ResponseBody>(){
                                             @Override
-                                            public void onNext(FirstInBean firstInBean) {
+                                            public void onNext(ResponseBody firstInBean) {
                                                 super.onNext(firstInBean);
+                                                try {
+                                                    String first = firstInBean.string();
+                                                    iBaseView.loadDataSuccess(first);
+                                                } catch (IOException e) {
+                                                    e.printStackTrace();
+                                                }
 
-                                                iBaseView.loadDataSuccess(firstInBean);
                                             }
 
                                             @Override
@@ -58,9 +65,36 @@ public class ISplashPresenter implements IBasePresenter<FirstInBean>{
     }
 
     @Override
-    public void attachView(IBaseView<FirstInBean> view) {
-        iBaseView = view;
+    public void attachView(IBaseView<String> view) {
+        iBaseView = (ISplashView) view;
     }
+
+    public void getSplash(){
+        RetrofitCreate.getNetApiService().getSplashInfo()
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeOn(Schedulers.io())
+                        .subscribe(new MVPObervice<ResponseBody>(){
+                            @Override
+                            public void onNext(ResponseBody splashBean) {
+                                super.onNext(splashBean);
+                                try {
+                                    String splash = splashBean.string();
+                                    iBaseView.loadSplashSuccess(splash);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                super.onError(e);
+                                iBaseView.loadSplashFailure(e.toString());
+                            }
+                        });
+    }
+
+
 
 
     @Override

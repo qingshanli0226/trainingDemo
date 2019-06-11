@@ -1,11 +1,13 @@
 package com.example.player.a1610aplayerdemo.utils;
 
 import com.example.player.a1610aplayerdemo.bean.FirstInBean;
+import com.example.player.a1610aplayerdemo.bean.SplashBean;
 
 import java.util.Map;
 
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
@@ -18,6 +20,9 @@ public interface NetApiService {
         //  第一次进入获取token   http://api.immedc.com/restapi/account/createNew HTTP/1.1
 
     @POST("account/createNew")
-    Observable<FirstInBean> FirstInAndGetToken(@QueryMap Map<String,String> map);
+    Observable<ResponseBody> FirstInAndGetToken(@QueryMap Map<String,String> map);
 
+    // 引导页   http://api.immedc.com/restapi/loading/getStartBanner
+    @GET("loading/getStartBanner")
+    Observable<ResponseBody> getSplashInfo();
 }
