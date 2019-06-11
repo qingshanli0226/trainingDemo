@@ -14,7 +14,8 @@ import com.example.player.a1610aplayerdemo.ui.Fragment.Fragment_Mine
 import com.example.player.a1610aplayerdemo.ui.Fragment.Fragment_SelectCourse
 import com.example.player.a1610aplayerdemo.ui.Fragment.Fragment_StudyCentre
 import com.example.player.a1610aplayerdemo.ui.Fragment.Fragment_VIP
-
+import android.R.id.edit
+import android.content.Context
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -48,6 +49,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         initView()
         mainRB1?.setChecked(true)
         selectFragment(R.id.mainRB1)
+        preferences = getSharedPreferences("YangYinOnline", Context.MODE_PRIVATE)
+        editor = preferences!!.edit()
+        val b = preferences!!.getBoolean("isFirstInitRecommendPage", true)
+        if(b){
+            editor!!.putBoolean("isFirstInitRecommendPage",false);
+            editor!!.commit();
+
+        }else {
+            recommendPageHelpImage1?.setVisibility(View.INVISIBLE);
+            recommendPageHelpImage2?.setVisibility(View.INVISIBLE);
+            recommendPageHelpImage3?.setVisibility(View.INVISIBLE);
+            recommendPageHelpImage4?.setVisibility(View.INVISIBLE);
+            recommendPageHelpImage5?.setVisibility(View.INVISIBLE);
+        }
+
         mainRadioGroup?.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
             selectFragment(
                 checkedId
