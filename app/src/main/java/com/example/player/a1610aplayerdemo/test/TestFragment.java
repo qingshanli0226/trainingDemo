@@ -1,8 +1,7 @@
-package com.example.player.a1610aplayerdemo.Test;
+package com.example.player.a1610aplayerdemo.test;
 
 
 import android.view.View;
-import com.example.player.a1610aplayerdemo.NetBean;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewFragment;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;

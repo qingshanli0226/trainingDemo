@@ -1,11 +1,10 @@
-package com.example.player.a1610aplayerdemo.Test;
+package com.example.player.a1610aplayerdemo.test;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.example.player.a1610aplayerdemo.NetBean;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
 

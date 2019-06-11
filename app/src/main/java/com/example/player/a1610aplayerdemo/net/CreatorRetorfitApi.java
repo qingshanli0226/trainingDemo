@@ -24,10 +24,11 @@ public class CreatorRetorfitApi {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
 //                .addInterceptor()
                 .connectTimeout(5000, TimeUnit.MICROSECONDS)
+                .addInterceptor(new TokenIntercepter())//添加token拦截器
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://www.qubaobei.com/")
+                .baseUrl("http://api.immedc.com/restapi/")
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

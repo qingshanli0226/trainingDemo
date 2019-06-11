@@ -1,7 +1,6 @@
-package com.example.player.a1610aplayerdemo.Test;
+package com.example.player.a1610aplayerdemo.test;
 
 import android.util.Log;
-import com.example.player.a1610aplayerdemo.NetBean;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.net.CreatorRetorfitApi;

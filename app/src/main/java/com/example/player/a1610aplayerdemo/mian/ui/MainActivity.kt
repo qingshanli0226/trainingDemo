@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.mian
+package com.example.player.a1610aplayerdemo.mian.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -7,10 +7,14 @@ import android.view.View
 import android.widget.RadioGroup
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.mian.adapter.MainViewPagerAdapter
+import com.example.player.a1610aplayerdemo.mian.bean.UserBean
+import com.example.player.a1610aplayerdemo.mian.presenter.MainContract
+import com.example.player.a1610aplayerdemo.mian.presenter.MainPresenterComple
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-//    val items = listOf(
+
+    //    val items = listOf(
 //        "给初学者的RxJava2.0教程（七）: Flowable",
 //        "Android之View的诞生之谜",
 //        "Android之自定义View的死亡三部曲之Measure",
@@ -23,7 +27,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        var mainPresenterComple =  MainPresenterComple();
+        mainPresenterComple.getUserInfo();
 //        rv_test.layoutManager = LinearLayoutManager(this)
 //        var adapter= TestAdapter()
 //        rv_test.adapter = adapter

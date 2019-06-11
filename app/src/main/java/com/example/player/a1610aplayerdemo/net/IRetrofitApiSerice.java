@@ -1,11 +1,16 @@
 package com.example.player.a1610aplayerdemo.net;
 
-import com.example.player.a1610aplayerdemo.NetBean;
+import com.example.player.a1610aplayerdemo.test.NetBean;
 import io.reactivex.Observable;
-import retrofit2.http.GET;
-import retrofit2.http.Url;
+import okhttp3.ResponseBody;
+import retrofit2.http.*;
+
+import java.util.HashMap;
 
 public interface IRetrofitApiSerice {
-    @GET
+//    @GET
     Observable<NetBean> getData(@Url String url);
+
+    @POST("account/createNew")
+    Observable<ResponseBody>  getUserInfo(@QueryMap HashMap<String,String> parmas);
 }
