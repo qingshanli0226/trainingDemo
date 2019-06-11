@@ -27,7 +27,9 @@ public abstract class BaseRecyclerFragment<T,V extends View> extends Fragment im
 
     private void initView(View rootView){
         RecyclerView recyclerView = rootView.findViewById(R.id.base_rv);
-        recyclerView.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
+        LinearLayoutManager manager = new LinearLayoutManager(rootView.getContext());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(manager);
         baseRecyclerViewAdapter = getAdapter();
         recyclerView.setAdapter(baseRecyclerViewAdapter);
     }

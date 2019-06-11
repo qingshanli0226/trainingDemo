@@ -1,0 +1,58 @@
+package com.example.player.a1610aplayerdemo.fragment.member;
+
+import android.content.SharedPreferences;
+import android.util.Log;
+import com.example.player.a1610aplayerdemo.base.IBasePresenter;
+import com.example.player.a1610aplayerdemo.base.IBaseView;
+import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+
+public class MemberPresenter implements IBasePresenter<Bean_Member.DataBean> {
+
+    IBaseView<Bean_Member.DataBean> iBaseView;
+
+    @Override
+    public void getData() {
+        RetrofitCreator.getInstance().getRetrofitApiService()
+                .getMenmberData("http://api.immedc.com/restapi/masterPackage/getMasterPackagelist?minid=0&size=20")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Bean_Member>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Bean_Member bean_member) {
+                      iBaseView.onloadData(bean_member.getData());
+                        Log.i("shuju", "onNext: "+"     "+bean_member.getMessage()+ "  "+bean_member.getCode());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                          iBaseView.onLoadError(e.hashCode(),e.getMessage());
+                        Log.i("DATA", "onNext: "+e.toString());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+
+    @Override
+    public void attachView(IBaseView<Bean_Member.DataBean> iBaseView) {
+        this.iBaseView = iBaseView;
+    }
+
+    @Override
+    public void detachView() {
+          iBaseView = null;
+    }
+}

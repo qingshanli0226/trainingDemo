@@ -14,28 +14,16 @@ import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Member_Fragment extends Fragment {
-
-
-    public Member_Fragment() {
-        // Required empty public constructor
-    }
-
+public class Member_Fragment extends BaseRecyclerFragment<Bean_Member.DataBean,View> {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        return inflater.inflate(R.layout.fragment_member,container,false);
+    public BaseRecyclerViewAdapter<Bean_Member.DataBean, View> getAdapter() {
+        return new MemberAdapter();
     }
 
-//    @Override
-//    public BaseRecyclerViewAdapter<Bean_Member.DataBean, MemberItemView> getAdapter() {
-//        return null;
-//    }
-//
-//    @Override
-//    public IBasePresenter getPresenter() {
-//        return null;
-//    }
+    @Override
+    public IBasePresenter getPresenter() {
+        return new MemberPresenter();
+    }
 
 }

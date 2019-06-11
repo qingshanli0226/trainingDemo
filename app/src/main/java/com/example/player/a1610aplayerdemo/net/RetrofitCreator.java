@@ -26,10 +26,9 @@ public class RetrofitCreator {
 
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(50, TimeUnit.SECONDS)
                 .addInterceptor(new TokenInterceptor())
+                .connectTimeout(50, TimeUnit.SECONDS)
                 .build();
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
