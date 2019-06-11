@@ -12,12 +12,18 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class HomePresenter implements IBasePresenter<NetDataBean.DataBean> {
     IBaseView<NetDataBean.DataBean> iBaseView;
 
     @Override
     public void getData() {
-        RetrofitCreator.getApiService().getData("http://www.qubaobei.com/ios/cf/dish_list.php?stage_id=1&limit=20&page=1")
+        HashMap<String, String> headers = new HashMap<>();
+        headers.put("Test-header1", "1610A1");
+        headers.put("Test-header2", "1610A2");
+        RetrofitCreator.getApiService().getData(headers,"http://www.qubaobei.com/ios/cf/dish_list.php?stage_id=1&limit=20&page=1")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<NetDataBean>() {
