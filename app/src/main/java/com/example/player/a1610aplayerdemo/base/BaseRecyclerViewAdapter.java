@@ -18,18 +18,25 @@ public abstract class BaseRecyclerViewAdapter<T , V extends View> extends Recycl
         notifyDataSetChanged();
     }
 
-    protected abstract V getItemViewHodler(ViewGroup viewGroup, Context context);
-    protected abstract void setItemViewHolder(V view,T data);
+    protected abstract V getItemViewHodler(ViewGroup viewGroup, Context context,int viewType);
+    protected abstract void setItemViewHolder(V view,T data,int positon);
+    protected abstract int getViewType(int positon);
+
+    @Override
+    public int getItemViewType(int position) {
+        return getViewType(position);
+    }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        V view = getItemViewHodler(viewGroup,viewGroup.getContext());
+        V view = getItemViewHodler(viewGroup,viewGroup.getContext(),i);
         return new BaseViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        setItemViewHolder((V)(viewHolder.itemView),datas.get(i));
+        setItemViewHolder((V)(viewHolder.itemView),datas.get(i),i);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

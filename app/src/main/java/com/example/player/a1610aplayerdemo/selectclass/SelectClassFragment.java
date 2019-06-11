@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo;
+package com.example.player.a1610aplayerdemo.selectclass;
 
 
 import android.os.Bundle;
@@ -6,7 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.mian.presenter.MainPresenterComple;
+import com.example.player.a1610aplayerdemo.selectclass.presenter.SelectPresenterComple;
 
 
 /**
@@ -24,7 +26,8 @@ public class SelectClassFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        SelectPresenterComple comple = new SelectPresenterComple();
+        comple.getSelectBean();
         return inflater.inflate(R.layout.fragment_select_class, container, false);
     }
 

@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.net;
 
+import com.example.player.a1610aplayerdemo.selectclass.SelectBean;
 import com.example.player.a1610aplayerdemo.test.NetBean;
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
@@ -12,5 +13,8 @@ public interface IRetrofitApiSerice {
     Observable<NetBean> getData(@Url String url);
 
     @POST("account/createNew")
+
     Observable<ResponseBody>  getUserInfo(@QueryMap HashMap<String,String> parmas);
+    @GET("loading/getHome")
+    Observable<SelectBean> getSelectBean();
 }
