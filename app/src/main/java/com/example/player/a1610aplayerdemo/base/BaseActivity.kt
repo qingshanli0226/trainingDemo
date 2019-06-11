@@ -48,7 +48,9 @@ abstract class  BaseActivity: AppCompatActivity(), AnkoLogger {
      * 跳转页面并结束掉
      */
     inline fun < reified  T:BaseActivity>startActivityAndFinish(){
+
         startActivity<T>()
         finish()
+
     }
 }

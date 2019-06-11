@@ -5,18 +5,18 @@
         <tab
                 id="@+id/tab_home"
                 icon="@drawable/img_home"
-                title="首页" />
+                title="选课" />
         <tab
                 id="@+id/tab_mv"
                 icon="@drawable/img_mv"
-                title="MV" />
+                title="学习中心" />
         <tab
                 id="@+id/tab_vbang"
                 icon="@drawable/img_vbang"
-                title="V榜" />
+                title="会员" />
         <tab
                 id="@+id/tab_yuedan"
                 icon="@drawable/img_yuedan"
-                title="悦单" />
+                title="我的" />
     </tabs>
 </PreferenceScreen>

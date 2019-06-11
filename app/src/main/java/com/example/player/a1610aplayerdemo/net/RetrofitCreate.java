@@ -10,19 +10,22 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.util.concurrent.TimeUnit;
 
 public class RetrofitCreate {
-    private NetApiService netApiService;
+    private static NetApiService netApiService;
 
-    public NetApiService getNetApiService() {
+    public static NetApiService getNetApiService() {
         if (netApiService == null) {
             createRetrofit();
         }
         return netApiService;
     }
 
-    private void createRetrofit() {
+    private static void createRetrofit() {
+
+
         OkHttpClient okHttpClient=new OkHttpClient.Builder()
                 .connectTimeout(5000, TimeUnit.SECONDS)
                 .build();
+
         Retrofit retrofit=new Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
