@@ -1,13 +1,15 @@
-package com.example.player.a1610aplayerdemo;
+package com.example.player.a1610aplayerdemo.Test;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import com.example.player.a1610aplayerdemo.NetBean;
+import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
 
-public class TestAdapter extends BaseRecyclerViewAdapter<String, View> {
+public class TestAdapter extends BaseRecyclerViewAdapter<NetBean.DataBean, View> {
 
     @Override
     protected View getItemViewHodler(ViewGroup viewGroup, Context context) {
@@ -15,7 +17,9 @@ public class TestAdapter extends BaseRecyclerViewAdapter<String, View> {
     }
 
     @Override
-    protected void setItemViewHolder(View view, String data) {
-        ((TextView)(view.findViewById(R.id.tv_test))).setText(data);
+    protected void setItemViewHolder(View view, NetBean.DataBean data) {
+        ((TextView)(view.findViewById(R.id.tv_test))).setText(data.getTitle());
     }
+
+
 }
