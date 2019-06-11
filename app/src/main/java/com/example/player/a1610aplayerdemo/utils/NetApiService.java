@@ -25,4 +25,6 @@ public interface NetApiService {
     // 引导页   http://api.immedc.com/restapi/loading/getStartBanner
     @GET("loading/getStartBanner")
     Observable<ResponseBody> getSplashInfo();
+
+    //http://api.immedc.com/restapi/loading/getHome   home主页
 }

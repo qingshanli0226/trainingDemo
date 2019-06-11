@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <tabs>
+        <tab
+            icon="@drawable/find_select"
+            id="@+id/tab_find"
+            title="发现" />
+        <tab
+            icon="@drawable/vip_select"
+            id="@+id/tab_vip"
+            title="会员" />
+        <tab
+            icon="@drawable/ispay_select"
+            id="@+id/tab_ispay"
+            title="已购" />
+        <tab
+            icon="@drawable/me_select"
+            id="@+id/tab_me"
+            title="我的" />
+    </tabs>
+</PreferenceScreen>

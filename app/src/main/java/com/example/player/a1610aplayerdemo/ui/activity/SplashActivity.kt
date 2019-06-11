@@ -1,18 +1,18 @@
 package com.example.player.a1610aplayerdemo.ui.activity
 
-import android.content.Context
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.util.Log
 import com.bumptech.glide.Glide
 import com.example.player.a1610aplayerdemo.MyApplication
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.base.BaseActivity
-import com.example.player.a1610aplayerdemo.base.IBaseView
 import com.example.player.a1610aplayerdemo.bean.FirstInBean
 import com.example.player.a1610aplayerdemo.bean.SplashBean
 import com.example.player.a1610aplayerdemo.utils.SharePresenterUtils
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_splash.*
-import okhttp3.ResponseBody
 import org.jetbrains.anko.toast
 
 /**
@@ -21,6 +21,15 @@ import org.jetbrains.anko.toast
  */
 class SplashActivity :BaseActivity(),ISplashView<String>{
 
+    private val mHandler:Handler =object :Handler(Looper.getMainLooper()){
+        override fun handleMessage(msg: Message?) {
+            super.handleMessage(msg)
+            if (msg?.what==1){
+                //跳转页面
+                startActivityAndFinainsh<BannerActivity>()
+            }
+        }
+    }
 
     val presenter by lazy { ISplashPresenter() }
     override fun getLayoutId(): Int {
@@ -68,15 +77,13 @@ class SplashActivity :BaseActivity(),ISplashView<String>{
                     var data=s.data
                     var img=data.bannerUrl
                     Glide.with(MyApplication.getContext()).load(img).into(splash_img);
-                    
+                    mHandler.sendEmptyMessageDelayed(1,4000)
+
                 }else{
                     //失败
                     toast("失败了")
                 }
-
-
     }
-
     override fun loadSplashFailure(mess: String?) {
         Log.d("lmz","错误原因"+mess);
     }
