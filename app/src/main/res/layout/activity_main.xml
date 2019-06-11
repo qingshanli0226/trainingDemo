@@ -27,13 +27,13 @@
             <LinearLayout android:layout_width="60dp" android:layout_height="wrap_content"
                           android:orientation="vertical"
                           android:gravity="center"
-                          android:background="#59ACFF"
                           android:id="@+id/linear_main_choice"
             >
                 <ImageView
                         android:id="@+id/iv_main_choice"
                         android:layout_width="wrap_content" android:layout_height="wrap_content"
                            android:src="@drawable/ic_action_main_choice"
+                        android:tint="#59ACFF"
                 />
                 <RadioButton
                         android:gravity="center"
@@ -43,7 +43,7 @@
                         android:id="@+id/rb_main_choice"
                         android:text="选课"
                         android:checked="true"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#59ACFF"
                 />
             </LinearLayout>
         </LinearLayout>

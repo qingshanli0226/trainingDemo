@@ -26,14 +26,12 @@ class MainActivity : AppCompatActivity() {
         fun setRadioButtonBg(flag: Boolean, img: ImageView, rb: RadioButton, linear: LinearLayout) {
             if (flag) {
                 //白色
-                rb.setTextColor(Color.rgb(255, 255, 255))
-                img.setColorFilter(Color.rgb(255, 255, 255))
+                rb.setTextColor(Color.rgb(89, 172, 255))
+                img.setColorFilter(Color.rgb(89, 172, 255))
                 //蓝色89172255
-                linear.setBackgroundColor(Color.rgb(89, 172, 255))
             } else {
                 rb.setTextColor(Color.rgb(192, 192, 192))
                 img.setColorFilter(Color.rgb(192, 192, 192))
-                linear.setBackgroundColor(Color.rgb(250, 250, 250))
             }
         }
         fun diao(){

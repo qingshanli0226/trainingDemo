@@ -1,7 +1,6 @@
 package com.example.player.a1610aplayerdemo.base;
 
 import android.os.Bundle;
-import android.provider.DocumentsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
 
 import java.util.List;
@@ -46,7 +48,15 @@ public abstract class BaseFragment<T,V extends View> extends Fragment implements
         recyclerView.setLayoutManager(new LinearLayoutManager(inflate.getContext()));
         baseAdapter = getBaseAdapter();
         recyclerView.setAdapter(baseAdapter);
+        RelativeLayout titlebar_search = inflate.findViewById(R.id.titlebar_search);
+        TextView titlebar_title = inflate.findViewById(R.id.titlebar_title);
+        ImageView titlebar_right = inflate.findViewById(R.id.titlebar_right);
+        ImageView titlebar_left = inflate.findViewById(R.id.titlebar_left);
+        setTitleBar(titlebar_left,titlebar_right,titlebar_search,titlebar_title);
     }
+
+    protected abstract void setTitleBar(ImageView titlebar_left, ImageView titlebar_right, RelativeLayout titlebar_search, TextView titlebar_title);
+
     //让子类对adapter进行初始化
     public abstract  BaseAdapter getBaseAdapter();
 
