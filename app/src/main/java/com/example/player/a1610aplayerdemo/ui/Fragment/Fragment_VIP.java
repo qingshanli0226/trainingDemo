@@ -1,21 +1,24 @@
 package com.example.player.a1610aplayerdemo.ui.Fragment;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.player.a1610aplayerdemo.MainActivity;
 import com.example.player.a1610aplayerdemo.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
+@SuppressLint("ValidFragment")
 public class Fragment_VIP extends Fragment {
 
 
-    public Fragment_VIP() {
+    public Fragment_VIP(MainActivity mainActivity) {
         // Required empty public constructor
     }
 

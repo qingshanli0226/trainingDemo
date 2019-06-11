@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".ui.Fragment.Fragment_VIP">
+             tools:context=".ui.Fragment.Fragment_VIP"
+android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:background="#8E002E"
+            android:gravity="center"
+            android:layout_height="65dp">
+        <TextView
+                android:layout_marginBottom="7dp"
+                android:layout_gravity="bottom"
+                android:textColor="#EEEEEE"
+                android:textSize="17sp"
+                android:text="会员"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    </LinearLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/vipPageSwipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/vipPageRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-</FrameLayout>
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

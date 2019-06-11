@@ -46,7 +46,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
-
+        mainRB1?.setChecked(true)
+        selectFragment(R.id.mainRB1)
+        mainRadioGroup?.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
+            selectFragment(
+                checkedId
+            )
+        })
     }
 
 
@@ -71,6 +77,37 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         changeImageSize()
 
 
+    }
+    private fun selectFragment(id: Int) {
+        val manager = supportFragmentManager
+        transaction = manager.beginTransaction()
+        when (id) {
+            R.id.mainRB1 -> if (fSelectCourse == null) {
+                fSelectCourse = Fragment_SelectCourse(this)
+                transaction!!.replace(R.id.mainFragmeLayout, fSelectCourse!!)
+            } else {
+                transaction!!.replace(R.id.mainFragmeLayout, fSelectCourse!!)
+            }
+            R.id.mainRB2 -> if (fStudeyCentre == null) {
+                fStudeyCentre = Fragment_StudyCentre(this)
+                transaction!!.replace(R.id.mainFragmeLayout, fStudeyCentre!!)
+            } else {
+                transaction!!.replace(R.id.mainFragmeLayout, fStudeyCentre!!)
+            }
+            R.id.mainRB3 -> if (fVIP == null) {
+                fVIP = Fragment_VIP(this)
+                transaction!!.replace(R.id.mainFragmeLayout, fVIP!!)
+            } else {
+                transaction!!.replace(R.id.mainFragmeLayout, fVIP!!)
+            }
+            R.id.mainRB4 -> if (fMine == null) {
+                fMine = Fragment_Mine(this)
+                transaction!!.replace(R.id.mainFragmeLayout, fMine!!)
+            } else {
+                transaction!!.replace(R.id.mainFragmeLayout, fMine!!)
+            }
+        }
+        transaction!!.commit()
     }
     private fun changeImageSize() {
         //定义底部标签图片大小

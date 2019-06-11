@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".ui.Fragment.Fragment_SelectCourse">
+             tools:context=".ui.Fragment.Fragment_SelectCourse"
+android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:gravity="bottom"
+            android:background="#8E002E"
+            android:orientation="horizontal"
+            android:layout_height="65dp">
+        <ImageView
+                android:id="@+id/cursePageTopBtn"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/home_logo"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        <LinearLayout
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/startbannershape"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_height="30dp">
+            <RelativeLayout
+                    android:id="@+id/cursePageSearchBtn"
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:layout_marginLeft="10dp"
+                        android:text="搜大师，搜课程"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                <ImageView
+                        android:layout_marginRight="15dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/icon_search"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/coursePageSwipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/cursePageRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-</FrameLayout>
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>
