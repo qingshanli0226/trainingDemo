@@ -32,7 +32,7 @@ class WelcomeActivity : AppCompatActivity() {
         banner.setImageLoader(MyImageLoader())
             .setImages(image_list)
             .setDelayTime(3000)
-            .setBannerStyle(BannerConfig.CIRCLE_INDICATOR)
+            .setBannerStyle(BannerConfig.NUM_INDICATOR)
             .isAutoPlay(false)
             .start()
         banner.setOnPageChangeListener(object : ViewPager.OnPageChangeListener {
