@@ -12,8 +12,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.base.BaseAdapter;
-import com.example.player.a1610aplayerdemo.base.BaseViewHolder;
 import com.example.player.a1610aplayerdemo.bean.XuanKeDateBean;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
@@ -28,6 +26,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     List<XuanKeDateBean.DataBean.HomeBannerBean> bannerInfoBeanList = new ArrayList<>();
     List<XuanKeDateBean.DataBean.HomeCategoryBean> homeCategoryBeanList = new ArrayList<>();
+    List<XuanKeDateBean.DataBean.VipRecommendBean> vipBeanList = new ArrayList<>();
     List<XuanKeDateBean.DataBean.ZlListBean> zhuanlanList = new ArrayList<>();
     List<XuanKeDateBean.DataBean.CourseRecommendsBean> tuijianlist = new ArrayList<>();
     List<XuanKeDateBean.DataBean.MasterLivesBean> dashikeList = new ArrayList<>();
@@ -44,6 +43,13 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         homeCategoryBeanList.addAll(bannerInfoBeanList1);
         notifyDataSetChanged();
     }
+
+    public void addVip( List<XuanKeDateBean.DataBean.VipRecommendBean> bannerInfoBeanList1){
+        vipBeanList.clear();
+        vipBeanList.addAll(bannerInfoBeanList1);
+        notifyDataSetChanged();
+    }
+
     public void addZhuanLan( List<XuanKeDateBean.DataBean.ZlListBean> bannerInfoBeanList1){
         zhuanlanList.clear();
         zhuanlanList.addAll(bannerInfoBeanList1);
@@ -67,14 +73,14 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static final int BANNER = 0;
 
     public static final int BIAOGE = 1;
-    /**
-     * 活动
-     */
-    public static final int ZHUANLAM = 2;
 
-    public static final int TUIJIAN = 3;
+    public static final int VIPZX = 2;
 
-    public static final int DASHIKE = 4;
+    public static final int ZHUANLAM = 3;
+
+    public static final int TUIJIAN = 4;
+
+    public static final int DASHIKE = 5;
 
     public int currentType = BANNER;
 
@@ -88,6 +94,9 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 break;
             case BIAOGE:
                 currentType = BIAOGE;
+                break;
+            case VIPZX:
+                currentType = VIPZX;
                 break;
             case ZHUANLAM:
                 currentType = ZHUANLAM;
@@ -110,14 +119,22 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         if (i == BANNER) {
 
-            View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.banner, viewGroup,false);
+            View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.banner_bn, viewGroup,false);
             return new BannerViewHolder(inflate);
+
         }else if (i == BIAOGE) {
 
             View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.homecategory, viewGroup,false);
             return new HomeCategoryHolder(inflate);
 
-        } else if (i == ZHUANLAM) {
+        } else if (i == VIPZX) {
+
+            View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.huiyuanzhuanxiang, viewGroup,false);
+            return new VipHolder(inflate);
+
+        }
+
+        else if (i == ZHUANLAM) {
 
             View inflate = LayoutInflater.from(MyApp.instance).inflate(R.layout.zhuanlan, viewGroup,false);
             return new ZhuanLanHolder(inflate);
@@ -147,7 +164,12 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             HomeCategoryHolder channelViewHolder = (HomeCategoryHolder) viewHolder;
             channelViewHolder.setDate(homeCategoryBeanList);
 
-        }else if (getItemViewType(i)==ZHUANLAM){
+        }else if (getItemViewType(i)==VIPZX){
+
+            VipHolder actViewHolder = (VipHolder) viewHolder;
+            actViewHolder.setDate(vipBeanList);
+        }
+        else if (getItemViewType(i)==ZHUANLAM){
 
             ZhuanLanHolder actViewHolder = (ZhuanLanHolder) viewHolder;
             actViewHolder.setDate(zhuanlanList);
@@ -166,7 +188,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 6;
     }
 
     class DaShiKeHolder extends RecyclerView.ViewHolder {
@@ -175,6 +197,8 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public DaShiKeHolder(@NonNull View itemView) {
             super(itemView);
+
+            channel = itemView.findViewById(R.id.dashi_lv);
         }
 
         public void setDate(List<XuanKeDateBean.DataBean.MasterLivesBean> channelInfoBeans){
@@ -200,24 +224,50 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             HomeCategoryAdp channelAdp = new HomeCategoryAdp();
             channelAdp.updateData(channelInfoBeans);
             channel.setAdapter(channelAdp);
+        }
+    }
+
+
+    class VipHolder extends RecyclerView.ViewHolder {
+
+        GridView vipgv;
+
+        public VipHolder(@NonNull View itemView) {
+            super(itemView);
+
+            vipgv = itemView.findViewById(R.id.vipzhuanxiang);
+        }
+
+        public void setDate(List<XuanKeDateBean.DataBean.VipRecommendBean> channelInfoBeans){
+
+            VipShareAdp channelAdp = new VipShareAdp();
+            channelAdp.updateData(channelInfoBeans);
+            vipgv.setAdapter(channelAdp);
 
         }
 
     }
 
+
+
+
+
+
+
     class ZhuanLanHolder extends RecyclerView.ViewHolder {
 
-        GridView channel;
+        GridView zhuangv;
         public ZhuanLanHolder(@NonNull View itemView) {
             super(itemView);
-            channel = itemView.findViewById(R.id.zhuanlan_gv);
+
+            zhuangv = itemView.findViewById(R.id.zhuanlan_gv);
         }
 
         public void setDate(List<XuanKeDateBean.DataBean.ZlListBean> channelInfoBeans){
 
             ZhuanLanAdp channelAdp = new ZhuanLanAdp();
             channelAdp.updateData(channelInfoBeans);
-            channel.setAdapter(channelAdp);
+            zhuangv.setAdapter(channelAdp);
 
         }
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             android:layout_width="match_parent"
+              android:orientation="vertical"
+                                             android:layout_height="330dp">
+
+    <TextView android:textColor="#9B7F52" android:layout_width="match_parent" android:layout_height="30dp" android:text="会员专享" android:textSize="20sp"/>
+
+
+    <GridView android:layout_width="match_parent" android:layout_height="match_parent"
+              android:numColumns="2"
+    android:id="@+id/vipzhuanxiang"
+    >
+
+    </GridView>
+
+</LinearLayout>

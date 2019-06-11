@@ -14,25 +14,28 @@ import com.example.player.a1610aplayerdemo.ui.xuankepresenter.XuanKeInterface
 import kotlinx.android.synthetic.main.fragment_xuan_ke.*
 import android.support.v7.widget.LinearLayoutManager
 import com.example.player.a1610aplayerdemo.ui.xuankeadapter.XuanKeAdp
-
+import com.example.player.a1610aplayerdemo.ui.xuankepresenter.XuanKePresenterCompl
 
 
 class XuanKeFragment : BaseFragment(),XuanKeInterface.XuanKeView {
 
+    val  adp = XuanKeAdp();
+
+    var presenter = XuanKePresenterCompl(this)
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         var layoutManager = LinearLayoutManager(context)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
         xry.setLayoutManager(layoutManager);
-
         xry.adapter = adp
     }
-
-    val  adp = XuanKeAdp();
 
     override fun onGetDataSuccess(bean: XuanKeDateBean) {
         adp.addBannerDate(bean.data.homeBanner)
         adp.addBean(bean.data.homeCategory)
+        adp.addVip(bean.data.vipRecommend)
         adp.addZhuanLan(bean.data.zlList)
         adp.addTuiJian(bean.data.courseRecommends)
         adp.addDaShi(bean.data.masterLives)
@@ -52,9 +55,9 @@ class XuanKeFragment : BaseFragment(),XuanKeInterface.XuanKeView {
     }
 
     override fun initView(): View? {
+        presenter.getXkData()
 
-
-        return View.inflate(context, R.layout.fragment_xuan_ke,null);
+        return View.inflate(context, com.example.player.a1610aplayerdemo.R.layout.fragment_xuan_ke,null);
     }
 
 

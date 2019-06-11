@@ -13,11 +13,11 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZhuanLanAdp extends BaseAdapter {
+public class VipShareAdp extends BaseAdapter {
 
-    List<XuanKeDateBean.DataBean.ZlListBean> dataBeanList = new ArrayList<>();
+    List<XuanKeDateBean.DataBean.VipRecommendBean> dataBeanList = new ArrayList<>();
 
-    public void updateData(List<XuanKeDateBean.DataBean.ZlListBean> dataBeans) {
+    public void updateData(List<XuanKeDateBean.DataBean.VipRecommendBean> dataBeans) {
         dataBeanList.clear();
         dataBeanList.addAll(dataBeans);
         notifyDataSetChanged();
@@ -41,15 +41,21 @@ public class ZhuanLanAdp extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.zhuanlan_item, parent, false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.huiyuanzhuanxiang_item, parent, false);
         }
 
-        ImageView imageView = convertView.findViewById(R.id.zhualan_img);
+        ImageView imageView = convertView.findViewById(R.id.vip_img);
         Picasso.get().load(dataBeanList.get(position).getImage()).into(imageView);
 
-        TextView tv =convertView.findViewById(R.id.zhuanlan_txt);
+        TextView tv =convertView.findViewById(R.id.vip_txt);
         tv.setText(dataBeanList.get(position).getTitle());
 
+
+        TextView vip =convertView.findViewById(R.id.vip_vip);
+        vip.setText("仅会员可看");
+
+        TextView dazhe =convertView.findViewById(R.id.vip_five);
+        dazhe.setText(dataBeanList.get(position).getText1());
 
         return convertView;
     }

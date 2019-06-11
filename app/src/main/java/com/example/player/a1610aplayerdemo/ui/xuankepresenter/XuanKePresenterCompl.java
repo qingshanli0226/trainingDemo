@@ -21,7 +21,7 @@ public class XuanKePresenterCompl implements XuanKeInterface.IxuankePresenter{
 
     @Override
     public void getXkData() {
-
+//http://api.immedc.com/restapi/
         RetrofitCreator.getApiService().getXuanKeDate("http://api.immedc.com/restapi/loading/getHome")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

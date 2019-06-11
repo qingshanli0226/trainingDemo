@@ -30,7 +30,7 @@ public class TuiJianAdp extends BaseAdapter<XuanKeDateBean.DataBean.CourseRecomm
 
         TextView textView = baseViewHolder.getView(R.id.tj_txt);
 
-        textView.setText(data.getTeacherName());
+        textView.setText(data.getAppTitle());
 
     }
 

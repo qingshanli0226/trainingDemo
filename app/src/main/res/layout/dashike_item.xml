@@ -8,12 +8,13 @@
 
     <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
 
-        <TextView android:layout_width="300dp" android:layout_height="20dp" android:id="@+id/ds_txr"/>
+        <TextView android:layout_width="300dp" android:layout_height="20dp" android:id="@+id/ds_txr" android:textColor="#000000"/>
 
         <TextView android:layout_width="40dp" android:layout_height="20dp" android:layout_alignParentRight="true" android:id="@+id/ds_price"
-                  android:layout_alignParentTop="true"/>
+                  android:textColor="#c1c1c1"  android:layout_alignParentTop="true"/>
 
         <TextView android:layout_width="100dp" android:layout_height="20dp" android:layout_alignParentRight="true"
+                  android:textColor="#c1c1c1"
                   android:layout_alignParentBottom="true" android:id="@+id/ds_jiangshi"/>
 
     </RelativeLayout>
