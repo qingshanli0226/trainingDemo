@@ -7,9 +7,22 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RadioButton
+import com.example.player.a1610aplayerdemo.bean.Bean
+import com.example.player.a1610aplayerdemo.bean.UserBean
 import com.example.player.a1610aplayerdemo.main.MainViewPagerAdapter
+import com.example.player.a1610aplayerdemo.net.RetrofitCreator
+import com.example.player.a1610aplayerdemo.utils.TokenSp
+import io.reactivex.Observable
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.functions.Function
+import io.reactivex.internal.operators.observable.ObservableOnErrorNext
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_titlebar.*
+import kotlin.math.log
+import io.reactivex.Observer as Observer
 
 class MainActivity : AppCompatActivity() {
     var linear_main_choice_flag: Boolean = true
@@ -20,6 +33,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        getUserData()
 
         main_vp.adapter = MainViewPagerAdapter(supportFragmentManager)
 
@@ -85,5 +101,28 @@ class MainActivity : AppCompatActivity() {
             main_vp.setCurrentItem(3)
         }
 
+    }
+
+    private fun getUserData() {
+        RetrofitCreator.getInstance().iServiceApi
+            .getUser("/restapi/account/createNew")
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object :Observer<Bean<UserBean>>{
+                override fun onComplete() {
+                }
+
+                override fun onSubscribe(d: Disposable) {
+                }
+
+                override fun onError(e: Throwable) {
+                }
+
+                override fun onNext(t: Bean<UserBean>) {
+                    var data = t.data
+                    var accessToken = data.accessToken
+                    TokenSp.getInstance().saveToken(accessToken)
+                }
+            })
     }
 }
