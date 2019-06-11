@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.frm;
+package com.example.player.a1610aplayerdemo.fragment;
 
 
 import android.os.Bundle;

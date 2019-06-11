@@ -11,7 +11,7 @@ import android.support.v4.view.ViewPager
 import android.view.View
 import android.widget.ImageView
 import android.widget.RadioGroup
-import com.example.player.a1610aplayerdemo.MainActivity
+import com.example.player.a1610aplayerdemo.mainactivity.MainActivity
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.welcomeactivity.welcomeAdapter.WelcomeVpAdapter
 import kotlinx.android.synthetic.main.activity_welcome.*
@@ -89,7 +89,7 @@ class WelcomeActivity : AppCompatActivity() {
 
     private fun tiao(){
         var intent = Intent()
-        intent.setClass(this,MainActivity::class.java)
+        intent.setClass(this, MainActivity::class.java)
         val edit = sp.edit()
         edit.putBoolean("first",false)
         edit.commit()

@@ -1,11 +1,12 @@
-package com.example.player.a1610aplayerdemo
+package com.example.player.a1610aplayerdemo.mainactivity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import com.example.player.a1610aplayerdemo.adapter.MainVpAdapter
+import com.example.player.a1610aplayerdemo.R
+import com.example.player.a1610aplayerdemo.mainactivity.adapter.MainVpAdapter
 
 class MainActivity : AppCompatActivity() {
  // 声明控件

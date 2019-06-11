@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.fragment;
+package com.example.player.a1610aplayerdemo.fragment.selectclass;
 
 
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package com.lc.tokendemo;
+package com.example.player.a1610aplayerdemo.tokendemo;
 
 /**
  * Created by lc on 2017/9/27.

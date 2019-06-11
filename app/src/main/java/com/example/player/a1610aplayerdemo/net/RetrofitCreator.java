@@ -23,8 +23,11 @@ public class RetrofitCreator {
     }
 
     private void createService() {
+
+
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(50, TimeUnit.SECONDS)
+                .addInterceptor(new TokenInterceptor())
                 .build();
 
 
@@ -32,7 +35,7 @@ public class RetrofitCreator {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
-                .baseUrl("")
+                .baseUrl(Contance.BASE_URL)
                 .build();
         retrofitApiService = retrofit.create(RetrofitApiService.class);
     }
