@@ -21,8 +21,8 @@ public abstract class BaseRecyclerViewAdapter<T,V extends View> extends Recycler
     private List<T> data = new ArrayList<>();// 定义一个数据列表
     private OnItemClickListener onItemClickListener;
 
-
-    public void setData(List<T> data) {
+// 更新数据
+    public void upData(List<T> data) {
         this.data.clear();
         this.data.addAll(data);
         notifyDataSetChanged();

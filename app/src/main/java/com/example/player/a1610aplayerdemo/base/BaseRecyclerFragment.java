@@ -56,7 +56,7 @@ public abstract class BaseRecyclerFragment<T,V extends View> extends Fragment im
      */
     @Override
     public void onloadData(List<T> data) {
-         baseRecyclerViewAdapter.setData(data);
+         baseRecyclerViewAdapter.upData(data);
     }
     /**
      * 当presenter获取失败时调用该方法。
