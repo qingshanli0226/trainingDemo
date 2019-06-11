@@ -2,11 +2,56 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <android.support.v4.view.ViewPager
                 android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/interface_pager">
+        </android.support.v4.view.ViewPager>
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/interface_group"
+                android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="主界面"
-                android:gravity="center"/>
+                android:text="发现"
+                android:gravity="center"
+                android:drawableTop="@drawable/fxaa"
+                android:id="@+id/interface_radio1"
+                android:button="@null"/>
+            <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="会员"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/hyaa"
+                    android:id="@+id/interface_radio2"
+                    android:button="@null"/>
+            <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="已购"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/gwaa"
+                    android:id="@+id/interface_radio3"
+                    android:button="@null"/>
+            <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="我的"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/wdaa"
+                    android:id="@+id/interface_radio4"
+                    android:button="@null"/>
+        </RadioGroup>
+        
 
 </LinearLayout>

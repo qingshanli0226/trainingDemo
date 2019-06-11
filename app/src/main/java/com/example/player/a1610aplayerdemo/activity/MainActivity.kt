@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo
+package com.example.player.a1610aplayerdemo.activity
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-import com.example.player.a1610aplayerdemo.activity.InterfaceActivity
+import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.adapter.GuidePageAdapter
 
 class MainActivity : AppCompatActivity() ,ViewPager.OnPageChangeListener{
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() ,ViewPager.OnPageChangeListener{
             val sharedPreferences = getSharedPreferences("guide1", Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
             editor.putBoolean("guide", true)
-            editor.commit()
+            editor.commit();
             startActivity(intent)
             finish();
         }
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() ,ViewPager.OnPageChangeListener{
         val size = viewList!!.size
         for (i in 0..size - 1) {
             iv_point = ImageView(this)
-            iv_point!!.layoutParams = ViewGroup.LayoutParams(50, 50)
+            iv_point!!.layoutParams = ViewGroup.LayoutParams(30, 30)
             iv_point!!.setPadding(20, 0, 20, 150)//left,top,right,bottom
             ivPointArray!![i] = iv_point!!
             //第一个页面需要设置为选中状态，这里采用两张不同的图片
@@ -75,7 +75,12 @@ class MainActivity : AppCompatActivity() ,ViewPager.OnPageChangeListener{
     private fun initViewPager() {
         main_pager = findViewById(R.id.main_pager) as ViewPager
         //实例化图片资源
-        imageIdArray = intArrayOf(R.mipmap.tp01, R.mipmap.tp02, R.mipmap.tp03,R.mipmap.tp04);
+        imageIdArray = intArrayOf(
+            R.mipmap.tp01,
+            R.mipmap.tp02,
+            R.mipmap.tp03,
+            R.mipmap.tp04
+        );
         viewList = ArrayList()
 
         //循环创建View并加入到集合中
