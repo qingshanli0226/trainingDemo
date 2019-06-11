@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.choice;
 
+import android.util.Log;
 import com.example.player.a1610aplayerdemo.Constant;
 import com.example.player.a1610aplayerdemo.MainActivity;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
@@ -46,7 +47,7 @@ public class ChoicePresenter implements IBasePresenter<MainBean> {
 
             @Override
             public void onError(Throwable e) {
-
+                Log.d("ChoicePresenter", e.toString());
             }
 
             @Override

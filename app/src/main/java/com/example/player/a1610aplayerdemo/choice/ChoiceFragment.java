@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.choice;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;

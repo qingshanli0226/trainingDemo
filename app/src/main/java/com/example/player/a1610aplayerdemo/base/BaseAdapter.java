@@ -53,7 +53,7 @@ public abstract class BaseAdapter<T, V extends View> extends RecyclerView.Adapte
     @Override
     public void onBindViewHolder(@NonNull final BaseViewHolder baseViewHolder, final int i) {
         //刷新  设置数据等   对于UI的操作
-        setItemView((V) (baseViewHolder.itemView), list.get(i), i);
+        setItemView((V) (baseViewHolder.itemView), null, i);
 
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +70,7 @@ public abstract class BaseAdapter<T, V extends View> extends RecyclerView.Adapte
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return 1;
     }
 
 }
