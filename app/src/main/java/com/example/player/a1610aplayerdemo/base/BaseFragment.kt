@@ -45,13 +45,13 @@ public abstract class BaseFragment : Fragment() {
      * 进行 adapter 和 listener 操作
      * 非必须
      */
-    protected fun initlistener(){}
+    open protected fun initlistener(){}
 
     /**
      * 初始化数据
      * 非必须
      */
-    protected fun  initdata(){
+    open protected fun  initdata(){
 
     }
 

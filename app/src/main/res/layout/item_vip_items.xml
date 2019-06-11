@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="30dp"
+        >
+
+        <ImageView
+            android:id="@+id/items_vip_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/items_vip_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="这里是标题"
+        android:textColor="#000"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="仅会员可看"
+            android:textSize="9sp"
+            android:textColor="#957848"
+            android:layout_marginLeft="5dp"
+            />
+        <TextView
+            android:id="@+id/items_vip_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会员五折"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="5dp"
+            android:textColor="#E52D2D"
+            android:textSize="9sp"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

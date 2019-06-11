@@ -13,13 +13,12 @@ import okhttp3.Response;
  *  token拦截器，在这里加入token
  */
 public class TokenInterceptor implements Interceptor{
-
-
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         Request newRequest = null;
         String token = SharePresenterUtils.getToken();
+        System.out.println(token);
         if (token != null) {
             newRequest = request.newBuilder().addHeader(Constans.TOKEN, token).build();
             return chain.proceed(newRequest);

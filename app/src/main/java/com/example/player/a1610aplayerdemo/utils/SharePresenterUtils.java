@@ -28,4 +28,17 @@ public class SharePresenterUtils {
         return token;
     }
 
+    /**
+     * 保存头像
+     */
+    public static void saveAvatar(String imgUri){
+        sp.edit().putString(Constans.USER_AVATAR,imgUri).commit();
+    }
+    /**
+     * 取出头像
+     */
+    public static String getAvatar(){
+        return sp.getString(Constans.USER_AVATAR,"");
+    }
+
 }

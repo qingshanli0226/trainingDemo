@@ -56,6 +56,7 @@ class SplashActivity :BaseActivity(),ISplashView<String>{
             //成功
             var data=s.data
             SharePresenterUtils.saveToken(data.accessToken);
+            SharePresenterUtils.saveAvatar(data.avatar)
             presenter.getSplash()
         }else{
             //失败

@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/heard_bg"
+        android:orientation="horizontal"
+        android:layout_height="60dp">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:id="@+id/find_heard_avatar"
+            android:layout_width="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_launcher_background"/>
+        
+        <EditText
+            android:id="@+id/find_heard_edit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="搜大师搜课程"
+            android:drawableLeft="@drawable/find_seach"
+            android:background="@drawable/edit_bg"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"
+            android:layout_marginRight="10dp"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/find_recyclerview"
+        ></android.support.v7.widget.RecyclerView>
+</LinearLayout>

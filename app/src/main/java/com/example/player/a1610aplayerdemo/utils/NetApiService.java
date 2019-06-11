@@ -1,7 +1,6 @@
 package com.example.player.a1610aplayerdemo.utils;
 
-import com.example.player.a1610aplayerdemo.bean.FirstInBean;
-import com.example.player.a1610aplayerdemo.bean.SplashBean;
+import com.example.player.a1610aplayerdemo.bean.HomeBean;
 
 import java.util.Map;
 
@@ -9,7 +8,6 @@ import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
 /**
@@ -26,5 +24,8 @@ public interface NetApiService {
     @GET("loading/getStartBanner")
     Observable<ResponseBody> getSplashInfo();
 
-    //http://api.immedc.com/restapi/loading/getHome   home主页
+    //          http://api.immedc.com/restapi/loading/getHome   home主页
+    @GET("loading/getHome")
+    Observable<HomeBean> getFindInfo();
+
 }
