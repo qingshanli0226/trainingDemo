@@ -1,14 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".curriculum.CurriculumFragment">
+             tools:context=".curriculum.CurriculumFragment"
+             android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="界面一"/>
+            android:layout_height="wrap_content"
+            android:background="#900231">
 
-</FrameLayout>
+        <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_me"/>
+
+        <EditText
+                android:id="@+id/curriculum_search"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/curriculum_edittext"
+                android:hint="搜大师 搜课程"
+                android:textSize="15dp"
+                android:textColor="#000"
+                android:clickable="true"
+                android:layout_marginRight="50dp"
+                android:focusableInTouchMode="false"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:orientation="vertical">
+            <com.youth.banner.Banner android:layout_width="match_parent"
+                                     android:id="@+id/curriculum_banner"
+                                     android:layout_height="180dp">
+            </com.youth.banner.Banner>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="215dp"
+                          android:orientation="vertical">
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/curriculum_category_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="会员专享"
+                        android:textColor="#a08459"/>
+
+                <TextView
+                        android:id="@+id/vip_more_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="更多>"
+                        android:gravity="right"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="415dp"
+                          android:orientation="vertical">
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/curriculum_vip_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
