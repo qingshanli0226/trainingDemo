@@ -7,7 +7,7 @@ import com.example.player.a1610aplayerdemo.base.ResEntity;
 import com.example.player.a1610aplayerdemo.net.CreatorRetorfitApi;
 import com.example.player.a1610aplayerdemo.net.MyObServer;
 import com.example.player.a1610aplayerdemo.net.NetFunction;
-import com.example.player.a1610aplayerdemo.selectclass.SelectBean;
+import com.example.player.a1610aplayerdemo.selectclass.bean.SelectBean;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 

@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.selectclass;
+package com.example.player.a1610aplayerdemo.selectclass.bean;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -34,6 +34,7 @@ class WeComeActivity : AppCompatActivity() {
                 var intent = Intent(this@WeComeActivity, MainActivity::class.java)
 
                 startActivity(intent)
+                finish()
             }
 
         })

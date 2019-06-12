@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+    <ImageView
+            android:scaleType="centerCrop"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/iv_masterlive"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+        <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/tv_masterlive_title"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:text="亲选上是你"
+                android:textSize="18sp"
+                android:singleLine="true"/>
+        <TextView
+                android:id="@+id/tv_teach_name"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/tv_masterlive_title"
+                android:text="hha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="12sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+        <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_teach_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="亲选上是你"
+                android:textSize="12sp"
+                android:singleLine="true"/>
+        <TextView
+                android:layout_marginRight="10dp"
+                android:textColor="#E30F17"
+                android:id="@+id/tv_master_price"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="hha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="12sp"/>
+    </RelativeLayout>
+
+</LinearLayout>

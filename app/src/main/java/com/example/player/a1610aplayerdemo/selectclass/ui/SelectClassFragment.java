@@ -1,10 +1,12 @@
-package com.example.player.a1610aplayerdemo.selectclass;
+package com.example.player.a1610aplayerdemo.selectclass.ui;
 
 import android.util.Log;
 import android.view.View;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewFragment;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
+import com.example.player.a1610aplayerdemo.selectclass.bean.SelectBean;
+import com.example.player.a1610aplayerdemo.selectclass.SelectClassRvAdapter;
 import com.example.player.a1610aplayerdemo.selectclass.presenter.SelectPresenter;
 
 import java.util.ArrayList;
@@ -31,10 +33,10 @@ public class SelectClassFragment extends BaseRecyclerViewFragment<Object, View> 
         objects.add(0,selectBean.getHomeBanner());
         objects.add(1,selectBean.getHomeCategory());
         Log.d("Mh",selectBean.getHomeCategory().get(1).getTitle());
-//        objects.add(2,selectBean.getCourseRecommends());
-//        objects.add(3,selectBean.getMasterLives());
-//        objects.add(4,selectBean.getZlList());
-//        objects.add(5,selectBean.getVipRecommend());
+        objects.add(2,selectBean.getVipRecommend());
+        objects.add(3,selectBean.getZlList());
+        objects.add(4,selectBean.getCourseRecommends());
+        objects.add(5,selectBean.getMasterLives());
 
         selectClassRvAdapter.refreshData(objects);
     }

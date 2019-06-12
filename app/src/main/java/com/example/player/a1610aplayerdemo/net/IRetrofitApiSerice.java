@@ -1,7 +1,7 @@
 package com.example.player.a1610aplayerdemo.net;
 
 import com.example.player.a1610aplayerdemo.base.ResEntity;
-import com.example.player.a1610aplayerdemo.selectclass.SelectBean;
+import com.example.player.a1610aplayerdemo.selectclass.bean.SelectBean;
 import com.example.player.a1610aplayerdemo.test.NetBean;
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;

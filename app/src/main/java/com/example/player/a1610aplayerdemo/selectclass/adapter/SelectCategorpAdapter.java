@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.selectclass;
+package com.example.player.a1610aplayerdemo.selectclass.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
+import com.example.player.a1610aplayerdemo.selectclass.bean.SelectBean;
 import com.squareup.picasso.Picasso;
 
 public class SelectCategorpAdapter extends BaseRecyclerViewAdapter<SelectBean.HomeCategoryBean,View> {
