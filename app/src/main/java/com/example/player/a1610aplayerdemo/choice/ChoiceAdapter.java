@@ -9,6 +9,7 @@ import com.example.player.a1610aplayerdemo.choice.advertising.AdvertisingView;
 import com.example.player.a1610aplayerdemo.choice.banner.BannerItemView;
 import com.example.player.a1610aplayerdemo.choice.category.CategoryView;
 import com.example.player.a1610aplayerdemo.choice.vip.VipRecommendView;
+import com.example.player.a1610aplayerdemo.choice.zl.ZLView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +62,8 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
            return new VipRecommendView(context);
        }else if(count == advertising){
            return new AdvertisingView(context);
+       }else if (count == ZLLIST){
+           return new ZLView(context);
        }
         return null;
     }
@@ -86,6 +89,10 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
             vipRecommendView.setVipData(vipRecommendBeans);
         }else if(i == advertising){
             AdvertisingView advertisingView = (AdvertisingView) itemView;
+        }else if (i == ZLLIST){
+            ZLView zlView = (ZLView) itemView;
+            List<MainBean.ZlListBean> zlListBeans = (List<MainBean.ZlListBean>) o;
+            zlView.setZLView(zlListBeans);
         }
     }
 
