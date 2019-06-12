@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+
+              android:id="@+id/master_linear"
+>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginLeft="20dp"
+                  android:layout_marginRight="20dp"
+                  android:orientation="vertical"
+    >
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="大师课"
+                android:textSize="23sp"
+                android:textColor="#0080FF"
+        />
+
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/master_recycler"
+        ></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</LinearLayout>

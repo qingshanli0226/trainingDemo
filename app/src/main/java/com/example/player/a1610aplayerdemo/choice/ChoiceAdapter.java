@@ -9,6 +9,7 @@ import com.example.player.a1610aplayerdemo.choice.advertising.AdvertisingView;
 import com.example.player.a1610aplayerdemo.choice.banner.BannerItemView;
 import com.example.player.a1610aplayerdemo.choice.category.CategoryView;
 import com.example.player.a1610aplayerdemo.choice.courserecommends.CourseRecommendsView;
+import com.example.player.a1610aplayerdemo.choice.masterlives.MasterLivesView;
 import com.example.player.a1610aplayerdemo.choice.vip.VipRecommendView;
 import com.example.player.a1610aplayerdemo.choice.zl.ZLView;
 
@@ -67,6 +68,8 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
            return new ZLView(context);
        }else if(count == COURSERECOMMENDS){
            return new CourseRecommendsView(context);
+       }else if(count == MASTERLIVES){
+           return new MasterLivesView(context);
        }
         return null;
     }
@@ -100,6 +103,10 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
             CourseRecommendsView view = (CourseRecommendsView) itemView;
             List<MainBean.CourseRecommendsBean> courseRecommendsBeans = (List<MainBean.CourseRecommendsBean>) o;
             view.setCourseView(courseRecommendsBeans);
+        }else if(i == MASTERLIVES){
+            MasterLivesView masterLivesView = (MasterLivesView) itemView;
+            List<MainBean.MasterLivesBean> masterLivesBeans = (List<MainBean.MasterLivesBean>) o;
+            masterLivesView.setMasterView(masterLivesBeans);
         }
     }
 
