@@ -25,12 +25,11 @@
                         android:layout_width="match_parent"
                         android:background="#ffffff"
                         android:orientation="horizontal"
-                        android:gravity="center_vertical"
                         android:layout_height="30dp">
                         <RelativeLayout
                                 android:id="@+id/searchView"
                                 android:layout_width="match_parent"
-                                android:gravity="center_vertical"
+                                android:gravity="center"
                                 android:layout_height="match_parent">
                                 <TextView
                                         android:layout_marginLeft="10dp"
@@ -46,6 +45,7 @@
                         </RelativeLayout>
                 </LinearLayout>
         </LinearLayout>
+
 
         <android.support.v4.widget.SwipeRefreshLayout
                 android:layout_width="match_parent"

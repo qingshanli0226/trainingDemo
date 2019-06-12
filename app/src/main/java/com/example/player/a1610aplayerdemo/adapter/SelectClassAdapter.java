@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.fragment.BlankFragment01;
@@ -27,6 +28,9 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
     //选择界面
     public static final int BANNER=0;
     public static final int CLASS=1;
+    public static final int RECOMMEND=2;
+    public static final int TEACH=3;
+
 
     public SelectClassAdapter(HomeBean homeBean, Context context) {
         this.homeBean = homeBean;
@@ -40,7 +44,10 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
           return new BannerViewHolder(LayoutInflater.from(context).inflate(R.layout.homebanner_view,null));
         }else if (i == CLASS){
             return new ClassViewHolder(LayoutInflater.from(context).inflate(R.layout.homeclass_view,null),context);
-
+        }else if (i == RECOMMEND){
+            return  new RecommendViewHolder(LayoutInflater.from(context).inflate(R.layout.homerecomend_view,null));
+        }else if (i == TEACH){
+            return new TeachViewHolder(LayoutInflater.from(context).inflate(R.layout.homebigteach_view,null));
         }
         return null;
     }
@@ -53,13 +60,20 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
         }else if (getItemViewType(i) == CLASS){
             ClassViewHolder classViewHolder= (ClassViewHolder) viewHolder;
             classViewHolder.getAdapter();
+        }else if (getItemViewType(i) == RECOMMEND){
+            RecommendViewHolder recommendViewHolder= (RecommendViewHolder) viewHolder;
+            recommendViewHolder.getAdapter();
+        }else if (getItemViewType(i)==TEACH){
+            TeachViewHolder teachViewHolder= (TeachViewHolder) viewHolder;
+            teachViewHolder.getAdapter();
+
         }
 
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 4;
     }
 
 
@@ -72,12 +86,59 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
             case CLASS:
                 currentType=CLASS;
                 break;
+            case RECOMMEND:
+                currentType=RECOMMEND;
+                break;
+            case TEACH:
+                currentType=TEACH;
+                break;
             default:
                 currentType=BANNER;
                 break;
         }
         return currentType;
     }
+
+    //大师课
+    private class TeachViewHolder extends RecyclerView.ViewHolder{
+        private RecyclerView recyclerView;
+        public TeachViewHolder(@NonNull View itemView) {
+            super(itemView);
+            recyclerView=itemView.findViewById(R.id.homeTeach_RV);
+        }
+        public void getAdapter(){
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+
+            HomeTeachAdpter homeTeachAdpter = new HomeTeachAdpter(homeBean, context);
+            recyclerView.setAdapter(homeTeachAdpter);
+
+        }
+
+    }
+
+
+    //推荐
+    private class RecommendViewHolder extends RecyclerView.ViewHolder{
+         private RecyclerView recyclerView;
+        public RecommendViewHolder(@NonNull View itemView) {
+            super(itemView);
+            recyclerView=itemView.findViewById(R.id.homeRecomend_RV);
+        }
+
+        public void getAdapter(){
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+            HomeRecomendAdapter homeRecomendAdapter = new HomeRecomendAdapter(homeBean, context);
+            recyclerView.setAdapter(homeRecomendAdapter);
+
+        }
+
+    }
+
+
 
     //分类
     private class ClassViewHolder extends RecyclerView.ViewHolder {
