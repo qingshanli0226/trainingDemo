@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.utils;
 
+import com.example.player.a1610aplayerdemo.base.MemberBean;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
 
 import java.util.Map;
@@ -8,6 +9,7 @@ import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
 /**
@@ -27,5 +29,8 @@ public interface NetApiService {
     //          http://api.immedc.com/restapi/loading/getHome   home主页
     @GET("loading/getHome")
     Observable<HomeBean> getFindInfo();
+    // 会员页面   http://api.immedc.com/restapi/masterPackage/getMasterPackagelist?minid=0&size=20
+    @GET("masterPackage/getMasterPackagelist")
+    Observable<MemberBean> getMemberViewInfo(@Query("minid")int minid,@Query("size")int size);
 
 }
