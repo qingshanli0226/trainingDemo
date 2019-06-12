@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+     <ImageView
+        android:id="@+id/gridView_Item_Image"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="10dp"
+       android:layout_gravity="center"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+    <TextView
+            android:id="@+id/gridView_Item_Text"
+            android:layout_marginTop="5dp"
+            android:textColor="#000000"
+            android:text="音乐课堂"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+</LinearLayout>

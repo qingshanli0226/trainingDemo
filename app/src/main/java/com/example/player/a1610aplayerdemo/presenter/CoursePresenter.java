@@ -1,10 +1,8 @@
 package com.example.player.a1610aplayerdemo.presenter;
 
 import android.content.Context;
-import android.util.Log;
 import com.example.player.a1610aplayerdemo.Server.AllServer;
 import com.example.player.a1610aplayerdemo.common.HomeBean;
-import com.example.player.a1610aplayerdemo.ui.Fragment.Fragment_SelectCourse;
 import com.example.player.a1610aplayerdemo.util.RetrofitHelper;
 import com.example.player.a1610aplayerdemo.view.CourseView;
 import io.reactivex.Observable;

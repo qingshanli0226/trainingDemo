@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.adapter.Adapter_CourseRecyclerView;
 import com.example.player.a1610aplayerdemo.common.HomeBean;
 import com.example.player.a1610aplayerdemo.presenter.CoursePresenter;
 import com.example.player.a1610aplayerdemo.presenter.ICoursepresenter;
@@ -40,7 +41,7 @@ public class Fragment_SelectCourse extends Fragment implements CourseView, View.
     private SharedPreferences preferences;
     private String token;
     private HomeBean homeBean;
-
+    Adapter_CourseRecyclerView adapter;
 
     private SwipeRefreshLayout coursePageSwipeRefreshLayout;
     public Fragment_SelectCourse(Context context) {
@@ -75,7 +76,7 @@ public class Fragment_SelectCourse extends Fragment implements CourseView, View.
                 //刷新数据
                 initNetInfo();
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -89,6 +90,7 @@ public class Fragment_SelectCourse extends Fragment implements CourseView, View.
         preferences = mContext.getSharedPreferences(Contants.SP, Context.MODE_PRIVATE);
         token = preferences.getString(Contants.TOKEN, "");
         iPcoursePresenter.getHomeData(token,mContext);
+
     }
 
     @Override
@@ -119,8 +121,10 @@ public class Fragment_SelectCourse extends Fragment implements CourseView, View.
                 break;
         }
     }
-    private void initRecyclerView() {
 
+    private void initRecyclerView() {
+        adapter = new Adapter_CourseRecyclerView(mContext, homeBean);
+        cursePageRecyclerView.setAdapter(adapter);
         GridLayoutManager manager = new GridLayoutManager(mContext, 1);
         cursePageRecyclerView.setLayoutManager(manager);
     }
