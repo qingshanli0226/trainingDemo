@@ -8,6 +8,7 @@ import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.bean.Bean;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
+import com.example.player.a1610aplayerdemo.utils.TokenSp;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -16,7 +17,9 @@ import io.reactivex.schedulers.Schedulers;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ChoicePresenter implements IBasePresenter<MainBean> {
 
@@ -24,7 +27,15 @@ public class ChoicePresenter implements IBasePresenter<MainBean> {
 
     @Override
     public void getData() {
-        RetrofitCreator.getInstance().getIServiceApi().getMainData(Constant.BASE + "restapi/loading/getHome")
+        String token = TokenSp.getInstance().getToken();
+        Log.e("123456", "getData: "+token);
+        Map<String, String> map = new HashMap<>();
+        map.put("Android-channel", "guoyun");
+        map.put("Android-VersionCode", "43");
+        map.put("DeviceKey", Constant.DeviceKey);
+        map.put("Tingyun_Process", "true");
+        map.put("CH-TOKEN", token);
+        RetrofitCreator.getInstance().getIServiceApi().getMainData(map,Constant.BASE + "restapi/loading/getHome")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(new Function<Bean<MainBean>, MainBean>() {
@@ -40,9 +51,7 @@ public class ChoicePresenter implements IBasePresenter<MainBean> {
 
             @Override
             public void onNext(MainBean mainBean) {
-                List<MainBean> list = new ArrayList<>();
-                list.add(mainBean);
-                iBaseView.onLoadData(list);
+                iBaseView.onLoadDataObject(mainBean);
             }
 
             @Override

@@ -90,6 +90,12 @@ public abstract class BaseFragment<T,V extends View> extends Fragment implements
         baseAdapter.updataData(data);
     }
 
+
+    @Override
+    public void onLoadDataObject(T o) {
+
+    }
+
     @Override
     public void onLoadError(int code, String msg) {
 

@@ -41,13 +41,8 @@ public class BannerItemView extends LinearLayout {
 
 
     public void setChoice_bannerData(List<String> url){
-        Log.e("yn", "setChoice_bannerData: -------------");
-        List<String> list = new ArrayList<>();
-        list.add("http://ali-files.yooshow.com/app/yangyin/default.png");
-        list.add("http://ali-files.yooshow.com/app/yangyin/default.png");
-        list.add("http://ali-files.yooshow.com/app/yangyin/default.png");
         choice_banner
-                .setImages(list)
+                .setImages(url)
                 .setIndicatorGravity(Gravity.CENTER)
                 .isAutoPlay(true)
                 .setDelayTime(3000)
@@ -65,65 +60,9 @@ public class BannerItemView extends LinearLayout {
         public void displayImage(Context context, Object path, ImageView imageView) {
             Picasso.with(context)
                     .load(Uri.parse((String) path))
-                    .transform(new MyTransformation())
                     .into(imageView);
         }
     }
 
 
-    class MyTransformation implements Transformation {
-
-        @Override
-        public Bitmap transform(Bitmap source) {
-            /**
-             * 求出宽和高的哪个小
-             */
-            int size = Math.min(source.getWidth(), source.getHeight());
-
-            /**
-             * 求中心点
-             */
-            int x = (source.getWidth() - size) / 2;
-            int y = (source.getHeight() - size) / 2;
-
-            /**
-             * 生成BitMap
-             */
-            Bitmap squaredBitmap = Bitmap.createBitmap(source, x, y, size, size);
-            if (squaredBitmap != source) {
-                //释放
-                source.recycle();
-            }
-
-            /**
-             * 建立新的Bitmap
-             */
-            Bitmap bitmap = Bitmap.createBitmap(size, size, source.getConfig());
-
-            /**
-             * 画布画笔
-             */
-            Canvas canvas = new Canvas(bitmap);
-            Paint paint = new Paint();
-
-            BitmapShader shader = new BitmapShader(squaredBitmap,
-                    BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP);
-            paint.setShader(shader);
-            paint.setAntiAlias(true);
-
-            float r = size / 2f;
-            /**
-             * 画圆
-             */
-            canvas.drawCircle(r, r, r, paint);
-
-            squaredBitmap.recycle();
-            return bitmap;
-        }
-
-        @Override
-        public String key() {
-            return "circle";
-        }
-    }
 }

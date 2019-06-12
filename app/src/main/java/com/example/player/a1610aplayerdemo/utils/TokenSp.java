@@ -6,39 +6,33 @@ import android.util.Log;
 import com.example.player.a1610aplayerdemo.Constant;
 
 public class TokenSp {
-    private TokenSp(){}
+    private TokenSp() {
+    }
 
     private static TokenSp tokenSp = new TokenSp();
 
-    public static TokenSp getInstance(){
+    public static TokenSp getInstance() {
         return tokenSp;
     }
 
     private SharedPreferences sp;
     private SharedPreferences.Editor edit;
 
-    public void init(Context context){
+    public void init(Context context) {
         sp = context.getSharedPreferences(Constant.TOKEN, Context.MODE_PRIVATE);
     }
 
-    public void saveToken(String token){
+    public void saveToken(String token) {
         edit = sp.edit();
         edit.putString(Constant.TOKEN, token);
         edit.apply();
         getToken();
     }
 
-    public String getToken(){
+    public String getToken() {
+
         String string = sp.getString(Constant.TOKEN, "");
-        Log.e("123", "getToken: "+string);
-        if(edit == null){
-            return null;
-        }else{
-            if(string == null){
-                return null;
-            }else{
-                return string;
-            }
-        }
+        Log.e("456", "getToken: " + string);
+        return string;
     }
 }

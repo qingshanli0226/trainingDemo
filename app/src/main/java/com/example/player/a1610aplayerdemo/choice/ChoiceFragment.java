@@ -11,9 +11,10 @@ import com.example.player.a1610aplayerdemo.base.BaseFragment;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ChoiceFragment extends BaseFragment<MainBean,View> {
+public class ChoiceFragment extends BaseFragment<Object,View> {
     @Override
     protected void setTitleBar(ImageView titlebar_left, ImageView titlebar_right, RelativeLayout titlebar_search, TextView titlebar_title) {
         titlebar_left.setImageResource(R.drawable.ic_action_main_my);
@@ -34,7 +35,22 @@ public class ChoiceFragment extends BaseFragment<MainBean,View> {
     }
 
     @Override
-    public void onLoadData(List<MainBean> data) {
-        super.onLoadData(data);
+    public void onLoadDataObject(Object oo) {
+        super.onLoadDataObject(oo);
+        List<Object> objects = new ArrayList<>();
+
+        MainBean o = (MainBean) oo;
+
+        objects.add(0,o.getHomeBanner());
+//        objects.add(1,o.getHomeCategory());
+//        objects.add(2,o.getVipRecommend());
+//        objects.add(3,o.getZlList());
+//        objects.add(4,o.getCourseRecommends());
+//        objects.add(5,o.getMasterLives());
+
+        adapter.updataData(objects);
+
     }
+
+
 }

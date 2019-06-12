@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChoiceAdapter extends BaseAdapter<MainBean, BannerItemView> {
+public class ChoiceAdapter extends BaseAdapter<Object, BannerItemView> {
     private final int BANNER = 0;
     private final int CATEGORY = 1;//Category种类
     private final int VIPRECOMMEND = 2;//VIP专享
@@ -54,22 +54,19 @@ public class ChoiceAdapter extends BaseAdapter<MainBean, BannerItemView> {
     }
 
     @Override
-    protected void setItemView(View itemView, MainBean mainBean, int i) {
-        Log.e("yn", "bind");
-//        if(i == BANNER){
+    protected void setItemView(View itemView, Object o, int i) {
+
+        if(i == BANNER){
             BannerItemView bannerItemView = (BannerItemView) itemView;
-//            List<MainBean.HomeBannerBean> homeBanner = mainBean.getHomeBanner();
-//            List<String> list = new ArrayList<>();
-//            for (int i1 = 0; i1 < homeBanner.size(); i1++) {
-//                list.add(homeBanner.get(i1).getBannerUrl());
-//            }
-        List<String> list = new ArrayList<>();
-        list.add("http://ali-files.yooshow.com/app/yangyin/default.png");
-        list.add("http://ali-files.yooshow.com/app/yangyin/default.png");
-        list.add("http://ali-files.yooshow.com/app/yangyin/default.png");
+            List<MainBean.HomeBannerBean> homeBanner = (List<MainBean.HomeBannerBean>) o;
+            List<String> list = new ArrayList<>();
+            for (int i1 = 0; i1 < homeBanner.size(); i1++) {
+                list.add(homeBanner.get(i1).getBannerUrl());
+            }
             bannerItemView.setChoice_bannerData(list);
-//        }
+        }
     }
+
 
 
 }

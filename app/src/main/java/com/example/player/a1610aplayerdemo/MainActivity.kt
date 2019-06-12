@@ -2,8 +2,10 @@ package com.example.player.a1610aplayerdemo
 
 import android.content.res.Resources
 import android.graphics.Color
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RadioButton
@@ -104,24 +106,47 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getUserData() {
+        var sdk:String = ""+Build.VERSION.SDK_INT
+        var map = mapOf<String, String>(
+            (Pair("DeviceKey", Constant.DeviceKey)), Pair("Android-channel", "guoyun"),
+            Pair("Android-VersionCode", "43"), Pair("Tingyun_Process", "true")
+//            ,
+//            Pair("device", Build.DEVICE), Pair("sdkVersion", sdk),
+//            Pair("brand", Build.BOARD), Pair("product", Build.PRODUCT)
+        )
+
+
+        var map1 = mapOf<String, String>(
+            (Pair("DeviceKey", Constant.DeviceKey)),
+//            Pair("Android-channel", "guoyun"),
+//            Pair("Android-VersionCode", "43"), Pair("Tingyun_Process", "true")
+//            ,
+            Pair("device", Build.DEVICE), Pair("sdkVersion", sdk),
+            Pair("brand", Build.BOARD), Pair("product", Build.PRODUCT)
+        )
+
         RetrofitCreator.getInstance().iServiceApi
-            .getUser("/restapi/account/createNew")
+            .getUser(map,map1)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object :Observer<Bean<UserBean>>{
                 override fun onComplete() {
+
                 }
 
                 override fun onSubscribe(d: Disposable) {
                 }
 
                 override fun onError(e: Throwable) {
+                    Log.d("123", e.toString())
                 }
 
                 override fun onNext(t: Bean<UserBean>) {
-                    var data = t.data
-                    var accessToken = data.accessToken
+                    var data:UserBean? = t.data
+                    var accessToken = data?.accessToken?:"123"
                     TokenSp.getInstance().saveToken(accessToken)
+
+                    println("456789--------$accessToken")
                 }
             })
     }
