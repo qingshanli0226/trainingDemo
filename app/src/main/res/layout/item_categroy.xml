@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+    <GridView
+            android:id="@+id/categroy_grideview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="4">
+
+    </GridView>
+
+</LinearLayout>

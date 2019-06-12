@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.fragment.selectclass;
+package com.example.player.a1610aplayerdemo.fragment.selectclass.bean;
 
 import java.util.List;
 

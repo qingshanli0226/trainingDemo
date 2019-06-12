@@ -43,7 +43,8 @@ public abstract class BaseRecyclerViewAdapter<T,V extends View> extends Recycler
  */
     @Override
     public void onBindViewHolder(@NonNull final BaseViewHolder baseViewHolder, final int position) {
-            refreshItemUi((V)baseViewHolder.itemView,data.get(position),position);
+
+        refreshItemUi((V)baseViewHolder.itemView,data.get(position),position);
             // 回调点击事件
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,18 +58,15 @@ public abstract class BaseRecyclerViewAdapter<T,V extends View> extends Recycler
     //因为生成itemView需要上下文，所以添加一个参数，就是上下文参数, 并且返回值只要是集成View即可,不需要指定返回的具体类型.
    public abstract V getItemView(Context context,int viewType);
 
-    @Override
-    public int getItemViewType(int position) {
-        return getViewType(position);
-    }
 // 根据position 传递不同viewType
     protected abstract int getViewType(int position);
 
     public abstract void refreshItemUi(V itemView, T t,int position);
 
+
     @Override
     public int getItemCount() {
-        return data.size();
+        return data.size() ;
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -78,4 +76,5 @@ public abstract class BaseRecyclerViewAdapter<T,V extends View> extends Recycler
     public interface OnItemClickListener{
         void onItemClick(View view,int position);
     }
+
 }

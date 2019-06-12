@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+android:layout_marginTop="10dp"
+android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+        <TextView
+                android:id="@+id/tuijian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="推荐"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="20sp"
+                android:textColor="#A5201B"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="课程"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:layout_toRightOf="@+id/tuijian"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/course_rv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

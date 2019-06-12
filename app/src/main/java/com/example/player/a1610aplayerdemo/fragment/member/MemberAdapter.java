@@ -35,7 +35,6 @@ public class MemberAdapter extends BaseRecyclerViewAdapter<Bean_Member.DataBean,
     public void refreshItemUi(View itemView, Bean_Member.DataBean dataBean,int position) {
           switch (position){
               case 0:
-                  Log.i("1232123", "refreshItemUi: e72472641437643ewfa");
                   MemberItemView memberItemView = (MemberItemView) itemView;
                   memberItemView.updateImg(dataBean.getImage());
                   break;

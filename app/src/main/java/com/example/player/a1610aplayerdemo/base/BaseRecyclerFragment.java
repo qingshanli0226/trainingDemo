@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,15 @@ import java.util.List;
 public abstract class BaseRecyclerFragment<T,V extends View> extends Fragment implements IBaseView<T> {
  private IBasePresenter iBasePresenter;
  private BaseRecyclerViewAdapter baseRecyclerViewAdapter;
+ public static View tollbar;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.base_recyclerview_fragment,container,false);
+        tollbar = rootView.findViewById(R.id.tb);
+
         initView(rootView);
         return rootView;
     }
@@ -58,7 +63,9 @@ public abstract class BaseRecyclerFragment<T,V extends View> extends Fragment im
      */
     @Override
     public void onloadData(List<T> data) {
-         baseRecyclerViewAdapter.upData(data);
+
+        baseRecyclerViewAdapter.upData(data);
+
     }
     /**
      * 当presenter获取失败时调用该方法。
@@ -67,6 +74,11 @@ public abstract class BaseRecyclerFragment<T,V extends View> extends Fragment im
      */
     @Override
     public void onLoadError(int code, String message) {
+
+    }
+
+    @Override
+    public void onLoadObject(T data) {
 
     }
 

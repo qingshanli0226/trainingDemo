@@ -18,6 +18,7 @@ public class Member_Fragment extends BaseRecyclerFragment<Bean_Member.DataBean,V
 
     @Override
     public BaseRecyclerViewAdapter<Bean_Member.DataBean, View> getAdapter() {
+        tollbar.setVisibility(View.GONE);
         return new MemberAdapter();
     }
 

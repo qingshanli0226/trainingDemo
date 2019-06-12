@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+android:layout_marginLeft="10dp"
+android:layout_marginTop="15dp"
+android:orientation="vertical">
+
+    <ImageView
+            android:id="@+id/item_vpi_img"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"/>
+    <TextView
+            android:id="@+id/item_vpi_title"
+            android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="16sp"
+              android:text="3434"
+              android:maxLines="1"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    android:layout_marginTop="5dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+        android:text="仅会员可看"
+        android:textColor="#AAA057"/>
+        <TextView
+                android:id="@+id/item_vip_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="会员5折"
+        android:textColor="#F44336"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
