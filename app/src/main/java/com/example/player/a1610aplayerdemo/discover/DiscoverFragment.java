@@ -16,10 +16,7 @@ import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
-import com.example.player.a1610aplayerdemo.discover.adapter.MemberAdapter;
-import com.example.player.a1610aplayerdemo.discover.adapter.OptionAdapter;
-import com.example.player.a1610aplayerdemo.discover.adapter.RecommendAdapter;
-import com.example.player.a1610aplayerdemo.discover.adapter.SpecialAdapter;
+import com.example.player.a1610aplayerdemo.discover.adapter.*;
 import com.example.player.a1610aplayerdemo.discover.bean.DiscoverBean;
 import com.example.player.a1610aplayerdemo.discover.presenter.DisPresenter;
 import com.squareup.picasso.Picasso;
@@ -32,22 +29,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DiscoverFragment extends Fragment implements IBaseView, OnBannerListener {
+public class DiscoverFragment extends Fragment implements IBaseView, OnBannerListener, RecommendAdapter.onItemRecommendClickListener, OptionAdapter.onItemOptionClickListener, MemberAdapter.onItemMemberClickListener, CourseAdapter.onItemCourseClickListener, SpecialAdapter.onItemSpecialClickListener {
     private IBasePresenter iBasePresenter;
     private Banner discover_banner;
     private OptionAdapter optionadapter = new OptionAdapter(getContext());
     private MemberAdapter memberAdapter = new MemberAdapter();
     private SpecialAdapter specialAdapter = new SpecialAdapter();
     private RecommendAdapter recommendAdapter = new RecommendAdapter();
+    private CourseAdapter courseAdapter = new CourseAdapter();
     private List<DiscoverBean.HomeBannerBean> list0 = new ArrayList<>();
     private List<DiscoverBean.HomeCategoryBean> list1 = new ArrayList<>();
     private List<DiscoverBean.VipRecommendBean> list2 = new ArrayList<>();
     private List<DiscoverBean.ZlListBean> list3 = new ArrayList<>();
     private List<DiscoverBean.CourseRecommendsBean> list4 = new ArrayList<>();
+    private List<DiscoverBean.MasterLivesBean> list5 = new ArrayList<>();
     private RecyclerView discover_option_recyc;
     private RecyclerView discover_member_recyc;
     private RecyclerView discover_special_recyc;
     private RecyclerView discover_recommend_recyc;
+    private RecyclerView discover_course_recyc;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -87,6 +87,14 @@ public class DiscoverFragment extends Fragment implements IBaseView, OnBannerLis
         discover_member_recyc = (RecyclerView) view.findViewById(R.id.discover_member_recyc);
         discover_special_recyc = (RecyclerView) view.findViewById(R.id.discover_special_recyc);
         discover_recommend_recyc = (RecyclerView) view.findViewById(R.id.discover_recommend_recyc);
+        discover_course_recyc = (RecyclerView) view.findViewById(R.id.discover_course_recyc);
+
+        courseAdapter.setListener(this);
+        memberAdapter.setListener(this);
+        optionadapter.setListener(this);
+        recommendAdapter.setListener(this);
+        specialAdapter.setListener(this);
+
     }
 
     @Override
@@ -102,15 +110,30 @@ public class DiscoverFragment extends Fragment implements IBaseView, OnBannerLis
         list2 = bean.getVipRecommend();
         list3 = bean.getZlList();
         list4 = bean.getCourseRecommends();
+        list5 = bean.getMasterLives();
         banner();
         option();
         member();
         special();
         recommend();
+        course();
+    }
+
+    private void course() {
+        LinearLayoutManager manager=new LinearLayoutManager(getContext()){
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        courseAdapter.setList(list5);
+        discover_course_recyc.setLayoutManager(manager);
+        discover_course_recyc.setAdapter(courseAdapter);
     }
 
     private void recommend() {
-        LinearLayoutManager manager=new LinearLayoutManager(getContext());
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recommendAdapter.setList(list4);
         discover_recommend_recyc.setLayoutManager(manager);
@@ -165,6 +188,31 @@ public class DiscoverFragment extends Fragment implements IBaseView, OnBannerLis
     public void onDestroy() {
         super.onDestroy();
         iBasePresenter.detachView();
+    }
+
+    @Override
+    public void onItemCourse(DiscoverBean.MasterLivesBean bean, int index) {
+        Toast.makeText(getContext(), ""+bean.getAppTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemMember(DiscoverBean.VipRecommendBean bean, int index) {
+        Toast.makeText(getContext(), ""+bean.getTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemOption(DiscoverBean.HomeCategoryBean bean, int index) {
+        Toast.makeText(getContext(), ""+bean.getTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemRecommend(DiscoverBean.CourseRecommendsBean bean, int index) {
+        Toast.makeText(getContext(), ""+bean.getAppTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemSpecial(DiscoverBean.ZlListBean bean, int index) {
+        Toast.makeText(getContext(), ""+bean.getTitle(), Toast.LENGTH_SHORT).show();
     }
 
     private class MyBannerLoder extends ImageLoader {

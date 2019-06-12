@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="320dp"
+                android:layout_margin="10dp"
+            android:orientation="vertical">
+            <ImageView android:layout_width="match_parent" android:layout_height="240dp"
+            android:id="@+id/course_iv1"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="35sp"
+                          android:layout_marginLeft="10dp"
+                          android:layout_marginRight="10dp">
+                <TextView android:layout_width="0dp"
+                          android:layout_weight="1"
+                          android:layout_height="40dp"
+                          android:gravity="center_vertical"
+                          android:lines="1"
+                          android:textColor="#000"
+                          android:ellipsize="end"
+                          android:id="@+id/course_tv1"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:id="@+id/course_tv2"/>
+            </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="35sp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+        <TextView android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_height="40dp"
+                  android:gravity="center_vertical"
+                  android:lines="1"
+                  android:textSize="10sp"
+                  android:textColor="#ccc"
+                  android:id="@+id/course_tv3"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                  android:gravity="center_vertical"
+                  android:id="@+id/course_tv4"
+                  android:textSize="10sp"
+                    android:textColor="#BF0055"/>
+    </LinearLayout>
+
+</LinearLayout>

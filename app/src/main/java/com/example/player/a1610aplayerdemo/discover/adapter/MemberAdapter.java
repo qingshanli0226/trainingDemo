@@ -17,6 +17,11 @@ import java.util.List;
 
 public class MemberAdapter  extends RecyclerView.Adapter<MemberAdapter.MemberViewHolder>{
     private List<DiscoverBean.VipRecommendBean> list=new ArrayList<>();
+    private onItemMemberClickListener listener;
+
+    public void setListener(onItemMemberClickListener listener) {
+        this.listener = listener;
+    }
 
     public void setList(List<DiscoverBean.VipRecommendBean> list) {
         this.list = list;
@@ -30,10 +35,16 @@ public class MemberAdapter  extends RecyclerView.Adapter<MemberAdapter.MemberVie
     }
 
     @Override
-    public void onBindViewHolder(@android.support.annotation.NonNull MemberViewHolder memberViewHolder, int i) {
+    public void onBindViewHolder(@android.support.annotation.NonNull MemberViewHolder memberViewHolder, final int i) {
         Picasso.get().load(list.get(i).getImage()).into(memberViewHolder.imageView);
         memberViewHolder.textView.setText(list.get(i).getTitle());
         memberViewHolder.textView2.setText(list.get(i).getText1());
+        memberViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemMember(list.get(i),i);
+            }
+        });
     }
 
     @Override
@@ -53,5 +64,8 @@ public class MemberAdapter  extends RecyclerView.Adapter<MemberAdapter.MemberVie
             textView1=itemView.findViewById(R.id.member_tv2);
             textView2=itemView.findViewById(R.id.member_tv3);
         }
+    }
+    public interface onItemMemberClickListener{
+        void onItemMember(DiscoverBean.VipRecommendBean bean,int index);
     }
 }

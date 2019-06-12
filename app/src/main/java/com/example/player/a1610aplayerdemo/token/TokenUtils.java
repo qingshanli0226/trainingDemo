@@ -1,0 +1,17 @@
+package com.example.player.a1610aplayerdemo.token;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.telephony.TelephonyManager;
+import com.example.player.a1610aplayerdemo.url.MyApplication;
+
+public class TokenUtils {
+    @SuppressLint("MissingPermission")
+    public static String getDeviceKey() {
+        String deviceKey = null;
+        TelephonyManager tm = (TelephonyManager) MyApplication.instance.getSystemService(Context.TELEPHONY_SERVICE);
+        deviceKey = tm.getSimSerialNumber();
+        deviceKey = Md5Utils.MD5(deviceKey);
+        return deviceKey;
+    }
+}

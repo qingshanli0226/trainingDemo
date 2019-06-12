@@ -7,9 +7,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.adapter.InterfaceFragmentPagerAdapter;
+import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.discover.DiscoverFragment;
 import com.example.player.a1610aplayerdemo.member.MemberFragment;
 import com.example.player.a1610aplayerdemo.my.MyFragment;
@@ -18,7 +18,8 @@ import com.example.player.a1610aplayerdemo.shopping.ShoppingFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InterfaceActivity extends AppCompatActivity {
+public class InterfaceActivity extends AppCompatActivity{
+    private IBasePresenter iBasePresenter;
     private ViewPager interface_pager;
     private RadioButton interface_radio1;
     private RadioButton interface_radio2;
@@ -30,6 +31,8 @@ public class InterfaceActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interface);
+
+
         initView();
         initPager();
         initItemPager();

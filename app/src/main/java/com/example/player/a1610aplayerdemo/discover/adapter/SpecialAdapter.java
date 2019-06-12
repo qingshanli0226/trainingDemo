@@ -18,6 +18,12 @@ import java.util.List;
 public class SpecialAdapter extends RecyclerView.Adapter<SpecialAdapter.SpecialViewHolder>{
     private List<DiscoverBean.ZlListBean> list=new ArrayList<>();
     private Context context;
+    private onItemSpecialClickListener listener;
+
+    public void setListener(onItemSpecialClickListener listener) {
+        this.listener = listener;
+    }
+
     public void setList(List<DiscoverBean.ZlListBean> list) {
         this.list = list;
     }
@@ -31,9 +37,15 @@ public class SpecialAdapter extends RecyclerView.Adapter<SpecialAdapter.SpecialV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SpecialViewHolder optionViewHolder, int i) {
+    public void onBindViewHolder(@NonNull SpecialViewHolder optionViewHolder, final int i) {
         Picasso.get().load(list.get(i).getImage()).into(optionViewHolder.imageView);
         optionViewHolder.textView.setText(list.get(i).getTitle());
+        optionViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemSpecial(list.get(i),i);
+            }
+        });
     }
 
     @Override
@@ -49,5 +61,8 @@ public class SpecialAdapter extends RecyclerView.Adapter<SpecialAdapter.SpecialV
             imageView=itemView.findViewById(R.id.special_iv1);
             textView=itemView.findViewById(R.id.special_tv1);
         }
+    }
+    public interface onItemSpecialClickListener{
+        void onItemSpecial(DiscoverBean.ZlListBean bean,int index);
     }
 }

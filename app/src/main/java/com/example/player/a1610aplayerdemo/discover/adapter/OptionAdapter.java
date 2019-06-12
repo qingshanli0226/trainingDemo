@@ -18,6 +18,12 @@ import java.util.List;
 public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.OptionViewHolder>{
     private List<DiscoverBean.HomeCategoryBean> list=new ArrayList<>();
     private Context context;
+    private onItemOptionClickListener listener;
+
+    public void setListener(onItemOptionClickListener listener) {
+        this.listener = listener;
+    }
+
     public void setList(List<DiscoverBean.HomeCategoryBean> list) {
         this.list = list;
     }
@@ -34,9 +40,15 @@ public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.OptionView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OptionViewHolder optionViewHolder, int i) {
+    public void onBindViewHolder(@NonNull OptionViewHolder optionViewHolder, final int i) {
         Picasso.get().load(list.get(i).getBannerUrl()).into(optionViewHolder.imageView);
         optionViewHolder.textView.setText(list.get(i).getTitle());
+        optionViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemOption(list.get(i),i);
+            }
+        });
     }
 
     @Override
@@ -52,5 +64,8 @@ public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.OptionView
             imageView=itemView.findViewById(R.id.option_iv1);
             textView=itemView.findViewById(R.id.option_tv1);
         }
+    }
+    public interface onItemOptionClickListener{
+        void onItemOption(DiscoverBean.HomeCategoryBean bean,int index);
     }
 }

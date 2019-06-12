@@ -18,6 +18,12 @@ import java.util.List;
 public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.RecommendViewHolder>{
     private List<DiscoverBean.CourseRecommendsBean> list=new ArrayList<>();
     private Context context;
+    private onItemRecommendClickListener listener;
+
+    public void setListener(onItemRecommendClickListener listener) {
+        this.listener = listener;
+    }
+
     public void setList(List<DiscoverBean.CourseRecommendsBean> list) {
         this.list = list;
     }
@@ -31,9 +37,15 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecommendViewHolder optionViewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecommendViewHolder optionViewHolder, final int i) {
         Picasso.get().load(list.get(i).getImageUrl()).into(optionViewHolder.imageView);
         optionViewHolder.textView.setText(list.get(i).getAppTitle());
+        optionViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemRecommend(list.get(i),i);
+            }
+        });
     }
 
     @Override
@@ -49,5 +61,8 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
             imageView=itemView.findViewById(R.id.recommend_iv1);
             textView=itemView.findViewById(R.id.recommend_tv1);
         }
+    }
+    public interface onItemRecommendClickListener{
+        void onItemRecommend(DiscoverBean.CourseRecommendsBean bean,int index);
     }
 }

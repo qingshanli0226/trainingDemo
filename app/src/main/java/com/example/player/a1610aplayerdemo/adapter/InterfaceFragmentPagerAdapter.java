@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InterfaceFragmentPagerAdapter extends FragmentPagerAdapter {
+public class InterfaceFragmentPagerAdapter extends android.support.v4.app.FragmentPagerAdapter {
     private List<Fragment> list=new ArrayList<>();
 
     public InterfaceFragmentPagerAdapter(FragmentManager fm, List<Fragment> list) {

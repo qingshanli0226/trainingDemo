@@ -19,10 +19,11 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     
-                    android:hint="搜大师 搜课程"
+                    android:hint="     搜大师 搜课程"
                     android:background="@drawable/editextbackground"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
+                    android:focusableInTouchMode="false"
                     android:layout_height="match_parent" />
             <TextView
                     android:layout_width="50dp"
@@ -158,10 +159,11 @@
                     android:textColor="#BF0055"
                     android:gravity="center_vertical"
                     android:textSize="20sp"/>
-            <!--<android.support.v7.widget.RecyclerView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="1200dp">-->
-            <!--</android.support.v7.widget.RecyclerView>-->
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/discover_course_recyc"
+                    android:layout_width="match_parent"
+                    android:layout_height="8640dp">
+            </android.support.v7.widget.RecyclerView>
         </LinearLayout>
     </ScrollView>
 

@@ -5,14 +5,33 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.adapter.GuidePageAdapter
+import com.example.player.a1610aplayerdemo.base.IBasePresenter
+import com.example.player.a1610aplayerdemo.base.IBaseView
+import com.example.player.a1610aplayerdemo.token.TokenBean
+import com.example.player.a1610aplayerdemo.token.TokenPresenter
+import com.example.player.a1610aplayerdemo.url.MyApplication
 
-class MainActivity : AppCompatActivity() ,ViewPager.OnPageChangeListener{
+class MainActivity : AppCompatActivity() ,ViewPager.OnPageChangeListener ,IBaseView<TokenBean>{
+    override fun onLoadError(message: String?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onLoadData(data: TokenBean?) {
+        val sharedPreferences =MyApplication.preferences;
+        val editor = sharedPreferences.edit()
+        editor.putString("token", data!!.getAccessToken())
+        editor.commit();
+
+    }
+
+    private var iBasePresenter: IBasePresenter<*>? = null
     private var main_pager:ViewPager?=null;
     private var imageIdArray: IntArray? = null//图片资源的数组
     private var viewList: MutableList<View>? = null//图片资源的集合
@@ -29,6 +48,9 @@ class MainActivity : AppCompatActivity() ,ViewPager.OnPageChangeListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        iBasePresenter = TokenPresenter();
+        (iBasePresenter as TokenPresenter).attachView(this)
+        (iBasePresenter as TokenPresenter).getData()
         if (use()) {
             val intent: Intent =Intent(this,InterfaceActivity::class.java)
             startActivity(intent)
