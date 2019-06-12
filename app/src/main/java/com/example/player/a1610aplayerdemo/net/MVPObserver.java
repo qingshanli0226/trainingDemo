@@ -20,7 +20,8 @@ public class MVPObserver<T> implements Observer<T> {
     @Override
     public void onError(Throwable e) {
 
-        Log.d("qwe",e.toString());
+        ErrorUtil.handleError(e);
+
     }
 
     @Override

@@ -6,6 +6,19 @@
               android:orientation="vertical"
              tools:context=".ui.fragment.XuanKeFragment">
 
+    <android.support.v7.widget.Toolbar android:layout_width="match_parent"
+                                 android:layout_height="70dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+            <ImageView android:layout_width="50dp" android:layout_height="match_parent" android:src="@mipmap/titleimg" android:id="@+id/dlzc" android:scaleType="fitXY" />
+            <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@mipmap/sousuoimg" android:scaleType="fitXY" android:id="@+id/sousuo" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView android:layout_width="match_parent"
                                                  android:layout_height="wrap_content" android:id="@+id/xry">

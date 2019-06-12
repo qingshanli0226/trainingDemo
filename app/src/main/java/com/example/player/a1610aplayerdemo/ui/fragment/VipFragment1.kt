@@ -57,5 +57,10 @@ class VipFragment : BaseFragment() ,VipInterface.VipView{
         return View.inflate(context, R.layout.fragment_vip,null);
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+
+        presenter.detachView()
+    }
 
 }

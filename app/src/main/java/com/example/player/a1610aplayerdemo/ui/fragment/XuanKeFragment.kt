@@ -61,5 +61,11 @@ class XuanKeFragment : BaseFragment(),XuanKeInterface.XuanKeView {
     }
 
 
+    override fun onDestroy() {
+        super.onDestroy()
+
+        presenter.detachView()
+    }
+
 
 }

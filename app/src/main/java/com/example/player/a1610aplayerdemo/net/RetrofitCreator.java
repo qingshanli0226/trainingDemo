@@ -42,7 +42,7 @@ public class RetrofitCreator {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(1, TimeUnit.SECONDS)
                 .addInterceptor(httpLoggingInterceptor)
-                .addInterceptor(new TokenInterceptor())
+          //      .addInterceptor(new TokenInterceptor())
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
