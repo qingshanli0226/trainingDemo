@@ -25,6 +25,7 @@ import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.curriculum.adapter.KindAdapter;
 import com.example.player.a1610aplayerdemo.curriculum.adapter.VipAdapter;
+import com.example.player.a1610aplayerdemo.curriculum.adapter.ZlAdapter;
 import com.example.player.a1610aplayerdemo.curriculum.bean.Bean;
 import com.example.player.a1610aplayerdemo.curriculum.presenter.CurriculumPresenter;
 import com.youth.banner.Banner;
@@ -38,7 +39,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CurriculumFragment extends Fragment implements IBaseView, OnBannerListener, KindAdapter.onClickItemListener,VipAdapter.onClickItemListener{
+public class CurriculumFragment extends Fragment implements IBaseView, OnBannerListener, KindAdapter.onClickItemListener, VipAdapter.onClickItemListener,ZlAdapter.onClickItemListener {
     @BindView(R.id.curriculum_search)
     EditText curriculumSearch;
     @BindView(R.id.curriculum_banner)
@@ -48,15 +49,19 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
     RecyclerView curriculumCategoryRv;
     @BindView(R.id.curriculum_vip_rv)
     RecyclerView curriculumVipRv;
+    @BindView(R.id.curriculum_zl_rv)
+    RecyclerView curriculumZlRv;
     private IBasePresenter iBasePresenter;
 
     private List<Bean.DataBean.CourseRecommendsBean> courseRecommendsBeans;
     private List<Bean.DataBean.HomeBannerBean> homeBannerBeans;
     private List<Bean.DataBean.HomeCategoryBean> homeCategoryBeans;
     private List<Bean.DataBean.VipRecommendBean> vipRecommendBeans;
+    private List<Bean.DataBean.ZlListBean> zlListBeans;
 
     private KindAdapter kindAdapter;
     private VipAdapter vipAdapter;
+    private ZlAdapter zlAdapter;
 
     public CurriculumFragment() {
         // Required empty public constructor
@@ -88,7 +93,14 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
             }
         });
 
-        curriculumVipRv.setLayoutManager(new GridLayoutManager(getActivity(),2,LinearLayoutManager.VERTICAL,false){
+        curriculumVipRv.setLayoutManager(new GridLayoutManager(getActivity(), 2, LinearLayoutManager.VERTICAL, false) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        });
+
+        curriculumZlRv.setLayoutManager(new GridLayoutManager(getActivity(), 2, LinearLayoutManager.VERTICAL, false) {
             @Override
             public boolean canScrollVertically() {
                 return false;
@@ -103,6 +115,7 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
         homeBannerBeans = new ArrayList<>();
         homeCategoryBeans = new ArrayList<>();
         vipRecommendBeans = new ArrayList<>();
+        zlListBeans = new ArrayList<>();
 
         Bean bean = (Bean) data;
 
@@ -110,6 +123,7 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
         homeBannerBeans.addAll(bean.getData().getHomeBanner());
         homeCategoryBeans.addAll(bean.getData().getHomeCategory());
         vipRecommendBeans.addAll(bean.getData().getVipRecommend());
+        zlListBeans.addAll(bean.getData().getZlList());
 
         initData();
     }
@@ -140,6 +154,12 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
         vipAdapter.refresh(vipRecommendBeans);
         curriculumVipRv.setAdapter(vipAdapter);
         vipAdapter.notifyDataSetChanged();
+
+        zlAdapter = new ZlAdapter();
+        zlAdapter.setListener(this);
+        zlAdapter.refresh(zlListBeans);
+        curriculumZlRv.setAdapter(zlAdapter);
+        zlAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -179,6 +199,11 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
     @Override
     public void onClickVip(int index) {
         Toast.makeText(getActivity(), "" + vipRecommendBeans.get(index).getTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClickZl(int index) {
+        Toast.makeText(getActivity(), "" + zlListBeans.get(index).getTitle(), Toast.LENGTH_SHORT).show();
     }
 
     private class MyLoader extends ImageLoader {

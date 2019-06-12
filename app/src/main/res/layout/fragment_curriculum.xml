@@ -57,6 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:text="会员专享"
+                        android:textStyle="bold"
                         android:textColor="#a08459"/>
 
                 <TextView
@@ -72,6 +73,49 @@
                           android:orientation="vertical">
                 <android.support.v7.widget.RecyclerView
                         android:id="@+id/curriculum_vip_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+            <TextView android:layout_width="match_parent" android:layout_height="40dp" android:background="@drawable/vip_image"
+                android:layout_marginTop="10dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="10dp"
+                android:text="每天不到1元钱 , 享受200位顶级名师指导" android:textColor="#fff" android:gravity="center"
+                android:id="@+id/curriculum_register_tv"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="专栏"
+                        android:textStyle="bold"
+                        android:textColor="#bf0256"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="专区"
+                        android:textColor="#000"/>
+
+                <TextView
+                        android:id="@+id/zl_more_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="更多>"
+                        android:gravity="right"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="380dp"
+                          android:orientation="vertical">
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/curriculum_zl_rv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                 </android.support.v7.widget.RecyclerView>

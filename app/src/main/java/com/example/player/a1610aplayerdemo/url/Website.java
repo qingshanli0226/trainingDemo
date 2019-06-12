@@ -8,4 +8,7 @@ public class Website {
     //发现界面的主json数据
     public static String CURRICULUM_HEAD = "http://api.immedc.com/";
     public static String CURRICULUM = "restapi/loading/getHome";
+
+    //获取token
+    public static String TOKEN_URL = "http://api.immedc.com/";
 }

@@ -15,8 +15,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VipAdapter extends RecyclerView.Adapter<VipAdapter.MyViewHolder>{
-    private List<Bean.DataBean.VipRecommendBean> list = new ArrayList<>();
+public class ZlAdapter extends RecyclerView.Adapter<ZlAdapter.MyViewHolder>{
+    private List<Bean.DataBean.ZlListBean> list = new ArrayList<>();
     private onClickItemListener listener;
     private Context context;
 
@@ -24,7 +24,7 @@ public class VipAdapter extends RecyclerView.Adapter<VipAdapter.MyViewHolder>{
         this.listener = listener;
     }
 
-    public void refresh(List<Bean.DataBean.VipRecommendBean> dataList) {
+    public void refresh(List<Bean.DataBean.ZlListBean> dataList) {
         this.list.clear();
         this.list.addAll(dataList);
         notifyDataSetChanged();
@@ -34,7 +34,7 @@ public class VipAdapter extends RecyclerView.Adapter<VipAdapter.MyViewHolder>{
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         context = viewGroup.getContext();
-        View view = LayoutInflater.from(context).inflate(R.layout.vip_item,viewGroup,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.zl_item,viewGroup,false);
         return new MyViewHolder(view);
     }
 
@@ -42,11 +42,10 @@ public class VipAdapter extends RecyclerView.Adapter<VipAdapter.MyViewHolder>{
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
         Picasso.with(context).load(list.get(i).getImage()).into(myViewHolder.imageView);
         myViewHolder.textView.setText(list.get(i).getTitle());
-        myViewHolder.vipText.setText(list.get(i).getText1());
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onClickVip(i);
+                listener.onClickZl(i);
             }
         });
     }
@@ -58,16 +57,15 @@ public class VipAdapter extends RecyclerView.Adapter<VipAdapter.MyViewHolder>{
 
     class MyViewHolder extends RecyclerView.ViewHolder{
         private NiceImageView imageView;
-        private TextView textView,vipText;
+        private TextView textView;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.vip_niv);
-            textView = itemView.findViewById(R.id.vip_title_tv);
-            vipText = itemView.findViewById(R.id.vip_vip_tv);
+            imageView = itemView.findViewById(R.id.zl_niv);
+            textView = itemView.findViewById(R.id.zl_title_tv);
         }
     }
 
     public interface onClickItemListener{
-        void onClickVip(int index);
+        void onClickZl(int index);
     }
 }

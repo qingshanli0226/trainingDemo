@@ -5,19 +5,17 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import com.example.player.a1610aplayerdemo.activity.HomeActivity
 import com.example.player.a1610aplayerdemo.adapter.guides.MyGuidesAdapter
-import com.example.player.a1610aplayerdemo.curriculum.CurriculumFragment
 import com.example.player.a1610aplayerdemo.url.Website
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
     private var guides:ArrayList<View>? = null
     private var myGuidesAdapter:MyGuidesAdapter? = null
     private var sharedPreferences:SharedPreferences? = null;
