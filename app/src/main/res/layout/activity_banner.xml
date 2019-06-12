@@ -15,14 +15,14 @@
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:text="立即体验"
-        android:textSize="25sp"
+        android:textSize="@dimen/banner_textsize"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="86dp"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:paddingLeft="@dimen/leftAndRight_padding"
+        android:paddingRight="@dimen/leftAndRight_padding"
+        android:paddingTop="@dimen/topAndBottom_padding"
+        android:paddingBottom="@dimen/topAndBottom_padding"
         android:layout_height="wrap_content" />
 
 </RelativeLayout>

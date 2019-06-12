@@ -9,27 +9,27 @@
         android:layout_width="match_parent"
         android:background="@drawable/heard_bg"
         android:orientation="horizontal"
-        android:layout_height="60dp">
+        android:layout_height="@dimen/bottombarOrHeardHeight">
 
         <ImageView
             android:id="@+id/find_heard_avatar"
-            android:layout_width="30dp"
+            android:layout_width="@dimen/avatarSize"
             android:layout_gravity="center_vertical"
-            android:layout_height="30dp"
+            android:layout_height="@dimen/avatarSize"
             android:src="@drawable/ic_launcher_background"/>
         
         <EditText
             android:id="@+id/find_heard_edit"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/main_weight"
             android:layout_weight="1"
             android:hint="搜大师搜课程"
             android:drawableLeft="@drawable/find_seach"
             android:background="@drawable/edit_bg"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/margin_topAndBottom"
+            android:layout_marginBottom="@dimen/margin_topAndBottom"
+            android:layout_marginLeft="@dimen/margin_leftAndRight"
             android:textColor="#ffffff"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="@dimen/margin_leftAndRight"
             android:layout_height="match_parent" />
 
 

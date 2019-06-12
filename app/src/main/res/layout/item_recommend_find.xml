@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="@dimen/recommend_height"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -42,7 +42,7 @@
         android:id="@+id/item_recommend_viewpager"
         android:layout_width="match_parent"
         android:clipChildren="false"
-        android:layout_height="150dp"
+        android:layout_height="@dimen/recommend_viewpager_h"
         android:layout_gravity="center"
 
         >

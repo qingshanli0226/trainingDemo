@@ -3,13 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
+    android:layout_marginTop="@dimen/margin_leftAndRight"
+    android:layout_marginBottom="@dimen/margin_leftAndRight"
     android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/bottombarOrHeardHeight"
         android:id="@+id/items_categoty_img"
         android:src="@drawable/banner_bg"
         />
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="dasdsa"
-        android:textSize="16sp"
+        android:textSize="@dimen/category_textsize"
 
         android:gravity="center_horizontal"/>
 </LinearLayout>

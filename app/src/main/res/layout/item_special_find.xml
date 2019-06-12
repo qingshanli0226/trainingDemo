@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_marginTop="20dp"
-    android:layout_height="400dp">
+    android:layout_marginTop="@dimen/banner_leftAndright"
+    android:layout_height="@dimen/special_height">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp">
+        android:layout_height="@dimen/avatarSize">
 
 
 
@@ -18,10 +18,10 @@
             android:text="专栏"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="@dimen/topAndBottom_padding"
             android:textStyle="bold"
             android:id="@+id/special_zl"
-            android:textSize="19sp"
+            android:textSize="@dimen/master_textsize"
             android:textColor="#E54600"
             />
 
@@ -32,7 +32,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:textStyle="bold"
                 android:text="专区"
-                android:textSize="19sp"
+                android:textSize="@dimen/master_textsize"
                 app:layout_constraintLeft_toRightOf="@id/special_zl"
                 android:textColor="#000"
                 />
@@ -40,7 +40,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="11sp"
+            android:textSize="@dimen/special_more_textsize"
             android:textColor="#000"
             android:layout_gravity="right"
             app:layout_constraintRight_toRightOf="parent"
@@ -51,7 +51,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_weight"
         android:layout_weight="1"
         android:id="@+id/item_special_recyclerview"></android.support.v7.widget.RecyclerView>
 

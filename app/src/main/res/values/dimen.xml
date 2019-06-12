@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="vip_height">500dp</dimen>
+    <dimen name="special_height">400dp</dimen>
+    <dimen name="master_height">300dp</dimen>
+    <dimen name="category_height">260dp</dimen>
+    <dimen name="master_cardHeight">230dp</dimen>
+    <dimen name="banner_height">220dp</dimen>
+    <dimen name="recommend_height">200dp</dimen>
+    <dimen name="recommend_viewpager_h">150dp</dimen>
+    <dimen name="margin_bottom">86dp</dimen>
+    <dimen name="bottombarOrHeardHeight">60dp</dimen>
+    <dimen name="banner_radius">50dp</dimen>
+    <dimen name="avatarSize">30dp</dimen>
+    <dimen name="banner_textsize">25sp</dimen>
+    <dimen name="leftAndRight_padding">25dp</dimen>
+    <dimen name="banner_leftAndright">20dp</dimen>
+    <dimen name="master_textsize">19sp</dimen>
+    <dimen name="category_textsize">16sp</dimen>
+    <dimen name="margin_topAndBottom">15dp</dimen>
+    <dimen name="special_more_textsize">11sp</dimen>
+    <dimen name="margin_leftAndRight">10dp</dimen>
+    <dimen name="topAndBottom_padding">5dp</dimen>
+    <dimen name="vip_line">3dp</dimen>
+    <dimen name="main_weight">0dp</dimen>
+
+
+
+
+
+
+
+
+    <dimen name="master_text_marginright">30dp</dimen>
+
+
+
+
+
+
+</resources>

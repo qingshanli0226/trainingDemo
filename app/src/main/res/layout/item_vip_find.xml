@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="500dp">
+    android:layout_height="@dimen/vip_height">
 
 
     <android.support.constraint.ConstraintLayout
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:id="@+id/item_vip_recycler"
         android:layout_weight="1"
-        android:layout_height="0dp">
+        android:layout_height="@dimen/main_weight">
     </android.support.v7.widget.RecyclerView>
 
 
@@ -47,9 +47,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/vip_bg"
         android:textColor="#fff"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="@dimen/margin_topAndBottom"
+        android:layout_marginLeft="@dimen/margin_leftAndRight"
+        android:layout_marginRight="@dimen/margin_leftAndRight"
         android:gravity="center_horizontal"
         android:text="每天不到一块钱，享受200位顶级名师指导"/>
 
