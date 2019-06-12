@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo.utils
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.base.BaseFragment
 import com.example.player.a1610aplayerdemo.fragment.*
+import com.example.player.a1610aplayerdemo.fragment.Home.HomeFragment
 
 class FragmentUtils private constructor(){
 

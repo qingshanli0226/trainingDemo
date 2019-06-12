@@ -19,6 +19,7 @@ abstract class  BaseActivity: AppCompatActivity(), AnkoLogger {
      *  子类根据需要去判断是否需要实现
      */
     open protected fun initdata() {
+
     }
 
     /**

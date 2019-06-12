@@ -12,7 +12,7 @@ class StudyItemView: RelativeLayout {
         constructor(context: Context?,attrs: AttributeSet?,defStyleAttr:Int):super(context,attrs, defStyleAttr)
 
     init {
-        View.inflate(context, R.layout.item_study,this);
+        View.inflate(context, R.layout.item_study,this)
     }
 
 }

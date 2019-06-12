@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo;
 
 import android.app.Application;
+import com.example.player.a1610aplayerdemo.activity.Slaphe.SharePresenterUtils;
 
 public class MyApp extends Application {
     public static Application instance;
@@ -8,5 +9,6 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         instance=this;
+        SharePresenterUtils.init(this);
     }
 }
