@@ -39,7 +39,7 @@ public abstract class BaseRecyclerFragment<T, V extends View> extends Fragment i
         super.onActivityCreated(savedInstanceState);
         iBasePresenter = getiBasePresenter();
 //        iBasePresenter.attachView(this);
-        iBasePresenter.getData();
+//        iBasePresenter.getData();
     }
 
 

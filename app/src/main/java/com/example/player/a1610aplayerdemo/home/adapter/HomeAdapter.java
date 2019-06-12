@@ -2,13 +2,12 @@ package com.example.player.a1610aplayerdemo.home.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.*;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.home.bean.HomeBean;
 import com.squareup.picasso.Picasso;
@@ -26,10 +25,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int BANNNER = 0;
     private static final int CATEGORY = 1;
-    private static final int ACT = 2;
-    private static final int SECKILL = 3;
-    private static final int RECOMMEND = 4;
-    private static final int HOT = 5;
+    private static final int VIPRECOMMEND = 2;
+    private static final int ZLLIST = 3;
+    private static final int COURSERECOMMENDS = 4;
+    private static final int MASTERLIVES = 5;
 
     public int currentType = BANNNER;
     private LayoutInflater layoutInflater;
@@ -50,17 +49,17 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             case CATEGORY:
                 currentType = CATEGORY;
                 break;
-            case ACT:
-                currentType = ACT;
+            case VIPRECOMMEND:
+                currentType = VIPRECOMMEND;
                 break;
-            case SECKILL:
-                currentType = SECKILL;
+            case ZLLIST:
+                currentType = ZLLIST;
                 break;
-            case RECOMMEND:
-                currentType = RECOMMEND;
+            case COURSERECOMMENDS:
+                currentType = COURSERECOMMENDS;
                 break;
-            case HOT:
-                currentType = HOT;
+            case MASTERLIVES:
+                currentType = MASTERLIVES;
                 break;
         }
         return currentType;
@@ -74,6 +73,14 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             return new BannerViewHolder(layoutInflater.inflate(R.layout.item_banner,viewGroup,false),context,homeBean);
         }else if (i == CATEGORY){
             return new CategoryViewHolder(layoutInflater.inflate(R.layout.item_category,viewGroup,false),context);
+        }else if (i == VIPRECOMMEND){
+            return new VipRecommendViewHolder(layoutInflater.inflate(R.layout.item_viprecommend,viewGroup,false),context);
+        }else if (i == ZLLIST){
+            return new ZlListViewHolder(layoutInflater.inflate(R.layout.item_zllist,viewGroup,false),context);
+        }else if (i == COURSERECOMMENDS){
+            return new CourseRecommendsViewHolder(layoutInflater.inflate(R.layout.item_courserecommends,viewGroup,false),context);
+        }else if (i == MASTERLIVES){
+            return new MasterLivesViewHolder(layoutInflater.inflate(R.layout.item_masterlives,viewGroup,false),context);
         }
         return null;
     }
@@ -86,12 +93,90 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }else if (getItemViewType(i) == CATEGORY){
             CategoryViewHolder viewHolder1 = (CategoryViewHolder) viewHolder;
             viewHolder1.setData(homeBean.getHomeCategory());
+        }else if (getItemViewType(i) == VIPRECOMMEND){
+            VipRecommendViewHolder viewHolder1 = (VipRecommendViewHolder) viewHolder;
+            viewHolder1.setData(homeBean.getVipRecommend());
+        }else if (getItemViewType(i) == ZLLIST){
+            ZlListViewHolder viewHolder1 = (ZlListViewHolder) viewHolder;
+            viewHolder1.setData(homeBean.getZlList());
+        }else if (getItemViewType(i) == COURSERECOMMENDS){
+            CourseRecommendsViewHolder viewHolder1 = (CourseRecommendsViewHolder) viewHolder;
+            viewHolder1.setData(homeBean.getCourseRecommends());
+        }else if (getItemViewType(i) == MASTERLIVES){
+            MasterLivesViewHolder viewHolder1 = (MasterLivesViewHolder) viewHolder;
+            viewHolder1.setData(homeBean.getMasterLives());
         }
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 6;
+    }
+
+    class MasterLivesViewHolder extends RecyclerView.ViewHolder {
+        private ListView listView;
+        private Context context;
+
+        public MasterLivesViewHolder(@NonNull View itemView,Context context) {
+            super(itemView);
+            listView = itemView.findViewById(R.id.lv_masterlives);
+            this.context = context;
+        }
+
+        public void setData(List<HomeBean.DataBean.MasterLivesBean> livesBeans){
+            listView.setAdapter(new MasterLivesAdpater(context,livesBeans));
+        }
+
+    }
+
+    class CourseRecommendsViewHolder extends RecyclerView.ViewHolder {
+        private RecyclerView recyclerView;
+        private Context context;
+
+        public CourseRecommendsViewHolder(@NonNull View itemView,Context context) {
+            super(itemView);
+            recyclerView = itemView.findViewById(R.id.rv_courserecommends);
+            this.context = context;
+        }
+
+        public void setData(List<HomeBean.DataBean.CourseRecommendsBean> list){
+            LinearLayoutManager manager = new LinearLayoutManager(context);
+            manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            recyclerView.setLayoutManager(manager);
+            recyclerView.setAdapter(new CourseRecommendsAdapter(context,list));
+        }
+
+    }
+
+    class ZlListViewHolder extends RecyclerView.ViewHolder {
+        private GridView gridView;
+        private Context context;
+
+        public ZlListViewHolder(@NonNull View itemView,Context context) {
+            super(itemView);
+            gridView = itemView.findViewById(R.id.gv_zllist);
+            this.context = context;
+        }
+
+        public void setData(List<HomeBean.DataBean.ZlListBean> listBeans){
+            gridView.setAdapter(new ZlListAdapter(context,listBeans));
+        }
+
+    }
+
+    class VipRecommendViewHolder extends RecyclerView.ViewHolder {
+        private GridView gridView;
+        private Context context;
+
+        public VipRecommendViewHolder(@NonNull View itemView,Context context) {
+            super(itemView);
+            gridView = itemView.findViewById(R.id.gv_vip);
+            this.context = context;
+        }
+
+        public void setData(List<HomeBean.DataBean.VipRecommendBean> list){
+            gridView.setAdapter(new VipRecommendAdapter(context,list));
+        }
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder {
@@ -113,13 +198,11 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     class BannerViewHolder extends RecyclerView.ViewHolder {
         public Banner banner;
         public Context context;
-        private HomeBean.DataBean dataBean;
 
         public BannerViewHolder(@NonNull View itemView,Context context,HomeBean.DataBean dataBean) {
             super(itemView);
             banner = itemView.findViewById(R.id.banner);
             this.context = context;
-            this.dataBean = dataBean;
         }
 
         public void setData(List<HomeBean.DataBean.HomeBannerBean> list){
@@ -130,6 +213,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
             banner.setBannerAnimation(Transformer.Default);
             banner.setImageLoader(new OnLoadUrl());
+            banner.setDelayTime(3000);
             banner.setImages(imageUrs)
                     .start();
         }

@@ -2,13 +2,19 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="175dp"
         android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@android:color/holo_green_light">
+    </RelativeLayout>
 
     <com.youth.banner.Banner
             android:id="@+id/banner"
-            android:layout_width="380dp"
-            android:layout_height="175dp"
+            android:layout_width="390dp"
+            android:layout_height="170dp"
             android:layout_centerInParent="true">
     </com.youth.banner.Banner>
 

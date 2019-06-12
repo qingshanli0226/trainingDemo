@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/masterlives_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+        <TextView
+                android:id="@+id/masterlives_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxEms="18"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/black"
+                android:text="钢琴教育周广仁90岁生日音乐会"/>
+
+        <TextView
+                android:id="@+id/masterlives_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="讲师：盛源"
+                android:textSize="12sp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+        <TextView
+                android:id="@+id/masterlives_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="中央音乐学院钢琴系"
+                android:textSize="12sp"
+                android:layout_marginLeft="10dp"/>
+
+        <TextView
+                android:id="@+id/masterlives_tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35元"
+                android:textSize="12sp"
+                android:textColor="#cf6e98"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

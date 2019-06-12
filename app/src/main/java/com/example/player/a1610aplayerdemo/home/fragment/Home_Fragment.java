@@ -38,13 +38,13 @@ public class Home_Fragment extends Fragment implements IBaseView {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         iBasePresenter = new HomePeresenter();
-        iBasePresenter.attachView(this);
-        iBasePresenter.getData();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        iBasePresenter.attachView(this);
+        iBasePresenter.getData();
     }
 
     @Override
