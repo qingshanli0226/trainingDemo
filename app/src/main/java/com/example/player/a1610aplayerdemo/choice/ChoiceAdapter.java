@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import com.example.player.a1610aplayerdemo.base.BaseAdapter;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
+import com.example.player.a1610aplayerdemo.choice.advertising.AdvertisingView;
 import com.example.player.a1610aplayerdemo.choice.banner.BannerItemView;
 import com.example.player.a1610aplayerdemo.choice.category.CategoryView;
 import com.example.player.a1610aplayerdemo.choice.vip.VipRecommendView;
@@ -16,9 +17,10 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
     private final int BANNER = 0;
     private final int CATEGORY = 1;//Category种类
     private final int VIPRECOMMEND = 2;//VIP专享
-    private final int ZLLIST = 3;//专栏
-    private final int COURSERECOMMENDS = 4;//推荐课程
-    private final int MASTERLIVES = 5;
+    private final int advertising = 3;
+    private final int ZLLIST = 4;//专栏
+    private final int COURSERECOMMENDS = 5;//推荐课程
+    private final int MASTERLIVES = 6;
     private int count = 0;
     @Override
     protected int getViewType(int position) {
@@ -41,6 +43,9 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
             case MASTERLIVES:
                 count = MASTERLIVES;
                 break;
+            case advertising:
+                count = advertising;
+                break;
         }
         Log.e("yn", "getViewType: "+count);
         return count;
@@ -54,6 +59,8 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
            return new CategoryView(context);
        }else if (count == VIPRECOMMEND){
            return new VipRecommendView(context);
+       }else if(count == advertising){
+           return new AdvertisingView(context);
        }
         return null;
     }
@@ -77,6 +84,8 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
             VipRecommendView vipRecommendView = (VipRecommendView) itemView;
             List<MainBean.VipRecommendBean> vipRecommendBeans = (List<MainBean.VipRecommendBean>) o;
             vipRecommendView.setVipData(vipRecommendBeans);
+        }else if(i == advertising){
+            AdvertisingView advertisingView = (AdvertisingView) itemView;
         }
     }
 
