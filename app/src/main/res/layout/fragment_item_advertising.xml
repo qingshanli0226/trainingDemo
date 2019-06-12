@@ -4,22 +4,23 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp">
+        android:id="@+id/advertising_linear"
+        >
 
     <LinearLayout android:layout_width="match_parent"
                   android:orientation="vertical"
                   android:layout_height="50dp"
                   android:background="@drawable/advertising"
-                  android:layout_gravity="center"
+                  android:layout_margin="20dp"
     >
         <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/advertising_tv"
-                android:text="                  每天不到1元钱，即可享受200位顶级名师指导                  "
-                android:gravity="center"
+                android:text="每天不到1元钱，即可享受200位顶级名师指导"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
+                android:gravity="center"
         />
     </LinearLayout>
 

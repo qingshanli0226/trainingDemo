@@ -1,7 +1,6 @@
 package com.example.player.a1610aplayerdemo.choice.courserecommends;
 
 import android.content.Context;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
@@ -12,8 +11,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
-import com.example.player.a1610aplayerdemo.choice.zl.ZLItemAdapter;
-import com.example.player.a1610aplayerdemo.utils.Height;
+import com.example.player.a1610aplayerdemo.utils.WidthAndHeight;
 
 import java.util.List;
 
@@ -32,7 +30,7 @@ public class CourseRecommendsView extends LinearLayout {
         View inflate = LayoutInflater.from(context).inflate(R.layout.fragment_item_course, this);
         recyclerView = inflate.findViewById(R.id.course_recycler);
 
-        Display display = Height.getHeight().getDisplay();
+        Display display = WidthAndHeight.getHeight().getDisplay();
         int width = display.getWidth();
 
         ViewGroup.LayoutParams params = recyclerView.getLayoutParams();

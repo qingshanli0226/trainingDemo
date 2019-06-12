@@ -4,14 +4,17 @@
         android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginRight="12dp">
     <ImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:id="@+id/vip_iv"
+            android:scaleType="centerCrop"
     />
 
     <TextView
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

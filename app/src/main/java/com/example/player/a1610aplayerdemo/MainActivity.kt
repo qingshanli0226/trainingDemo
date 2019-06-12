@@ -1,6 +1,5 @@
 package com.example.player.a1610aplayerdemo
 
-import android.content.res.Resources
 import android.graphics.Color
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
@@ -14,18 +13,12 @@ import com.example.player.a1610aplayerdemo.bean.Bean
 import com.example.player.a1610aplayerdemo.bean.UserBean
 import com.example.player.a1610aplayerdemo.main.MainViewPagerAdapter
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator
-import com.example.player.a1610aplayerdemo.utils.Height
+import com.example.player.a1610aplayerdemo.utils.WidthAndHeight
 import com.example.player.a1610aplayerdemo.utils.TokenSp
-import io.reactivex.Observable
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import io.reactivex.functions.Function
-import io.reactivex.internal.operators.observable.ObservableOnErrorNext
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.layout_titlebar.*
-import kotlin.math.log
 import io.reactivex.Observer as Observer
 
 class MainActivity : AppCompatActivity() {
@@ -42,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         var dis: DisplayMetrics = DisplayMetrics()
         defaultDisplay.getMetrics(dis)
 
-        Height.getHeight().display = defaultDisplay
+        WidthAndHeight.getHeight().display = defaultDisplay
 
         getUserData()
 

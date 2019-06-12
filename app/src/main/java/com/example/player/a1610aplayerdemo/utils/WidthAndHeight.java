@@ -2,13 +2,13 @@ package com.example.player.a1610aplayerdemo.utils;
 
 import android.view.Display;
 
-public class Height {
-    private Height(){
+public class WidthAndHeight {
+    private WidthAndHeight(){
     }
 
-    private static Height height = new Height();
+    private static WidthAndHeight height = new WidthAndHeight();
 
-    public static Height getHeight(){
+    public static WidthAndHeight getHeight(){
         return height;
     }
 
