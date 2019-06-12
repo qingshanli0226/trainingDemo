@@ -8,6 +8,7 @@ import java.util.List;
  * @param <T>
  */
 public interface IBaseView<T> {
-    void onLoadData(List<T> data);
+    void onLoadDataList(List<T> data);//返回一个列表
+    void onLoadDataBean(T data); //返回一个对象
     void onLoadError(int code, String message);
 }

@@ -54,7 +54,7 @@ public abstract class BaseRecyclerFragment<T, V extends View> extends Fragment i
      * @param data
      */
     @Override
-    public void onLoadData(final List<T> data) {
+    public void onLoadDataList(final List<T> data) {
        baseRecyclerViewAdapter.updateData(data);
     }
 
@@ -66,6 +66,11 @@ public abstract class BaseRecyclerFragment<T, V extends View> extends Fragment i
     @Override
     public void onLoadError(int code, String message) {
 
+    }
+
+    @Override
+    public void onLoadDataBean(T data) {
+        //子类实现
     }
 
     //需要子类来提供适配器

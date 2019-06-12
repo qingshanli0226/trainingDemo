@@ -6,14 +6,11 @@ import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.home.mode.NetDataBean;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class HomePresenter implements IBasePresenter<NetDataBean.DataBean> {
     IBaseView<NetDataBean.DataBean> iBaseView;
@@ -34,7 +31,7 @@ public class HomePresenter implements IBasePresenter<NetDataBean.DataBean> {
 
                     @Override
                     public void onNext(NetDataBean netDataBean) {
-                        iBaseView.onLoadData(netDataBean.getData());
+                        iBaseView.onLoadDataList(netDataBean.getData());
                     }
 
                     @Override
