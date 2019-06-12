@@ -28,8 +28,11 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
     //选择界面
     public static final int BANNER=0;
     public static final int CLASS=1;
-    public static final int RECOMMEND=2;
-    public static final int TEACH=3;
+    public static final int VIP=2;
+    public static final int SPECIAL=3;
+
+    public static final int RECOMMEND=4;
+    public static final int TEACH=5;
 
 
     public SelectClassAdapter(HomeBean homeBean, Context context) {
@@ -44,6 +47,10 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
           return new BannerViewHolder(LayoutInflater.from(context).inflate(R.layout.homebanner_view,null));
         }else if (i == CLASS){
             return new ClassViewHolder(LayoutInflater.from(context).inflate(R.layout.homeclass_view,null),context);
+        }else if (i == VIP){
+            return new VipViewHolder(LayoutInflater.from(context).inflate(R.layout.homevip_view,null));
+        }else if (i == SPECIAL){
+            return new SpecialViewHolder(LayoutInflater.from(context).inflate(R.layout.homespecial_view,null));
         }else if (i == RECOMMEND){
             return  new RecommendViewHolder(LayoutInflater.from(context).inflate(R.layout.homerecomend_view,null));
         }else if (i == TEACH){
@@ -60,6 +67,14 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
         }else if (getItemViewType(i) == CLASS){
             ClassViewHolder classViewHolder= (ClassViewHolder) viewHolder;
             classViewHolder.getAdapter();
+        }else if (getItemViewType(i) == VIP){
+            VipViewHolder vipViewHolder= (VipViewHolder) viewHolder;
+            vipViewHolder.getVipAdapter();
+
+        }else if (getItemViewType(i) == SPECIAL){
+            SpecialViewHolder specialViewHolder= (SpecialViewHolder) viewHolder;
+            specialViewHolder.getAdapter();
+
         }else if (getItemViewType(i) == RECOMMEND){
             RecommendViewHolder recommendViewHolder= (RecommendViewHolder) viewHolder;
             recommendViewHolder.getAdapter();
@@ -73,7 +88,7 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 6;
     }
 
 
@@ -85,6 +100,12 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
                 break;
             case CLASS:
                 currentType=CLASS;
+                break;
+            case VIP:
+                currentType=VIP;
+                break;
+            case SPECIAL:
+                currentType=SPECIAL;
                 break;
             case RECOMMEND:
                 currentType=RECOMMEND;
@@ -98,6 +119,45 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
         }
         return currentType;
     }
+
+    //专栏专区
+       private class SpecialViewHolder extends RecyclerView.ViewHolder{
+          RecyclerView recyclerView;
+        public SpecialViewHolder(@NonNull View itemView) {
+            super(itemView);
+            recyclerView=itemView.findViewById(R.id.homeSpecial_RV);
+        }
+        public void getAdapter(){
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 2);
+            gridLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            recyclerView.setLayoutManager(gridLayoutManager);
+
+            HomeSpecialAdapter homeSpecialAdapter = new HomeSpecialAdapter(homeBean, context);
+            recyclerView.setAdapter(homeSpecialAdapter);
+
+        }
+
+    }
+
+
+
+    //会员专享
+    private class VipViewHolder extends RecyclerView.ViewHolder{
+          RecyclerView recyclerView;
+        public VipViewHolder(@NonNull View itemView) {
+            super(itemView);
+            recyclerView=itemView.findViewById(R.id.homeVip_RV);
+        }
+        public void getVipAdapter(){
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 2);
+            gridLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            recyclerView.setLayoutManager(gridLayoutManager);
+
+            HomeVipAdapter homeVipAdapter = new HomeVipAdapter(homeBean, context);
+            recyclerView.setAdapter(homeVipAdapter);
+        }
+    }
+
 
     //大师课
     private class TeachViewHolder extends RecyclerView.ViewHolder{

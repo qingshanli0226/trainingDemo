@@ -18,13 +18,14 @@ import java.util.List;
 public class HomeTeachAdpter extends RecyclerView.Adapter<HomeTeachAdpter.MyTeachViewHolder> {
    private HomeBean thomeBean;
    private Context tcontext;
-   private  List<HomeBean.DataBean.VipRecommendBean> vipRecommend;
+   private List<HomeBean.DataBean.MasterLivesBean> masterLives;
 
     public HomeTeachAdpter(HomeBean homeBean, Context context) {
         this.thomeBean = homeBean;
         this.tcontext = context;
 
-        vipRecommend = homeBean.getData().getVipRecommend();
+        masterLives = thomeBean.getData().getMasterLives();
+
 //        Log.d("111",""+vipRecommend.size());
     }
 
@@ -37,23 +38,32 @@ public class HomeTeachAdpter extends RecyclerView.Adapter<HomeTeachAdpter.MyTeac
 
     @Override
     public void onBindViewHolder(@NonNull MyTeachViewHolder myTeachAdapter, int i) {
-         myTeachAdapter.textView.setText(vipRecommend.get(i).getTitle());
-        Glide.with(tcontext).load(vipRecommend.get(i).getImage()).into(myTeachAdapter.imageView);
-
+         myTeachAdapter.textView.setText(masterLives.get(i).getAppTitle());
+        Glide.with(tcontext).load(masterLives.get(i).getImageUrl()).into(myTeachAdapter.imageView);
+        myTeachAdapter.teachTitle.setText(masterLives.get(i).getTeacherTitle());
+        myTeachAdapter.teachName.setText(masterLives.get(i).getTeacherName());
+        myTeachAdapter.textPrice.setText("￥"+masterLives.get(i).getPrice()+"");
     }
 
     @Override
     public int getItemCount() {
-        return vipRecommend.size();
+        return masterLives.size();
     }
 
     class MyTeachViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;
+        TextView teachTitle;
+        TextView teachName;
+        TextView textPrice;
+
         public MyTeachViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.teach_image);
             textView=itemView.findViewById(R.id.teach_Text);
+            teachTitle=itemView.findViewById(R.id.teachTitle);
+            teachName=itemView.findViewById(R.id.teachName);
+            textPrice=itemView.findViewById(R.id.teachPrice);
         }
     }
 
