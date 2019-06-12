@@ -65,6 +65,7 @@ public class MainPresenterComple implements MainContract.IMainGetUserInfo {
                             UserBean bean = gson.fromJson(string, UserBean.class);
                             Log.d("Mh", bean.getData().getAccessToken());
                             AccountManager.getInstance().setCurrentUser(bean);
+                            AccountManager.getInstance().SaveToken(bean.getData().getAccessToken());
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

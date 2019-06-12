@@ -14,18 +14,15 @@ public abstract class BaseRecyclerViewAdapter<T , V extends View> extends Recycl
     private List<T> datas = new ArrayList<>();
 
     public void refreshData(List<T> list){
+        datas.clear();
         datas.addAll(list);
         notifyDataSetChanged();
     }
 
     protected abstract V getItemViewHodler(ViewGroup viewGroup, Context context,int viewType);
     protected abstract void setItemViewHolder(V view,T data,int positon);
-    protected abstract int getViewType(int positon);
+//    protected abstract int getViewType(int positon);
 
-    @Override
-    public int getItemViewType(int position) {
-        return getViewType(position);
-    }
 
     @NonNull
     @Override

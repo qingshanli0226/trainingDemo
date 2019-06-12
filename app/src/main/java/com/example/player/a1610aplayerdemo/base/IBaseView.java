@@ -8,5 +8,6 @@ import java.util.List;
  */
 public interface IBaseView<T> {
     void onLoadData(List<T> data);
+    void onLoadObject(T data);
     void onLoadError(int code, String message);
 }

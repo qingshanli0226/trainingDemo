@@ -56,6 +56,7 @@ public abstract class BaseRecyclerViewFragment<T , V extends View> extends Fragm
     public abstract BaseRecyclerViewAdapter <T ,V> getAdapter();
     //需要子类来提供获取数据源的接口
     public abstract IBasePresenter getPresenter();
+
     /**
      * 初始化RecyclerView
      */
@@ -66,10 +67,16 @@ public abstract class BaseRecyclerViewFragment<T , V extends View> extends Fragm
         recyclerView.setAdapter(baseRecyclerViewAdapter);
     }
 
-
+    //集合刷新适配器
     @Override
     public void onLoadData(List<T> data) {
         baseRecyclerViewAdapter.refreshData(data);
+    }
+
+    //对象刷新适配器
+    @Override
+    public void onLoadObject(T data) {
+//        baseRecyclerViewAdapter.
     }
 
     @Override

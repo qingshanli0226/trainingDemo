@@ -31,8 +31,5 @@ public class TestAdapter extends BaseRecyclerViewAdapter<NetBean.DataBean, View>
 
     }
 
-    @Override
-    protected int getViewType(int positon) {
-        return 0;
-    }
+
 }

@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var mainPresenterComple =  MainPresenterComple();
-        mainPresenterComple.getUserInfo();
+        var mainPresenterComple =  MainPresenterComple()
+        mainPresenterComple.getUserInfo()
 //        rv_test.layoutManager = LinearLayoutManager(this)
 //        var adapter= TestAdapter()
 //        rv_test.adapter = adapter
@@ -57,17 +57,14 @@ class MainActivity : AppCompatActivity() {
     })
 
     //按钮组的监听器
-    rg.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener{
-        override fun onCheckedChanged(p0: RadioGroup?, p1: Int) {
-            when(p1){
-                R.id.rb1 -> mainViewPager.currentItem = 0
-                R.id.rb2 -> mainViewPager.currentItem = 1
-                R.id.rb3 -> mainViewPager.currentItem = 2
-                R.id.rb4 -> mainViewPager.currentItem = 3
-            }
+    rg.setOnCheckedChangeListener { p0, p1 ->
+        when(p1){
+            R.id.rb1 -> mainViewPager.currentItem = 0
+            R.id.rb2 -> mainViewPager.currentItem = 1
+            R.id.rb3 -> mainViewPager.currentItem = 2
+            R.id.rb4 -> mainViewPager.currentItem = 3
         }
-    })
-
+    }
 
 
     }
