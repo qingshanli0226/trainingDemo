@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,7 @@ import com.example.player.a1610aplayerdemo.bean.HomeBean;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.loader.ImageLoader;
+import com.zhy.magicviewpager.transformer.RotateDownPageTransformer;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -68,11 +70,9 @@ public class FindAdapter extends RecyclerView.Adapter{
             case BANNER: return new BannerViewhoder(inflater.inflate(R.layout.item_banner_find,viewGroup,false));
             case CATEGORY: return new CategoytViewhoder(inflater.inflate(R.layout.item_category_find,viewGroup,false));
             case VIP:return new VipViewhoder(inflater.inflate(R.layout.item_vip_find,viewGroup,false));
-         /*
-
-            case SPECIALLY:currType =SPECIALLY;break;
-            case RECOMMEND:currType = RECOMMEND ;break;
-            case LIST:currType=LIST;break;*/
+            case SPECIALLY:return new SpecialViewhoder(inflater.inflate(R.layout.item_special_find,viewGroup,false));
+            case RECOMMEND:return  new RecommendViewhoder(inflater.inflate(R.layout.item_recommend_find,viewGroup,false));
+            case LIST:return  new MasterViewhoder(inflater.inflate(R.layout.item_master_find,viewGroup,false));
         }
 
         return null;
@@ -93,19 +93,25 @@ public class FindAdapter extends RecyclerView.Adapter{
             case VIP:
                 VipViewhoder vip = (VipViewhoder) viewHolder;
                 vip.setData(data.getVipRecommend());
-
                 break;
-            /*
-
-            case SPECIALLY:currType =SPECIALLY;break;
-            case RECOMMEND:currType = RECOMMEND ;break;
-            case LIST:currType=LIST;break;*/
+            case SPECIALLY:
+                SpecialViewhoder specialViewhoder = (SpecialViewhoder) viewHolder;
+                specialViewhoder.setData(data.getZlList());
+                break;
+            case RECOMMEND:
+                RecommendViewhoder recommend = (RecommendViewhoder) viewHolder;
+                recommend.setData(data.getCourseRecommends());
+                break;
+            case LIST:
+                MasterViewhoder master = (MasterViewhoder) viewHolder;
+                master.setData(data.getMasterLives());
+                break;
         }
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 6;
     }
 
     //设置banner viewhoder
@@ -178,6 +184,65 @@ public class FindAdapter extends RecyclerView.Adapter{
             adapter = new Vip_Adapter(data,context);
             recyclerView.setAdapter(adapter);
 
+        }
+    }
+    //设置 专栏专区
+    class SpecialViewhoder extends RecyclerView.ViewHolder{
+        private RecyclerView recyclerView;
+        private List<HomeBean.DataBean.ZlListBean> data;
+        private Special_Adapter adapter;
+
+        public SpecialViewhoder(@NonNull View itemView) {
+            super(itemView);
+            recyclerView =itemView.findViewById(R.id.item_special_recyclerview);
+            GridLayoutManager manager2 =new GridLayoutManager(context,2);
+            manager2.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(manager2);
+        }
+
+        public void setData(List<HomeBean.DataBean.ZlListBean> data) {
+            this.data = data;
+            adapter =new Special_Adapter(context,data);
+            recyclerView.setAdapter(adapter);
+        }
+    }
+    //设置推荐专区 recommend
+    class RecommendViewhoder extends RecyclerView.ViewHolder{
+        private ViewPager viewPager;
+        private List<HomeBean.DataBean.CourseRecommendsBean> data;
+        private RecommendAdapter adapter;
+
+        public RecommendViewhoder(@NonNull View itemView) {
+            super(itemView);
+            viewPager =itemView.findViewById(R.id.item_recommend_viewpager);
+            viewPager.setPageMargin(20);
+            viewPager.setOffscreenPageLimit(2);
+            //viewPager.setPageTransformer(true,new RotateDownPageTransformer());
+        }
+
+        public void setData(List<HomeBean.DataBean.CourseRecommendsBean> data) {
+            this.data = data;
+            adapter = new RecommendAdapter(data,context);
+            viewPager.setAdapter(adapter);
+        }
+    }
+    //设置 大师课
+    class MasterViewhoder extends RecyclerView.ViewHolder{
+        RecyclerView recyclerView;
+        private List<HomeBean.DataBean.MasterLivesBean> data;
+        private Master_Adapter adapter;
+        public MasterViewhoder(@NonNull View itemView) {
+            super(itemView);
+            recyclerView =itemView.findViewById(R.id.item_master_recyclerview);
+            LinearLayoutManager linearLayoutManager =new LinearLayoutManager(context);
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+        }
+
+        public void setData(List<HomeBean.DataBean.MasterLivesBean> data) {
+            this.data = data;
+            adapter = new Master_Adapter(context,data);
+            recyclerView.setAdapter(adapter);
         }
     }
 }

@@ -61,4 +61,9 @@ dependencies {
     //bottombar
     compile 'com.roughike:bottom-bar:2.3.1'
     implementation 'com.youth.banner:banner:1.4.9'
+    //智能刷新控件  SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-7'
+    //多条目 viewpager
+    compile 'com.zhy:magic-viewpager:1.0.1'
 }
