@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ZlAdapter extends RecyclerView.Adapter<ZlAdapter.MyViewHolder>{
-    private List<Bean.DataBean.ZlListBean> list = new ArrayList<>();
+    private List<Bean.ZlListBean> list = new ArrayList<>();
     private onClickItemListener listener;
     private Context context;
 
@@ -24,7 +24,7 @@ public class ZlAdapter extends RecyclerView.Adapter<ZlAdapter.MyViewHolder>{
         this.listener = listener;
     }
 
-    public void refresh(List<Bean.DataBean.ZlListBean> dataList) {
+    public void refresh(List<Bean.ZlListBean> dataList) {
         this.list.clear();
         this.list.addAll(dataList);
         notifyDataSetChanged();

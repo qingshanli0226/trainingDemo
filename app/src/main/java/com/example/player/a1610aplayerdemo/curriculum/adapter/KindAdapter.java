@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KindAdapter extends RecyclerView.Adapter<KindAdapter.MyViewHolder>{
-    private List<Bean.DataBean.HomeCategoryBean> list = new ArrayList<>();
+    private List<Bean.HomeCategoryBean> list = new ArrayList<>();
     private onClickItemListener listener;
     private Context context;
 
@@ -24,7 +24,7 @@ public class KindAdapter extends RecyclerView.Adapter<KindAdapter.MyViewHolder>{
         this.listener = listener;
     }
 
-    public void refresh(List<Bean.DataBean.HomeCategoryBean> dataList) {
+    public void refresh(List<Bean.HomeCategoryBean> dataList) {
         this.list.clear();
         this.list.addAll(dataList);
         notifyDataSetChanged();

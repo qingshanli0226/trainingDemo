@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,9 +24,7 @@ import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
-import com.example.player.a1610aplayerdemo.curriculum.adapter.KindAdapter;
-import com.example.player.a1610aplayerdemo.curriculum.adapter.VipAdapter;
-import com.example.player.a1610aplayerdemo.curriculum.adapter.ZlAdapter;
+import com.example.player.a1610aplayerdemo.curriculum.adapter.*;
 import com.example.player.a1610aplayerdemo.curriculum.bean.Bean;
 import com.example.player.a1610aplayerdemo.curriculum.presenter.CurriculumPresenter;
 import com.youth.banner.Banner;
@@ -39,7 +38,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CurriculumFragment extends Fragment implements IBaseView, OnBannerListener, KindAdapter.onClickItemListener, VipAdapter.onClickItemListener,ZlAdapter.onClickItemListener {
+public class CurriculumFragment extends Fragment implements IBaseView, OnBannerListener, KindAdapter.onClickItemListener, VipAdapter.onClickItemListener, ZlAdapter.onClickItemListener, CourseRecommendsAdapter.onClickItemListener,MasterAdapter.onClickItemListener {
     @BindView(R.id.curriculum_search)
     EditText curriculumSearch;
     @BindView(R.id.curriculum_banner)
@@ -51,17 +50,30 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
     RecyclerView curriculumVipRv;
     @BindView(R.id.curriculum_zl_rv)
     RecyclerView curriculumZlRv;
+    @BindView(R.id.curriculum_courseRecommends_rv)
+    RecyclerView curriculumCourseRecommendsRv;
+    @BindView(R.id.vip_more_tv)
+    TextView vipMoreTv;
+    @BindView(R.id.curriculum_register_tv)
+    TextView curriculumRegisterTv;
+    @BindView(R.id.zl_more_tv)
+    TextView zlMoreTv;
+    @BindView(R.id.curriculum_master_rv)
+    RecyclerView curriculumMasterRv;
     private IBasePresenter iBasePresenter;
 
-    private List<Bean.DataBean.CourseRecommendsBean> courseRecommendsBeans;
-    private List<Bean.DataBean.HomeBannerBean> homeBannerBeans;
-    private List<Bean.DataBean.HomeCategoryBean> homeCategoryBeans;
-    private List<Bean.DataBean.VipRecommendBean> vipRecommendBeans;
-    private List<Bean.DataBean.ZlListBean> zlListBeans;
+    private List<Bean.CourseRecommendsBean> courseRecommendsBeans;
+    private List<Bean.HomeBannerBean> homeBannerBeans;
+    private List<Bean.HomeCategoryBean> homeCategoryBeans;
+    private List<Bean.VipRecommendBean> vipRecommendBeans;
+    private List<Bean.ZlListBean> zlListBeans;
+    private List<Bean.MasterLivesBean> masterLivesBeans;
 
     private KindAdapter kindAdapter;
     private VipAdapter vipAdapter;
     private ZlAdapter zlAdapter;
+    private CourseRecommendsAdapter courseRecommendsAdapter;
+    private MasterAdapter masterAdapter;
 
     public CurriculumFragment() {
         // Required empty public constructor
@@ -106,6 +118,15 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
                 return false;
             }
         });
+
+        curriculumCourseRecommendsRv.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+
+        curriculumMasterRv.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false){
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        });
     }
 
 
@@ -116,14 +137,16 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
         homeCategoryBeans = new ArrayList<>();
         vipRecommendBeans = new ArrayList<>();
         zlListBeans = new ArrayList<>();
+        masterLivesBeans = new ArrayList<>();
 
         Bean bean = (Bean) data;
 
-        courseRecommendsBeans.addAll(bean.getData().getCourseRecommends());
-        homeBannerBeans.addAll(bean.getData().getHomeBanner());
-        homeCategoryBeans.addAll(bean.getData().getHomeCategory());
-        vipRecommendBeans.addAll(bean.getData().getVipRecommend());
-        zlListBeans.addAll(bean.getData().getZlList());
+        courseRecommendsBeans.addAll(bean.getCourseRecommends());
+        homeBannerBeans.addAll(bean.getHomeBanner());
+        homeCategoryBeans.addAll(bean.getHomeCategory());
+        vipRecommendBeans.addAll(bean.getVipRecommend());
+        zlListBeans.addAll(bean.getZlList());
+        masterLivesBeans.addAll(bean.getMasterLives());
 
         initData();
     }
@@ -160,6 +183,18 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
         zlAdapter.refresh(zlListBeans);
         curriculumZlRv.setAdapter(zlAdapter);
         zlAdapter.notifyDataSetChanged();
+
+        courseRecommendsAdapter = new CourseRecommendsAdapter();
+        courseRecommendsAdapter.setListener(this);
+        courseRecommendsAdapter.refresh(courseRecommendsBeans);
+        curriculumCourseRecommendsRv.setAdapter(courseRecommendsAdapter);
+        courseRecommendsAdapter.notifyDataSetChanged();
+
+        masterAdapter = new MasterAdapter();
+        masterAdapter.setListener(this);
+        masterAdapter.refresh(masterLivesBeans);
+        curriculumMasterRv.setAdapter(masterAdapter);
+        masterAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -204,6 +239,31 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
     @Override
     public void onClickZl(int index) {
         Toast.makeText(getActivity(), "" + zlListBeans.get(index).getTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClickCourseRecommends(int index) {
+        Toast.makeText(getActivity(), "" + courseRecommendsBeans.get(index).getAppTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick({R.id.vip_more_tv, R.id.curriculum_register_tv, R.id.zl_more_tv})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.vip_more_tv:
+                Toast.makeText(getActivity(), "会员专享", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.curriculum_register_tv:
+                Toast.makeText(getActivity(), "登录", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.zl_more_tv:
+                Toast.makeText(getActivity(), "专栏专区", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    @Override
+    public void onClickMaster(int index) {
+        Toast.makeText(getActivity(), "" + masterLivesBeans.get(index).getAppTitle(), Toast.LENGTH_SHORT).show();
     }
 
     private class MyLoader extends ImageLoader {

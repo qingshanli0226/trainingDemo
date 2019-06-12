@@ -38,7 +38,7 @@
                                      android:layout_height="180dp">
             </com.youth.banner.Banner>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="215dp"
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                           android:orientation="vertical">
                 <android.support.v7.widget.RecyclerView
                         android:id="@+id/curriculum_category_rv"
@@ -50,7 +50,8 @@
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -69,7 +70,7 @@
 
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="415dp"
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                           android:orientation="vertical">
                 <android.support.v7.widget.RecyclerView
                         android:id="@+id/curriculum_vip_rv"
@@ -112,10 +113,66 @@
 
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="380dp"
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                           android:orientation="vertical">
                 <android.support.v7.widget.RecyclerView
                         android:id="@+id/curriculum_zl_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="推荐"
+                        android:textStyle="bold"
+                        android:textColor="#bf0256"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="课程"
+                        android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/curriculum_courseRecommends_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="大师课"
+                        android:textStyle="bold"
+                        android:textColor="#bf0256"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/curriculum_master_rv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                 </android.support.v7.widget.RecyclerView>

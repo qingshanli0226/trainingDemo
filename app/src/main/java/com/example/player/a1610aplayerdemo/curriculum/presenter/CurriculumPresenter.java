@@ -4,6 +4,9 @@ import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.curriculum.bean.Bean;
 import com.example.player.a1610aplayerdemo.curriculum.net.RetrofitCreatorCurriculum;
+import com.example.player.a1610aplayerdemo.mistake.ErrorUtil;
+import com.example.player.a1610aplayerdemo.mistake.NetFunction;
+import com.example.player.a1610aplayerdemo.mistake.ResEntity;
 import com.example.player.a1610aplayerdemo.url.Website;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -17,6 +20,7 @@ public class CurriculumPresenter implements IBasePresenter<Bean> {
     public void getData() {
         RetrofitCreatorCurriculum.getNetApiService().getBeanData(Website.CURRICULUM)
                 .subscribeOn(Schedulers.io())
+                .map(new NetFunction<ResEntity<Bean>,Bean>())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Bean>() {
                     @Override
@@ -31,7 +35,7 @@ public class CurriculumPresenter implements IBasePresenter<Bean> {
 
                     @Override
                     public void onError(Throwable e) {
-                        iBaseView.onLoadError(1,e.getMessage());
+                        ErrorUtil.handleError(e);
                     }
 
                     @Override
