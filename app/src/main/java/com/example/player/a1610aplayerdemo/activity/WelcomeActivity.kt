@@ -1,12 +1,11 @@
-package com.example.player.a1610aplayerdemo
+package com.example.player.a1610aplayerdemo.activity
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
-import android.util.Log
-import android.widget.Button
-import com.youth.banner.Banner
+import com.example.player.a1610aplayerdemo.util.MyImageLoader
+import com.example.player.a1610aplayerdemo.R
 import com.youth.banner.BannerConfig
 import kotlinx.android.synthetic.main.activity_welcome.*
 
@@ -19,6 +18,11 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
         initView()
+
+        skipTV.setOnClickListener {
+            val intent = Intent(this@WelcomeActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }

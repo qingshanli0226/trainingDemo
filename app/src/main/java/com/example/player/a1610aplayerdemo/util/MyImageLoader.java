@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo;
+package com.example.player.a1610aplayerdemo.util;
 
 import android.content.Context;
 import android.widget.ImageView;

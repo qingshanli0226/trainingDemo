@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.home;
+package com.example.player.a1610aplayerdemo.bean;
 
 import java.util.List;
 
