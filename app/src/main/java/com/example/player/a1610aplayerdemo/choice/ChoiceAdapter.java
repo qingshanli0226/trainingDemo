@@ -6,12 +6,12 @@ import android.view.View;
 import com.example.player.a1610aplayerdemo.base.BaseAdapter;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
 import com.example.player.a1610aplayerdemo.choice.banner.BannerItemView;
-import com.squareup.picasso.Picasso;
+import com.example.player.a1610aplayerdemo.choice.category.CategoryView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChoiceAdapter extends BaseAdapter<Object, BannerItemView> {
+public class ChoiceAdapter extends BaseAdapter<Object, View> {
     private final int BANNER = 0;
     private final int CATEGORY = 1;//Category种类
     private final int VIPRECOMMEND = 2;//VIP专享
@@ -46,9 +46,11 @@ public class ChoiceAdapter extends BaseAdapter<Object, BannerItemView> {
     }
 
     @Override
-    protected BannerItemView getView(Context context, int i) {
+    protected View getView(Context context, int i) {
        if(count == BANNER){
            return new BannerItemView(context);
+       }else if(count == CATEGORY){
+           return new CategoryView(context);
        }
         return null;
     }
@@ -64,6 +66,10 @@ public class ChoiceAdapter extends BaseAdapter<Object, BannerItemView> {
                 list.add(homeBanner.get(i1).getBannerUrl());
             }
             bannerItemView.setChoice_bannerData(list);
+        }else if (i == CATEGORY){
+            CategoryView categoryItemView = (CategoryView) itemView;
+            List<MainBean.HomeCategoryBean> categoryBeans = (List<MainBean.HomeCategoryBean>) o;
+            categoryItemView.setCategoryData(categoryBeans);
         }
     }
 

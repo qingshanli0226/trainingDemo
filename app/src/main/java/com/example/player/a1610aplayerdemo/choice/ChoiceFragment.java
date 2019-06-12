@@ -42,7 +42,7 @@ public class ChoiceFragment extends BaseFragment<Object,View> {
         MainBean o = (MainBean) oo;
 
         objects.add(0,o.getHomeBanner());
-//        objects.add(1,o.getHomeCategory());
+        objects.add(1,o.getHomeCategory());
 //        objects.add(2,o.getVipRecommend());
 //        objects.add(3,o.getZlList());
 //        objects.add(4,o.getCourseRecommends());
