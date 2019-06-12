@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -13,6 +14,7 @@ import com.example.player.a1610aplayerdemo.bean.Bean
 import com.example.player.a1610aplayerdemo.bean.UserBean
 import com.example.player.a1610aplayerdemo.main.MainViewPagerAdapter
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator
+import com.example.player.a1610aplayerdemo.utils.Height
 import com.example.player.a1610aplayerdemo.utils.TokenSp
 import io.reactivex.Observable
 import io.reactivex.Scheduler
@@ -36,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var defaultDisplay = windowManager.defaultDisplay
+        var dis: DisplayMetrics = DisplayMetrics()
+        defaultDisplay.getMetrics(dis)
+
+        Height.getHeight().display = defaultDisplay
 
         getUserData()
 

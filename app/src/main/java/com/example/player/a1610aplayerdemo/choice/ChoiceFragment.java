@@ -46,7 +46,7 @@ public class ChoiceFragment extends BaseFragment<Object,View> {
         objects.add(2,o.getVipRecommend());
         objects.add(3,null);
         objects.add(4,o.getZlList());
-//        objects.add(4,o.getCourseRecommends());
+        objects.add(5,o.getCourseRecommends());
 //        objects.add(5,o.getMasterLives());
 
         adapter.updataData(objects);
