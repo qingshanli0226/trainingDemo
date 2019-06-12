@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="学习中心"
+                android:text="会员"
                 android:button="@null"
                 android:textColor="@drawable/study_chooser"
                 android:gravity="center|bottom"/>
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="会员"
+                android:text="已购"
                 android:button="@null"
                 android:textColor="@drawable/membber_chooser"
                 android:gravity="center|bottom"/>

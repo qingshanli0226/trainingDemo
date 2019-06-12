@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.example.player.a1610aplayerdemo.R;
 
-public class Study_Fragment extends Fragment {
+public class Already_Fragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.study_fragment,container,false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.already_fragment,container,false);
         return view;
     }
 }

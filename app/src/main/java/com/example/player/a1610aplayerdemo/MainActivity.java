@@ -9,7 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import com.example.player.a1610aplayerdemo.home.fragment.Home_Fragment;
 import com.example.player.a1610aplayerdemo.member.fragment.Member_Fragment;
-import com.example.player.a1610aplayerdemo.study.fragment.Study_Fragment;
+import com.example.player.a1610aplayerdemo.study.fragment.Already_Fragment;
 import com.example.player.a1610aplayerdemo.user.fragment.User_Fragment;
 
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private void data(){
         list.add(new Home_Fragment());
         list.add(new Member_Fragment());
-        list.add(new Study_Fragment());
+        list.add(new Already_Fragment());
         list.add(new User_Fragment());
     }
 
