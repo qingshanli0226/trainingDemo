@@ -7,6 +7,7 @@ import com.example.player.a1610aplayerdemo.base.BaseAdapter;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
 import com.example.player.a1610aplayerdemo.choice.banner.BannerItemView;
 import com.example.player.a1610aplayerdemo.choice.category.CategoryView;
+import com.example.player.a1610aplayerdemo.choice.vip.VipRecommendView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +52,8 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
            return new BannerItemView(context);
        }else if(count == CATEGORY){
            return new CategoryView(context);
+       }else if (count == VIPRECOMMEND){
+           return new VipRecommendView(context);
        }
         return null;
     }
@@ -70,6 +73,10 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
             CategoryView categoryItemView = (CategoryView) itemView;
             List<MainBean.HomeCategoryBean> categoryBeans = (List<MainBean.HomeCategoryBean>) o;
             categoryItemView.setCategoryData(categoryBeans);
+        }else if (i == VIPRECOMMEND){
+            VipRecommendView vipRecommendView = (VipRecommendView) itemView;
+            List<MainBean.VipRecommendBean> vipRecommendBeans = (List<MainBean.VipRecommendBean>) o;
+            vipRecommendView.setVipData(vipRecommendBeans);
         }
     }
 
