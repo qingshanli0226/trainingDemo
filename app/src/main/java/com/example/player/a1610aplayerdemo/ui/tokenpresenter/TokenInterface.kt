@@ -4,6 +4,7 @@ import com.example.player.a1610aplayerdemo.bean.TokenDateBean
 import com.example.player.a1610aplayerdemo.bean.VipDateBean
 
 import com.example.player.a1610aplayerdemo.view.BaseView
+import okhttp3.ResponseBody
 
 class TokenInterface {
     interface ItokenPresenter {

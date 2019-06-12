@@ -11,13 +11,13 @@ public class SpUtil {
     private static SharedPreferences sp;
 
     public static void init(Context context) {
-        sp = MyApp.instance.getSharedPreferences(name, Context.MODE_PRIVATE);
+        sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
     }
 
     public static void saveToken(String token) {
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString(Contants.TOKEN, token);
-        editor.apply();
+
+        sp.edit().putString(Contants.TOKEN, token).commit();
+
     }
 
     public static String getToken() {//读取token

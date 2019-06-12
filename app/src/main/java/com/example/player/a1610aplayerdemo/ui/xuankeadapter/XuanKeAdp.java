@@ -24,44 +24,44 @@ import java.util.List;
 public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
-    List<XuanKeDateBean.DataBean.HomeBannerBean> bannerInfoBeanList = new ArrayList<>();
-    List<XuanKeDateBean.DataBean.HomeCategoryBean> homeCategoryBeanList = new ArrayList<>();
-    List<XuanKeDateBean.DataBean.VipRecommendBean> vipBeanList = new ArrayList<>();
-    List<XuanKeDateBean.DataBean.ZlListBean> zhuanlanList = new ArrayList<>();
-    List<XuanKeDateBean.DataBean.CourseRecommendsBean> tuijianlist = new ArrayList<>();
-    List<XuanKeDateBean.DataBean.MasterLivesBean> dashikeList = new ArrayList<>();
+    List<XuanKeDateBean.HomeBannerBean> bannerInfoBeanList = new ArrayList<>();
+    List<XuanKeDateBean.HomeCategoryBean> homeCategoryBeanList = new ArrayList<>();
+    List<XuanKeDateBean.VipRecommendBean> vipBeanList = new ArrayList<>();
+    List<XuanKeDateBean.ZlListBean> zhuanlanList = new ArrayList<>();
+    List<XuanKeDateBean.CourseRecommendsBean> tuijianlist = new ArrayList<>();
+    List<XuanKeDateBean.MasterLivesBean> dashikeList = new ArrayList<>();
 
 
-    public void addBannerDate( List<XuanKeDateBean.DataBean.HomeBannerBean> bannerInfoBeanList1){
+    public void addBannerDate( List<XuanKeDateBean.HomeBannerBean> bannerInfoBeanList1){
         bannerInfoBeanList.clear();
         bannerInfoBeanList.addAll(bannerInfoBeanList1);
         notifyDataSetChanged();
     }
 
-    public void addBean( List<XuanKeDateBean.DataBean.HomeCategoryBean> bannerInfoBeanList1){
+    public void addBean( List<XuanKeDateBean.HomeCategoryBean> bannerInfoBeanList1){
         homeCategoryBeanList.clear();
         homeCategoryBeanList.addAll(bannerInfoBeanList1);
         notifyDataSetChanged();
     }
 
-    public void addVip( List<XuanKeDateBean.DataBean.VipRecommendBean> bannerInfoBeanList1){
+    public void addVip( List<XuanKeDateBean.VipRecommendBean> bannerInfoBeanList1){
         vipBeanList.clear();
         vipBeanList.addAll(bannerInfoBeanList1);
         notifyDataSetChanged();
     }
 
-    public void addZhuanLan( List<XuanKeDateBean.DataBean.ZlListBean> bannerInfoBeanList1){
+    public void addZhuanLan( List<XuanKeDateBean.ZlListBean> bannerInfoBeanList1){
         zhuanlanList.clear();
         zhuanlanList.addAll(bannerInfoBeanList1);
         notifyDataSetChanged();
     }
-    public void addTuiJian( List<XuanKeDateBean.DataBean.CourseRecommendsBean> bannerInfoBeanList1){
+    public void addTuiJian( List<XuanKeDateBean.CourseRecommendsBean> bannerInfoBeanList1){
        tuijianlist.clear();
         tuijianlist.addAll(bannerInfoBeanList1);
         notifyDataSetChanged();
     }
 
-    public void addDaShi( List<XuanKeDateBean.DataBean.MasterLivesBean> bannerInfoBeanList1){
+    public void addDaShi( List<XuanKeDateBean.MasterLivesBean> bannerInfoBeanList1){
         dashikeList.clear();
         dashikeList.addAll(bannerInfoBeanList1);
         notifyDataSetChanged();
@@ -201,7 +201,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             channel = itemView.findViewById(R.id.dashi_lv);
         }
 
-        public void setDate(List<XuanKeDateBean.DataBean.MasterLivesBean> channelInfoBeans){
+        public void setDate(List<XuanKeDateBean.MasterLivesBean> channelInfoBeans){
             DaShiKeAdp channelAdp = new DaShiKeAdp();
             channelAdp.updateData(channelInfoBeans);
             channel.setAdapter(channelAdp);
@@ -219,7 +219,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             channel = itemView.findViewById(R.id.category_gv);
         }
 
-        public void setDate(List<XuanKeDateBean.DataBean.HomeCategoryBean> channelInfoBeans){
+        public void setDate(List<XuanKeDateBean.HomeCategoryBean> channelInfoBeans){
 
             HomeCategoryAdp channelAdp = new HomeCategoryAdp();
             channelAdp.updateData(channelInfoBeans);
@@ -238,7 +238,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             vipgv = itemView.findViewById(R.id.vipzhuanxiang);
         }
 
-        public void setDate(List<XuanKeDateBean.DataBean.VipRecommendBean> channelInfoBeans){
+        public void setDate(List<XuanKeDateBean.VipRecommendBean> channelInfoBeans){
 
             VipShareAdp channelAdp = new VipShareAdp();
             channelAdp.updateData(channelInfoBeans);
@@ -247,10 +247,6 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
     }
-
-
-
-
 
 
 
@@ -263,7 +259,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             zhuangv = itemView.findViewById(R.id.zhuanlan_gv);
         }
 
-        public void setDate(List<XuanKeDateBean.DataBean.ZlListBean> channelInfoBeans){
+        public void setDate(List<XuanKeDateBean.ZlListBean> channelInfoBeans){
 
             ZhuanLanAdp channelAdp = new ZhuanLanAdp();
             channelAdp.updateData(channelInfoBeans);
@@ -284,7 +280,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             recyclerView.setLayoutManager(linearLayoutManager);
         }
 
-        public void setDate(List<XuanKeDateBean.DataBean.CourseRecommendsBean> channel){
+        public void setDate(List<XuanKeDateBean.CourseRecommendsBean> channel){
 
             TuiJianAdp adp = new TuiJianAdp();
             adp.refreshData(channel);
@@ -304,7 +300,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemView);
             banner = itemView.findViewById(R.id.banner);
         }
-        public void setData(List<XuanKeDateBean.DataBean.HomeBannerBean> banner_info){
+        public void setData(List<XuanKeDateBean.HomeBannerBean> banner_info){
 
             List<String> images = new ArrayList<>();
             for (int i = 0; i < banner_info.size(); i++) {

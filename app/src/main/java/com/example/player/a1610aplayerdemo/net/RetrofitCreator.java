@@ -40,16 +40,16 @@ public class RetrofitCreator {
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(1, TimeUnit.SECONDS)
+                .connectTimeout(1000, TimeUnit.SECONDS)
                 .addInterceptor(httpLoggingInterceptor)
-          //      .addInterceptor(new TokenInterceptor())
+                .addInterceptor(new TokenInterceptor())
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //确保service方法，返回值是Observable.
                 .addConverterFactory(GsonConverterFactory.create()) //数据解析
                 .client(okHttpClient) //okhttpclient
-                .baseUrl("http://api.immedc.com/") //base url
+                .baseUrl("http://api.immedc.com/restapi/") //base url
                 .build();
 
         netApiService = retrofit.create(NetApiService.class);

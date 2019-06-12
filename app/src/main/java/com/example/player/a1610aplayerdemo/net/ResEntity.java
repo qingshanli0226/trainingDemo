@@ -2,8 +2,9 @@ package com.example.player.a1610aplayerdemo.net;
 
 public class ResEntity<T> {
     private String code;
-    private String msg;
-    private T result;
+    private String success;
+    private String message;
+    private T data;
 
     public String getCode() {
         return code;
@@ -13,19 +14,27 @@ public class ResEntity<T> {
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public T getData() {
+        return data;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setData(T data) {
+        this.data = data;
     }
 
-    public T getResult() {
-        return result;
+    public String getSuccess() {
+        return success;
     }
 
-    public void setResult(T result) {
-        this.result = result;
+    public void setSuccess(String success) {
+        this.success = success;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

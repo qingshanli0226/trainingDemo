@@ -15,9 +15,9 @@ import java.util.List;
 
 public class DaShiKeAdp extends BaseAdapter {
 
-    List<XuanKeDateBean.DataBean.MasterLivesBean> dataBeanList = new ArrayList<>();
+    List<XuanKeDateBean.MasterLivesBean> dataBeanList = new ArrayList<>();
 
-    public void updateData(List<XuanKeDateBean.DataBean.MasterLivesBean> dataBeans) {
+    public void updateData(List<XuanKeDateBean.MasterLivesBean> dataBeans) {
         dataBeanList.clear();
         dataBeanList.addAll(dataBeans);
         notifyDataSetChanged();

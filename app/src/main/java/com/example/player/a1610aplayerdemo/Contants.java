@@ -7,7 +7,7 @@ package com.example.player.a1610aplayerdemo;
 public class Contants {
     public static final String BASE_URL = "http://api.immedc.com/restapi/";//正式服务器
     //    public static final String BASE_URL="http://192.168.1.236/restapi/";//测试服务器
-    public static String TOKEN = "";
+    public static String TOKEN = "CH-TOKEN";
 
     public static final String CREATE_NEW = "account/createNew";
     public static final String GET_HOME = "loading/getHome";

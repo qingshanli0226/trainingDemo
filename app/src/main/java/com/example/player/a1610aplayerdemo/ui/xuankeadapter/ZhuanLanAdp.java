@@ -15,9 +15,9 @@ import java.util.List;
 
 public class ZhuanLanAdp extends BaseAdapter {
 
-    List<XuanKeDateBean.DataBean.ZlListBean> dataBeanList = new ArrayList<>();
+    List<XuanKeDateBean.ZlListBean> dataBeanList = new ArrayList<>();
 
-    public void updateData(List<XuanKeDateBean.DataBean.ZlListBean> dataBeans) {
+    public void updateData(List<XuanKeDateBean.ZlListBean> dataBeans) {
         dataBeanList.clear();
         dataBeanList.addAll(dataBeans);
         notifyDataSetChanged();

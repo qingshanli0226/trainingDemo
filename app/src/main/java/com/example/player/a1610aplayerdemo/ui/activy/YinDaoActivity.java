@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo.ui.activy;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.TokenDateBean;
@@ -10,6 +11,7 @@ import com.example.player.a1610aplayerdemo.ui.tokenpresenter.TokenInterface;
 import com.example.player.a1610aplayerdemo.ui.tokenpresenter.TokenPresenterCompl;
 import com.example.player.a1610aplayerdemo.util.SpUtil;
 import com.facebook.drawee.view.SimpleDraweeView;
+import okhttp3.ResponseBody;
 import org.jetbrains.annotations.NotNull;
 
 public class YinDaoActivity extends AppCompatActivity implements TokenInterface.TokenView {
@@ -25,6 +27,7 @@ public class YinDaoActivity extends AppCompatActivity implements TokenInterface.
         setContentView(R.layout.activity_yin_dao);
 
         itokenPresenter = new TokenPresenterCompl(this);
+
         itokenPresenter.getTokenData();
 
         sm = findViewById(R.id.yd_img);
@@ -44,8 +47,9 @@ public class YinDaoActivity extends AppCompatActivity implements TokenInterface.
 
     @Override
     public void onGetDataSuccess(@NotNull TokenDateBean bean) {
+        Log.d("xxxxxxx",bean.getAccessToken());
 
-        SpUtil.saveToken(bean.getData().getAccessToken());
+        SpUtil.saveToken(bean.getAccessToken());
 
     }
 

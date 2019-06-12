@@ -19,8 +19,11 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.ResponseBody;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 import static android.support.v4.content.ContextCompat.getSystemService;
 
@@ -34,34 +37,31 @@ public class TokenPresenterCompl implements TokenInterface.ItokenPresenter {
 
     @Override
     public void getTokenData() {
-
-
         Log.i("TagA", "设备:" + Build.DEVICE);
         Log.i("TagA", "设备的key:" + getDeviceKey());
         Log.i("TagA", "系统版本:" + String.valueOf(Build.VERSION.SDK_INT));
         Log.i("TagA", "品牌:" + Build.BRAND);
         Log.i("TagA", "产品型号:" + Build.PRODUCT);
 
-        HashMap map = new HashMap();
+        Map map = new HashMap();
         map.put("device", Build.DEVICE);
         map.put("deviceKey", getDeviceKey());
         map.put("sdkVersion", String.valueOf(Build.VERSION.SDK_INT));
         map.put("brand", Build.BRAND);
         map.put("product", Build.PRODUCT);
 
-//http://api.immedc.com/restapi/
-
+        Log.d("lmz","22");
         RetrofitCreator.getApiService().getFirstInAndGetToken(map)
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+
                 .map(new MyNetFunction<ResEntity<TokenDateBean>,TokenDateBean>())
+                .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
                         tokenView.showLoading();
                     }
                 })
-
                 .doFinally(new Action() {
                     @Override
                     public void run() throws Exception {
@@ -69,17 +69,14 @@ public class TokenPresenterCompl implements TokenInterface.ItokenPresenter {
                     }
                 })
                 .subscribe(new MVPObserver<TokenDateBean>(){
-
                     @Override
                     public void onNext(TokenDateBean vipDateBean) {
                         super.onNext(vipDateBean);
 
+                        Log.d("xxx",vipDateBean.toString());
                         tokenView.onGetDataSuccess(vipDateBean);
-                    }
-                    @Override
-                    public void onError(Throwable e) {
-                        super.onError(e);
-                        e.printStackTrace();
+
+
                     }
                 });
     }

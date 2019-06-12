@@ -15,9 +15,9 @@ import java.util.List;
 
 public class VipShareAdp extends BaseAdapter {
 
-    List<XuanKeDateBean.DataBean.VipRecommendBean> dataBeanList = new ArrayList<>();
+    List<XuanKeDateBean.VipRecommendBean> dataBeanList = new ArrayList<>();
 
-    public void updateData(List<XuanKeDateBean.DataBean.VipRecommendBean> dataBeans) {
+    public void updateData(List<XuanKeDateBean.VipRecommendBean> dataBeans) {
         dataBeanList.clear();
         dataBeanList.addAll(dataBeans);
         notifyDataSetChanged();

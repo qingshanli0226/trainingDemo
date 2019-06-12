@@ -10,7 +10,7 @@ import com.example.player.a1610aplayerdemo.base.BaseViewHolder;
 import com.example.player.a1610aplayerdemo.bean.XuanKeDateBean;
 import com.squareup.picasso.Picasso;
 
-public class TuiJianAdp extends BaseAdapter<XuanKeDateBean.DataBean.CourseRecommendsBean> {
+public class TuiJianAdp extends BaseAdapter<XuanKeDateBean.CourseRecommendsBean> {
 
 
 
@@ -21,7 +21,7 @@ public class TuiJianAdp extends BaseAdapter<XuanKeDateBean.DataBean.CourseRecomm
 
     @Override
     protected void convert(BaseViewHolder baseViewHolder, int i) {
-        XuanKeDateBean.DataBean.CourseRecommendsBean data = getData(i);
+        XuanKeDateBean.CourseRecommendsBean data = getData(i);
 
 
         ImageView im = baseViewHolder.getView(R.id.tj_img);

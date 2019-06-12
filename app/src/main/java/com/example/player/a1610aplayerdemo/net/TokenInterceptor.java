@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo.net;
 
 import java.io.IOException;
 
+import android.util.Log;
 import com.example.player.a1610aplayerdemo.Contants;
 import com.example.player.a1610aplayerdemo.util.SpUtil;
 import okhttp3.Interceptor;
@@ -16,13 +17,19 @@ public class TokenInterceptor implements Interceptor {
 
         Request request = chain.request();//去拿到request请求对象
         Request newRequest = null;
-        if (SpUtil.getToken() != null) {
 
-            newRequest = request.newBuilder().addHeader(Contants.TOKEN, SpUtil.getToken()).build();
+        String token = SpUtil.getToken();
+        Log.d("we",token);
 
-            return chain.proceed(newRequest); //将生成带token的newRequest做为请求参数进行网络请求
+        System.out.println(token);
+
+        if (token != null) {
+
+            newRequest = request.newBuilder().addHeader(Contants.TOKEN, token).build();
+
+            return chain.proceed(newRequest);
         } else {
-            return chain.proceed(request); //如果没有token,使用老的不带token参数的request，去进行网络请求.
+            return chain.proceed(request);
         }
     }
 }

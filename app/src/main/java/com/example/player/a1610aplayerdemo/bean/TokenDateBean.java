@@ -2,133 +2,88 @@ package com.example.player.a1610aplayerdemo.bean;
 
 public class TokenDateBean {
 
+
     /**
-     * success : true
-     * message :
-     * code : success
-     * data : {"passportId":0,"nickName":"游客","avatar":"http://ali-files.yooshow.com/app/yangyin/default.png","gender":0,"ranking":0,"score":0,"accessToken":"4A3DEE83CCE842BFCF2143557344A17B","login":false}
+     * passportId : 0
+     * nickName : 游客
+     * avatar : http://ali-files.yooshow.com/app/yangyin/default.png
+     * gender : 0
+     * ranking : 0
+     * score : 0
+     * accessToken : 4AE1AE55D5C6FF0276D737F8733AB6B0
+     * login : false
      */
 
-    private boolean success;
-    private String message;
-    private String code;
-    private DataBean data;
+    private int passportId;
+    private String nickName;
+    private String avatar;
+    private int gender;
+    private int ranking;
+    private int score;
+    private String accessToken;
+    private boolean login;
 
-    public boolean isSuccess() {
-        return success;
+    public int getPassportId() {
+        return passportId;
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
+    public void setPassportId(int passportId) {
+        this.passportId = passportId;
     }
 
-    public String getMessage() {
-        return message;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    public String getCode() {
-        return code;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
-    public DataBean getData() {
-        return data;
+    public int getGender() {
+        return gender;
     }
 
-    public void setData(DataBean data) {
-        this.data = data;
+    public void setGender(int gender) {
+        this.gender = gender;
     }
 
-    public static class DataBean {
-        /**
-         * passportId : 0
-         * nickName : 游客
-         * avatar : http://ali-files.yooshow.com/app/yangyin/default.png
-         * gender : 0
-         * ranking : 0
-         * score : 0
-         * accessToken : 4A3DEE83CCE842BFCF2143557344A17B
-         * login : false
-         */
+    public int getRanking() {
+        return ranking;
+    }
 
-        private int passportId;
-        private String nickName;
-        private String avatar;
-        private int gender;
-        private int ranking;
-        private int score;
-        private String accessToken;
-        private boolean login;
+    public void setRanking(int ranking) {
+        this.ranking = ranking;
+    }
 
-        public int getPassportId() {
-            return passportId;
-        }
+    public int getScore() {
+        return score;
+    }
 
-        public void setPassportId(int passportId) {
-            this.passportId = passportId;
-        }
+    public void setScore(int score) {
+        this.score = score;
+    }
 
-        public String getNickName() {
-            return nickName;
-        }
+    public String getAccessToken() {
+        return accessToken;
+    }
 
-        public void setNickName(String nickName) {
-            this.nickName = nickName;
-        }
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
 
-        public String getAvatar() {
-            return avatar;
-        }
+    public boolean isLogin() {
+        return login;
+    }
 
-        public void setAvatar(String avatar) {
-            this.avatar = avatar;
-        }
-
-        public int getGender() {
-            return gender;
-        }
-
-        public void setGender(int gender) {
-            this.gender = gender;
-        }
-
-        public int getRanking() {
-            return ranking;
-        }
-
-        public void setRanking(int ranking) {
-            this.ranking = ranking;
-        }
-
-        public int getScore() {
-            return score;
-        }
-
-        public void setScore(int score) {
-            this.score = score;
-        }
-
-        public String getAccessToken() {
-            return accessToken;
-        }
-
-        public void setAccessToken(String accessToken) {
-            this.accessToken = accessToken;
-        }
-
-        public boolean isLogin() {
-            return login;
-        }
-
-        public void setLogin(boolean login) {
-            this.login = login;
-        }
+    public void setLogin(boolean login) {
+        this.login = login;
     }
 }

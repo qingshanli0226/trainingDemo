@@ -33,12 +33,12 @@ class XuanKeFragment : BaseFragment(),XuanKeInterface.XuanKeView {
     }
 
     override fun onGetDataSuccess(bean: XuanKeDateBean) {
-        adp.addBannerDate(bean.data.homeBanner)
-        adp.addBean(bean.data.homeCategory)
-        adp.addVip(bean.data.vipRecommend)
-        adp.addZhuanLan(bean.data.zlList)
-        adp.addTuiJian(bean.data.courseRecommends)
-        adp.addDaShi(bean.data.masterLives)
+        adp.addBannerDate(bean.homeBanner)
+        adp.addBean(bean.homeCategory)
+        adp.addVip(bean.vipRecommend)
+        adp.addZhuanLan(bean.zlList)
+        adp.addTuiJian(bean.courseRecommends)
+        adp.addDaShi(bean.masterLives)
 
     }
 

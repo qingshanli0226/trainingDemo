@@ -15,9 +15,9 @@ import java.util.List;
 
 public class HomeCategoryAdp extends BaseAdapter {
 
-    List<XuanKeDateBean.DataBean.HomeCategoryBean> dataBeanList = new ArrayList<>();
+    List<XuanKeDateBean.HomeCategoryBean> dataBeanList = new ArrayList<>();
 
-    public void updateData(List<XuanKeDateBean.DataBean.HomeCategoryBean> dataBeans) {
+    public void updateData(List<XuanKeDateBean.HomeCategoryBean> dataBeans) {
         dataBeanList.clear();
         dataBeanList.addAll(dataBeans);
         notifyDataSetChanged();
