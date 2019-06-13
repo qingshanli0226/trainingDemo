@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.fragment.selectclass.course;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,7 +18,6 @@ public class CourseItewView extends LinearLayout {
 
     Context m_context;
     RecyclerView m_rv;
-
     public CourseItewView(Context context) {
         super(context);
         m_context = context;
@@ -41,7 +41,11 @@ public class CourseItewView extends LinearLayout {
         m_rv.setLayoutManager(manager);
         CourseRvAdapter courseRvAdapter = new CourseRvAdapter();
         courseRvAdapter.setList(list);
+
+
+
         m_rv.setAdapter(courseRvAdapter);
     }
+
 
 }

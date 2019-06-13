@@ -3,15 +3,15 @@ package com.example.player.a1610aplayerdemo.token;
 public class UserBean {
     /**
      * success : true
-     * message :
-     * code : success
+     *      * message :
+     *      * code : success
      * data : {"passportId":0,"nickName":"游客","avatar":"http://ali-files.yooshow.com/app/yangyin/default.png","gender":0,"ranking":0,"score":0,"accessToken":"D7C1676C00907C27B80ECBAB4F90902E","login":false}
      */
 
     private boolean success;
     private String message;
     private String code;
-    private DataBean data;
+    public DataBean data;
 
     public boolean isSuccess() {
         return success;

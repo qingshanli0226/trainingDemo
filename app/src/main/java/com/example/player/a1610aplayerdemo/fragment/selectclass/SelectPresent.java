@@ -8,13 +8,16 @@ import com.example.player.a1610aplayerdemo.net.Contance;
 import com.example.player.a1610aplayerdemo.net.NetFunction;
 import com.example.player.a1610aplayerdemo.net.ResEntity;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
+import com.example.player.a1610aplayerdemo.token.SpUtils;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 class SelectPresent implements IBasePresenter<GetHomeBean.DataBean> {
 
@@ -22,20 +25,29 @@ class SelectPresent implements IBasePresenter<GetHomeBean.DataBean> {
 
     @Override
     public void getData() {
+
+        Map<String,String> headMap = new HashMap<>();
+        String token = SpUtils.getSpUtils().getToken();
+        if (token==null){
+            token = "D7C1676C00907C27B80ECBAB4F90902E";
+        }
+        headMap.put(Contance.CH_TOKEN,token);
+
         RetrofitCreator.getInstance().getRetrofitApiService()
-                .getSelectData(Contance.BASE_URL+Contance.GET_HOME)
+                .getSelectData(headMap)
+                .map(new NetFunction<ResEntity<GetHomeBean.DataBean>,GetHomeBean.DataBean>())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<GetHomeBean>() {
+                .subscribe(new Observer<GetHomeBean.DataBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(GetHomeBean dataBean) {
-                        Log.i("aaa", "onNext: "+dataBean.getData().getHomeBanner().size());
-                        iBaseView.onLoadObject(dataBean.getData());
+                    public void onNext(GetHomeBean.DataBean dataBean) {
+                        Log.i("aaa", "onNext: "+dataBean.getHomeBanner().size());
+                        iBaseView.onLoadObject(dataBean);
                     }
 
                     @Override

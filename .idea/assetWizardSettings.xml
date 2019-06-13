@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/D:/Program%20Files/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_assignment_turned_in_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/D:/Program%20Files/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_message_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,9 +44,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_select_class" />
+                                      <entry key="outputName" value="ic_mymessage_img" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="8f948e" />
+                                      <entry key="themeColor" value="fffbfd" />
                                     </map>
                                   </option>
                                 </PersistentState>

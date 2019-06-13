@@ -10,19 +10,24 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.bean.GetHomeBean;
+import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.onclickinterface.OnclickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ZL_Item_gv_Adapter extends BaseAdapter {
-
+   private OnclickListener onclickListener;
     private List<GetHomeBean.DataBean.ZlListBean> list = new ArrayList<>();
     public void refreshData( List<GetHomeBean.DataBean.ZlListBean> list){
         Log.i("bbb", "refreshData: "+list.size());
         this.list.clear();
         this.list.addAll(list);
         notifyDataSetChanged();
+    }
+
+    public void setOnclickListener(OnclickListener onclickListener) {
+        this.onclickListener = onclickListener;
     }
 
     @Override
@@ -41,7 +46,7 @@ public class ZL_Item_gv_Adapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
         MyZLViewHolder myZLViewHolder = null;
         if (view == null){
             myZLViewHolder = new MyZLViewHolder();
@@ -52,6 +57,15 @@ public class ZL_Item_gv_Adapter extends BaseAdapter {
         }else {
             myZLViewHolder = (MyZLViewHolder) view.getTag();
         }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (onclickListener!=null){
+                    onclickListener.onClick(i);
+                }
+            }
+        });
 
         Glide.with(viewGroup.getContext()).load(list.get(i).getImage()).into(myZLViewHolder.course_img);
         myZLViewHolder.course_title.setText(list.get(i).getTitle());

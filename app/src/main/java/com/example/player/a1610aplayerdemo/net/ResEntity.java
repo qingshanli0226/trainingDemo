@@ -8,7 +8,7 @@ public class ResEntity<T> {
 
     private String msg;
 
-    private T result;//泛型， 可以是任意类型的数据
+    private T data;//泛型， 可以是任意类型的数据
 
     public String getCode() {
         return code;
@@ -26,11 +26,11 @@ public class ResEntity<T> {
         this.msg = msg;
     }
 
-    public T getResult() {
-        return result;
+    public T getData() {
+        return data;
     }
 
-    public void setResult(T result) {
-        this.result = result;
+    public void setData(T data) {
+        this.data = data;
     }
 }

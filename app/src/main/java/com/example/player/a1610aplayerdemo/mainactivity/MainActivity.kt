@@ -1,20 +1,29 @@
 package com.example.player.a1610aplayerdemo.mainactivity
 
-import android.graphics.Color
+
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.mainactivity.adapter.MainVpAdapter
 import com.example.player.a1610aplayerdemo.net.Contance
+import com.example.player.a1610aplayerdemo.net.NetFunction
+import com.example.player.a1610aplayerdemo.net.ResEntity
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator
+import com.example.player.a1610aplayerdemo.token.SpUtils
 import com.example.player.a1610aplayerdemo.token.UserBean
+import com.google.gson.annotations.SerializedName
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+
+
+
 
 class MainActivity : AppCompatActivity() {
  // 声明控件
@@ -42,25 +51,39 @@ class MainActivity : AppCompatActivity() {
             Pair("Android-VersionCode","43"),
             Pair("Android-channel","guoyun"),Pair("Tingyun_Process","true")
         )
-       RetrofitCreator.getInstance().retrofitApiService.getUserData(paramMap)
+
+    var paramMap2:Map<String,String> = mapOf(
+        Pair("DeviceKey",Contance.DEVICEKEY),
+        Pair("device",Build.DEVICE),
+        Pair("sdkVersion","${Build.VERSION.SDK_INT}"),
+        Pair("brand",Build.BOARD), Pair("product",Build.PRODUCT)
+    )
+
+
+
+
+    RetrofitCreator.getInstance().retrofitApiService.getUserData(paramMap,paramMap2)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object :Observer<Result<UserBean>>{
+            .subscribe(object :Observer<ResEntity<UserBean.DataBean>>{
                 override fun onComplete() {
 
                 }
 
                 override fun onSubscribe(d: Disposable) {
-
                 }
 
-                override fun onNext(t: Result<UserBean>) {
-
+                override fun onNext(t: ResEntity<UserBean.DataBean>) {
+                    val accessToken = t.data.accessToken
+                    // 保存token
+                    SpUtils.getSpUtils().saveToken(accessToken)
+                    println(accessToken);
                 }
 
                 override fun onError(e: Throwable) {
-
+                    println(e.toString())
                 }
+
 
             })
     }
@@ -108,7 +131,5 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-private fun Any.subscribe(observer: Observer<Result<UserBean>>) {
 
-}
 

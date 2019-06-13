@@ -17,13 +17,13 @@ public class SpUtils {
         return spUtils;
     }
 
-    private void  saveToken(String token){
+    public void  saveToken(String token){
         SharedPreferences.Editor edit = sharedPreferences.edit();
         edit.putString(Contance.TOKEN,token);
         edit.commit();
     }
 
-    private String getToken(){
+    public String getToken(){
         String token = sharedPreferences.getString(Contance.TOKEN, "");
         return token;
     }

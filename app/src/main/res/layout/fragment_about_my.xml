@@ -1,14 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".fragment.AboutMyFragment">
+             android:layout_height="wrap_content"
+             tools:context=".fragment.AboutMyFragment"
+android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:layout_height="wrap_content">
 
-</FrameLayout>
+        <ImageView
+                android:id="@+id/my_back_img"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/gangqin"
+                android:scaleType="centerCrop"
+        />
+
+        <ImageView
+                android:id="@+id/my_avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/circlebackground"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"/>
+
+        <TextView
+                android:id="@+id/my_login_or_register_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登录/注册"
+                android:textColor="#ffffff"
+                android:textSize="19sp"
+                android:layout_toRightOf="@+id/my_avatar"
+                android:layout_centerVertical="true"/>
+
+
+
+        <ImageView
+                android:id="@+id/my_message_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mymessage_img"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="50dp"
+        android:paddingLeft="10dp"/>
+        <ImageView
+                android:id="@+id/my_setting_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mysetting_img"
+                android:layout_toLeftOf="@+id/my_message_img"
+                android:layout_marginTop="50dp"/>
+    </RelativeLayout>
+
+
+<ScrollView
+        android:id="@+id/my_scrollView"
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+       >
+    <LinearLayout
+            android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="常见问题"
+                android:textSize="19sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableLeft="@drawable/my1"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#888"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+        />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="检查更新"
+                android:textSize="19sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableLeft="@drawable/my2"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#888"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+        />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="推荐【央音在线】给好友"
+                android:textSize="19sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableLeft="@drawable/my3"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#888"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+        />
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="意见反馈"
+                android:textSize="19sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableLeft="@drawable/my4"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#888"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+        />
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+</LinearLayout>

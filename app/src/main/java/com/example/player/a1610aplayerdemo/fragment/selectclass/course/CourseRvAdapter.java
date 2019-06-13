@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.bean.GetHomeBean;
+import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.onclickinterface.OnclickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,9 @@ public class CourseRvAdapter extends  RecyclerView.Adapter<CourseRvAdapter.MyCou
 
     private List<GetHomeBean.DataBean.CourseRecommendsBean> list = new ArrayList<>();
     private Context m_context;
+    private OnclickListener onclickListener;
+
+
     public void setList(List<GetHomeBean.DataBean.CourseRecommendsBean> list) {
         this.list.clear();
         this.list.addAll(list);
@@ -34,9 +38,16 @@ public class CourseRvAdapter extends  RecyclerView.Adapter<CourseRvAdapter.MyCou
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyCourseHolder myCourseHolder, int i) {
+    public void onBindViewHolder(@NonNull MyCourseHolder myCourseHolder, final int i) {
         Glide.with(m_context).load(list.get(i).getImageUrl()).into(myCourseHolder.course_img);
         myCourseHolder.course_title.setText(list.get(i).getAppTitle());
+
+        myCourseHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onclickListener.onClick(i);
+            }
+        });
     }
 
     @Override
@@ -53,5 +64,11 @@ public class CourseRvAdapter extends  RecyclerView.Adapter<CourseRvAdapter.MyCou
             course_title = itemView.findViewById(R.id.item_course_title);
         }
     }
+
+
+    public void setOnclickListener(OnclickListener onclickListener) {
+        this.onclickListener = onclickListener;
+    }
+
 
 }
