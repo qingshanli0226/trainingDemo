@@ -32,4 +32,6 @@ public interface IServiceApi {
      */
     @GET
     Observable<Bean<List<VipDataBean>>> getVipData(@HeaderMap Map<String,String> map,@Url String url);
+
+    ///restapi/student/getStudentInfo   每次更改个人信息会调用的
 }
