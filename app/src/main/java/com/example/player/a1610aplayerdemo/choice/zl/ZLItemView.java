@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo.choice.zl;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -45,10 +46,17 @@ public class ZLItemView extends LinearLayout {
 
     }
 
-    public void setZLItem(MainBean.ZlListBean zlListBean){
+    public void setZLItem(MainBean.ZlListBean zlListBean,int i){
         String title = zlListBean.getTitle();
         String image = zlListBean.getImage();
         Picasso.with(context).load(image).into(iv);
         tv.setText(title);
+        final int a = i;
+        iv.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("click", "onClick: 专栏"+a);
+            }
+        });
     }
 }

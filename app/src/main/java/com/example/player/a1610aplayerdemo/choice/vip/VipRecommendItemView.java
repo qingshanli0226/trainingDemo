@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.choice.vip;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -42,12 +43,21 @@ class VipRecommendItemView extends LinearLayout {
         init(context);
         this.context = context;
     }
-    public void setItem(MainBean.VipRecommendBean vipRecommendBean){
+    public void setItem(MainBean.VipRecommendBean vipRecommendBean,int i){
         String text1 = vipRecommendBean.getText1();
         text.setText(text1);
         String title = vipRecommendBean.getTitle();
         this.title.setText(title);
         String image = vipRecommendBean.getImage();
         Picasso.with(context).load(image).into(iv);
+
+        final int a = i;
+
+        iv.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("click", "onClick: 会员专享"+a);
+            }
+        });
     }
 }

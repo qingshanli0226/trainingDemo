@@ -19,6 +19,6 @@ public class ZLItemAdapter extends BaseAdapter<MainBean.ZlListBean,ZLItemView> {
     @Override
     protected void setItemView(View itemView, MainBean.ZlListBean zlListBean, int i) {
         ZLItemView zlItemView = (ZLItemView) itemView;
-        zlItemView.setZLItem(zlListBean);
+        zlItemView.setZLItem(zlListBean,i);
     }
 }

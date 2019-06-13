@@ -19,6 +19,6 @@ public class CourseRecommendsItemAdapter extends BaseAdapter<MainBean.CourseReco
     @Override
     protected void setItemView(View itemView, MainBean.CourseRecommendsBean courseRecommendsBean, int i) {
         CourseRecommendsItemView view = (CourseRecommendsItemView) itemView;
-        view.setCourseItem(courseRecommendsBean);
+        view.setCourseItem(courseRecommendsBean,i);
     }
 }

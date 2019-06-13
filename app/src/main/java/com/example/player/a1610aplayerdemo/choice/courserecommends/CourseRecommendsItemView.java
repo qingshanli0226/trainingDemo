@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo.choice.courserecommends;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -44,10 +45,17 @@ public class CourseRecommendsItemView extends LinearLayout {
 
     }
 
-    public void setCourseItem(MainBean.CourseRecommendsBean courseItem){
+    public void setCourseItem(MainBean.CourseRecommendsBean courseItem,int i){
         String title = courseItem.getAppTitle();
         String image = courseItem.getImageUrl();
         Picasso.with(context).load(image).into(iv);
         tv.setText(title);
+        final int a = i;
+        iv.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("click", "onClick:推荐课程 "+a);
+            }
+        });
     }
 }

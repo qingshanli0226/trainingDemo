@@ -21,6 +21,20 @@ public class ChoiceFragment extends BaseFragment<Object,View> {
         titlebar_right.setVisibility(View.GONE);
         titlebar_title.setVisibility(View.GONE);
         titlebar_search.setVisibility(View.VISIBLE);
+        titlebar_left.setVisibility(View.VISIBLE);
+        titlebar_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("click", "onClick: 小头像" );
+            }
+        });
+
+        titlebar_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("click", "onClick: 搜索框");
+            }
+        });
     }
 
     private ChoiceAdapter adapter = new ChoiceAdapter();

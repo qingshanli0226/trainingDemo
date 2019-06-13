@@ -13,10 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.bean.MainBean;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
 import retrofit2.http.Url;
 
@@ -32,6 +35,7 @@ public class BannerItemView extends LinearLayout {
     private void initView(Context context) {
         View inflate = LayoutInflater.from(context).inflate(R.layout.fragment_item_banner, this);
         choice_banner = inflate.findViewById(R.id.choice_banner);
+
     }
 
     public BannerItemView(Context context, AttributeSet attrs) {
@@ -40,14 +44,28 @@ public class BannerItemView extends LinearLayout {
     }
 
 
-    public void setChoice_bannerData(List<String> url){
+    public void setChoice_bannerData(List<MainBean.HomeBannerBean> homeBanner){
+        List<String> list = new ArrayList<>();
+        List<String> id = new ArrayList<>();
+        for (int i1 = 0; i1 < homeBanner.size(); i1++) {
+            MainBean.HomeBannerBean homeBannerBean = homeBanner.get(i1);
+            list.add(homeBannerBean.getBannerUrl());
+        }
+
         choice_banner
-                .setImages(url)
+                .setImages(list)
                 .setIndicatorGravity(Gravity.CENTER)
                 .isAutoPlay(true)
                 .setDelayTime(3000)
                 .setImageLoader(new MyBannerLoder())
                 .start();
+
+        choice_banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Log.e("click", "OnBannerClick: 轮播图"+position);
+            }
+        });
     }
 
 

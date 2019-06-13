@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.choice.masterlives;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -51,7 +52,7 @@ class MasterLivesItemView extends LinearLayout {
 
     }
 
-    public void setMasterItem(MainBean.MasterLivesBean masterLivesBean){
+    public void setMasterItem(MainBean.MasterLivesBean masterLivesBean,int i){
         String title = masterLivesBean.getAppTitle();
         String image = masterLivesBean.getImageUrl();
         Picasso.with(context).load(image).into(iv);
@@ -62,5 +63,12 @@ class MasterLivesItemView extends LinearLayout {
         this.teacherTitle.setText(teacherTitle);
         int price = masterLivesBean.getPrice();
         money.setText(price+"元");
+        final int a = i;
+        iv.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("click", "onClick: 大师课"+a);
+            }
+        });
     }
 }

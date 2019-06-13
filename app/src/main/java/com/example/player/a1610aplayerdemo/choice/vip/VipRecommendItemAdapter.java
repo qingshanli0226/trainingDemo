@@ -19,6 +19,6 @@ public class VipRecommendItemAdapter extends BaseAdapter<MainBean.VipRecommendBe
     @Override
     protected void setItemView(View itemView, MainBean.VipRecommendBean vipRecommendBean, int i) {
         VipRecommendItemView vipRecommendItemView = (VipRecommendItemView) itemView;
-        vipRecommendItemView.setItem(vipRecommendBean);
+        vipRecommendItemView.setItem(vipRecommendBean,i);
     }
 }

@@ -19,7 +19,7 @@ public class CategoryItemAdapter extends BaseAdapter<MainBean.HomeCategoryBean,C
     @Override
     protected void setItemView(View itemView, MainBean.HomeCategoryBean homeCategoryBean, int i) {
         CategoryItemView categoryItemView = (CategoryItemView) itemView;
-        categoryItemView.setItemCategory(homeCategoryBean);
+        categoryItemView.setItemCategory(homeCategoryBean,i);
     }
 
 }

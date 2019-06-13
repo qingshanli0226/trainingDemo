@@ -21,7 +21,7 @@ public class MasterLivesItemAdapter extends BaseAdapter<MainBean.MasterLivesBean
     @Override
     protected void setItemView(View itemView, MainBean.MasterLivesBean masterLivesBean, int i) {
         MasterLivesItemView masterLivesItemView = (MasterLivesItemView) itemView;
-        masterLivesItemView.setMasterItem(masterLivesBean);
+        masterLivesItemView.setMasterItem(masterLivesBean,i);
     }
 
 }

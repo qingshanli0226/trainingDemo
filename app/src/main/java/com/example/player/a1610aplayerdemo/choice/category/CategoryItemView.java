@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo.choice.category;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -42,8 +43,15 @@ public class CategoryItemView extends LinearLayout {
         this.context = context;
     }
 
-    public void setItemCategory(MainBean.HomeCategoryBean homeCategoryBean){
+    public void setItemCategory(MainBean.HomeCategoryBean homeCategoryBean,int i){
         tv.setText(homeCategoryBean.getTitle());
         Picasso.with(context).load(homeCategoryBean.getBannerUrl()).into(iv);
+        final int a = i;
+        iv.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("click", "onClick:种类 "+a);
+            }
+        });
     }
 }

@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -46,6 +47,12 @@ public class VipRecommendView extends LinearLayout {
         VipRecommendItemAdapter vipRecommendItemAdapter = new VipRecommendItemAdapter();
         recyclerView.setAdapter(vipRecommendItemAdapter);
         vipRecommendItemAdapter.updataData(vipData);
+        more.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("click", "onClick: VIP更多");
+            }
+        });
     }
 }
 

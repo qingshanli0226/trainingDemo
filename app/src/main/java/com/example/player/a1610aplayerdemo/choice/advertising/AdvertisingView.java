@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo.choice.advertising;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,5 +40,14 @@ public class AdvertisingView extends LinearLayout {
     public AdvertisingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
+    }
+
+    public void setClick(){
+        linear.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("click", "onClick:广告 ");
+            }
+        });
     }
 }

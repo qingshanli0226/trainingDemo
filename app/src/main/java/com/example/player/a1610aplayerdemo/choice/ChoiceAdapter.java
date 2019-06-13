@@ -80,11 +80,7 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
         if(i == BANNER){
             BannerItemView bannerItemView = (BannerItemView) itemView;
             List<MainBean.HomeBannerBean> homeBanner = (List<MainBean.HomeBannerBean>) o;
-            List<String> list = new ArrayList<>();
-            for (int i1 = 0; i1 < homeBanner.size(); i1++) {
-                list.add(homeBanner.get(i1).getBannerUrl());
-            }
-            bannerItemView.setChoice_bannerData(list);
+            bannerItemView.setChoice_bannerData(homeBanner);
         }else if (i == CATEGORY){
             CategoryView categoryItemView = (CategoryView) itemView;
             List<MainBean.HomeCategoryBean> categoryBeans = (List<MainBean.HomeCategoryBean>) o;
@@ -95,6 +91,7 @@ public class ChoiceAdapter extends BaseAdapter<Object, View> {
             vipRecommendView.setVipData(vipRecommendBeans);
         }else if(i == advertising){
             AdvertisingView advertisingView = (AdvertisingView) itemView;
+            advertisingView.setClick();
         }else if (i == ZLLIST){
             ZLView zlView = (ZLView) itemView;
             List<MainBean.ZlListBean> zlListBeans = (List<MainBean.ZlListBean>) o;
