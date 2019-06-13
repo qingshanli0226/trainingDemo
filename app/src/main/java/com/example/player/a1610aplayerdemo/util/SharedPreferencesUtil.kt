@@ -9,24 +9,24 @@ import com.example.player.a1610aplayerdemo.ui.activity.SplashActivity
 
 class SharedPreferencesUtil {
 
-    var myApplication:MyApplication
+    lateinit var context:Context
 
-    constructor(myApplication: MyApplication) {
-        this.myApplication = myApplication
+    constructor(context: Context) {
+        this.context = context
     }
 
 
     fun SharedPreferencesSave2String(key: String, info: String): Unit {
-        var sp: SharedPreferences = myApplication.getSharedPreferences(key, MODE_PRIVATE)
+        var sp: SharedPreferences = context.getSharedPreferences(key, MODE_PRIVATE)
         var et: SharedPreferences.Editor = sp.edit()
         et.putString(key, info)
         et.commit()
     }
 
 
-    fun SharedPreferencesGet2String(key: String): String {
-        var sp: SharedPreferences = myApplication.getSharedPreferences(key, MODE_PRIVATE)
-        var result: String = sp.getString(key, "")
+    fun SharedPreferencesGet2String(key: String): String? {
+        var sp: SharedPreferences = context.getSharedPreferences(key, MODE_PRIVATE)
+        var result: String? = sp.getString(key, "")
         if (!"".equals(result)) {
             return result
         } else {

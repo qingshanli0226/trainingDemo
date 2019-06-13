@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">1610APlayerDemo</string>
+    <string name="vipitem">每天不到1元钱，享受200位顶级名师指导</string>
+    <string name="vip_title">会员专享</string>
+    <string name="more"><![CDATA[更多 >]]></string>
+    <string name="zlist_title1">专栏</string>
+    <string name="zlist_title2">专区</string>
+    <string name="course_title2">课程</string>
+    <string name="course_title1">推荐</string>
+    <string name="master_title">大师课</string>
 </resources>

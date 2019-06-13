@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp">
+        <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="@string/vip_title"
+                  android:textColor="#9B7F52"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:id="@+id/zhuanlan"
+                  android:layout_centerVertical="true"
+        />
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="@string/more"
+                  android:textSize="10sp"
+                  android:layout_alignParentRight="true"
+                  android:layout_centerVertical="true"
+                  android:layout_marginRight="10dp"
+        />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/item4recyc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+
+            android:layout_marginTop="30dp"
+            android:layout_width="500dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="40dp"
+        android:background="@drawable/vip_shape"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/vipitem"
+            android:textColor="#fff"
+
+    />
+</LinearLayout>

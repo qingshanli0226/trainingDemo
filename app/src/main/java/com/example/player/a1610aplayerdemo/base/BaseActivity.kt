@@ -1,33 +1,21 @@
 package com.example.player.a1610aplayerdemo.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
-import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.toast
 
-abstract class BaseActivity : AppCompatActivity(),AnkoLogger{
+abstract class BaseActivity: AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
-        initListener()
         initData()
-
+        initListener()
     }
 
-    open protected fun initData() {
-
-    }
-
-    open protected fun initListener() {
-
-    }
-
-    abstract fun getLayoutId():Int
+    abstract fun getLayoutId(): Int
 
 
-    protected fun myToast(msg:String){
-        runOnUiThread { toast(msg) }
-    }
+    abstract fun initData()
+    abstract  fun initListener()
 }
