@@ -12,8 +12,8 @@ class MainViewPagerAdapter : FragmentPagerAdapter {
     var fms:MutableList<Fragment> = ArrayList()
     constructor(fm:FragmentManager):super(fm){
         fms.add(ChoiceFragment())
-        fms.add(StudyFragment())
         fms.add(VIPFragment())
+        fms.add(StudyFragment())
         fms.add(MyFragment())
     }
     override fun getCount(): Int = fms.size

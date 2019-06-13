@@ -33,7 +33,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:gravity="center"
+                android:gravity="center|left"
                 android:id="@+id/master_title"
                 android:textColor="#000000"
                 android:textSize="16sp"

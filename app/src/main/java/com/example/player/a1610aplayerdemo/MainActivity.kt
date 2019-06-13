@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
             }
             diao()
-            main_vp.setCurrentItem(1)
+            main_vp.setCurrentItem(2)
 
         }
         linear_main_vip.setOnClickListener {
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                 linear_main_my_flag = false
             }
             diao()
-            main_vp.setCurrentItem(2)
+            main_vp.setCurrentItem(1)
 
         }
         linear_main_my.setOnClickListener {

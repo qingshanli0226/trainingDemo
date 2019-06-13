@@ -3,9 +3,11 @@ package com.example.player.a1610aplayerdemo.net;
 import com.example.player.a1610aplayerdemo.bean.Bean;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
 import com.example.player.a1610aplayerdemo.bean.UserBean;
+import com.example.player.a1610aplayerdemo.bean.VipDataBean;
 import io.reactivex.Observable;
 import retrofit2.http.*;
 
+import java.util.List;
 import java.util.Map;
 
 public interface IServiceApi {
@@ -21,4 +23,13 @@ public interface IServiceApi {
      */
     @GET
     Observable<Bean<MainBean>> getMainData(@HeaderMap Map<String,String> map,@Url String url);
+
+    /**
+     * 获取VIP界面的数据
+     * @param map
+     * @param url
+     * @return
+     */
+    @GET
+    Observable<Bean<List<VipDataBean>>> getVipData(@HeaderMap Map<String,String> map,@Url String url);
 }
