@@ -25,6 +25,9 @@
         </activity>
         <activity android:name=".ui.activity.BannerActivity"
             android:theme="@style/AppTheme.FullScorn"></activity>
+        <activity android:name=".ui.activity.LoginActivity"/>
+        <activity android:name=".ui.activity.RegisterActivity"/>
+        <activity android:name=".ui.activity.SetPasswordActivity"/>
     </application>
 
 </manifest>

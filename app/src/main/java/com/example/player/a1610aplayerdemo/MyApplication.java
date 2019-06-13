@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.player.a1610aplayerdemo.utils.CrashMerss;
 import com.example.player.a1610aplayerdemo.utils.SharePresenterUtils;
 
 /**
@@ -15,6 +16,7 @@ public class MyApplication extends Application {
         super.onCreate();
         context =this;
         SharePresenterUtils.init(this);
+        CrashMerss.getInstance(this);
     }
 
     public static Context getContext() {

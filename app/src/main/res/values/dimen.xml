@@ -19,6 +19,7 @@
     <dimen name="master_textsize">19sp</dimen>
     <dimen name="category_textsize">16sp</dimen>
     <dimen name="margin_topAndBottom">15dp</dimen>
+    <dimen name="input_textsize">13sp</dimen>
     <dimen name="special_more_textsize">11sp</dimen>
     <dimen name="margin_leftAndRight">10dp</dimen>
     <dimen name="topAndBottom_padding">5dp</dimen>

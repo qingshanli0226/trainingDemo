@@ -9,8 +9,10 @@ import com.example.player.a1610aplayerdemo.adapter.FindAdapter
 import com.example.player.a1610aplayerdemo.base.BaseFragment
 import com.example.player.a1610aplayerdemo.base.IBaseView
 import com.example.player.a1610aplayerdemo.bean.HomeBean
+import com.example.player.a1610aplayerdemo.ui.activity.LoginActivity
 import com.example.player.a1610aplayerdemo.utils.SharePresenterUtils
 import kotlinx.android.synthetic.main.fragment_find.*
+import org.jetbrains.anko.support.v4.startActivity
 
 /**
  * Created by Lmz on 2019/06/11
@@ -30,7 +32,9 @@ class FindFragment :BaseFragment(),IBaseView<HomeBean> {
         manger.orientation=VERTICAL
         find_recyclerview.layoutManager = manger
 
-
+        find_heard_avatar.setOnClickListener {
+            startActivity<LoginActivity>()
+        }
 
         presenter.attachView(this)
         presenter.getData()

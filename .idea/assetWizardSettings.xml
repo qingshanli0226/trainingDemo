@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/D:/Android/android/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_blur_on_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/D:/Android/android/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_arrow_back_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -33,9 +33,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="me_img4" />
+                                      <entry key="outputName" value="login_back" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="e51200" />
+                                      <entry key="themeColor" value="6b6d72" />
                                     </map>
                                   </option>
                                 </PersistentState>
