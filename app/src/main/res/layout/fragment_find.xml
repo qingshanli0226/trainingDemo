@@ -5,28 +5,52 @@
               android:layout_height="match_parent">
 
 
-    <!--<com.youth.banner.Banner-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_weight="2.5"-->
-            <!--android:padding="10dp"-->
-            <!--android:id="@+id/banner"-->
-    <!--/>-->
 
-    <!--<android.support.v7.widget.RecyclerView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_weight="2.5"-->
-            <!--android:id="@+id/recycler"-->
-    <!--/>-->
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#97013F"
+
+
+    >
+                <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/search_user"
+                        android:background="@drawable/js_classify_images_classify_tx_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                />
+        
+                <LinearLayout 
+                        android:gravity="center"
+                        android:layout_width="450dp"
+                        android:layout_height="30dp"
+                        android:layout_toRightOf="@+id/search_user"
+                        android:background="@drawable/search_back"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                >
+                    <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/blk_search_icon"
+                    />
+                    <TextView
+
+                            android:layout_width="wrap_content" android:layout_height="30dp"
+                            android:text="@string/search_title"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                    />
+                </LinearLayout>
+    </RelativeLayout>
 
 
     <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:id="@+id/recycler1"
-
     />
 
 
