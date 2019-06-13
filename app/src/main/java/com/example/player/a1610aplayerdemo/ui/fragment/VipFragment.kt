@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_vip.*
  * Created by Lmz on 2019/06/11
  */
 class VipFragment :BaseFragment(),IBaseView<MemberBean> {
-    var presenter=IVipPresenter()
+    var presenter= VipPresenter()
     var adapter = VipView_Adapter()
     override fun initview(): View? {
         return View.inflate(context, R.layout.fragment_vip,null);

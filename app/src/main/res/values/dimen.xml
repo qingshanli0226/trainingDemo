@@ -9,6 +9,7 @@
     <dimen name="recommend_height">200dp</dimen>
     <dimen name="recommend_viewpager_h">150dp</dimen>
     <dimen name="margin_bottom">86dp</dimen>
+    <dimen name="me_avatar">80dp</dimen>
     <dimen name="bottombarOrHeardHeight">60dp</dimen>
     <dimen name="banner_radius">50dp</dimen>
     <dimen name="avatarSize">30dp</dimen>

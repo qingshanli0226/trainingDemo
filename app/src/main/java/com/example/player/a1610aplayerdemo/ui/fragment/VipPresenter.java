@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers;
  * Created by Lmz on 2019/06/12
  * vip页面的presenter
  */
-public class IVipPresenter implements IBasePresenter<MemberBean>{
+public class VipPresenter implements IBasePresenter<MemberBean>{
     private IBaseView iBaseView;
     @Override
     public void getData() {
@@ -46,6 +46,10 @@ public class IVipPresenter implements IBasePresenter<MemberBean>{
 
     @Override
     public void detachView() {
-        iBaseView =null;
+
+        if (iBaseView!=null){
+            iBaseView =null;
+        }
+
     }
 }

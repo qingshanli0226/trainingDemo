@@ -99,6 +99,9 @@ public class ISplashPresenter implements IBasePresenter<String>{
 
     @Override
     public void detachView() {
+        if (iBaseView!=null){
             iBaseView =null;
+        }
+
     }
 }

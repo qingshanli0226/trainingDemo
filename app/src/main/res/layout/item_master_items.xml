@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="录播课"
-                android:background="#9C3434"
+                android:background="@color/wangdashi"
                 android:paddingLeft="@dimen/margin_leftAndRight"
                 android:paddingRight="@dimen/margin_leftAndRight"
                 android:paddingTop="@dimen/topAndBottom_padding"
@@ -56,7 +56,7 @@
             android:maxLines="1"
             android:ellipsize="end"
             android:text="adsadasdas"
-            android:textColor="#000"
+            android:textColor="@color/textColor"
 
             />
 
@@ -65,7 +65,7 @@
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:text="adsadasdas"
-            android:textColor="#ccc"
+            android:textColor="@color/pay"
             android:gravity="right"
             android:id="@+id/item_master_items_teacher"
             />
@@ -88,7 +88,7 @@
             android:id="@+id/item_master_items_price"
             android:text="sadsadsad"
             android:layout_width="@dimen/main_weight"
-            android:textColor="#DA0001"
+            android:textColor="@color/priceColor"
             android:gravity="right"
             android:layout_height="match_parent"
             android:layout_weight="2"/>

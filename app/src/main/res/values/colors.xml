@@ -3,4 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="textColor_black">#ffffff</color>
+    <color name="textColor">#000</color>
+    <color name="wangdashi">#E54600</color>
+    <color name="pay">#ccc</color>
+    <color name="priceColor">#DA0001</color>
+    <color name="vipcolor">#957848</color>
 </resources>

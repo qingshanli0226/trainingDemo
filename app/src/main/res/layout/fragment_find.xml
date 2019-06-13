@@ -28,7 +28,7 @@
             android:layout_marginTop="@dimen/margin_topAndBottom"
             android:layout_marginBottom="@dimen/margin_topAndBottom"
             android:layout_marginLeft="@dimen/margin_leftAndRight"
-            android:textColor="#ffffff"
+            android:textColor="@color/textColor_black"
             android:layout_marginRight="@dimen/margin_leftAndRight"
             android:layout_height="match_parent" />
 

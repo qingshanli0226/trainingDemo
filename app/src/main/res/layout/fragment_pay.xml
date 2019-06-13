@@ -1,10 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="pay"
-        android:gravity="center"/>
+        android:orientation="horizontal"
+        android:id="@+id/pay_layout"
+        android:layout_height="@dimen/bottombarOrHeardHeight">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/pay_tablayout"
+                android:layout_width="match_parent"
+                app:tabTextColor="@color/pay"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/textColor"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已购课程"/>
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="会员课程"/>
+
+            </android.support.design.widget.TabLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/pay"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/pay_layout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <FrameLayout
+            android:id="@+id/pay_fragmelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/pay_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_login"
+                    android:layout_width="wrap_content"
+                    android:text="您还没有登录"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:id="@+id/text_login2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_login"
+                    android:text="登录后才能在（已购）中查看全部课程哦"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="登录/注册"
+                    android:id="@+id/pay_login_btn"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_login2"
+                    android:textColor="@color/textColor_black"
+                    android:background="@color/colorAccent"/>
+                
+            </android.support.constraint.ConstraintLayout>
+
+    </RelativeLayout>
+
+
+
+
 </android.support.constraint.ConstraintLayout>

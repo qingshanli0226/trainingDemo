@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers;
  * Created by Lmz on 2019/06/11
  *  发现页面presenter
  */
-public class IFindPresenter implements IBasePresenter<HomeBean>{
+public class FindPresenter implements IBasePresenter<HomeBean>{
     private IBaseView iBaseView;
 
     @Override
@@ -44,6 +44,9 @@ public class IFindPresenter implements IBasePresenter<HomeBean>{
 
     @Override
     public void detachView() {
-        iBaseView=null;
+        if (iBaseView!=null){
+            iBaseView=null;
+        }
+
     }
 }

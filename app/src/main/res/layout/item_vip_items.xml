@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="@dimen/topAndBottom_padding"
-        app:cardCornerRadius="@dimen/avatarSizeAndmarginsize"
+        app:cardCornerRadius="@dimen/avatarSize"
         >
 
         <ImageView
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="这里是标题"
-        android:textColor="#000"
+        android:textColor="@color/textColor"
         android:layout_marginLeft="@dimen/topAndBottom_padding"
         android:layout_marginTop="@dimen/margin_leftAndRight"
         android:maxLines="1"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="仅会员可看"
             android:textSize="9sp"
-            android:textColor="#957848"
+            android:textColor="@color/vipcolor"
             android:layout_marginLeft="@dimen/topAndBottom_padding"
             />
         <TextView
@@ -50,7 +50,7 @@
             android:text="会员五折"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginRight="@dimen/topAndBottom_padding"
-            android:textColor="#E52D2D"
+            android:textColor="@color/wangdashi"
             android:textSize="9sp"/>
 
     </android.support.constraint.ConstraintLayout>

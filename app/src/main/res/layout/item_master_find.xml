@@ -18,7 +18,7 @@
             android:textStyle="bold"
             android:id="@+id/special_zl"
             android:textSize="@dimen/master_textsize"
-            android:textColor="#E54600"
+            android:textColor="@color/wangdashi"
             />
 
     </android.support.constraint.ConstraintLayout>

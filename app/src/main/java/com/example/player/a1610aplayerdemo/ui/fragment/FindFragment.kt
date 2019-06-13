@@ -2,7 +2,6 @@ package com.example.player.a1610aplayerdemo.ui.fragment
 
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.LinearLayoutManager.VERTICAL
-import android.util.Log
 import android.view.View
 import com.bumptech.glide.Glide
 import com.example.player.a1610aplayerdemo.R
@@ -18,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_find.*
  */
 class FindFragment :BaseFragment(),IBaseView<HomeBean> {
 
-
+    val presenter = FindPresenter()
     override fun initview(): View? {
         return View.inflate(context,R.layout.fragment_find,null)
     }
@@ -32,7 +31,7 @@ class FindFragment :BaseFragment(),IBaseView<HomeBean> {
         find_recyclerview.layoutManager = manger
 
 
-        val presenter =IFindPresenter()
+
         presenter.attachView(this)
         presenter.getData()
     }
@@ -47,6 +46,10 @@ class FindFragment :BaseFragment(),IBaseView<HomeBean> {
             var adapter = FindAdapter(context,bean)
             find_recyclerview.adapter = adapter
         }
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.detachView()
     }
 }
