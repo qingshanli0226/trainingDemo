@@ -1,7 +1,7 @@
 package com.example.player.a1610aplayerdemo.net;
 
-import com.example.player.a1610aplayerdemo.home.bean.HomeBean;
-import com.example.player.a1610aplayerdemo.member.bean.MemberBean;
+import com.example.player.a1610aplayerdemo.ui.home.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.ui.member.bean.MemberBean;
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
