@@ -8,6 +8,13 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.mainactivity.adapter.MainVpAdapter
+import com.example.player.a1610aplayerdemo.net.Contance
+import com.example.player.a1610aplayerdemo.net.RetrofitCreator
+import com.example.player.a1610aplayerdemo.token.UserBean
+import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
  // 声明控件
@@ -27,6 +34,35 @@ class MainActivity : AppCompatActivity() {
         initView()
           init();
         initListener()
+        initUser();
+    }
+//  进入主页面， 获取用户信息， 可以拿到token
+    private fun initUser() {
+        var paramMap:Map<String,String> = mapOf(Pair("DeviceKey",Contance.DEVICEKEY),
+            Pair("Android-VersionCode","43"),
+            Pair("Android-channel","guoyun"),Pair("Tingyun_Process","true")
+        )
+       RetrofitCreator.getInstance().retrofitApiService.getUserData(paramMap)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object :Observer<Result<UserBean>>{
+                override fun onComplete() {
+
+                }
+
+                override fun onSubscribe(d: Disposable) {
+
+                }
+
+                override fun onNext(t: Result<UserBean>) {
+
+                }
+
+                override fun onError(e: Throwable) {
+
+                }
+
+            })
     }
 
     private fun initListener() {
@@ -71,3 +107,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+private fun Any.subscribe(observer: Observer<Result<UserBean>>) {
+
+}
+
