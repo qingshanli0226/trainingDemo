@@ -34,7 +34,7 @@ public class VipAdapter extends RecyclerView.Adapter<VipAdapter.MyViewHolder>{
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         context = viewGroup.getContext();
-        View view = LayoutInflater.from(context).inflate(R.layout.vip_item,viewGroup,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.curriculum_vip_item,viewGroup,false);
         return new MyViewHolder(view);
     }
 

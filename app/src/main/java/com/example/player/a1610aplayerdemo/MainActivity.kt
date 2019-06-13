@@ -6,12 +6,11 @@ import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import com.example.player.a1610aplayerdemo.activity.HomeActivity
 import com.example.player.a1610aplayerdemo.adapter.guides.MyGuidesAdapter
-import com.example.player.a1610aplayerdemo.url.Website
+import com.example.player.a1610aplayerdemo.url.SiteUrl
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity(){
         }else{
             main_guide_vp.visibility = View.GONE
             main_greet_iv.visibility = View.VISIBLE
-            Picasso.with(this@MainActivity).load(Website.GREET).into(main_greet_iv)
+            Picasso.with(this@MainActivity).load(SiteUrl.GREET).into(main_greet_iv)
             main_greet_tv.visibility = View.VISIBLE
             main_greet_tv.setOnClickListener(object:View.OnClickListener {
                 override fun onClick(p0: View?) {

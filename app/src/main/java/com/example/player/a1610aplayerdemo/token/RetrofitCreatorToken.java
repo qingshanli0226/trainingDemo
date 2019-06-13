@@ -1,7 +1,7 @@
 package com.example.player.a1610aplayerdemo.token;
 
 import com.example.player.a1610aplayerdemo.net.NetApiService;
-import com.example.player.a1610aplayerdemo.url.Website;
+import com.example.player.a1610aplayerdemo.url.SiteUrl;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -27,7 +27,7 @@ public class RetrofitCreatorToken {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
-                .baseUrl(Website.TOKEN_URL)
+                .baseUrl(SiteUrl.TOKEN_URL)
                 .build();
 
         netApiService = retrofit.create(NetApiService.class);

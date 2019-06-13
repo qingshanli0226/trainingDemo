@@ -27,6 +27,12 @@ import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.curriculum.adapter.*;
 import com.example.player.a1610aplayerdemo.curriculum.bean.Bean;
 import com.example.player.a1610aplayerdemo.curriculum.presenter.CurriculumPresenter;
+import com.scwang.smartrefresh.header.BezierCircleHeader;
+import com.scwang.smartrefresh.header.WaterDropHeader;
+import com.scwang.smartrefresh.header.WaveSwipeHeader;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
@@ -38,7 +44,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CurriculumFragment extends Fragment implements IBaseView, OnBannerListener, KindAdapter.onClickItemListener, VipAdapter.onClickItemListener, ZlAdapter.onClickItemListener, CourseRecommendsAdapter.onClickItemListener,MasterAdapter.onClickItemListener {
+public class CurriculumFragment extends Fragment implements IBaseView, OnBannerListener, KindAdapter.onClickItemListener, VipAdapter.onClickItemListener, ZlAdapter.onClickItemListener, CourseRecommendsAdapter.onClickItemListener, MasterAdapter.onClickItemListener {
     @BindView(R.id.curriculum_search)
     EditText curriculumSearch;
     @BindView(R.id.curriculum_banner)
@@ -60,6 +66,8 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
     TextView zlMoreTv;
     @BindView(R.id.curriculum_master_rv)
     RecyclerView curriculumMasterRv;
+    @BindView(R.id.curriculum_srl)
+    SmartRefreshLayout curriculumSrl;
     private IBasePresenter iBasePresenter;
 
     private List<Bean.CourseRecommendsBean> courseRecommendsBeans;
@@ -121,10 +129,20 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
 
         curriculumCourseRecommendsRv.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
 
-        curriculumMasterRv.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false){
+        curriculumMasterRv.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false) {
             @Override
             public boolean canScrollVertically() {
                 return false;
+            }
+        });
+
+        curriculumSrl.setRefreshHeader(new WaterDropHeader(getActivity()));
+
+        curriculumSrl.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                iBasePresenter.getData();
+                refreshlayout.finishRefresh();
             }
         });
     }

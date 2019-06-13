@@ -1,9 +1,6 @@
-package com.example.player.a1610aplayerdemo.curriculum.net;
+package com.example.player.a1610aplayerdemo.net;
 
-import android.webkit.WebView;
-import com.example.player.a1610aplayerdemo.net.NetApiService;
-import com.example.player.a1610aplayerdemo.net.TokenInterceptor;
-import com.example.player.a1610aplayerdemo.url.Website;
+import com.example.player.a1610aplayerdemo.url.SiteUrl;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -11,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.concurrent.TimeUnit;
 
-public class RetrofitCreatorCurriculum {
+public class RetrofitCreator {
     public static NetApiService netApiService;
 
     public static NetApiService getNetApiService() {
@@ -30,7 +27,7 @@ public class RetrofitCreatorCurriculum {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
-                .baseUrl(Website.CURRICULUM_HEAD)
+                .baseUrl(SiteUrl.URL_HEAD)
                 .build();
 
         netApiService = retrofit.create(NetApiService.class);

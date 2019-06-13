@@ -31,6 +31,11 @@ public class TokenActivity extends AppCompatActivity implements IBaseView {
 
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_READ_PHONE_STATE);
+        }else {
+            sp = getSharedPreferences("tokenKey",Context.MODE_PRIVATE);
+            iBasePresenter = new TokenPresenter();
+            iBasePresenter.attachView(this);
+            iBasePresenter.getData();
         }
     }
 

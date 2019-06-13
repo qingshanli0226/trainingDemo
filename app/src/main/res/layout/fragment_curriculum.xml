@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".curriculum.CurriculumFragment"
-             android:orientation="vertical">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+              tools:context=".curriculum.CurriculumFragment"
+              android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.Toolbar
@@ -29,157 +29,166 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/curriculum_srl"
+            app:srlPrimaryColor="#27edbc"
+            app:srlEnablePreviewInEditMode="true">
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                      android:orientation="vertical">
-            <com.youth.banner.Banner android:layout_width="match_parent"
-                                     android:id="@+id/curriculum_banner"
-                                     android:layout_height="180dp">
-            </com.youth.banner.Banner>
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
                           android:orientation="vertical">
-                <android.support.v7.widget.RecyclerView
-                        android:id="@+id/curriculum_category_rv"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                </android.support.v7.widget.RecyclerView>
-            </LinearLayout>
+                <com.youth.banner.Banner android:layout_width="match_parent"
+                                         android:id="@+id/curriculum_banner"
+                                         android:layout_height="180dp">
+                </com.youth.banner.Banner>
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical">
+                    <android.support.v7.widget.RecyclerView
+                            android:id="@+id/curriculum_category_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="会员专享"
-                        android:textStyle="bold"
-                        android:textColor="#a08459"/>
-
-                <TextView
-                        android:id="@+id/vip_more_tv"
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="更多>"
-                        android:gravity="right"/>
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
 
-            </LinearLayout>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="会员专享"
+                            android:textStyle="bold"
+                            android:textColor="#a08459"/>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                          android:orientation="vertical">
-                <android.support.v7.widget.RecyclerView
-                        android:id="@+id/curriculum_vip_rv"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                </android.support.v7.widget.RecyclerView>
-            </LinearLayout>
+                    <TextView
+                            android:id="@+id/vip_more_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="更多>"
+                            android:gravity="right"/>
 
-            <TextView android:layout_width="match_parent" android:layout_height="40dp" android:background="@drawable/vip_image"
-                android:layout_marginTop="10dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="10dp"
-                android:text="每天不到1元钱 , 享受200位顶级名师指导" android:textColor="#fff" android:gravity="center"
-                android:id="@+id/curriculum_register_tv"/>
+                </LinearLayout>
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical">
+                    <android.support.v7.widget.RecyclerView
+                            android:id="@+id/curriculum_vip_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="专栏"
-                        android:textStyle="bold"
-                        android:textColor="#bf0256"/>
+                <TextView android:layout_width="match_parent" android:layout_height="40dp" android:background="@drawable/vip_image"
+                          android:layout_marginTop="10dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="10dp"
+                          android:text="每天不到1元钱 , 享受200位顶级名师指导" android:textColor="#fff" android:gravity="center"
+                          android:id="@+id/curriculum_register_tv"/>
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="专区"
-                        android:textColor="#000"/>
-
-                <TextView
-                        android:id="@+id/zl_more_tv"
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="更多>"
-                        android:gravity="right"/>
+                        android:orientation="horizontal">
 
-            </LinearLayout>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="专栏"
+                            android:textStyle="bold"
+                            android:textColor="#bf0256"/>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                          android:orientation="vertical">
-                <android.support.v7.widget.RecyclerView
-                        android:id="@+id/curriculum_zl_rv"
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="专区"
+                            android:textColor="#000"/>
+
+                    <TextView
+                            android:id="@+id/zl_more_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="更多>"
+                            android:gravity="right"/>
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical">
+                    <android.support.v7.widget.RecyclerView
+                            android:id="@+id/curriculum_zl_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+
+                <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                </android.support.v7.widget.RecyclerView>
-            </LinearLayout>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                <TextView
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="推荐"
-                        android:textStyle="bold"
-                        android:textColor="#bf0256"/>
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="课程"
-                        android:textColor="#000"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="推荐"
+                            android:textStyle="bold"
+                            android:textColor="#bf0256"/>
 
-            </LinearLayout>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="课程"
+                            android:textColor="#000"/>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                          android:orientation="vertical">
-                <android.support.v7.widget.RecyclerView
-                        android:id="@+id/curriculum_courseRecommends_rv"
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical">
+                    <android.support.v7.widget.RecyclerView
+                            android:id="@+id/curriculum_courseRecommends_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+
+                <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                </android.support.v7.widget.RecyclerView>
-            </LinearLayout>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                <TextView
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="大师课"
-                        android:textStyle="bold"
-                        android:textColor="#bf0256"/>
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="大师课"
+                            android:textStyle="bold"
+                            android:textColor="#bf0256"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical">
+                    <android.support.v7.widget.RecyclerView
+                            android:id="@+id/curriculum_master_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                          android:orientation="vertical">
-                <android.support.v7.widget.RecyclerView
-                        android:id="@+id/curriculum_master_rv"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                </android.support.v7.widget.RecyclerView>
-            </LinearLayout>
+        </ScrollView>
 
-        </LinearLayout>
-
-    </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </LinearLayout>
