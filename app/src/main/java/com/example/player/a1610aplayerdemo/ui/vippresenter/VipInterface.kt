@@ -13,7 +13,7 @@ class VipInterface {
 
     interface VipView : BaseView {
 
-        fun onGetDataSuccess(bean: VipDateBean)
+        fun onGetDataSuccess(bean: List<VipDateBean>)
         fun onGetDataFailed(errorMsg: String)
 
 

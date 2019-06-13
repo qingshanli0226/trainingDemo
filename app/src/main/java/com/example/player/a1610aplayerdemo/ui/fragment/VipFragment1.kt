@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 
 import android.view.View
-
-
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.base.BaseFragment
 import com.example.player.a1610aplayerdemo.bean.VipDateBean
@@ -32,9 +30,10 @@ class VipFragment : BaseFragment() ,VipInterface.VipView{
 
     }
 
-    override fun onGetDataSuccess(bean: VipDateBean) {
+    override fun onGetDataSuccess(bean: List<VipDateBean>) {
 
-        adp.refreshData(bean.data)
+
+        adp.refreshData(bean)
 
         viprecy.adapter = adp
     }

@@ -1,9 +1,11 @@
 package com.example.player.a1610aplayerdemo.ui.xuankeadapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +14,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.base.BaseAdapter;
 import com.example.player.a1610aplayerdemo.bean.XuanKeDateBean;
+import com.example.player.a1610aplayerdemo.ui.activy.TuiJianClassActivity;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.Transformer;
@@ -193,7 +197,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     class DaShiKeHolder extends RecyclerView.ViewHolder {
 
-        ListView channel;
+        RecyclerView channel;
 
         public DaShiKeHolder(@NonNull View itemView) {
             super(itemView);
@@ -203,7 +207,10 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public void setDate(List<XuanKeDateBean.MasterLivesBean> channelInfoBeans){
             DaShiKeAdp channelAdp = new DaShiKeAdp();
-            channelAdp.updateData(channelInfoBeans);
+            channelAdp.refreshData(channelInfoBeans);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MyApp.instance);
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            channel.setLayoutManager(linearLayoutManager);
             channel.setAdapter(channelAdp);
 
         }
@@ -269,7 +276,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     }
 
-    class TuiJianHolder extends RecyclerView.ViewHolder{
+    class TuiJianHolder extends RecyclerView.ViewHolder implements BaseAdapter.Onckitem {
 
         RecyclerView recyclerView;
         public TuiJianHolder(@NonNull View itemView) {
@@ -283,11 +290,21 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public void setDate(List<XuanKeDateBean.CourseRecommendsBean> channel){
 
             TuiJianAdp adp = new TuiJianAdp();
+            adp.setOnckitem(this);
             adp.refreshData(channel);
             recyclerView.setAdapter(adp);
 
         }
+        @Override
+        public void dianji(int i) {
 
+            Intent intent = new Intent(MyApp.instance, TuiJianClassActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            MyApp.instance.startActivity(intent);
+            Log.d("mmm",tuijianlist.get(i).getCourseId()+"--------");
+
+        }
     }
 
 

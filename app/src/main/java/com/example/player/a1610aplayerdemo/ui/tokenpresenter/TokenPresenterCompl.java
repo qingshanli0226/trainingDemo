@@ -13,6 +13,7 @@ import com.example.player.a1610aplayerdemo.net.MyNetFunction;
 import com.example.player.a1610aplayerdemo.net.ResEntity;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
 import com.example.player.a1610aplayerdemo.ui.vippresenter.VipInterface;
+import com.example.player.a1610aplayerdemo.util.DeviceKye;
 import com.example.player.a1610aplayerdemo.util.Md5Utils;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -38,20 +39,24 @@ public class TokenPresenterCompl implements TokenInterface.ItokenPresenter {
     @Override
     public void getTokenData() {
         Log.i("TagA", "设备:" + Build.DEVICE);
-        Log.i("TagA", "设备的key:" + getDeviceKey());
+        Log.i("TagA", "设备的key:" + DeviceKye.getDeviceKye());
         Log.i("TagA", "系统版本:" + String.valueOf(Build.VERSION.SDK_INT));
         Log.i("TagA", "品牌:" + Build.BRAND);
         Log.i("TagA", "产品型号:" + Build.PRODUCT);
 
         Map map = new HashMap();
         map.put("device", Build.DEVICE);
-        map.put("deviceKey", getDeviceKey());
+        map.put("deviceKey", DeviceKye.getDeviceKye());
         map.put("sdkVersion", String.valueOf(Build.VERSION.SDK_INT));
         map.put("brand", Build.BRAND);
         map.put("product", Build.PRODUCT);
 
+        Map headmap = new HashMap<>(map);
+
+        headmap.put("deviceKey",DeviceKye.getDeviceKye());
+
         Log.d("lmz","22");
-        RetrofitCreator.getApiService().getFirstInAndGetToken(map)
+        RetrofitCreator.getApiService().getFirstInAndGetToken(headmap,map)
                 .subscribeOn(Schedulers.io())
 
                 .map(new MyNetFunction<ResEntity<TokenDateBean>,TokenDateBean>())
@@ -81,14 +86,7 @@ public class TokenPresenterCompl implements TokenInterface.ItokenPresenter {
                 });
     }
 
-    @SuppressLint("MissingPermission")
-    private String getDeviceKey() {
-        String deviceKey = null;
-        TelephonyManager tm = (TelephonyManager) MyApp.instance.getSystemService(Context.TELEPHONY_SERVICE);
-        deviceKey = tm.getSimSerialNumber();
-        deviceKey = Md5Utils.MD5(deviceKey);
-        return deviceKey;
-    }
+
 
     @Override
     public void detachView() {

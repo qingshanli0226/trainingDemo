@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.net;
 
+import com.example.player.a1610aplayerdemo.Contants;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
@@ -49,7 +50,7 @@ public class RetrofitCreator {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //确保service方法，返回值是Observable.
                 .addConverterFactory(GsonConverterFactory.create()) //数据解析
                 .client(okHttpClient) //okhttpclient
-                .baseUrl("http://api.immedc.com/restapi/") //base url
+                .baseUrl(Contants.BASE_URL) //base url
                 .build();
 
         netApiService = retrofit.create(NetApiService.class);

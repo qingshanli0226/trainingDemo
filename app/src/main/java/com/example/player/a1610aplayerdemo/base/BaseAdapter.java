@@ -34,8 +34,14 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     protected abstract int getLayoutId();
 
     @Override
-    public void onBindViewHolder(@NonNull BaseViewHolder baseViewHolder, int i) {
+    public void onBindViewHolder(@NonNull BaseViewHolder baseViewHolder, final int i) {
         convert(baseViewHolder, i);
+        baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onckitem.dianji(i);
+            }
+        });
     }
 
     protected abstract void convert(BaseViewHolder baseViewHolder, int i);
@@ -44,4 +50,15 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     public int getItemCount() {
         return data.size();
     }
+
+    Onckitem onckitem;
+
+    public void setOnckitem(Onckitem onckitem) {
+        this.onckitem = onckitem;
+    }
+
+    public interface Onckitem{
+        void dianji(int i);
+    }
+
 }

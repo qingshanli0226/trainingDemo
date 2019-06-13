@@ -10,8 +10,14 @@ public class Contants {
     public static String TOKEN = "CH-TOKEN";
 
     public static final String CREATE_NEW = "account/createNew";
+
     public static final String GET_HOME = "loading/getHome";
+
+    public static final String GET_VIP =  "masterPackage/getMasterPackagelist?minid=0&size=20";
+
     public static final String GET_LIVE = "live/getLive";
+
+
 
 
 //    public static final String BASE_URL="http://atp.fulishe.com/ClientApi/";

@@ -7,7 +7,7 @@ import com.example.player.a1610aplayerdemo.base.BaseViewHolder;
 import com.example.player.a1610aplayerdemo.bean.VipDateBean;
 import com.squareup.picasso.Picasso;
 
-public class VipAdp extends BaseAdapter<VipDateBean.DataBean> {
+public class VipAdp extends BaseAdapter<VipDateBean> {
     @Override
     protected int getLayoutId() {
         return R.layout.vip_listview_item;

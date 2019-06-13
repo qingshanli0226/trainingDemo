@@ -13,7 +13,6 @@ import com.squareup.picasso.Picasso;
 public class TuiJianAdp extends BaseAdapter<XuanKeDateBean.CourseRecommendsBean> {
 
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.tuijian_item;

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activy.TuiJianClassActivity">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:background="#8E002E">
+
+        <TextView android:layout_width="60dp" android:layout_height="match_parent" android:text="＜"
+                  android:textColor="#ffffff" android:gravity="center" android:textSize="20sp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true" android:id="@+id/tuijian_title"/>
+    </RelativeLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="3">
+
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:text="这是视频" android:gravity="center"/>
+
+    </LinearLayout>
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+
+        <com.facebook.drawee.view.SimpleDraweeView android:layout_width="60dp" android:layout_height="60dp"
+                                                   android:layout_alignParentStart="true"
+                                                   android:layout_marginStart="40dp"
+                                                   app:roundAsCircle="true"
+                                                   android:id="@+id/tuijian_touxiang"
+                                                   android:layout_alignParentBottom="true"
+                                                   android:layout_marginBottom="0dp"/>
+
+        <TextView android:layout_width="200dp" android:layout_height="match_parent"
+                  android:id="@+id/tuijian_ren"
+                  android:layout_alignParentTop="true" android:layout_alignParentStart="true"
+                  android:layout_marginTop="0dp" android:layout_marginStart="113dp"/>
+
+    </RelativeLayout>
+    <TableLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:id="@+id/tuijian_tab">
+        
+    </TableLayout>
+
+    <android.support.v4.view.ViewPager android:layout_width="match_parent"
+                                       android:id="@+id/tuijian_vpg"
+                                       android:layout_height="0dp" android:layout_weight="4">
+
+    </android.support.v4.view.ViewPager>
+
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="2" android:orientation="vertical">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"></LinearLayout>
+
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+
+
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="立即购买"
+                    android:layout_centerVertical="true" android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="13dp"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
