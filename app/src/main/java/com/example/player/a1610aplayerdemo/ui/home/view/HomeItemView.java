@@ -27,7 +27,7 @@ public class HomeItemView extends LinearLayout {
     }
 
     public void updateImg(String picUrl){
-        Picasso.with(getContext()).load(picUrl).into(imageView);
+        Picasso.get().load(picUrl).into(imageView);
     }
 
     public HomeItemView(Context context, AttributeSet attrs, int defStyleAttr) {

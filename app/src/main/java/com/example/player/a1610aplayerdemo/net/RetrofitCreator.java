@@ -21,7 +21,6 @@ public class RetrofitCreator {
 
     private static void createApiService() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .addInterceptor(new TokenInterceptor())
                 .connectTimeout(50, TimeUnit.SECONDS)
                 .build();
 

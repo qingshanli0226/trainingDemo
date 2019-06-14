@@ -47,15 +47,16 @@ public class Home_Fragment extends Fragment implements IBaseView {
         iBasePresenter.getData();
     }
 
+
+
     @Override
-    public void onLoadData(Object data) {
-        list.add((HomeBean.DataBean) data);
+    public void onLoadData(List data) {
+        list.addAll(data);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         xr.setLayoutManager(manager);
-        adapter = new HomeAdapter(getContext(), (HomeBean.DataBean) data);
+        adapter = new HomeAdapter(getContext(), list);
         xr.setAdapter(adapter);
-        Log.i("aaa", "" + list.get(0).getHomeBanner().size());
     }
 
     @Override

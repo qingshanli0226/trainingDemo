@@ -62,7 +62,7 @@ public class Welcome_Activity extends AppCompatActivity {
 
                 ivRedPoint.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 mPaintDis = llContainer.getChildAt(1).getLeft() - llContainer.getChildAt(0).getLeft();
-                System.out.println("距离：" + mPaintDis);
+//                System.out.println("距离：" + mPaintDis);
             }
         });
 
@@ -78,7 +78,7 @@ public class Welcome_Activity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int i) {
-                System.out.println("position:" + i);
+//                System.out.println("position:" + i);
                 if (i == mImageViewList.size() - 1){
                     start_btn.setVisibility(View.VISIBLE);
                 }else {

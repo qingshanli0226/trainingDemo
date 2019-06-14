@@ -21,7 +21,8 @@ import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
-    private HomeBean.DataBean homeBean;
+//    private HomeBean.DataBean homeBean;
+    private List<HomeBean.DataBean> list;
 
     private static final int BANNNER = 0;
     private static final int CATEGORY = 1;
@@ -33,10 +34,11 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public int currentType = BANNNER;
     private LayoutInflater layoutInflater;
 
-    public HomeAdapter(Context context,HomeBean.DataBean homeBean){
+    public HomeAdapter(Context context,List<HomeBean.DataBean> list){
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
-        this.homeBean = homeBean;
+        this.list = list;
+//        this.homeBean = homeBean;
     }
 
 
@@ -70,7 +72,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         if (i == BANNNER){
-            return new BannerViewHolder(layoutInflater.inflate(R.layout.item_banner,viewGroup,false),context,homeBean);
+            return new BannerViewHolder(layoutInflater.inflate(R.layout.item_banner,viewGroup,false),context);
         }else if (i == CATEGORY){
             return new CategoryViewHolder(layoutInflater.inflate(R.layout.item_category,viewGroup,false),context);
         }else if (i == VIPRECOMMEND){
@@ -89,22 +91,22 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         if (getItemViewType(i) == BANNNER){
             BannerViewHolder viewHolder1 = (BannerViewHolder) viewHolder;
-            viewHolder1.setData(homeBean.getHomeBanner());
+            viewHolder1.setData(list.get(0).getHomeBanner());
         }else if (getItemViewType(i) == CATEGORY){
             CategoryViewHolder viewHolder1 = (CategoryViewHolder) viewHolder;
-            viewHolder1.setData(homeBean.getHomeCategory());
+            viewHolder1.setData(list.get(0).getHomeCategory());
         }else if (getItemViewType(i) == VIPRECOMMEND){
             VipRecommendViewHolder viewHolder1 = (VipRecommendViewHolder) viewHolder;
-            viewHolder1.setData(homeBean.getVipRecommend());
+            viewHolder1.setData(list.get(0).getVipRecommend());
         }else if (getItemViewType(i) == ZLLIST){
             ZlListViewHolder viewHolder1 = (ZlListViewHolder) viewHolder;
-            viewHolder1.setData(homeBean.getZlList());
+            viewHolder1.setData(list.get(0).getZlList());
         }else if (getItemViewType(i) == COURSERECOMMENDS){
             CourseRecommendsViewHolder viewHolder1 = (CourseRecommendsViewHolder) viewHolder;
-            viewHolder1.setData(homeBean.getCourseRecommends());
+            viewHolder1.setData(list.get(0).getCourseRecommends());
         }else if (getItemViewType(i) == MASTERLIVES){
             MasterLivesViewHolder viewHolder1 = (MasterLivesViewHolder) viewHolder;
-            viewHolder1.setData(homeBean.getMasterLives());
+            viewHolder1.setData(list.get(0).getMasterLives());
         }
     }
 
@@ -199,7 +201,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public Banner banner;
         public Context context;
 
-        public BannerViewHolder(@NonNull View itemView,Context context,HomeBean.DataBean dataBean) {
+        public BannerViewHolder(@NonNull View itemView,Context context) {
             super(itemView);
             banner = itemView.findViewById(R.id.banner);
             this.context = context;
@@ -221,7 +223,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         class OnLoadUrl extends ImageLoader{
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
-                Picasso.with(context).load(path + "").into(imageView);
+                Picasso.get().load(path + "").into(imageView);
             }
         }
 

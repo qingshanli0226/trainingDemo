@@ -10,23 +10,18 @@ import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerFragment;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
+import com.example.player.a1610aplayerdemo.ui.member.adapter.MemberAdapter;
+import com.example.player.a1610aplayerdemo.ui.member.presenter.MemberPeresenter;
 
-public class Member_Fragment extends BaseRecyclerFragment {
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.member_fragment,container,false);
-        return view;
-    }
+public class Member_Fragment extends BaseRecyclerFragment<Object,View> {
 
     @Override
     public BaseRecyclerViewAdapter getAdapter() {
-        return null;
+        return new MemberAdapter();
     }
 
     @Override
     public IBasePresenter getiBasePresenter() {
-        return null;
+        return new MemberPeresenter();
     }
 }

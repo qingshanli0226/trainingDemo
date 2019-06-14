@@ -34,7 +34,7 @@ public class CourseRecommendsAdapter extends RecyclerView.Adapter<CourseRecommen
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        Picasso.with(context).load(list.get(i).getImageUrl()).into(myViewHolder.imageView);
+        Picasso.get().load(list.get(i).getImageUrl()).into(myViewHolder.imageView);
         myViewHolder.textView.setText(list.get(i).getAppTitle());
     }
 

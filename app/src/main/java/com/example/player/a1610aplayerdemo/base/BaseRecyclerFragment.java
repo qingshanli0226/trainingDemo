@@ -38,14 +38,14 @@ public abstract class BaseRecyclerFragment<T, V extends View> extends Fragment i
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         iBasePresenter = getiBasePresenter();
-//        iBasePresenter.attachView(this);
-//        iBasePresenter.getData();
+        iBasePresenter.attachView(this);
+        iBasePresenter.getData();
     }
 
 
     @Override
-    public void onLoadData(T data) {
-        list.add(data);
+    public void onLoadData(List<T> data) {
+        list.addAll(data);
         baseRecyclerViewAdapter.updateData(list);
     }
 

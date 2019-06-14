@@ -1,35 +1,23 @@
 package com.example.player.a1610aplayerdemo.ui;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.os.Build;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.Window;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
-import com.example.player.a1610aplayerdemo.commit.Contants;
-import com.example.player.a1610aplayerdemo.utils.Md5Utils;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.ui.home.fragment.Home_Fragment;
 import com.example.player.a1610aplayerdemo.ui.member.fragment.Member_Fragment;
+import com.example.player.a1610aplayerdemo.ui.presenter.TokenPresenter;
 import com.example.player.a1610aplayerdemo.ui.study.fragment.Already_Fragment;
 import com.example.player.a1610aplayerdemo.ui.user.fragment.User_Fragment;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
-import okhttp3.Call;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     private ViewPager vp;
@@ -42,80 +30,22 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private List<Fragment> list = new ArrayList<>();
 
     @Override
+    public void onActivityReenter(int resultCode, Intent data) {
+        super.onActivityReenter(resultCode, data);
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        TokenPresenter tokenPresenter = new TokenPresenter();
+        tokenPresenter.getInfo();
         initView();
         data();
         adapter();
         listener();
-
-        Log.i("TagA", "设备：" + Build.DEVICE);
-        Log.i("TagA", "设备的key：" + getDeviceKey());
-        Log.i("TagA", "系统版本：" + String.valueOf(Build.VERSION.SDK_INT));
-        Log.i("TagA", "品牌：" + Build.BOARD);
-
-        Map map = new HashMap();
-        map.put("device", Build.DEVICE);
-        map.put("deviceKey", getDeviceKey());
-        map.put("sdkVersion", String.valueOf(Build.VERSION.SDK_INT));
-        map.put("brand", Build.BRAND);
-        map.put("product", Build.PRODUCT);
-
-        OkHttpUtils
-                .post()
-                .url(Contants.BASE_URL)
-                .addParams("", Build.DEVICE)
-                .addParams("", getDeviceKey())
-                .addParams("", String.valueOf(Build.VERSION.SDK_INT))
-                .addParams("", Build.BRAND)
-                .addParams("", Build.PRODUCT)
-                .build().execute(new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    JSONObject data = jsonObject.getJSONObject("data");
-                    String accessToken = data.getString("accessToken");
-                    Toast.makeText(MainActivity.this, "TOKEN:" + accessToken, Toast.LENGTH_SHORT).show();
-                    Log.i("TOKEN", accessToken);
-                    Contants.TOKEN = accessToken;
-                    OkHttpUtils
-                            .get()
-                            .url(Contants.BASE_URL + Contants.GET_HOME)
-                            .addHeader("CH-TOKEN", Contants.TOKEN)
-                            .build().execute(new StringCallback() {
-                        @Override
-                        public void onError(Call call, Exception e, int id) {
-
-                        }
-
-                        @Override
-                        public void onResponse(String response, int id) {
-
-                        }
-                    });
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-    }
-
-    @SuppressLint("MissingPermission")
-    private String getDeviceKey() {
-        String deviceKey = null;
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        deviceKey = tm.getSimSerialNumber();
-        deviceKey = Md5Utils.MD5(deviceKey);
-        return deviceKey;
     }
 
     private void initView() {

@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.net;
+package com.example.player.a1610aplayerdemo.utils;
 
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;

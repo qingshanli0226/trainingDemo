@@ -52,7 +52,7 @@ public class VipRecommendAdapter extends BaseAdapter {
             holderView = (HolderView) convertView.getTag();
         }
 
-        Picasso.with(context).load(list.get(position).getImage()).into(holderView.vip_image);
+        Picasso.get().load(list.get(position).getImage()).into(holderView.vip_image);
         holderView.vip_tv1.setText(list.get(position).getTitle());
         holderView.vip_tv2.setText(list.get(position).getText1());
 

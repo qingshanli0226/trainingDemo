@@ -49,7 +49,7 @@ public class CategoryAdapter extends BaseAdapter {
         }else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        Picasso.with(context).load(list.get(position).getBannerUrl()).into(viewHolder.imageView);
+        Picasso.get().load(list.get(position).getBannerUrl()).into(viewHolder.imageView);
         viewHolder.textView.setText(list.get(position).getTitle());
 
         return convertView;

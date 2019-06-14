@@ -49,7 +49,7 @@ public class ZlListAdapter extends BaseAdapter {
         }else {
             holderView = (HolderView) convertView.getTag();
         }
-        Picasso.with(context).load(listBeans.get(position).getImage()).into(holderView.vip_image);
+        Picasso.get().load(listBeans.get(position).getImage()).into(holderView.vip_image);
         holderView.vip_tv.setText(listBeans.get(position).getTitle());
         return convertView;
     }

@@ -52,7 +52,7 @@ public class MasterLivesAdpater extends BaseAdapter {
         }else {
             holderView = (HolderView) convertView.getTag();
         }
-        Picasso.with(context).load(livesBeans.get(position).getImageUrl()).into(holderView.masterlives_image);
+        Picasso.get().load(livesBeans.get(position).getImageUrl()).into(holderView.masterlives_image);
         holderView.masterlives_tv1.setText(livesBeans.get(position).getAppTitle());
         holderView.masterlives_tv2.setText(livesBeans.get(position).getTeacherName());
         holderView.masterlives_tv3.setText(livesBeans.get(position).getTeacherTitle());
