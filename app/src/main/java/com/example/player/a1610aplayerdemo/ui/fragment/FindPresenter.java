@@ -1,5 +1,7 @@
 package com.example.player.a1610aplayerdemo.ui.fragment;
 
+import android.util.Log;
+
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
@@ -26,6 +28,7 @@ public class FindPresenter implements IBasePresenter<HomeBean>{
                             public void onNext(HomeBean homeBean) {
                                 super.onNext(homeBean);
                                 System.out.println(homeBean.getMessage());
+                                String simpleName = homeBean.getClass().getSimpleName();
                                 iBaseView.loadDataSuccess(homeBean);
                             }
 

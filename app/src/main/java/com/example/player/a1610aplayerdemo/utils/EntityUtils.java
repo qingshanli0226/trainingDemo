@@ -1,20 +1,25 @@
 package com.example.player.a1610aplayerdemo.utils;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Lmz on 2019/06/13
  *  全能bean类
  */
 public class EntityUtils<T> {
-    private boolean success;
+    @SerializedName("success")
+    private String success;
+    @SerializedName("message")
     private String message;
+    @SerializedName("code")
     private String code;
-    private T result;
+    private T data;
 
-    public boolean isSuccess() {
+    public String getSuccess() {
         return success;
     }
 
-    public void setSuccess(boolean success) {
+    public void setSuccess(String success) {
         this.success = success;
     }
 
@@ -34,11 +39,11 @@ public class EntityUtils<T> {
         this.code = code;
     }
 
-    public T getResult() {
-        return result;
+    public T getData() {
+        return data;
     }
 
-    public void setResult(T result) {
-        this.result = result;
+    public void setData(T data) {
+        this.data = data;
     }
 }

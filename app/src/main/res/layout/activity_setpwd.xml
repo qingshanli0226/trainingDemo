@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="设置密码"
+            android:text="@string/pwd_titlebar"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -39,30 +39,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="密码："/>
+            android:text="@string/pwd_pwd"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/input_textsize"
-            android:hint="请设置6位以上的密码"/>
+            android:hint="@string/pwd_input"/>
 
 
         <TextView
             android:layout_marginTop="@dimen/banner_leftAndright"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="确认密码："/>
+            android:text="@string/pwd_commitpwd"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/input_textsize"
-            android:hint="请再次输入您的密码"/>
+            android:hint="@string/pwd_inputpwd"/>
 
         <TextView
             android:id="@+id/setpwd_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="完成注册，并登录"
+            android:text="@string/pwd_completion"
             android:textColor="@color/textColor_black"
             android:background="@color/colorAccent"
             android:layout_gravity="center_horizontal"

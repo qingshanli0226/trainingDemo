@@ -1,3 +1,54 @@
 <resources>
     <string name="app_name">1610APlayerDemo</string>
+    
+    <string name="banner_btn">立即体验</string>
+    <string name="login_hello">您好，</string>
+    <string name="login_welcome">欢迎来到央音在线，立即</string>
+    <string name="login_register">免费注册</string>
+    <string name="login_titlebar">手机快捷登录</string>
+    <string name="login_findpwd">忘记密码？</string>
+    <string name="login_phone">手机号：</string>
+    <string name="login_inputphone">请输入手机号</string>
+    <string name="login_pwd">     \t 密码：</string>
+    <string name="login_inputpwd">请输入密码</string>
+    <string name="login_show">显示</string>
+    <string name="login_btn">登录</string>
+    
+    <string name="register_titlebar">手机号注册</string>
+    <string name="register_login">欢迎注册央音在线，立即</string>
+    <string name="register_code">验证码：</string>
+    <string name="register_inputcode">请输入验证码</string>
+    <string name="register_getcode">获取验证码</string>
+    <string name="register_protocol">我已认真阅读并同意</string>
+    <string name="register_protocol2">服务协议</string>
+    <string name="register_next">下一步</string>
+
+    <string name="pwd_titlebar">设置密码</string>
+    <string name="pwd_pwd">密码：</string>
+    <string name="pwd_input">请设置6位以上的密码</string>
+    <string name="pwd_commitpwd">确认密码：</string>
+    <string name="pwd_inputpwd">请再次输入您的密码</string>
+    <string name="pwd_completion">完成注册，并登录</string>
+
+    <string name="find_titlebar">搜大师搜课程</string>
+
+    <string name="me_loginorregister">登录/注册</string>
+    <string name="me_wenti">常见问题</string>
+    <string name="me_updata">检查更新</string>
+    <string name="me_share">推荐[央音在线]给好友</string>
+    <string name="me_yijian">意见反馈</string>
+
+    <string name="pay_has">已购课程</string>
+    <string name="pay_vip">会员课程</string>
+    <string name="pay_text_login">您还没有登录</string>
+    <string name="pay_text">登录后才能在（已购）中查看全部课程哦</string>
+
+    <string name="vip_title">会员</string>
+    <string name="recommend">推荐</string>
+    <string name="course">课程</string>
+    <string name="special">专栏</string>
+    <string name="special2">专区</string>
+    <string name="special_more">更多>></string>
+    <string name="vip_speiacl">会员专享</string>
+    <string name="vip_speical_btn">每天不到一块钱，享受200位顶级名师指导</string>
 </resources>

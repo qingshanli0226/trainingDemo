@@ -22,7 +22,7 @@
             android:id="@+id/find_heard_edit"
             android:layout_width="@dimen/main_weight"
             android:layout_weight="1"
-            android:hint="搜大师搜课程"
+            android:hint="@string/find_titlebar"
             android:drawableLeft="@drawable/find_seach"
             android:background="@drawable/edit_bg"
             android:layout_marginTop="@dimen/margin_topAndBottom"

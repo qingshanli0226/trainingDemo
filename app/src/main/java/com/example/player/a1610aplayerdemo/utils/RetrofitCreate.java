@@ -1,5 +1,7 @@
 package com.example.player.a1610aplayerdemo.utils;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
@@ -32,7 +34,6 @@ public class RetrofitCreate {
         }
         return netApiService;
     }
-
     private static NetApiService CreateApi(){
 
         FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
@@ -49,11 +50,13 @@ public class RetrofitCreate {
         OkHttpClient client =new OkHttpClient.Builder()
                             .connectTimeout(3000, TimeUnit.SECONDS)
                             .readTimeout(3000,TimeUnit.SECONDS)
+                            .addInterceptor(httpLoggingInterceptor)
                             .addInterceptor(new TokenInterceptor()) //加入token 拦截器
                             .build();
         Retrofit retrofit =new Retrofit.Builder()
                                 .baseUrl(Constans.BaseUri)
                                 .client(client)
+                                .addConverterFactory(StringConverterFactroy.onCreate()) //添加字符串 解析器  如果解析为null 就调用下面的那个gson的
                                 .addConverterFactory(GsonConverterFactory.create())
                                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                                 .build();

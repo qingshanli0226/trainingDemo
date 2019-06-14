@@ -12,6 +12,8 @@ import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.MemberBean;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,8 @@ public class VipView_Adapter extends RecyclerView.Adapter<VipView_Adapter.VipVie
             this.data =data;
             notifyDataSetChanged();
     }
+
+
 
     @NonNull
     @Override
@@ -43,6 +47,8 @@ public class VipView_Adapter extends RecyclerView.Adapter<VipView_Adapter.VipVie
     public int getItemCount() {
         return data.size();
     }
+
+
 
     class VipViewViewhoder extends RecyclerView.ViewHolder{
         ImageView img;

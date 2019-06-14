@@ -25,7 +25,7 @@
             android:id="@+id/me_text_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="登录/注册"
+            android:text="@string/me_loginorregister"
             android:textColor="@color/textColor_black"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -65,7 +65,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="常见问题"
+            android:text="@string/me_wenti"
             android:layout_marginTop="@dimen/margin_leftAndRight"
             android:layout_marginBottom="@dimen/margin_leftAndRight"
             android:layout_marginLeft="@dimen/margin_topAndBottom"
@@ -75,7 +75,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="检查更新"
+            android:text="@string/me_updata"
             android:layout_marginTop="@dimen/margin_leftAndRight"
             android:layout_marginBottom="@dimen/margin_leftAndRight"
             android:layout_marginLeft="@dimen/margin_topAndBottom"
@@ -84,7 +84,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="推荐[央音在线]给好友"
+            android:text="@string/me_share"
             android:layout_marginTop="@dimen/margin_leftAndRight"
             android:layout_marginBottom="@dimen/margin_leftAndRight"
             android:layout_marginLeft="@dimen/margin_topAndBottom"
@@ -99,7 +99,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="意见反馈"
+            android:text="@string/me_yijian"
             android:layout_marginTop="@dimen/margin_leftAndRight"
             android:layout_marginBottom="@dimen/margin_leftAndRight"
             android:layout_marginLeft="@dimen/margin_topAndBottom"

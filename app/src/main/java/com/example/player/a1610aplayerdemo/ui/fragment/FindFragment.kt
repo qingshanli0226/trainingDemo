@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.ui.fragment
 
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.LinearLayoutManager.VERTICAL
+import android.util.Log
 import android.view.View
 import com.bumptech.glide.Glide
 import com.example.player.a1610aplayerdemo.R
@@ -18,6 +19,8 @@ import org.jetbrains.anko.support.v4.startActivity
  * Created by Lmz on 2019/06/11
  */
 class FindFragment :BaseFragment(),IBaseView<HomeBean> {
+
+
 
     val presenter = FindPresenter()
     override fun initview(): View? {
@@ -45,15 +48,19 @@ class FindFragment :BaseFragment(),IBaseView<HomeBean> {
         myToast(ErrorMess.toString())
     }
 
-    override fun loadDataSuccess(bean: HomeBean?) {
-        if ("success".equals(bean?.code)){
-            var adapter = FindAdapter(context,bean)
-            find_recyclerview.adapter = adapter
-        }
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         presenter.detachView()
     }
+
+
+    override fun loadDataSuccess(bean: HomeBean?) {
+        val adapter  = FindAdapter(context,bean)
+        find_recyclerview.adapter = adapter
+    }
+
+    override fun LoadListDataSuccess(data: MutableList<HomeBean>?) {
+
+    }
+
 }

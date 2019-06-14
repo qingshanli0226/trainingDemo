@@ -20,6 +20,9 @@ import org.jetbrains.anko.toast
  *   引导页
  */
 class SplashActivity :BaseActivity(),ISplashView<String>{
+    override fun LoadListDataSuccess(data: MutableList<String>?) {
+
+    }
 
     private val mHandler:Handler =object :Handler(Looper.getMainLooper()){
         override fun handleMessage(msg: Message?) {

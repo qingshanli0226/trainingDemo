@@ -14,7 +14,7 @@
         android:id="@+id/splash_go"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:text="立即体验"
+        android:text="@string/banner_btn"
         android:textSize="@dimen/banner_textsize"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

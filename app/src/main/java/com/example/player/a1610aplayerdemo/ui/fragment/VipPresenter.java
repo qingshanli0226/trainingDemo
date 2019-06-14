@@ -1,55 +1,54 @@
 package com.example.player.a1610aplayerdemo.ui.fragment;
 
+import android.util.Log;
+
+import com.example.player.a1610aplayerdemo.base.BasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.base.MemberBean;
+import com.example.player.a1610aplayerdemo.utils.Constans;
+import com.example.player.a1610aplayerdemo.utils.EntityUtils;
 import com.example.player.a1610aplayerdemo.utils.MVPObervice;
 import com.example.player.a1610aplayerdemo.utils.RetrofitCreate;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.List;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import kotlin.text.StringsKt;
 
 /**
  * Created by Lmz on 2019/06/12
  * vip页面的presenter
  */
-public class VipPresenter implements IBasePresenter<MemberBean>{
-    private IBaseView iBaseView;
+public class VipPresenter extends BasePresenter<MemberBean.DataBean> {
+   private String params;
+   private String size;
+   public void setParams(String params,String size){
+       this.params =params;
+       this.size =size;
+   }
+
     @Override
-    public void getData() {
-
-    }
-    //因为需要 参数 所有扩展一个 网络获取类
-    public void getVipData(int minid,int size){
-        RetrofitCreate.getNetApiService().getMemberViewInfo(minid,size)
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribeOn(Schedulers.io())
-                            .subscribe(new MVPObervice<MemberBean>(){
-                                @Override
-                                public void onNext(MemberBean memberBean) {
-                                    super.onNext(memberBean);
-                                    iBaseView.loadDataSuccess(memberBean);
-                                }
-
-                                @Override
-                                public void onError(Throwable e) {
-                                    super.onError(e);
-                                    iBaseView.loadDataFailure(101,e.toString());
-                                }
-                            });
+    public String getApiPath() {
+        return "masterPackage";
     }
 
     @Override
-    public void attachView(IBaseView<MemberBean> view) {
-            iBaseView =view;
+    public String getApiPath2() {
+        return "getMasterPackagelist";
     }
 
     @Override
-    public void detachView() {
+    public Type getType() {
+        return new TypeToken<EntityUtils<List<MemberBean.DataBean>>>(){}.getType();
+    }
 
-        if (iBaseView!=null){
-            iBaseView =null;
-        }
-
+    @Override
+    public boolean isList() {
+        return true;
     }
 }
