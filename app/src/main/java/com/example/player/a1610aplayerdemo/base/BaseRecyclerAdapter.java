@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.adapter;
+package com.example.player.a1610aplayerdemo.base;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,21 +7,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseRecyclerAdapter <T> extends RecyclerView.Adapter<BaseRecyclerAdapter.BaseViewHolder>{
+        public abstract class BaseRecyclerAdapter <T> extends RecyclerView.Adapter<BaseRecyclerAdapter.BaseViewHolder>{
 
-    private List<T> list;
-    private Context context;
-    private LayoutInflater layoutInflater;
-    private int layId;
+            private List<T> list;
+            private Context context;
+            private LayoutInflater layoutInflater;
+            private int layId;
 
 
-    public BaseRecyclerAdapter(List<T> list, Context context, int layId) {
-        this.list = list;
-        this.context = context;
-        this.layId = layId;
+            public BaseRecyclerAdapter(List<T> list, Context context, int layId) {
+                this.list = list;
+                this.context = context;
+                this.layId = layId;
         layoutInflater = LayoutInflater.from(context);
     }
 

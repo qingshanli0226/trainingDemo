@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.adapter;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +9,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.ui.activity.category_activity.Category1Activity;
+import com.example.player.a1610aplayerdemo.ui.activity.category_activity.Category2Activity;
+import com.example.player.a1610aplayerdemo.ui.activity.category_activity.Category5Activity;
+import com.example.player.a1610aplayerdemo.util.MyApplication;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
@@ -28,9 +33,35 @@ public class FindCategoryAdapter extends RecyclerView.Adapter<FindCategoryAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder myHolder, int i) {
+    public void onBindViewHolder(@NonNull final MyHolder myHolder, int i) {
         myHolder.simpleDraweeView.setImageURI(list.get(i).getBannerUrl());
         myHolder.textView.setText(list.get(i).getTitle());
+        if (i==0){
+            myHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(myHolder.itemView.getContext(), Category1Activity.class);
+                    myHolder.itemView.getContext().startActivity(intent);
+                }
+            });
+        }else if (i==4){
+            myHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(myHolder.itemView.getContext(), Category5Activity.class);
+                    myHolder.itemView.getContext().startActivity(intent);
+                }
+            });
+        }else if (i==1){
+            myHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(myHolder.itemView.getContext(), Category2Activity.class);
+                    myHolder.itemView.getContext().startActivity(intent);
+                }
+            });
+        }
+
     }
 
     @Override

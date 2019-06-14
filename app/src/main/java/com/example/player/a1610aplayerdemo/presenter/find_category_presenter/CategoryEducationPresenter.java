@@ -1,50 +1,45 @@
-package com.example.player.a1610aplayerdemo.presenter;
+package com.example.player.a1610aplayerdemo.presenter.find_category_presenter;
 
 import android.util.Log;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
+import com.example.player.a1610aplayerdemo.bean.EducationBean;
+import com.example.player.a1610aplayerdemo.bean.MusicClassBean;
 import com.example.player.a1610aplayerdemo.service.BaseService;
-
 import com.example.player.a1610aplayerdemo.util.CreatorUtils;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
 
-import java.io.IOException;
+public class CategoryEducationPresenter implements IBasePresenter<EducationBean> {
 
-public class FindPresenter implements IBasePresenter<String> {
-
-    private IBaseView<String> iBaseView;
+    private IBaseView<EducationBean> iBaseView;
 
 
     @Override
-    public void attachView(IBaseView<String> baseView) {
-            this.iBaseView = baseView;
+    public void attachView(IBaseView<EducationBean> baseView) {
+        this.iBaseView = baseView;
     }
 
 
     @Override
     public void getData() {
         BaseService baseService = CreatorUtils.getRetrofit();
-        Observable<ResponseBody> homeData = baseService.getHomeData();
+        Observable<EducationBean> homeData = baseService.getEducationData();
         homeData.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ResponseBody>() {
+                .subscribe(new Observer<EducationBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(ResponseBody responseBody) {
-                        try {
-                            iBaseView.onLoadData(responseBody.string());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                    public void onNext(EducationBean educationBean) {
+
+                        iBaseView.onLoadData(educationBean);
 
                     }
 
@@ -66,4 +61,5 @@ public class FindPresenter implements IBasePresenter<String> {
     public void detachView() {
         iBaseView = null;
     }
+
 }

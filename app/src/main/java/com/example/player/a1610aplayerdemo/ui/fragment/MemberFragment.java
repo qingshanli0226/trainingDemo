@@ -12,8 +12,6 @@ import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.bean.MemberBean;
 import com.example.player.a1610aplayerdemo.presenter.MemberPresenter;
-import com.example.player.a1610aplayerdemo.view.MemberView;
-
 import java.util.List;
 
 public class MemberFragment extends BaseFragment implements IBaseView<MemberBean> {

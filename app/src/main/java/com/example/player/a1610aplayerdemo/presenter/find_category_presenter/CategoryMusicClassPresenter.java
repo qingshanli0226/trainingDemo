@@ -1,10 +1,10 @@
-package com.example.player.a1610aplayerdemo.presenter;
+package com.example.player.a1610aplayerdemo.presenter.find_category_presenter;
 
 import android.util.Log;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
+import com.example.player.a1610aplayerdemo.bean.MusicClassBean;
 import com.example.player.a1610aplayerdemo.service.BaseService;
-
 import com.example.player.a1610aplayerdemo.util.CreatorUtils;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -15,36 +15,32 @@ import okhttp3.ResponseBody;
 
 import java.io.IOException;
 
-public class FindPresenter implements IBasePresenter<String> {
+public class CategoryMusicClassPresenter implements IBasePresenter<MusicClassBean>{
 
-    private IBaseView<String> iBaseView;
+    private IBaseView<MusicClassBean> iBaseView;
 
 
     @Override
-    public void attachView(IBaseView<String> baseView) {
-            this.iBaseView = baseView;
+    public void attachView(IBaseView<MusicClassBean> baseView) {
+        this.iBaseView = baseView;
     }
 
 
     @Override
     public void getData() {
         BaseService baseService = CreatorUtils.getRetrofit();
-        Observable<ResponseBody> homeData = baseService.getHomeData();
+        Observable<MusicClassBean> homeData = baseService.getMusicClassData("1");
         homeData.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ResponseBody>() {
+                .subscribe(new Observer<MusicClassBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(ResponseBody responseBody) {
-                        try {
-                            iBaseView.onLoadData(responseBody.string());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                    public void onNext(MusicClassBean musicClassBean) {
+                        iBaseView.onLoadData(musicClassBean);
 
                     }
 

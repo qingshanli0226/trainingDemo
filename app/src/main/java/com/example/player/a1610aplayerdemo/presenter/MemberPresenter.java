@@ -59,6 +59,6 @@ public class MemberPresenter implements IBasePresenter<MemberBean> {
 
     @Override
     public void detachView() {
-
+            iBaseView =null;
     }
 }
