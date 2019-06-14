@@ -10,8 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.message.adapter.BuyFragmentAdapter;
@@ -59,5 +61,10 @@ public class MessageFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @OnClick(R.id.buy_register_btn)
+    public void onViewClicked() {
+        Toast.makeText(getActivity(), "跳转到登录界面", Toast.LENGTH_SHORT).show();
     }
 }

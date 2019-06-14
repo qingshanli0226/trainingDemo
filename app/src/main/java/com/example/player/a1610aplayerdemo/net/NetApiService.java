@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.net;
 
 import com.example.player.a1610aplayerdemo.curriculum.bean.Bean;
 import com.example.player.a1610aplayerdemo.mistake.ResEntity;
+import com.example.player.a1610aplayerdemo.my.bean.Feedback;
 import com.example.player.a1610aplayerdemo.study.bean.VipBean;
 import com.example.player.a1610aplayerdemo.token.TokenBean;
 import io.reactivex.Observable;
@@ -22,4 +23,7 @@ public interface NetApiService {
 
     @GET
     Observable<ResEntity<List<VipBean>>> getVipBeanData(@Url String string);
+
+    @POST("restapi/app/setFeedback")
+    Observable<ResEntity<Feedback>> getFeedback(@QueryMap Map<String,String> map);
 }

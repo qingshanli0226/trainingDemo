@@ -3,22 +3,107 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".my.MeFragment"
         android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="180dp">
+            style="@style/curriculum_banner">
 
         <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/mm"
                 android:scaleType="centerCrop"
-                android:background="@drawable/mebackgroud">
+                android:background="@drawable/mebackgroud"
+                android:layout_alignParentTop="true" android:layout_marginTop="0dp">
         </ImageView>
 
+        <com.othershe.library.NiceImageView
+                android:id="@+id/my_niv_portrait"
+                android:src="@drawable/head_portrait"
+                app:is_circle="true"
+                app:border_width="2dp"
+                app:border_color="@color/colorGray"
+                app:is_cover_src="true" style="@style/my_niv_portrait"/>
+
+        <TextView
+                android:id="@+id/my_niv_register"
+                android:text="@string/register"
+                style="@style/my_niv_register"/>
+
+        <ImageView
+                android:id="@+id/my_iv_set"
+                android:src="@drawable/ic_my_set"
+                style="@style/my_iv_set"/>
+
+        <ImageView
+                android:id="@+id/my_iv_message"
+                android:src="@drawable/ic_my_message"
+                style="@style/my_iv_message"/>
+
     </RelativeLayout>
+    
+    <LinearLayout
+            android:id="@+id/my_ll_issue"
+            style="@style/my_ll">
+
+        <ImageView
+                android:src="@drawable/ic_my_iv" style="@style/ww"/>
+
+        <TextView
+                android:text="@string/my_ll_issue" style="@style/my_textView_wwt"/>
+
+    </LinearLayout>
+
+    <View
+            style="@style/my_view"></View>
+
+    <LinearLayout
+            android:id="@+id/my_ll_update"
+            style="@style/my_ll">
+
+        <ImageView
+                style="@style/ww"
+                android:src="@drawable/ic_my_iv"/>
+
+        <TextView
+                style="@style/my_textView_wwt"
+                android:text="@string/my_ll_update"/>
+
+    </LinearLayout>
+
+    <View style="@style/my_view"></View>
+
+    <LinearLayout
+            android:id="@+id/my_ll_recommend"
+            style="@style/my_ll">
+
+        <ImageView
+                style="@style/ww"
+                android:src="@drawable/ic_my_iv"/>
+
+        <TextView
+                style="@style/my_textView_wwt"
+                android:text="@string/my_ll_recommend"/>
+
+    </LinearLayout>
+
+    <View style="@style/my_view"></View>
+
+    <LinearLayout
+            android:id="@+id/my_ll_opinion"
+            style="@style/my_ll">
+
+        <ImageView
+                style="@style/ww"
+                android:src="@drawable/ic_my_iv"/>
+
+        <TextView
+                style="@style/my_textView_wwt"
+                android:text="@string/my_ll_opinion"/>
+
+    </LinearLayout>
+
+    <View style="@style/my_view"></View>
 
 </LinearLayout>

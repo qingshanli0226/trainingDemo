@@ -1,64 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
               tools:context=".curriculum.CurriculumFragment"
-              android:orientation="vertical">
+              style="@style/mmv">
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#900231">
+            style="@style/curriculum_Toolbar">
 
-        <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_me"/>
+        <ImageView android:src="@drawable/ic_me" style="@style/curriculum_image"/>
 
         <EditText
                 android:id="@+id/curriculum_search"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:background="@drawable/curriculum_edittext"
-                android:hint="搜大师 搜课程"
-                android:textSize="15dp"
-                android:textColor="#000"
-                android:clickable="true"
-                android:layout_marginRight="50dp"
-                android:focusableInTouchMode="false"/>
+                style="@style/curriculum_search"/>
 
     </android.support.v7.widget.Toolbar>
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/curriculum_srl"
             app:srlPrimaryColor="#27edbc"
-            app:srlEnablePreviewInEditMode="true">
+            app:srlEnablePreviewInEditMode="true" style="@style/curriculum_srl">
 
-        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <ScrollView style="@style/mm">
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                          android:orientation="vertical">
-                <com.youth.banner.Banner android:layout_width="match_parent"
-                                         android:id="@+id/curriculum_banner"
-                                         android:layout_height="180dp">
+            <LinearLayout
+                    style="@style/mmv">
+                <com.youth.banner.Banner
+                        android:id="@+id/curriculum_banner"
+                        style="@style/curriculum_banner">
                 </com.youth.banner.Banner>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:orientation="vertical">
+                <LinearLayout
+                        style="@style/mwv">
                     <android.support.v7.widget.RecyclerView
                             android:id="@+id/curriculum_category_rv"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            style="@style/mm">
                     </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
 
                 <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="8dp">
+                        style="@style/mwht">
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -77,12 +59,10 @@
 
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:orientation="vertical">
+                <LinearLayout style="@style/mwv">
                     <android.support.v7.widget.RecyclerView
                             android:id="@+id/curriculum_vip_rv"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            style="@style/mm">
                     </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
 
@@ -92,9 +72,7 @@
                           android:id="@+id/curriculum_register_tv"/>
 
                 <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        style="@style/mwht">
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -120,20 +98,14 @@
 
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:orientation="vertical">
+                <LinearLayout style="@style/mwv">
                     <android.support.v7.widget.RecyclerView
                             android:id="@+id/curriculum_zl_rv"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            style="@style/mm">
                     </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
 
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="8dp">
+                <LinearLayout style="@style/mwht">
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -152,20 +124,15 @@
 
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:orientation="vertical">
+                <LinearLayout style="@style/mwv">
                     <android.support.v7.widget.RecyclerView
                             android:id="@+id/curriculum_courseRecommends_rv"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            style="@style/mm">
                     </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
 
                 <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="8dp">
+                        style="@style/mwht">
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -176,12 +143,10 @@
                             android:textColor="#bf0256"/>
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:orientation="vertical">
+                <LinearLayout style="@style/mwv">
                     <android.support.v7.widget.RecyclerView
                             android:id="@+id/curriculum_master_rv"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            style="@style/mm">
                     </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
 

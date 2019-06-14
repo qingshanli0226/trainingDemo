@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".my.fragment.FeedbackFragment"
+        android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.Toolbar
+            android:background="@color/colorModena"
+            style="@style/mw">
+
+        <ImageView
+                style="@style/my_textView_wwt"
+                android:src="@drawable/ic_back"/>
+
+        <TextView
+                android:text="@string/my_ll_opinion"
+                style="@style/feedback_opinion"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="意见和建议"
+            android:layout_margin="8dp"
+            android:textStyle="bold"/>
+
+    <EditText
+            android:id="@+id/feedback_et1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/feedback_edittext"
+            android:hint="请尽量详细描述您想要反馈的问题，也欢迎您提出宝贵意见。"
+            android:textSize="15sp"
+            android:gravity="left"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系方式"
+            android:layout_margin="8dp"
+            android:textStyle="bold"/>
+
+    <EditText
+            android:id="@+id/feedback_et2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/feedback_edittext"
+            android:hint="手机/微信号/QQ号，方便我们与您联系。"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"/>
+
+    <Button
+            android:id="@+id/feedback_btn"
+            android:layout_marginTop="20dp"
+            android:layout_width="85dp"
+            android:layout_height="30dp"
+            android:background="#900231"
+            android:text="提交"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
