@@ -46,7 +46,7 @@ public abstract class BaseRecyclerFragment<T, V extends View> extends Fragment i
     }
 
     private void initData() {
-        iBasePresenter.getData();//通过presenter去获取数据
+        iBasePresenter.loadDataByGet();//通过presenter去获取数据
     }
 
     /**

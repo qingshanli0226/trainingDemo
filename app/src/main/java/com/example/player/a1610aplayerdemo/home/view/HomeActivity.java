@@ -14,7 +14,7 @@ public class HomeActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
 
-    private Fragment[] fragments = new Fragment[] {new OneFragment()};
+    private Fragment[] fragments = new Fragment[] {new OneFragment(), new TwoFragment()};
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +49,14 @@ public class HomeActivity extends AppCompatActivity {
         @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
-            return "ONE";
+            switch (position) {
+                case 0 :
+                    return "ONE";
+                case 1:
+                    return "TWO";
+                    default:
+                        return "";
+            }
         }
     }
 }

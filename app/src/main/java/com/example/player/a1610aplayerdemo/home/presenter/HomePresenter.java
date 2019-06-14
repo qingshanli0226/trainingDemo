@@ -16,22 +16,27 @@ public class HomePresenter implements IBasePresenter<NetDataBean.DataBean> {
     IBaseView<NetDataBean.DataBean> iBaseView;
 
     @Override
-    public void getData() {
+    public void loadDataByGet() {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Test-header1", "1610A1");
         headers.put("Test-header2", "1610A2");
-        RetrofitCreator.getApiService().getData(headers,"http://www.qubaobei.com/ios/cf/dish_list.php?stage_id=1&limit=20&page=1")
+        HashMap<String, String> params = new HashMap<>();
+        params.put("stage_id", "1");
+        params.put("limit", "20");
+        params.put("page", "1");
+        RetrofitCreator.getApiService().getData(headers,"dish_list.php", params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<NetDataBean>() {
+                .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(NetDataBean netDataBean) {
-                        iBaseView.onLoadDataList(netDataBean.getData());
+                    public void onNext(String s) {
+                        Log.d("LQS", s);
+                        //iBaseView.onLoadDataList(netDataBean.getData());
                     }
 
                     @Override

@@ -28,7 +28,8 @@ public class RetrofitCreator {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //确保service方法，返回值是Observable.
-                .addConverterFactory(GsonConverterFactory.create()) //数据解析
+                .addConverterFactory(StringConverterFactory.create()) //数据解析
+                .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient) //okhttpclient
                 .baseUrl("http://www.qubaobei.com/ios/cf/") //base url
                 .build();

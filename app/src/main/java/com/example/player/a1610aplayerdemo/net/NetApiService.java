@@ -2,15 +2,14 @@ package com.example.player.a1610aplayerdemo.net;
 
 import com.example.player.a1610aplayerdemo.home.mode.NetDataBean;
 import io.reactivex.Observable;
-import retrofit2.http.GET;
-import retrofit2.http.HeaderMap;
-import retrofit2.http.Url;
+import okhttp3.ResponseBody;
+import retrofit2.http.*;
 
 import java.util.HashMap;
 
 
 public interface NetApiService {
 
-    @GET
-    Observable<NetDataBean> getData(@HeaderMap HashMap<String, String> headers, @Url String url);
+    @GET("{path}")
+     Observable<String> getData(@HeaderMap HashMap<String, String> headers, @Path("path") String path, @QueryMap HashMap<String, String> params);
 }

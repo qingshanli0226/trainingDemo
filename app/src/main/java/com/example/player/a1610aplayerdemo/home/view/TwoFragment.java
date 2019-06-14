@@ -9,7 +9,9 @@ import com.example.player.a1610aplayerdemo.home.mode.NetDataBean;
 import com.example.player.a1610aplayerdemo.home.presenter.HomePresenter;
 import com.example.player.a1610aplayerdemo.home.presenter.NewHomePresenter;
 
-public class OneFragment extends BaseRecyclerFragment<NetDataBean.DataBean, View> {
+import java.util.List;
+
+public class TwoFragment extends BaseRecyclerFragment<NetDataBean.DataBean, View> {
     @Override
     public BaseRecyclerViewAdapter<NetDataBean.DataBean, View> getAdapter() {
         return new HomeAdapter();
@@ -17,6 +19,6 @@ public class OneFragment extends BaseRecyclerFragment<NetDataBean.DataBean, View
 
     @Override
     public IBasePresenter getPresenter() {
-        return new HomePresenter();
+        return new NewHomePresenter();
     }
 }
