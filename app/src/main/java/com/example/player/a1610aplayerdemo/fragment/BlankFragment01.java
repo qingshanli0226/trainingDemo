@@ -73,7 +73,7 @@ public class BlankFragment01 extends Fragment implements HomeView {
     @Override
     public void onLoadData(Object data) {
         homeBean= (HomeBean) data;
-        Log.d("aaaaaa",""+homeBean.getCode());
+        //Log.d("aaaaaa",""+homeBean.getCode());
 
         SelectClassAdapter selectClassAdapter = new SelectClassAdapter(homeBean, getActivity());
         rv.setAdapter(selectClassAdapter);

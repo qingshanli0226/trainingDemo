@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
             .setBarBackgroundColor("#8E002E")
             .setActiveColor("#ffffff")
             .setInActiveColor("#808080")
-            .addItem(BottomNavigationItem(R.mipmap.ic02, "炫珂"))
-            .addItem(BottomNavigationItem(R.mipmap.ic04, "雪喜钟辛"))
-            .addItem(BottomNavigationItem(R.mipmap.ic03, "笑嘻"))
+            .addItem(BottomNavigationItem(R.mipmap.ic02, "选课"))
+            .addItem(BottomNavigationItem(R.mipmap.ic04, "会员"))
+            .addItem(BottomNavigationItem(R.mipmap.ic03, "选购"))
             .addItem(BottomNavigationItem(R.mipmap.ic01, "沃德"))
             .setFirstSelectedPosition(0)//默认选中位置
             .initialise()//提交初始化

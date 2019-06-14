@@ -10,9 +10,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.concurrent.TimeUnit;
 
-public class MyRetorfit {
+public  class MyRetorfit {
 
-    public MyService getService(){
+    public  MyService getService(){
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(new TokenInterceptor())
                 .connectTimeout(5, TimeUnit.SECONDS)

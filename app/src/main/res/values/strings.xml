@@ -3,5 +3,18 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phonenumber">手机号：</string>
+    <string name="PlaseInputPhoneNumber">请输入您的手机号码</string>
+    <string name="password">密码：</string>
+    <string name="PlaseInputPassword">请输入密码</string>
+    <string name="welcome">您好\n欢迎来到央音在线，立即</string>
+    <string name="welcomez">您好\n欢迎来到央音在线，已有账户请</string>
+    <string name="mianZhuCe">\n免费注册</string>
+    <string name="mianLogin">\n登录</string>
+    <string name="MeTitleLogin">手机快捷登录</string>
+    <string name="forgetPassword">忘记密码？</string>
+    <string name="loginandregister">登录/注册</string>
+    <string name="lookQuestion">常见问题</string>
+    <string name="checkUpdata">检查更新</string>
 
 </resources>
