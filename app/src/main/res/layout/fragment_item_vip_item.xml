@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/vip_title"
-            android:textColor="#000000"
+            android:textColor="@color/colorBlack"
             android:textSize="16sp"
             android:singleLine="true"
             android:text="fdsfs"
@@ -37,7 +37,7 @@
                 android:gravity="center"
                 android:text="会员专享"
                 android:textSize="13sp"
-                android:textColor="#947910"
+                android:textColor="@color/colorVip"
                 android:layout_alignParentLeft="true"
         />
 
@@ -47,7 +47,7 @@
                 android:gravity="center"
                 android:text="1231212"
                 android:textSize="13sp"
-                android:textColor="#BF0055"
+                android:textColor="@color/colorAccent"
                 android:layout_alignParentRight="true"
                 android:id="@+id/vip_text"
         />

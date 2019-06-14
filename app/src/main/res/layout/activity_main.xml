@@ -32,8 +32,8 @@
                 <ImageView
                         android:id="@+id/iv_main_choice"
                         android:layout_width="wrap_content" android:layout_height="wrap_content"
-                           android:src="@drawable/ic_action_main_choice"
-                        android:tint="#59ACFF"
+                        android:src="@drawable/ic_action_main_choice"
+                        android:tint="@color/colorBlue"
                 />
                 <RadioButton
                         android:gravity="center"
@@ -43,7 +43,7 @@
                         android:id="@+id/rb_main_choice"
                         android:text="选课"
                         android:checked="true"
-                        android:textColor="#59ACFF"
+                        android:textColor="@color/colorBlue"
                 />
             </LinearLayout>
         </LinearLayout>
@@ -63,7 +63,7 @@
             >
                 <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
                            android:src="@drawable/ic_action_main_vip"
-                           android:tint="#c0c0c0"
+                           android:tint="@color/colorSilver"
                            android:id="@+id/iv_main_VIP"
                 />
                 <RadioButton
@@ -73,8 +73,8 @@
                         android:id="@+id/rb_main_VIP"
                         android:text="会员"
                         android:gravity="center"
-                        android:textColor="#c0c0c0"
-                        android:drawableTint="#c0c0c0"
+                        android:textColor="@color/colorSilver"
+                        android:drawableTint="@color/colorSilver"
                 />
             </LinearLayout>
 
@@ -96,7 +96,7 @@
             >
                 <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
                            android:src="@drawable/ic_action_main_study"
-                           android:tint="#c0c0c0"
+                           android:tint="@color/colorSilver"
                            android:id="@+id/iv_main_study"
                 />
                 <RadioButton
@@ -106,8 +106,7 @@
                         android:id="@+id/rb_main_study"
                         android:text="已购"
                         android:gravity="center"
-                        android:textColor="#c0c0c0"
-                        android:drawableTint="#000000"
+                        android:textColor="@color/colorSilver"
                 />
             </LinearLayout>
         </LinearLayout>
@@ -126,7 +125,7 @@
             >
                 <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
                            android:src="@drawable/ic_action_main_my"
-                           android:tint="#c0c0c0"
+                           android:tint="@color/colorSilver"
                            android:id="@+id/iv_main_my"
                 />
                 <RadioButton
@@ -135,8 +134,8 @@
                         android:button="@null"
                         android:text="我的"
                         android:gravity="center"
-                        android:textColor="#c0c0c0"
-                        android:drawableTint="#c0c0c0"
+                        android:textColor="@color/colorSilver"
+                        android:drawableTint="@color/colorSilver"
                         android:id="@+id/rb_main_my"
                 />
             </LinearLayout>

@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/course_title"
             android:gravity="center"
-            android:textColor="#000000"
+            android:textColor="@color/colorBlack"
             android:textSize="16sp"
             android:singleLine="true"
             android:text="fdsfs"

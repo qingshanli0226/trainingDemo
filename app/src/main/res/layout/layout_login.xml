@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <include layout="@layout/layout_titlebar"></include>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您好，"
+            android:textSize="25sp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="60dp"
+    />
+
+    <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="欢迎来到央音在线，立即"
+            android:textSize="20dp"
+    />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="免费注册"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlue"
+        />
+    </LinearLayout>
+
+</LinearLayout>

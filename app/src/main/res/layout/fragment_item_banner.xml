@@ -4,7 +4,7 @@
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:orientation="vertical"
-        android:background="#59ACFF"
+        android:background="@color/colorBlue"
 
 >
     <com.youth.banner.Banner

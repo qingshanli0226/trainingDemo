@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-        android:layout_marginTop="10dp"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -13,21 +13,13 @@
             android:id="@+id/master_iv"
     />
 
-    <!--<RelativeLayout-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="20dp"-->
-    <!--&gt;-->
-
-    <!--</RelativeLayout>-->
-
     <LinearLayout
-                android:layout_marginTop="5dp"
-
-                android:layout_width="match_parent" android:layout_height="20dp"
-        android:orientation="horizontal"
-                android:layout_gravity="center"
-        >
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+    >
 
         <TextView
                 android:layout_width="0dp"
@@ -35,7 +27,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:id="@+id/master_title"
-                android:textColor="#000000"
+                android:textColor="@color/colorBlack"
                 android:textSize="16sp"
                 android:singleLine="true"
                 android:text="fdsfsdgdshjdkdsjshgjdhgjsdghjdhgkgdigidsuiigdfgfdggfdgdgfdgfi"
@@ -51,7 +43,7 @@
         />
 
 
-        </LinearLayout>
+    </LinearLayout>
 
 
     <RelativeLayout
@@ -66,7 +58,7 @@
                 android:gravity="center"
                 android:text="1231212"
                 android:textSize="13sp"
-                android:textColor="#BF0055"
+                android:textColor="@color/colorAccent"
                 android:layout_alignParentRight="true"
                 android:id="@+id/master_money"
         />
