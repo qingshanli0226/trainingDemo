@@ -42,8 +42,6 @@ public class CourseItewView extends LinearLayout {
         CourseRvAdapter courseRvAdapter = new CourseRvAdapter();
         courseRvAdapter.setList(list);
 
-
-
         m_rv.setAdapter(courseRvAdapter);
     }
 

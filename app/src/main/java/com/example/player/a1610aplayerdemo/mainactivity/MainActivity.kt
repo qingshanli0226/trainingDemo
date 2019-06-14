@@ -76,7 +76,9 @@ class MainActivity : AppCompatActivity() {
                 override fun onNext(t: ResEntity<UserBean.DataBean>) {
                     val accessToken = t.data.accessToken
                     // 保存token
+                    println(t.data.accessToken);
                     SpUtils.getSpUtils().saveToken(accessToken)
+
                     println(accessToken);
                 }
 

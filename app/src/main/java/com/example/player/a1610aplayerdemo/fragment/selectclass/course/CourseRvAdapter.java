@@ -45,7 +45,9 @@ public class CourseRvAdapter extends  RecyclerView.Adapter<CourseRvAdapter.MyCou
         myCourseHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onclickListener.onClick(i);
+                if (onclickListener != null){
+                    onclickListener.onClick(i);
+                }
             }
         });
     }

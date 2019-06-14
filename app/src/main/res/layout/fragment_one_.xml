@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragment.selectclass.zl.zlvideoactivity.secondfragment.onefragment.One_Fragment"
+ android:orientation="vertical">
+<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/intro_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="嗓音诊疗室"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:layout_margin="10dp"/>
+
+        <ImageView
+                android:id="@+id/intro_avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+        />
+        <TextView
+                android:id="@+id/intro_teacher_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="韩丽艳"
+                android:textAlignment="center"/>
+
+        <TextView
+                android:id="@+id/intro_duce"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:lineHeight="20dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>

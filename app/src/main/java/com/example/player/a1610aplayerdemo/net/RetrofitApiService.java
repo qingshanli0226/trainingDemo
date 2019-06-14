@@ -5,10 +5,12 @@ package com.example.player.a1610aplayerdemo.net;
 import com.example.player.a1610aplayerdemo.fragment.member.Bean_Member;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.bean.GetHomeBean;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.bean.ZlintroduceBean;
+import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.bean.ZlvideoBean;
 import com.example.player.a1610aplayerdemo.token.UserBean;
 import io.reactivex.Observable;
 import retrofit2.http.*;
 
+import java.util.List;
 import java.util.Map;
 
 public interface RetrofitApiService {
@@ -25,5 +27,8 @@ public interface RetrofitApiService {
 
   @GET("zhuanLan/getdetail")
   Observable<ResEntity<ZlintroduceBean.DataBean>> getZlIntroDuce(@HeaderMap Map<String,String> headMap, @Query("id")String id);
+
+  @GET("zhuanLan/getArticleList")  //zlId=20&page=1&size=20
+  Observable<ResEntity<List<ZlvideoBean.DataBean>>> getVideoList(@HeaderMap Map<String,String> headMap, @QueryMap Map<String,String> queryMap);
 
 }

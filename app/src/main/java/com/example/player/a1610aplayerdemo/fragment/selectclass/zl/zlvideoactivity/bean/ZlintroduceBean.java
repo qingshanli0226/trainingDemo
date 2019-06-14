@@ -1,5 +1,8 @@
 package com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class ZlintroduceBean {
     /**
      * success : true
@@ -45,7 +48,7 @@ public class ZlintroduceBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Parcelable {
         /**
          * id : 20
          * teacherId : 142
@@ -85,6 +88,37 @@ public class ZlintroduceBean {
         private String teacherAvatar;
         private int passportId;
         private ShareViewBean shareView;
+
+        protected DataBean(Parcel in) {
+            id = in.readInt();
+            teacherId = in.readInt();
+            title = in.readString();
+            image = in.readString();
+            showIndex = in.readInt();
+            isQa = in.readInt();
+            qaPrice = in.readDouble();
+            percentage = in.readInt();
+            ccomPercentage = in.readInt();
+            teacherPercentage = in.readInt();
+            introduce = in.readString();
+            barTitle = in.readString();
+            barColor = in.readString();
+            teacherName = in.readString();
+            teacherAvatar = in.readString();
+            passportId = in.readInt();
+        }
+
+        public static final Creator<DataBean> CREATOR = new Creator<DataBean>() {
+            @Override
+            public DataBean createFromParcel(Parcel in) {
+                return new DataBean(in);
+            }
+
+            @Override
+            public DataBean[] newArray(int size) {
+                return new DataBean[size];
+            }
+        };
 
         public int getId() {
             return id;
@@ -220,6 +254,31 @@ public class ZlintroduceBean {
 
         public void setShareView(ShareViewBean shareView) {
             this.shareView = shareView;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel parcel, int i) {
+            parcel.writeInt(id);
+            parcel.writeInt(teacherId);
+            parcel.writeString(title);
+            parcel.writeString(image);
+            parcel.writeInt(showIndex);
+            parcel.writeInt(isQa);
+            parcel.writeDouble(qaPrice);
+            parcel.writeInt(percentage);
+            parcel.writeInt(ccomPercentage);
+            parcel.writeInt(teacherPercentage);
+            parcel.writeString(introduce);
+            parcel.writeString(barTitle);
+            parcel.writeString(barColor);
+            parcel.writeString(teacherName);
+            parcel.writeString(teacherAvatar);
+            parcel.writeInt(passportId);
         }
 
         public static class ShareViewBean {

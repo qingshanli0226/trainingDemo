@@ -2,6 +2,8 @@ package com.example.player.a1610aplayerdemo.net;
 
 import io.reactivex.functions.Function;
 
+import java.util.List;
+
 public class NetFunction<R extends ResEntity<T>, T> implements Function<R, T> {
     @Override
     public T apply(R input) {
