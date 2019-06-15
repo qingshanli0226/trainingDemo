@@ -18,6 +18,8 @@ import com.example.player.a1610aplayerdemo.fragment.Home.bean.SelectorBean
 import com.example.player.a1610aplayerdemo.fragment.Home.present.SelectPresenter
 import com.example.player.a1610aplayerdemo.fragment.Home.present.SelectorPresentCompl
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.toolbar.*
+import org.jetbrains.anko.support.v4.intentFor
 import kotlin.math.log
 
 //// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

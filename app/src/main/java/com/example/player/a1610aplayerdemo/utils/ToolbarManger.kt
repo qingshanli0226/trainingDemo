@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.utils
 
+import android.graphics.Color
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.example.player.a1610aplayerdemo.R
@@ -11,6 +12,7 @@ interface ToolbarManger {
     fun initMainToolbar(){
         toolbar.setTitle("喜慧")
         toolbar.inflateMenu(R.menu.main)
+        
         toolbar.setOnMenuItemClickListener(object :Toolbar.OnMenuItemClickListener{
             override fun onMenuItemClick(item: MenuItem?): Boolean {
                 when(item?.itemId){
@@ -25,5 +27,9 @@ interface ToolbarManger {
     }
     fun initSettingToolbar(){
         toolbar.setTitle("设置")
+    }
+    fun initSettingToolbar1() {
+        toolbar.setTitle("管乐")
+        toolbar.setBackgroundColor(Color.WHITE)
     }
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <ImageView
+            android:id="@+id/mb2_img"
+            android:layout_width="match_parent" android:layout_height="@dimen/music_mb_img_height"
+    android:src="@mipmap/ic_launcher"/>
+    <RelativeLayout android:layout_width="match_parent"
+                  android:layout_marginTop="@dimen/music_mb_text_height"
+                  android:layout_height="@dimen/music_mb_text_height">
+        <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content" android:layout_height="match_parent"
+        android:text="111"
+        android:layout_alignParentLeft="true"/>
+        <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content" android:layout_height="match_parent"
+        android:text="111"
+                  android:textColor="#f00"
+        android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+    <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="@dimen/music_mb_text_height">
+        <TextView
+                android:id="@+id/tv_tc_name"
+                android:layout_width="wrap_content" android:layout_height="match_parent"
+                android:text="111"
+                android:textColor="#999"
+                android:layout_alignParentLeft="true"/>
+        <TextView
+                android:id="@+id/tv_jieshao"
+                android:layout_marginLeft="@dimen/music_mb_text_width"
+                android:layout_width="wrap_content" android:layout_height="match_parent"
+                android:text="111"
+                android:textColor="#999"
+                android:singleLine="true"/>
+
+    </LinearLayout>
+</LinearLayout>

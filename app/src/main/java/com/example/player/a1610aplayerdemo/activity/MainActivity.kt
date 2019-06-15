@@ -34,6 +34,7 @@ class MainActivity : BaseActivity(), ToolbarManger {
     override fun initlistener() {
 
         bottomBar.setOnTabSelectListener { tabId ->
+
             val transaction=supportFragmentManager.beginTransaction()
             transaction.replace(R.id.main_frameLayout, FragmentUtils.fragmentUtils.getFragment(tabId),tabId.toString())
             transaction.commit()

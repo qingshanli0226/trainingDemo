@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_mb_text_size">20dp</dimen>
+    <dimen name="item_mb_text_margin">30dp</dimen>
+    <dimen name="music_mb_img_height">150dp</dimen>
+    <dimen name="music_mb_text_height">20dp</dimen>
+    <dimen name="music_mb_text_width">10dp</dimen>
+
+</resources>

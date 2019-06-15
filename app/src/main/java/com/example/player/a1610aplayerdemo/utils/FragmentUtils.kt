@@ -4,9 +4,9 @@ import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.base.BaseFragment
 import com.example.player.a1610aplayerdemo.fragment.*
 import com.example.player.a1610aplayerdemo.fragment.Home.HomeFragment
+import com.example.player.a1610aplayerdemo.fragment.membre.Bean.MvFragment
 
 class FragmentUtils private constructor(){
-
     val homeFragment by lazy { HomeFragment() }
     val studyFragment by lazy { StudyFragment() }
     val mvFragment by lazy { MvFragment() }
@@ -16,6 +16,7 @@ class FragmentUtils private constructor(){
     companion object {
         val fragmentUtils by lazy{FragmentUtils()}
     }
+
     fun getFragment(tabId:Int):BaseFragment {
             when(tabId){
                 R.id.tab_home -> return homeFragment

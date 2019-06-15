@@ -1,20 +1,18 @@
 package com.example.player.a1610aplayerdemo.fragment.Home.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.*;
 import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.base.BaseAdapter;
-import com.example.player.a1610aplayerdemo.base.BaseViewHolder;
 import com.example.player.a1610aplayerdemo.fragment.Home.bean.SelectorBean;
+import com.example.player.a1610aplayerdemo.fragment.MusicClass.present.MusciClassActivity;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.Transformer;
@@ -39,6 +37,7 @@ public class SelectorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public static final int DASHIKE=5;
     public int currentType =BANNER;
 
+    public Context context;
 
     public void addBannerData(List<SelectorBean.HomeBannerBean> list){
         bannerBeans.clear();
@@ -102,6 +101,7 @@ public class SelectorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        context=viewGroup.getContext();
         if (i==BANNER){
             View view= LayoutInflater.from(MyApp.instance).inflate(R.layout.banner_bn,viewGroup,false);
             return new BannerViewHolder(view);
@@ -206,6 +206,16 @@ public class SelectorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public BiaogeViewHolder(@NonNull View itemView) {
             super(itemView);
             channel=itemView.findViewById(R.id.rv_biaoge);
+            channel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    if (position == 0) {
+                        Intent intent=new Intent();
+                        intent.setClass(context, MusciClassActivity.class);
+                        context.startActivity(intent);
+                    }
+                }
+            });
         }
         public void setData(List<SelectorBean.HomeCategoryBean> homeCategoryBeans){
             HomeCateAdapter homeCateAdapter=new HomeCateAdapter();
@@ -251,7 +261,7 @@ public class SelectorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
          public void setData(List<SelectorBean.VipRecommendBean> vipRecommendBeans) {
             VipAdapter vipAdapter=new VipAdapter();
-                gridView.setAdapter(vipAdapter);
+            gridView.setAdapter(vipAdapter);
             vipAdapter.refresh(vipRecommendBeans);
          }
      }

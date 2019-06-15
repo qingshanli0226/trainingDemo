@@ -16,7 +16,6 @@ public class TokenInterceptor implements Interceptor {
         Request newRequest=null;
         Request request= chain.request();
         Log.d("token", "intercept: "+token);
-
         if (token != null) {
             newRequest=request.newBuilder().addHeader(Contants.TOKEN, token).build();
             return chain.proceed(newRequest);
