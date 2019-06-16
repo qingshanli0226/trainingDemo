@@ -124,7 +124,9 @@ public class DivToolbar extends RelativeLayout{
     public void setCenterRightTextLayoutVisibility(int visibility){
         centerRightText.setVisibility(visibility);
     }
-
+    public void setCenterRightText(String text){
+        centerRightText.setText(text);
+    }
     public void setBackgroundColor(int color){
         titleLayout.setBackgroundColor(color);
     }

@@ -21,10 +21,11 @@ import java.util.List;
 public abstract class BaseRecyclerViewFragment<T , V extends View> extends Fragment implements IBaseView<T> {
 
 
-    private View view;
-    private BaseRecyclerViewAdapter baseRecyclerViewAdapter;
-    private IBasePresenter iBasePresenter;
+    protected View view;
+    protected BaseRecyclerViewAdapter baseRecyclerViewAdapter;
+    protected IBasePresenter iBasePresenter;
     protected  DivToolbar toolbar;
+    protected  RecyclerView recyclerView;
     public BaseRecyclerViewFragment() {
         // Required empty public constructor
     }
@@ -48,9 +49,9 @@ public abstract class BaseRecyclerViewFragment<T , V extends View> extends Fragm
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_base_recycler_view, container, false);
         toolbar = view.findViewById(R.id.toolbar);
-        initToobar();
+        recyclerView  = view.findViewById(R.id.rv);
+        initToobar();//子类可重写自己界面的toolbar
         initView();
-
         return view;
     }
 
@@ -65,11 +66,14 @@ public abstract class BaseRecyclerViewFragment<T , V extends View> extends Fragm
     /**
      * 初始化RecyclerView
      */
-    private void initView() {
-        RecyclerView recyclerView = view.findViewById(R.id.rv);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+    protected void initView() {
+        setRecyclerViewManager();   //子类不重写该方法默认LinearLayoutManager竖向排列
         baseRecyclerViewAdapter = getAdapter();
         recyclerView.setAdapter(baseRecyclerViewAdapter);
+    }
+    //向子类提空重写RecyclerView布局方向的方法
+    protected void setRecyclerViewManager() {
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
     }
 
     //集合刷新适配器
