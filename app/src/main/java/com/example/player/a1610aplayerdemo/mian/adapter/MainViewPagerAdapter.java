@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import com.example.player.a1610aplayerdemo.*;
 import com.example.player.a1610aplayerdemo.selectclass.ui.SelectClassFragment;
+import com.example.player.a1610aplayerdemo.vip.VipFragment;
 
 public class MainViewPagerAdapter extends FragmentStatePagerAdapter {
     private Fragment[] fragments = new Fragment[]{new SelectClassFragment(),new StudyFragment(),new VipFragment(),new MyFragment()};

@@ -24,7 +24,7 @@ public abstract class BaseRecyclerViewFragment<T , V extends View> extends Fragm
     private View view;
     private BaseRecyclerViewAdapter baseRecyclerViewAdapter;
     private IBasePresenter iBasePresenter;
-
+    protected  DivToolbar toolbar;
     public BaseRecyclerViewFragment() {
         // Required empty public constructor
     }
@@ -47,9 +47,14 @@ public abstract class BaseRecyclerViewFragment<T , V extends View> extends Fragm
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_base_recycler_view, container, false);
+        toolbar = view.findViewById(R.id.toolbar);
+        initToobar();
         initView();
+
         return view;
     }
+
+    protected abstract void initToobar();
 
 
     //需要子类来提供适配器

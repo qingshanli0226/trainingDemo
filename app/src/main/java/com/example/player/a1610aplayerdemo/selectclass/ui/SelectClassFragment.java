@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.selectclass.ui;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewFragment;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
@@ -14,6 +15,17 @@ import java.util.List;
 
 public class SelectClassFragment extends BaseRecyclerViewFragment<Object, View> {
     private SelectClassRvAdapter selectClassRvAdapter = new SelectClassRvAdapter();
+
+    @Override
+    protected void initToobar() {
+        toolbar.setLeftLayoutClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "点击了左边", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     @Override
     public BaseRecyclerViewAdapter<Object, View> getAdapter() {
         return selectClassRvAdapter;

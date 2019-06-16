@@ -11,6 +11,11 @@ public class TestFragment extends BaseRecyclerViewFragment<NetBean.DataBean, Vie
 
 
     @Override
+    protected void initToobar() {
+
+    }
+
+    @Override
     public BaseRecyclerViewAdapter<NetBean.DataBean, View> getAdapter() {
         return new TestAdapter();
     }
