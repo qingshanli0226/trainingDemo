@@ -48,7 +48,7 @@ public class VipPresenter extends BasePresenter<MemberBean.DataBean> {
     }
 
     @Override
-    public boolean isList() {
-        return true;
+    public int isList() {
+        return Constans.DATA_TYPE_LIST;
     }
 }

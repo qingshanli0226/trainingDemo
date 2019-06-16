@@ -1,7 +1,9 @@
 package com.example.player.a1610aplayerdemo.base;
 
+import android.content.Context;
 import android.util.Log;
 
+import com.example.player.a1610aplayerdemo.utils.Constans;
 import com.example.player.a1610aplayerdemo.utils.EntityUtils;
 import com.example.player.a1610aplayerdemo.utils.ErrorUtils;
 import com.example.player.a1610aplayerdemo.utils.MVPObervice;
@@ -32,18 +34,24 @@ public abstract class BasePresenter<T> implements IBasePresenter<T> {
                                     @Override
                                     public void onNext(String s) {
                                         super.onNext(s);
-                                        if (isList()){
+                                        if (isList()==1){
                                             //如果是列表数据
                                             EntityUtils<List<T>> result =null;
                                             //通过子类传入的是数据类型,去给定值
                                             result =new Gson().fromJson(s,getType());
                                             iBaseView.LoadListDataSuccess(result.getData());
-                                        }else {
+                                        }else if (isList()==2){
                                             EntityUtils<T> result =null;
+                                            Log.d("limengzhen",s);
+                                            Log.d("limengzhen","type"+getType());
                                             result =new Gson().fromJson(s,getType());
                                             String simpleName = result.getData().getClass().getSimpleName();
                                             Log.i("json",simpleName);
                                             iBaseView.loadDataSuccess(result.getData());
+                                        }else if (isList()==3){
+                                            Gson gson =new Gson();
+                                            Object o = gson.fromJson(s, getType());
+                                            iBaseView.loadDataSuccess((T) o);
                                         }
                                     }
 
@@ -73,8 +81,8 @@ public abstract class BasePresenter<T> implements IBasePresenter<T> {
     }
 
     //判断返回的类型是否是 集合  默认为false
-    public boolean isList(){
-        return false;
+    public int isList(){
+        return Constans.DATA_TYPE_OBJECT;
     }
 
     /**

@@ -10,4 +10,10 @@ public class Constans {
     public static final String YX_USER="user";
     public static final String USER_AVATAR="avatar";
     public static final String YX_VIP= "masterPackage/getMasterPackagelist";
+    //LIST
+    public static final int DATA_TYPE_LIST=1;
+    //普通对象
+    public static final int DATA_TYPE_OBJECT=2;
+    //布尔值
+    public static final int DATA_TYPE_BOOLEAN=3;
 }
