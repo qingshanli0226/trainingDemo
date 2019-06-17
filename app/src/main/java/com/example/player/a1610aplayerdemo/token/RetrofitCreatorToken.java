@@ -27,7 +27,7 @@ public class RetrofitCreatorToken {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
-                .baseUrl(SiteUrl.TOKEN_URL)
+                .baseUrl(SiteUrl.URL_HEAD)
                 .build();
 
         netApiService = retrofit.create(NetApiService.class);

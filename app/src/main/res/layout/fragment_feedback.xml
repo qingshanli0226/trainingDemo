@@ -13,6 +13,7 @@
             style="@style/mw">
 
         <ImageView
+                android:id="@+id/feedback_back"
                 style="@style/my_textView_wwt"
                 android:src="@drawable/ic_back"/>
 

@@ -25,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.home_frame)
     FrameLayout homeFrame;
     @BindView(R.id.home_radioB_curriculum)
+
     RadioButton homeRadioBCurriculum;
     @BindView(R.id.home_radioB_study)
     RadioButton homeRadioBStudy;

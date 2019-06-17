@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.net;
 
+import com.example.player.a1610aplayerdemo.curriculum.bean.BannerBean;
 import com.example.player.a1610aplayerdemo.curriculum.bean.Bean;
 import com.example.player.a1610aplayerdemo.mistake.ResEntity;
 import com.example.player.a1610aplayerdemo.my.bean.Feedback;
@@ -26,4 +27,7 @@ public interface NetApiService {
 
     @POST("restapi/app/setFeedback")
     Observable<ResEntity<Feedback>> getFeedback(@QueryMap Map<String,String> map);
+
+    @GET("restapi/course/getVideo2")
+    Observable<ResEntity<BannerBean>> getBannerData(@QueryMap Map<String,String> map);
 }

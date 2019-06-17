@@ -9,8 +9,8 @@ public class SiteUrl {
     public static String URL_HEAD = "http://api.immedc.com/";
     //发现界面的主json数据
     public static String CURRICULUM = "restapi/loading/getHome";
-    //获取token POST请求
-    public static String TOKEN_URL = "http://api.immedc.com/";
     //获取VIP界面
     public static String VIP = "restapi/masterPackage/getMasterPackagelist?minid=0&size=20";
+    //获取banner
+
 }

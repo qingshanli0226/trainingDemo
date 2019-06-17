@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".curriculum.fragment.BannerFragment"
+        android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.Toolbar
+            android:background="@color/colorModena"
+            style="@style/mw">
+
+        <ImageView
+                android:id="@+id/banner_back"
+                style="@style/my_textView_wwt"
+                android:src="@drawable/ic_back"/>
+
+        <TextView
+                android:id="@+id/banner_title"
+                style="@style/feedback_opinion"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+            android:layout_width="match_parent" android:layout_height="240dp">
+
+        <ImageView
+                android:id="@+id/banner_image"
+                style="@style/curriculum_banner"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true" android:layout_marginTop="0dp">
+        </ImageView>
+
+        <TextView
+                android:id="@+id/banner_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="试看"
+                android:textSize="15sp"
+                android:background="#8e2627"
+                android:textColor="#fff"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+                android:layout_marginTop="66dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#fff"
+                  android:text="收藏" android:id="@+id/banner_collect" android:layout_alignParentRight="true"
+                  android:layout_alignParentEnd="true" android:layout_marginEnd="6dp"
+                  android:layout_alignParentBottom="true" android:layout_marginBottom="69dp"
+                  android:layout_marginRight="6dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#fff"
+                  android:text="分享" android:id="@+id/banner_share" android:layout_alignParentRight="true"
+                  android:layout_alignParentEnd="true" android:layout_marginEnd="43dp"
+                  android:layout_marginRight="43dp" android:layout_above="@+id/banner_niv"
+                  android:layout_marginBottom="0dp"/>
+
+        <com.othershe.library.NiceImageView
+                android:id="@+id/banner_niv"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10dp"
+                app:is_circle="true"
+                android:layout_alignBottom="@+id/banner_collect"
+                android:layout_marginBottom="-72dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_alignParentStart="true"
+                  android:layout_marginStart="99dp" android:layout_alignParentLeft="true"
+                  android:layout_alignParentBottom="true" android:layout_marginBottom="35dp"
+                  android:layout_marginLeft="99dp" android:id="@+id/banner_text1"
+                  android:layout_marginTop="10dp" android:textColor="#000"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_alignBottom="@+id/banner_collect"
+                  android:layout_marginBottom="-63dp"
+                  android:layout_marginTop="10dp" android:textColor="#000"
+                  android:layout_marginLeft="97dp" android:id="@+id/banner_text2"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/banner_tab"
+            app:tabTextColor="#000"
+            app:tabSelectedTextColor="#ac4063"
+            app:tabIndicatorColor="#ac4063"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="150dp"
+            android:layout_marginTop="10dp">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/banner_vp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="#000"
+                    android:textSize="12dp"
+                    android:text="会员价0元(原价0元)"/>
+
+            <TextView
+                    android:id="@+id/banner_huiyue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textSize="12dp"
+                    android:textColor="#ec632e"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginRight="5dp"
+                    android:text="戳此加入会员>"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="免费"
+                    android:gravity="left"
+                    android:textColor="#ec612d"
+                    android:layout_gravity="center_vertical"/>
+
+           <LinearLayout android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:gravity="right">
+
+               <Button
+                       android:id="@+id/banner_btn"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="立即购买"
+                       android:textColor="#fff"
+                       android:background="#ec612d"/>
+
+           </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

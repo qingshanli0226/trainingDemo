@@ -15,67 +15,57 @@
             android:layout_weight="1">
     </FrameLayout>
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="vertical">
+    <RadioGroup android:id="@+id/home_radioG"
+                android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
 
-        <View android:layout_width="match_parent"
-              android:layout_height="7dp"
-              android:background="#ccc"></View>
+        <RadioButton
+                android:id="@+id/home_radioB_curriculum"
+                android:button="@null"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="发现"
+                android:drawableTop="@drawable/ic_curriculum"
+                android:textAlignment="center"
+                android:background="@drawable/navigation_bar">
+        </RadioButton>
 
-        <RadioGroup android:id="@+id/home_radioG" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+        <RadioButton
+                android:id="@+id/home_radioB_study"
+                android:button="@null"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="会员"
+                android:drawableTop="@drawable/ic_study"
+                android:textAlignment="center"
+                android:background="@drawable/navigation_bar">
+        </RadioButton>
 
-            <RadioButton
-                    android:id="@+id/home_radioB_curriculum"
-                    android:button="@null"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="发现"
-                    android:drawableTop="@drawable/ic_curriculum"
-                    android:textAlignment="center"
-                    android:background="@drawable/navigation_bar">
-            </RadioButton>
+        <RadioButton
+                android:id="@+id/home_radioB_message"
+                android:button="@null"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="已购"
+                android:drawableTop="@drawable/ic_message"
+                android:textAlignment="center"
+                android:background="@drawable/navigation_bar">
+        </RadioButton>
 
-            <RadioButton
-                    android:id="@+id/home_radioB_study"
-                    android:button="@null"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="会员"
-                    android:drawableTop="@drawable/ic_study"
-                    android:textAlignment="center"
-                    android:background="@drawable/navigation_bar">
-            </RadioButton>
+        <RadioButton
+                android:id="@+id/home_radioB_me"
+                android:button="@null"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="我的"
+                android:drawableTop="@drawable/ic_me"
+                android:textAlignment="center"
+                android:background="@drawable/navigation_bar">
+        </RadioButton>
 
-            <RadioButton
-                    android:id="@+id/home_radioB_message"
-                    android:button="@null"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="已购"
-                    android:drawableTop="@drawable/ic_message"
-                    android:textAlignment="center"
-                    android:background="@drawable/navigation_bar">
-            </RadioButton>
-
-            <RadioButton
-                    android:id="@+id/home_radioB_me"
-                    android:button="@null"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="我的"
-                    android:drawableTop="@drawable/ic_me"
-                    android:textAlignment="center"
-                    android:background="@drawable/navigation_bar">
-            </RadioButton>
-
-        </RadioGroup>
-
-    </LinearLayout>
+    </RadioGroup>
 
 </LinearLayout>

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -80,8 +81,13 @@ public class MeFragment extends Fragment {
             case R.id.my_ll_recommend:
                 break;
             case R.id.my_ll_opinion:
-                Intent intent = new Intent(getActivity(),FeedbackFragment.class);
-                startActivity(intent);
+                RadioGroup radioGroup = getActivity().findViewById(R.id.home_radioG);
+                radioGroup.setVisibility(View.GONE);
+                getFragmentManager()
+                        .beginTransaction()
+                        .addToBackStack(null)  //将当前fragment加入到返回栈中
+                        .replace(R.id.home_frame,new FeedbackFragment())
+                        .commit();
                 break;
         }
     }

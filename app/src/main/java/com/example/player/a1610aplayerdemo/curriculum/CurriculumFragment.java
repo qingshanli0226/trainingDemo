@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.curriculum;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,10 +13,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.*;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -26,7 +26,9 @@ import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.curriculum.adapter.*;
 import com.example.player.a1610aplayerdemo.curriculum.bean.Bean;
+import com.example.player.a1610aplayerdemo.curriculum.fragment.BannerFragment;
 import com.example.player.a1610aplayerdemo.curriculum.presenter.CurriculumPresenter;
+import com.example.player.a1610aplayerdemo.my.fragment.FeedbackFragment;
 import com.scwang.smartrefresh.header.BezierCircleHeader;
 import com.scwang.smartrefresh.header.WaterDropHeader;
 import com.scwang.smartrefresh.header.WaveSwipeHeader;
@@ -82,6 +84,7 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
     private ZlAdapter zlAdapter;
     private CourseRecommendsAdapter courseRecommendsAdapter;
     private MasterAdapter masterAdapter;
+    private SharedPreferences spBannner;
 
     public CurriculumFragment() {
         // Required empty public constructor
@@ -237,9 +240,37 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
 
     }
 
+//    "title" : "钢琴即兴伴奏",
+//            "bannerUrl" : "http://ali-files.yooshow.com/2019/03/20/eb32525c-4e19-47e6-be9b-d5007a48b823.png",
+//            "bannerType" : 2,
+//            "relationInfo" : "31",
+//            "moduletype" : 0,
+//            "showIndex" : 1,
+//            "courseType" : 1,
+//            "liveStatus" : 0,
+//            "liveIsBuy" : false
+
+
+    //轮播图的点击事件
     @Override
     public void OnBannerClick(int position) {
-        Toast.makeText(getActivity(), "" + homeBannerBeans.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+        if(homeBannerBeans.get(position).getCourseType() == 1){
+            spBannner = getActivity().getSharedPreferences("spBanner",Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = spBannner.edit();
+            editor.putString("courseId",homeBannerBeans.get(position).getRelationInfo());
+            editor.commit();
+            RadioGroup radioGroup = getActivity().findViewById(R.id.home_radioG);
+            radioGroup.setVisibility(View.GONE);
+            getFragmentManager()
+                    .beginTransaction()
+                    .addToBackStack(null)  //将当前fragment加入到返回栈中
+                    .replace(R.id.home_frame,new BannerFragment())
+                    .commit();
+        }else{
+            WebView webView = new WebView(getActivity());
+            webView.setWebViewClient(new WebViewClient());
+            webView.loadUrl("http://api.immedc.com/restapi/apph5/viphy?pkgid=16");
+        }
     }
 
     //选择的监听事件
