@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">1610APlayerDemo</string>
+    <string name="shikan">试看</string>
+    <string name="shoucang">收藏</string>
+    <string name="share">分享</string>
+    <string name="vipPrice">会员价0元（原价0元）</string>
+    <string name="joinvip">戳此加入会员></string>
+    <string name="mianfei">免费</string>
+    <string name="goumai">立即购买</string>
+    <string name="jianjie">简介</string>
 </resources>

@@ -5,13 +5,13 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-    <com.example.player.a1610aplayerdemo.main.MyViewPager
+        tools:context=".ui.main.MainActivity">
+    <com.example.player.a1610aplayerdemo.ui.main.MyViewPager
             android:id="@+id/main_vp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
-    ></com.example.player.a1610aplayerdemo.main.MyViewPager>
+    ></com.example.player.a1610aplayerdemo.ui.main.MyViewPager>
 
     <LinearLayout
             android:layout_width="match_parent"

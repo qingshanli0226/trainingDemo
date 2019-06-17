@@ -1,9 +1,6 @@
 package com.example.player.a1610aplayerdemo.net;
 
-import com.example.player.a1610aplayerdemo.bean.Bean;
-import com.example.player.a1610aplayerdemo.bean.MainBean;
-import com.example.player.a1610aplayerdemo.bean.UserBean;
-import com.example.player.a1610aplayerdemo.bean.VipDataBean;
+import com.example.player.a1610aplayerdemo.bean.*;
 import io.reactivex.Observable;
 import retrofit2.http.*;
 
@@ -34,4 +31,15 @@ public interface IServiceApi {
     Observable<Bean<List<VipDataBean>>> getVipData(@HeaderMap Map<String,String> map,@Url String url);
 
     ///restapi/student/getStudentInfo   每次更改个人信息会调用的
+
+
+    /**
+     * 获取VIP界面的数据
+     * @param map
+     * @param url
+     * @return
+     */
+    @GET
+    Observable<Bean<DetailBean>> getDetailsData(@HeaderMap Map<String,String> map, @Url String url);
+
 }
