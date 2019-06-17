@@ -12,21 +12,24 @@
 
         <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:src="@mipmap/jiangyinglianordiqier3"/>
+                android:layout_height="250dp"
+                android:background="@mipmap/userimage"/>
 
         <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:src="@mipmap/tu1"/>
 
         <TextView
+                android:id="@+id/log_in_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="登录/注册"
-                android:layout_marginLeft="60dp"
-                android:textColor="@android:color/holo_green_light"
+                android:layout_marginLeft="90dp"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"
                 android:layout_centerVertical="true"/>
 
     </RelativeLayout>
@@ -34,22 +37,28 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
         <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="40dp"
+                android:src="@mipmap/jiangyinglian5"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="常见问题"/>
-
+                android:text="常见问题"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"/>
     </LinearLayout>
 
     <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+            android:layout_height="0.1dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:background="@android:color/darker_gray">
@@ -58,22 +67,29 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
         <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="40dp"
+                android:src="@mipmap/jiangyinglian6"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="常见问题"/>
+                android:text="检查更新"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"/>
 
     </LinearLayout>
 
     <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+            android:layout_height="0.1dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:background="@android:color/darker_gray">
@@ -82,22 +98,29 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
         <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="40dp"
+                android:src="@mipmap/jiangyinglian7"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="常见问题"/>
+                android:text="推荐【央音在线】给好友"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"/>
 
     </LinearLayout>
 
     <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+            android:layout_height="0.1dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:background="@android:color/darker_gray">
@@ -106,22 +129,29 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
         <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="40dp"
+                android:src="@mipmap/jiangyinglian8"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="常见问题"/>
+                android:text="意见反馈"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"/>
 
     </LinearLayout>
 
     <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+            android:layout_height="0.1dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:background="@android:color/darker_gray">

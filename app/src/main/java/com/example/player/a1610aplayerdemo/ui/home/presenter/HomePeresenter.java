@@ -4,15 +4,13 @@ import android.util.Log;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.base.ResEntity;
+import com.example.player.a1610aplayerdemo.commit.Contants;
 import com.example.player.a1610aplayerdemo.net.Functions;
 import com.example.player.a1610aplayerdemo.net.ObServer;
 import com.example.player.a1610aplayerdemo.net.SP;
-import com.example.player.a1610aplayerdemo.ui.AccountManager;
 import com.example.player.a1610aplayerdemo.ui.home.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
-import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 import java.util.ArrayList;
@@ -28,11 +26,11 @@ public class HomePeresenter implements IBasePresenter<HomeBean.DataBean> {
 
         Map<String,String> map = new HashMap();
         String token = SP.getToken();
-        if (token !=null){
+        if (!token.equals("")){
             map.put("CH-TOKEN", token);
             Log.i("aaa", "getData: "+token);
         }else {
-            return;
+            map.put("CH-TOKEN", Contants.TOKEN_FINAL);
         }
 
         RetrofitCreator.getMyServiceInterface().getHomeBean(map)

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/homefourleft_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="走进鲁特琴的世界"
+                    android:textSize="23sp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@android:color/black"/>
+
+            <ImageView
+                    android:id="@+id/homefourleft_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@mipmap/jiangyinglian7"
+                    android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                    android:id="@+id/homefourleft_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="陈谊"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                    android:id="@+id/homefourleft_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="鲁特琴（Lute）也称琉特琴，是一种曲颈拨弦乐器,也是意大利的传说乐器，更是现今风行世界的乐器--吉他家族的祖先。鲁特琴是中世纪到巴洛克时期在欧洲使用的一类古乐器的总称，是文艺复兴时期欧洲最最风靡的家庭独奏乐器。在十六世纪和十七世纪"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

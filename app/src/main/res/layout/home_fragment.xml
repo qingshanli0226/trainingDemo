@@ -13,9 +13,10 @@
 
         <EditText
                 android:layout_width="320dp"
-                android:layout_height="25dp"
+                android:layout_height="30dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="10dp"
+                android:textSize="10sp"
                 android:background="@android:drawable/edit_text"
                 android:layout_centerHorizontal="true"/>
 

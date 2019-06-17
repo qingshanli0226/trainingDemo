@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.ui.home.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.*;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.ui.home.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.ui.home_activity.categoryactivity.activity.CategoryZeroActivity;
+import com.example.player.a1610aplayerdemo.ui.home_activity.zllistactivity.Home_Four;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -19,9 +23,8 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class HomeAdapter extends XRecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
-//    private HomeBean.DataBean homeBean;
     private List<HomeBean.DataBean> list;
 
     private static final int BANNNER = 0;
@@ -38,9 +41,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
         this.list = list;
-//        this.homeBean = homeBean;
     }
-
 
     @Override
     public int getItemViewType(int position) {
@@ -160,8 +161,17 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             this.context = context;
         }
 
-        public void setData(List<HomeBean.DataBean.ZlListBean> listBeans){
+        public void setData(final List<HomeBean.DataBean.ZlListBean> listBeans){
             gridView.setAdapter(new ZlListAdapter(context,listBeans));
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent();
+                    intent.putExtra("id",listBeans.get(position).getId() + "");
+                    intent.setClass(context, Home_Four.class);
+                    context.startActivity(intent);
+                }
+            });
         }
 
     }
@@ -193,6 +203,18 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public void setData(List<HomeBean.DataBean.HomeCategoryBean> list){
             gvCategory.setAdapter(new CategoryAdapter(context,list));
+            gvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    if (position == 0){
+                        Intent intent = new Intent();
+                        intent.setClass(context, CategoryZeroActivity.class);
+                        context.startActivity(intent);
+                    }else {
+                        Toast.makeText(context, "" + position, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
         }
 
     }
@@ -228,6 +250,5 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
     }
-
 
 }

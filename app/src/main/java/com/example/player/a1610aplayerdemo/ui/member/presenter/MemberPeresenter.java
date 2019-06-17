@@ -4,6 +4,7 @@ import android.util.Log;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.base.ResEntity;
+import com.example.player.a1610aplayerdemo.commit.Contants;
 import com.example.player.a1610aplayerdemo.net.Functions;
 import com.example.player.a1610aplayerdemo.net.ObServer;
 import com.example.player.a1610aplayerdemo.net.SP;
@@ -25,11 +26,11 @@ public class MemberPeresenter implements IBasePresenter<MemberBean.DataBean> {
     public void getData() {
         Map<String,String> map = new HashMap();
         String token = SP.getToken();
-        if (token !=null){
+        if (!token.equals("")){
             map.put("CH-TOKEN", token);
             Log.i("aaa", "getData: "+token);
         }else {
-            return;
+            map.put("CH-TOKEN", Contants.TOKEN_FINAL);
         }
 
         RetrofitCreator.getMyServiceInterface().getDataTwo(map,"0","20")

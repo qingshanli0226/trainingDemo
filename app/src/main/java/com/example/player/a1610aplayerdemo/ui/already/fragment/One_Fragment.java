@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.ui.study.fragment;
+package com.example.player.a1610aplayerdemo.ui.already.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.example.player.a1610aplayerdemo.R;
 
-public class Already_Fragment extends Fragment {
+public class One_Fragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.already_fragment,container,false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.one_fragment,container,false);
         return view;
     }
 }

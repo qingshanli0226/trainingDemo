@@ -58,14 +58,11 @@ public class TokenPresenter implements TokenContract.ITokenUserInfo {
 
                     @Override
                     public void onNext(ResEntity<Bean.DataBean> beanResEntity) {
-                        if (beanResEntity.getData() != null){
                             SP.Tokens(beanResEntity.getData().getAccessToken());
-                        }else {
-                            return;
-                        }
 
-//                        AccountManager.getInstance().setCurrentUser(beanResEntity.getData());
-//                        AccountManager.getInstance().SaveToken(beanResEntity.getData().getAccessToken());
+
+                        AccountManager.getInstance().setCurrentUser(beanResEntity.getData());
+                        AccountManager.getInstance().SaveToken(beanResEntity.getData().getAccessToken());
                     }
 
                     @Override

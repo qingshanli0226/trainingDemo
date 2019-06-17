@@ -6,6 +6,8 @@ public class Contants {
 
     public static String TOKEN = "CH-TOKEN";
 
+    public static String TOKEN_FINAL = "F173B5AA23C2C9E4694A4B993B259004";
+
     public static final String GET_HOME = "loading/getHome";
 
 }

@@ -27,6 +27,11 @@ public abstract class BaseRecyclerFragment<T, V extends View> extends Fragment i
         return view;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     private void initView(View rootView){
         RecyclerView recyclerView = rootView.findViewById(R.id.base_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
@@ -45,6 +50,7 @@ public abstract class BaseRecyclerFragment<T, V extends View> extends Fragment i
 
     @Override
     public void onLoadData(List<T> data) {
+        list.clear();
         list.addAll(data);
         baseRecyclerViewAdapter.updateData(list);
     }
