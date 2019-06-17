@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.ui.activity
 
 import android.os.Build
 import com.example.player.a1610aplayerdemo.base.BasePresenter
+import com.example.player.a1610aplayerdemo.bean.SetPasswordBean
 import com.example.player.a1610aplayerdemo.bean.SetPwdBean
 import com.example.player.a1610aplayerdemo.utils.Constans
 import com.example.player.a1610aplayerdemo.utils.EntityUtils
@@ -15,7 +16,7 @@ import java.util.HashMap
  * Created by Lmz on 2019/06/17
  *  设置密码
  */
-class SetPwdPresenter :BasePresenter<EntityUtils<SetPwdBean>>(){
+class SetPwdPresenter :BasePresenter<SetPasswordBean.DataBean>(){
 
     var pwd="PHONE"
     fun setpwd(pwd:String){
@@ -30,7 +31,7 @@ class SetPwdPresenter :BasePresenter<EntityUtils<SetPwdBean>>(){
     }
 
     override fun getType(): Type {
-        var type=object :TypeToken<EntityUtils<SetPwdBean>>(){}.type
+        var type=object :TypeToken<EntityUtils<SetPasswordBean.DataBean>>(){}.type
         return type
     }
 

@@ -62,4 +62,6 @@ public class SharePresenterUtils {
     public static String getPhone(){
         return sp.getString("phone","");
     }
+
+
 }

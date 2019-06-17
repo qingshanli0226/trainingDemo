@@ -23,5 +23,7 @@ class MeFragment :BaseFragment() {
         me_text_login.setOnClickListener {
             startActivity<LoginActivity>()
         }
+
+        
     }
 }
