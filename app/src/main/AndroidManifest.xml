@@ -15,6 +15,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".loginactivity.LoginActivity">
+        </activity>
         <activity android:name=".fragment.selectclass.zl.zlvideoactivity.ZLvideoActivity">
         </activity>
         <activity

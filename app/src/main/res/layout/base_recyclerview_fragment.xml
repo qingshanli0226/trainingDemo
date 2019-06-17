@@ -2,11 +2,15 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-android:orientation="vertical">
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
 
-    <include layout="@layout/mtoolbar"
-    android:id="@+id/tb"/>
+   <com.example.player.a1610aplayerdemo.base.MToolBar
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:id="@+id/basef_tb"
+           android:background="#81110B">
+   </com.example.player.a1610aplayerdemo.base.MToolBar>
 
 <android.support.v7.widget.RecyclerView
         android:id="@+id/base_rv"

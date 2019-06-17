@@ -47,6 +47,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     // 必要依赖，解析json字符所用
     implementation 'com.squareup.picasso:picasso:2.71828'
-
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.dou361.ijkplayer:jjdxm-ijkplayer:1.0.2'
 }

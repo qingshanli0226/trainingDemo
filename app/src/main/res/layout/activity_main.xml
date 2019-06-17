@@ -26,7 +26,7 @@
         android:layout_weight="1"
         android:layout_height="match_parent"
         style="@style/radiobutton"
-        android:text="选课"
+        android:text="@string/main_rb_selectclass"
         android:checked="true"
         android:textColor="@drawable/radiobutton_select"
         android:drawableTop="@drawable/ic_select_class"
@@ -39,7 +39,7 @@
            android:layout_weight="1"
            android:layout_height="match_parent"
            style="@style/radiobutton"
-           android:text="学习中心"
+           android:text="@string/main_rb_study"
            android:textColor="@drawable/radiobutton_select"
            android:drawableTop="@drawable/ic_select_class"
    />
@@ -49,7 +49,7 @@
            android:layout_weight="1"
            android:layout_height="match_parent"
            style="@style/radiobutton"
-           android:text="会员"
+           android:text="@string/main_rb_member"
            android:textColor="@drawable/radiobutton_select"
            android:drawableTop="@drawable/ic_select_class"
    />
@@ -59,7 +59,7 @@
            android:layout_weight="1"
            android:layout_height="match_parent"
            style="@style/radiobutton"
-           android:text="我的"
+           android:text="@string/main_rb_aboutme"
            android:textColor="@drawable/radiobutton_select"
            android:drawableTop="@drawable/ic_select_class"
    />

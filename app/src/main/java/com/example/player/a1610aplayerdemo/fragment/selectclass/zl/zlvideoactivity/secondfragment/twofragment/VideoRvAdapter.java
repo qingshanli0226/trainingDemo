@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactiv
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,10 @@ class VideoRvAdapter extends RecyclerView.Adapter<VideoRvAdapter.MyHolder>{
         }
         myHolder.video_price.setText(p);
         Glide.with(m_context).load(dataBean.getImage()).into(myHolder.imageView);
+
+        String url = dataBean.getUrl();
+        Log.i("WLL", "initAdapter: "+url);
+
     }
 
     @Override

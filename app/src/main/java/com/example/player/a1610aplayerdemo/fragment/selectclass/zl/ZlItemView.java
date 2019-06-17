@@ -55,4 +55,5 @@ private List<GetHomeBean.DataBean.ZlListBean> listBeans = new ArrayList<>();
         intent.putExtra("id",id+"");
         m_context.startActivity(intent);
     }
+
 }

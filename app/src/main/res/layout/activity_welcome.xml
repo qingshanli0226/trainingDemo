@@ -78,12 +78,14 @@
                 android:id="@+id/tv_tiao0"
                 android:layout_width="60dp"
                 android:layout_height="30dp"
-                android:background="#F1EEEE"
+
                 android:text="跳过->"
+                android:textColor="#fff"
                android:layout_alignParentRight="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:gravity="center"/>
+                android:gravity="center"
+        />
 
     </RelativeLayout>
 

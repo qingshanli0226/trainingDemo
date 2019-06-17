@@ -1,7 +1,5 @@
 package com.example.player.a1610aplayerdemo.net;
 
-import com.example.player.a1610aplayerdemo.fragment.selectclass.bean.GetHomeBean;
-
 public class ResEntity<T> {
 
     private String code;

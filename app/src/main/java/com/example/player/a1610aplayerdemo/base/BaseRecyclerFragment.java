@@ -1,5 +1,7 @@
 package com.example.player.a1610aplayerdemo.base;
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,16 +19,21 @@ import java.util.List;
 public abstract class BaseRecyclerFragment<T,V extends View> extends Fragment implements IBaseView<T> {
  private IBasePresenter iBasePresenter;
  private BaseRecyclerViewAdapter baseRecyclerViewAdapter;
- public static View tollbar;
+ public static MToolBar tollbar;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.base_recyclerview_fragment,container,false);
-        tollbar = rootView.findViewById(R.id.tb);
+     // 关于toolbar 的设置
+        tollbar = rootView.findViewById(R.id.basef_tb);
+        tollbar.showEditextView();
+        tollbar.setLeftImg(R.drawable.yy);
+
 
         initView(rootView);
+
         return rootView;
     }
 

@@ -60,7 +60,6 @@ int c = 0;
 
         initData();
 
-
     }
 
     private void initAdapter() {

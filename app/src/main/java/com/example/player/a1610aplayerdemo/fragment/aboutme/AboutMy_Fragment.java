@@ -1,5 +1,6 @@
-package com.example.player.a1610aplayerdemo.fragment;
+package com.example.player.a1610aplayerdemo.fragment.aboutme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,12 +12,13 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.loginactivity.LoginActivity;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AboutMy_Fragment extends Fragment {
+public class AboutMy_Fragment extends Fragment implements View.OnClickListener {
 
     private View view;
     private ImageView my_back_img;
@@ -56,6 +58,19 @@ public class AboutMy_Fragment extends Fragment {
         my_message_img = (ImageView) view.findViewById(R.id.my_message_img);
         my_setting_img = (ImageView) view.findViewById(R.id.my_setting_img);
         my_scrollView = (ScrollView) view.findViewById(R.id.my_scrollView);
+
+        my_login_or_register_tv.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.my_login_or_register_tv:
+                Intent intent = new Intent();
+                intent.setClass(getContext(), LoginActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }
 

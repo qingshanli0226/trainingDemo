@@ -1,38 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="wrap_content">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
     <RelativeLayout
             android:id="@+id/m_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#850000">
+    >
         >
         <EditText
                 android:id="@+id/tb_edit"
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@android:drawable/editbox_background_normal"
-                android:layout_marginLeft="68dp"/>
+                android:layout_toRightOf="@+id/tb_leftImg"
+        android:drawableRight="@android:drawable/ic_search_category_default"
+        android:visibility="gone"/>
         <TextView
                 android:id="@+id/tb_title"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@android:drawable/editbox_background_normal"
-                android:layout_marginLeft="68dp"
-                android:visibility="gone"/>
+                android:gravity="center"
+                android:textColor="#333"/>
         <ImageView
                 android:id="@+id/tb_leftImg"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:src="@drawable/yy"
-                android:scaleType="center"
+                android:src="@drawable/ic_back_img"
+                android:visibility="gone"
         />
         <ImageView
-                android:id="@+id/tb_rightImg"
+            android:id="@+id/tb_rightImg"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_save_img"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"/>
+
+        <TextView
+                android:id="@+id/tb_righText"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:background="@android:drawable/ic_search_category_default"
-                android:layout_alignParentRight="true"/>
+                android:src="@drawable/ic_save_img"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"/>
+
     </RelativeLayout>
 </LinearLayout>
