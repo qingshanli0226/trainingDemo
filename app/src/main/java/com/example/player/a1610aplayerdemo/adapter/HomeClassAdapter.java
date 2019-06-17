@@ -36,6 +36,12 @@ public class HomeClassAdapter extends RecyclerView.Adapter<HomeClassAdapter.MyCl
     public void onBindViewHolder(@NonNull MyClassViewHolder myClassViewHolder, int i) {
           myClassViewHolder.textView.setText(homeCategory.get(i).getTitle());
           Glide.with(acontext).load(homeCategory.get(i).getBannerUrl()).into(myClassViewHolder.imageView);
+          myClassViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                   
+              }
+          });
 
     }
 

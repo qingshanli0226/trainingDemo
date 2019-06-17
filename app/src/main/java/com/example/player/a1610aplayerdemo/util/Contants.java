@@ -8,8 +8,10 @@ public class Contants {
     //vip
     public static final String GET_VIP="masterPackage/getMasterPackagelist";
     //login
-    public static final String GET_LOGIN="masterPackage/getMyMasterPackage";
+    public static final String GET_LOGIN="account/signIn";
 
     //url的token
     public static final String TOKEN="urlToken";
+
+    public static final String GET_TwoMenu="course/getVideo2";
 }

@@ -12,7 +12,6 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseView;
-import com.example.player.a1610aplayerdemo.bean.LoginBean;
 import com.example.player.a1610aplayerdemo.cartfragment.BuyFragment;
 import com.example.player.a1610aplayerdemo.cartfragment.CartFragMentAdapter;
 import com.example.player.a1610aplayerdemo.cartfragment.VipFragment;
@@ -24,7 +23,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment03 extends Fragment implements BaseView<LoginBean> {
+public class BlankFragment03 extends Fragment {
     private VipPresenter vipPresenter;
     private BottomNavigationBar buttonBar;
     private ViewPager vp;
@@ -40,22 +39,12 @@ public class BlankFragment03 extends Fragment implements BaseView<LoginBean> {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_blank_fragment03, container, false);
-        vipPresenter = new VipPresenter(this);
-        vipPresenter.getLogin("4046381F8C1C2C1D0A4AB66B15205D7B", "16", "0", "20");
+
         initView(view);
         initAdapter();
         return view;
     }
 
-    @Override
-    public void onLoadData(LoginBean datalist) {
-        Log.d("login", "" + datalist.getMessage());
-    }
-
-    @Override
-    public void onLoadError(int code, String str) {
-        Log.d("loginerror", "" + str);
-    }
 
 
 

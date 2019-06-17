@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,12 +10,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
-import com.example.player.a1610aplayerdemo.fragment.BlankFragment01;
+import com.example.player.a1610aplayerdemo.twomenuActivity.activity.BannerActivity;
+import com.example.player.a1610aplayerdemo.twomenuActivity.activity.BannerZeroActivity;
 import com.example.player.a1610aplayerdemo.util.MyImageLoader;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -226,7 +228,7 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
 
     //选课Banner
     private class BannerViewHolder extends RecyclerView.ViewHolder{
-        private Context context;
+
         private Banner banner;
 
         public BannerViewHolder(@NonNull View itemView) {
@@ -239,6 +241,23 @@ public class SelectClassAdapter extends RecyclerView.Adapter {
                     .setDelayTime(3000)
                     .isAutoPlay(true)
                     .start();
+            //跳转二级界面
+
+            banner.setOnBannerListener(new OnBannerListener() {
+                @Override
+                public void OnBannerClick(int position) {
+                    if (position==0){
+                        Intent intent = new Intent(context, BannerZeroActivity.class);
+                        context.startActivity(intent);
+                    }else{
+                        String relationInfo = homeBean.getData().getHomeBanner().get(position).getRelationInfo();
+                        Intent intent = new Intent(context, BannerActivity.class);
+                        intent.putExtra("relation",relationInfo);
+                        context.startActivity(intent);
+                    }
+                }
+            });
+
         }
 
         private List<String> getImages(){

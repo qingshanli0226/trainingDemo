@@ -2,7 +2,6 @@ package com.example.player.a1610aplayerdemo.vip;
 
 import com.example.player.a1610aplayerdemo.base.BasePersenter;
 import com.example.player.a1610aplayerdemo.base.BaseView;
-import com.example.player.a1610aplayerdemo.bean.LoginBean;
 import com.example.player.a1610aplayerdemo.bean.VipBean;
 import com.example.player.a1610aplayerdemo.service.MyService;
 import com.example.player.a1610aplayerdemo.util.MyRetorfit;
@@ -42,7 +41,7 @@ public class VipPresenter implements BasePersenter {
 
                                 @Override
                                 public void onError(Throwable e) {
-                                        baseView.onLoadError(101,e.toString());
+                                    baseView.onLoadError(101,e.toString());
                                 }
 
                                 @Override
@@ -51,37 +50,6 @@ public class VipPresenter implements BasePersenter {
                                 }
                             });
     }
- public void getLogin(String token,String packageId,String lastId,String size){
-     MyService service = new MyRetorfit().getService();
-     service
-             .getLoginInfo(token,packageId,lastId,size)
-             .subscribeOn(Schedulers.io())
-             .observeOn(AndroidSchedulers.mainThread())
-             .subscribe(new Observer<LoginBean>() {
-                 @Override
-                 public void onSubscribe(Disposable d) {
-
-                 }
-
-                 @Override
-                 public void onNext(LoginBean loginBean) {
-                     baseView.onLoadData(loginBean);
-                 }
-
-                 @Override
-                 public void onError(Throwable e) {
-                     baseView.onLoadError(109,e.toString());
-
-                 }
-
-                 @Override
-                 public void onComplete() {
-
-                 }
-             });
-
-
- }
 
 
 

@@ -16,5 +16,7 @@
     <string name="loginandregister">登录/注册</string>
     <string name="lookQuestion">常见问题</string>
     <string name="checkUpdata">检查更新</string>
+    <string name="nologintext">登录后才能在[已购]中查看全部课程哦</string>
+    <string name="nologintxet">您还没有登录</string>
 
 </resources>

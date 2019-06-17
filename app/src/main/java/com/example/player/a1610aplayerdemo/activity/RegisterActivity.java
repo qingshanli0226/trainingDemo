@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.*;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.login.LoginActivity;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -67,11 +68,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 next.setBackgroundColor(Color.parseColor("#8F002F"));
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
-
             }else {
                 Toast.makeText(this, "您还没有同意服务协议", Toast.LENGTH_SHORT).show();
             }
-
         }
 
     }

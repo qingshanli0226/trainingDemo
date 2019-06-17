@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.fragment;
+package com.example.player.a1610aplayerdemo.cartfragment.classfragment;
 
 
 import android.content.Intent;
@@ -7,23 +7,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.Button;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.login.LoginActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment04 extends Fragment {
+public class NoLoginFragment extends Fragment implements View.OnClickListener {
 
 
-    private ImageView i_img;
-    private TextView loginTV;
-    private LinearLayout exitLogin;
+    private Button gologin_register;
 
-    public BlankFragment04() {
+    public NoLoginFragment() {
         // Required empty public constructor
     }
 
@@ -32,22 +28,24 @@ public class BlankFragment04 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_blank_fragment04, container, false);
+        View view = inflater.inflate(R.layout.fragment_no_login, container, false);
         initView(view);
         return view;
     }
 
     private void initView(View view) {
-        i_img = (ImageView) view.findViewById(R.id.i_img);
-        loginTV = (TextView) view.findViewById(R.id.loginTV);
-        exitLogin = (LinearLayout) view.findViewById(R.id.exitLogin);
+        gologin_register = (Button) view.findViewById(R.id.gologin_register);
 
-        loginTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        gologin_register.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.gologin_register:
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
-            }
-        });
+                break;
+        }
     }
 }

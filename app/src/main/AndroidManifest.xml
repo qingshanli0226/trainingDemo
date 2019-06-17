@@ -13,9 +13,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".twomenuActivity.activity.BannerZeroActivity">
+        </activity>
+        <activity android:name=".twomenuActivity.activity.BannerActivity">
+        </activity>
         <activity android:name=".activity.RegisterActivity">
         </activity>
-        <activity android:name=".activity.LoginActivity">
+        <activity android:name=".login.LoginActivity">
         </activity>
         <activity android:name=".activity.WelcomeActivity">
             <intent-filter>
