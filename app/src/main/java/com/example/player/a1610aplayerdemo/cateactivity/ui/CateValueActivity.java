@@ -1,11 +1,13 @@
-package com.example.player.a1610aplayerdemo;
+package com.example.player.a1610aplayerdemo.cateactivity.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
-import com.example.player.a1610aplayerdemo.cateactivity.fragment.MusicClassFragment;
+import com.example.player.a1610aplayerdemo.BlankFragment;
+import com.example.player.a1610aplayerdemo.Content;
+import com.example.player.a1610aplayerdemo.R;
 
 public class CateValueActivity extends AppCompatActivity {
 
@@ -20,7 +22,7 @@ public class CateValueActivity extends AppCompatActivity {
 
     private void initView() {
         Intent intent = getIntent();
-        int flag = intent.getIntExtra(Content.CATE_FLAG, 0);
+        int flag = intent.getIntExtra(Content.CATE_FLAG_VALUE, 0);
         Fragment currentFragment = new BlankFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.cateFragment,currentFragment).commit();
         if(flag == 0){

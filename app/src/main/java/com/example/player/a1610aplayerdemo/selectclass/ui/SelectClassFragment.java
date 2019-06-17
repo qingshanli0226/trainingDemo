@@ -41,10 +41,8 @@ public class SelectClassFragment extends BaseRecyclerViewFragment<Object, View> 
         super.onLoadObject(data);
         List<Object> objects = new ArrayList<>();
         SelectBean selectBean = (SelectBean) data;
-        Log.d("Mh",selectBean.getHomeBanner().get(1).getTitle());
         objects.add(0,selectBean.getHomeBanner());
         objects.add(1,selectBean.getHomeCategory());
-        Log.d("Mh",selectBean.getHomeCategory().get(1).getTitle());
         objects.add(2,selectBean.getVipRecommend());
         objects.add(3,selectBean.getZlList());
         objects.add(4,selectBean.getCourseRecommends());

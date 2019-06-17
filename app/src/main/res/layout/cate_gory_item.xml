@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_margin="5dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+    <ImageView
+            android:id="@+id/iv_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/tv_cate_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小姐"
+            android:textSize="15sp"/>
+    <TextView
+            android:id="@+id/tv_cate_teacherTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小dsadasdasdas姐"
+            android:singleLine="true"/>
+</LinearLayout>

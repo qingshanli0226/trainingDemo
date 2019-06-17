@@ -1,6 +1,7 @@
-package com.example.player.a1610aplayerdemo.cateactivity;
+package com.example.player.a1610aplayerdemo.cateactivity.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
+import com.example.player.a1610aplayerdemo.cateactivity.ui.CategoryActivity;
+import com.example.player.a1610aplayerdemo.Content;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
 import com.example.player.a1610aplayerdemo.cateactivity.Bean.MusicClassBean;
@@ -29,5 +32,9 @@ public class MusicClassAdapter extends BaseRecyclerViewAdapter<MusicClassBean.Da
     @Override
     public void onItemClik(View itme, MusicClassBean.DataBean data, int position) {
         Toast.makeText(itme.getContext(), "点击了："+data.getShortName()+":"+position, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(itme.getContext(), CategoryActivity.class);
+        intent.putExtra(Content.CATE_FLAG_GORY,data.getId());
+        intent.putExtra(Content.TOOL_VAULE,data.getShortName());
+        itme.getContext().startActivity(intent);
     }
 }

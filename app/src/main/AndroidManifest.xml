@@ -12,7 +12,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".CateValueActivity">
+        <activity android:name=".details.ui.DetailsActivity">
+        </activity>
+        <activity android:name=".cateactivity.ui.CategoryActivity">
+        </activity>
+        <activity android:name=".cateactivity.ui.CateValueActivity">
         </activity>
         <activity android:name=".welcome.WeComeActivity">
             <intent-filter>

@@ -33,9 +33,7 @@ public abstract class BaseRecyclerViewFragment<T , V extends View> extends Fragm
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        iBasePresenter = getPresenter();
-        iBasePresenter.attachView(this);//在这里让presenter绑定view
-        initData();
+
     }
 
     private void initData() {
@@ -48,6 +46,9 @@ public abstract class BaseRecyclerViewFragment<T , V extends View> extends Fragm
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_base_recycler_view, container, false);
+        iBasePresenter = getPresenter();
+        iBasePresenter.attachView(this);//在这里让presenter绑定view
+        initData();
         toolbar = view.findViewById(R.id.toolbar);
         recyclerView  = view.findViewById(R.id.rv);
         initToobar();//子类可重写自己界面的toolbar

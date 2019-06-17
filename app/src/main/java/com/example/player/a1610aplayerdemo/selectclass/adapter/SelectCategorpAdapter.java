@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.player.a1610aplayerdemo.CateValueActivity;
+import com.example.player.a1610aplayerdemo.cateactivity.ui.CateValueActivity;
 import com.example.player.a1610aplayerdemo.Content;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
@@ -38,7 +38,7 @@ public class SelectCategorpAdapter extends BaseRecyclerViewAdapter<SelectBean.Ho
         Intent intent = null;
         if(position == 0){
             intent = new Intent(itme.getContext(), CateValueActivity.class);
-            intent.putExtra(Content.CATE_FLAG,0);
+            intent.putExtra(Content.CATE_FLAG_VALUE,0);
             itme.getContext().startActivity(intent);
         }
 

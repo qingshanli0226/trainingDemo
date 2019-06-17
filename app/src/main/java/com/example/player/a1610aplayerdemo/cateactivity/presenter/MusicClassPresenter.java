@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.cateactivity;
+package com.example.player.a1610aplayerdemo.cateactivity.presenter;
 
 import android.util.Log;
 import android.view.View;
@@ -27,8 +27,11 @@ public class MusicClassPresenter implements IBasePresenter<MusicClassBean.DataBe
 
                     @Override
                     public void onNext(MusicClassBean musicClassBean) {
-                        Log.d("Mh",musicClassBean.getCode());
-                        iBaseView.onLoadData(musicClassBean.getData());
+                        if(musicClassBean.getData() != null){
+                            Log.d("Mh",musicClassBean.getData().get(0).getShortName());
+                            iBaseView.onLoadData(musicClassBean.getData());
+                        }
+
                     }
 
                     @Override
