@@ -33,6 +33,7 @@ public class ResEntity<T> {
     }
 
     public T getData() {
+        Log.i("aaa",data.toString());
         return data;
     }
 

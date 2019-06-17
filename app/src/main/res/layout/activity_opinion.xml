@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="#FAFAFA">
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#8E002E">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageView
+                    android:id="@+id/opinion_iv1"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/my_return"/>
+            <TextView android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:layout_height="match_parent"
+                      android:text="意见反馈"
+                      android:textColor="#fff"
+                      android:gravity="center"
+                      android:layout_marginRight="60dp"
+                      android:textSize="20sp"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="意见和建议"
+            android:textColor="#000"
+            android:layout_marginTop="20sp"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+    <EditText
+            android:id="@+id/opinion_et1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/editext_my"
+            android:layout_margin="15dp"
+            android:hint="     请尽量详细描述您想要反馈的问题,也欢迎您提出宝贵的意见."
+            android:textSize="15sp"
+            android:gravity="left"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="联系方式"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+    <EditText
+            android:id="@+id/opinion_et2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/editext_my"
+            android:hint="    手机/微信号/QQ号,方便我们与您联系"
+            android:textSize="15sp"/>
+    <Button
+            android:id="@+id/opinion_btn1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#8E002E"
+            android:text="提交"
+            android:textColor="#fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="150dp"
+            android:layout_marginLeft="150dp"/>
+    
+    
+
+</LinearLayout>

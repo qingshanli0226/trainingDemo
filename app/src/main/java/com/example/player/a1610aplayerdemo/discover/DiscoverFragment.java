@@ -8,10 +8,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
@@ -19,6 +21,14 @@ import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.discover.adapter.*;
 import com.example.player.a1610aplayerdemo.discover.bean.DiscoverBean;
 import com.example.player.a1610aplayerdemo.discover.presenter.DisPresenter;
+import com.example.player.a1610aplayerdemo.interface2.Interface2Fragment.InterFace2Fragment;
+import com.example.player.a1610aplayerdemo.interface2.Interface2Fragment.InterfaceFragment;
+import com.example.player.a1610aplayerdemo.interface2.presenter.Interface2Presenter;
+import com.scwang.smartrefresh.header.WaveSwipeHeader;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -48,6 +58,7 @@ public class DiscoverFragment extends Fragment implements IBaseView, OnBannerLis
     private RecyclerView discover_special_recyc;
     private RecyclerView discover_recommend_recyc;
     private RecyclerView discover_course_recyc;
+    private SmartRefreshLayout discover_smart;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +73,13 @@ public class DiscoverFragment extends Fragment implements IBaseView, OnBannerLis
         initView(view);
         iBasePresenter.attachView(this);
         iBasePresenter.getData();
+        discover_smart.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                refreshlayout.finishRefresh();
+                iBasePresenter.getData();
+            }
+        });
         return view;
     }
 
@@ -95,10 +113,30 @@ public class DiscoverFragment extends Fragment implements IBaseView, OnBannerLis
         recommendAdapter.setListener(this);
         specialAdapter.setListener(this);
 
+        discover_smart = (SmartRefreshLayout) view.findViewById(R.id.discover_smart);
+        discover_smart.setRefreshHeader(new WaveSwipeHeader(getActivity()));
+        discover_smart.setRefreshFooter(new BallPulseFooter(getActivity()));
     }
 
     @Override
     public void OnBannerClick(int position) {
+        int type=list0.get(position).getBannerType();
+        if (type==3){
+
+        }else if (type==2){
+            InterfaceFragment fragment=new InterfaceFragment();
+            Bundle bundle=new Bundle();
+            bundle.putString("url",""+list0.get(position).getRelationInfo());
+            fragment.setArguments(bundle);
+            getFragmentManager()
+                    .beginTransaction()
+                    .addToBackStack(null)
+                    .replace(R.id.interface_fragmeLayout,fragment)
+                    .commit();
+            RadioGroup radioGroup=getActivity().findViewById(R.id.interface_group);
+            radioGroup.setVisibility(View.GONE);
+
+        }
         Toast.makeText(getContext(), "你点击了" + list1.get(position).getTitle(), Toast.LENGTH_SHORT).show();
     }
 
@@ -120,7 +158,7 @@ public class DiscoverFragment extends Fragment implements IBaseView, OnBannerLis
     }
 
     private void course() {
-        LinearLayoutManager manager=new LinearLayoutManager(getContext()){
+        LinearLayoutManager manager = new LinearLayoutManager(getContext()) {
             @Override
             public boolean canScrollVertically() {
                 return false;
@@ -192,27 +230,40 @@ public class DiscoverFragment extends Fragment implements IBaseView, OnBannerLis
 
     @Override
     public void onItemCourse(DiscoverBean.MasterLivesBean bean, int index) {
-        Toast.makeText(getContext(), ""+bean.getAppTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "" + bean.getAppTitle(), Toast.LENGTH_SHORT).show();
+        InterFace2Fragment fragment=new InterFace2Fragment();
+        Bundle bundle=new Bundle();
+        bundle.putString("url",""+bean.getLiveId());
+        fragment.setArguments(bundle);
+        getFragmentManager()
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.interface_fragmeLayout,fragment)
+                .commit();
     }
 
     @Override
     public void onItemMember(DiscoverBean.VipRecommendBean bean, int index) {
-        Toast.makeText(getContext(), ""+bean.getTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "" + bean.getTitle(), Toast.LENGTH_SHORT).show();
+        Log.i("discover","222222");
     }
 
     @Override
     public void onItemOption(DiscoverBean.HomeCategoryBean bean, int index) {
-        Toast.makeText(getContext(), ""+bean.getTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "" + bean.getTitle(), Toast.LENGTH_SHORT).show();
+        Log.i("discover","333333");
     }
 
     @Override
     public void onItemRecommend(DiscoverBean.CourseRecommendsBean bean, int index) {
-        Toast.makeText(getContext(), ""+bean.getAppTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "" + bean.getAppTitle(), Toast.LENGTH_SHORT).show();
+        Log.i("discover","444444");
     }
 
     @Override
     public void onItemSpecial(DiscoverBean.ZlListBean bean, int index) {
-        Toast.makeText(getContext(), ""+bean.getTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "" + bean.getTitle(), Toast.LENGTH_SHORT).show();
+        Log.i("discover","555555");
     }
 
     private class MyBannerLoder extends ImageLoader {

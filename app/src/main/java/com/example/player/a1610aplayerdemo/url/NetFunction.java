@@ -9,7 +9,7 @@ public class NetFunction<R extends ResEntity<T>,T> implements Function<R,T> {
         if(input.getCode().equals("success")){
             return input.getData();
         }else if (input.getData() == null) {
-            throw new RuntimeException("code = " + input.getCode() + " error msg = " + "获取数据为空");
+            throw new RuntimeException("code = " + input.getData() + " error msg = " + "获取数据为空");
         }else {
             throw new RuntimeException("code = " + input.getCode() + " error msg =" + input.getMessage());
         }
