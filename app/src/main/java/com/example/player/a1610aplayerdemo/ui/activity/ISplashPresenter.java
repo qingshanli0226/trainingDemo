@@ -65,6 +65,11 @@ public class ISplashPresenter implements IBasePresenter<String>{
     }
 
     @Override
+    public void getDataByPost() {
+
+    }
+
+    @Override
     public void attachView(IBaseView<String> view) {
         iBaseView = (ISplashView) view;
     }

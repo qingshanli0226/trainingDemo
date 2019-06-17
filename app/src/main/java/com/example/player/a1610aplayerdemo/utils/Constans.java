@@ -16,4 +16,8 @@ public class Constans {
     public static final int DATA_TYPE_OBJECT=2;
     //布尔值
     public static final int DATA_TYPE_BOOLEAN=3;
+    //用户是否注册过    0:注册过  1：未注册
+    public static final int USER_REGISTER=0;
+    public static final int USER_NOTREGISTER=1;
+
 }

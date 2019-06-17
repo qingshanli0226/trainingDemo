@@ -41,4 +41,25 @@ public class SharePresenterUtils {
         return sp.getString(Constans.USER_AVATAR,"");
     }
 
+    /**
+     * 保存下验证码
+     */
+    public static void saveCode(String code){
+        sp.edit().putString("code",code).commit();
+    }
+    /**
+     * 取出验证码
+     */
+    public static String getCode(){
+        return sp.getString("code","");
+    }
+    /**
+     * 保存手机号
+     */
+    public static void savePhone(String phone){
+        sp.edit().putString("phone",phone).commit();
+    }
+    public static String getPhone(){
+        return sp.getString("phone","");
+    }
 }

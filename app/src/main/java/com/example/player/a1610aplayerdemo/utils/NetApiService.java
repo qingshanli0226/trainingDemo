@@ -1,6 +1,6 @@
 package com.example.player.a1610aplayerdemo.utils;
 
-import com.example.player.a1610aplayerdemo.base.MemberBean;
+import com.example.player.a1610aplayerdemo.bean.MemberBean;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
 
 import java.util.HashMap;
@@ -10,9 +10,7 @@ import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
-import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
@@ -42,5 +40,8 @@ public interface NetApiService {
     //代码的优化，对api进行一个共同方法的优化，完成目标 一个api可适用于全部网络请求。
     @GET("{path}/{path2}")
     Observable<String> getData(@HeaderMap HashMap<String,String> heardmap, @Path(value = "path")String path,@Path(value = "path2")String path2,@QueryMap HashMap<String,String> map);
+
+    @POST("{path}/{path2}")
+    Observable<String> getDataByPost(@HeaderMap HashMap<String,String> heardmap,@Path("path")String path,@Path("path2")String path2,@QueryMap HashMap<String,String> map);
 
 }

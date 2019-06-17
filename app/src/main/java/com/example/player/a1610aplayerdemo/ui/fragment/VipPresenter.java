@@ -1,24 +1,13 @@
 package com.example.player.a1610aplayerdemo.ui.fragment;
 
-import android.util.Log;
-
 import com.example.player.a1610aplayerdemo.base.BasePresenter;
-import com.example.player.a1610aplayerdemo.base.IBasePresenter;
-import com.example.player.a1610aplayerdemo.base.IBaseView;
-import com.example.player.a1610aplayerdemo.base.MemberBean;
+import com.example.player.a1610aplayerdemo.bean.MemberBean;
 import com.example.player.a1610aplayerdemo.utils.Constans;
 import com.example.player.a1610aplayerdemo.utils.EntityUtils;
-import com.example.player.a1610aplayerdemo.utils.MVPObervice;
-import com.example.player.a1610aplayerdemo.utils.RetrofitCreate;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.HashMap;
 import java.util.List;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
-import kotlin.text.StringsKt;
 
 /**
  * Created by Lmz on 2019/06/12

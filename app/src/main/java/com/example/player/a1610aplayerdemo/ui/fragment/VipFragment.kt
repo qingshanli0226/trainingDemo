@@ -1,13 +1,12 @@
 package com.example.player.a1610aplayerdemo.ui.fragment
 
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.View
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.adapter.VipView_Adapter
 import com.example.player.a1610aplayerdemo.base.BaseFragment
 import com.example.player.a1610aplayerdemo.base.IBaseView
-import com.example.player.a1610aplayerdemo.base.MemberBean
+import com.example.player.a1610aplayerdemo.bean.MemberBean
 import kotlinx.android.synthetic.main.fragment_vip.*
 
 /**

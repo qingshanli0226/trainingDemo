@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface IBasePresenter<R> {
     void getData(); //在列表展示数据
+    void getDataByPost();//列表展示数据 post 方法
     void attachView(IBaseView<R> view);//绑定view
     void detachView(); //当View销毁时，注销绑定
 

@@ -41,6 +41,11 @@ public class FindPresenter implements IBasePresenter<HomeBean>{
     }
 
     @Override
+    public void getDataByPost() {
+
+    }
+
+    @Override
     public void attachView(IBaseView<HomeBean> view) {
         iBaseView = view;
     }

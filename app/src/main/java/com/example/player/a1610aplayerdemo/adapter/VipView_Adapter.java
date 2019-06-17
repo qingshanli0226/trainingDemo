@@ -10,9 +10,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.base.MemberBean;
-
-import org.jetbrains.annotations.Nullable;
+import com.example.player.a1610aplayerdemo.bean.MemberBean;
 
 import java.util.ArrayList;
 import java.util.List;

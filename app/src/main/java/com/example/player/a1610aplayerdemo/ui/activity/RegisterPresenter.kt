@@ -11,7 +11,7 @@ import java.util.HashMap
 /**
  * Created by Lmz on 2019/06/15
  */
-class RegisterPresenter: BasePresenter<CheckRegisterBean>() {
+class RegisterPresenter: BasePresenter<Boolean>() {
 
     var phone="PHONE"
     fun setParare(phone:String){
@@ -32,12 +32,13 @@ class RegisterPresenter: BasePresenter<CheckRegisterBean>() {
     }
 
     override fun getType(): Type {
-        var type=object : TypeToken<CheckRegisterBean>(){}.type
+    //    var type=object : TypeToken<CheckRegisterBean>(){}.type
+        var type = object :TypeToken<EntityUtils<Boolean>>(){}.type
         return type
     }
 
     override fun isList(): Int {
-        return Constans.DATA_TYPE_BOOLEAN
+        return Constans.DATA_TYPE_OBJECT
     }
 
 }

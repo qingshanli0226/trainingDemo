@@ -64,6 +64,45 @@ public abstract class BasePresenter<T> implements IBasePresenter<T> {
                                 });
     }
 
+    @Override
+    public void getDataByPost() {
+        RetrofitCreate.getNetApiService().getDataByPost(getHearder(),getApiPath(),getApiPath2(),getParmars())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new MVPObervice<String>(){
+                    @Override
+                    public void onNext(String s) {
+                        super.onNext(s);
+                        if (isList()==1){
+                            //如果是列表数据
+                            EntityUtils<List<T>> result =null;
+                            //通过子类传入的是数据类型,去给定值
+                            result =new Gson().fromJson(s,getType());
+                            iBaseView.LoadListDataSuccess(result.getData());
+                        }else if (isList()==2){
+                            EntityUtils<T> result =null;
+                            Log.d("limengzhen",s);
+                            Log.d("limengzhen","type"+getType());
+                            result =new Gson().fromJson(s,getType());
+                            String simpleName = result.getData().getClass().getSimpleName();
+                            Log.i("json",simpleName);
+                            iBaseView.loadDataSuccess(result.getData());
+                        }else if (isList()==3){
+                            Gson gson =new Gson();
+                            Object o = gson.fromJson(s, getType());
+                            iBaseView.loadDataSuccess((T) o);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        super.onError(e);
+                        iBaseView.loadDataFailure(101,e.toString());
+                        ErrorUtils.ErrorMess(e);
+                    }
+                });
+    }
+
     /**
      *   返回参数，如果网络请求不需要参数，可以不写
      * @return

@@ -44,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/input_textsize"
+            android:id="@+id/setpwd_inputpwd"
             android:hint="@string/pwd_input"/>
 
 
@@ -56,10 +57,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/input_textsize"
+            android:id="@+id/setpwd_inputpwd_commit"
             android:hint="@string/pwd_inputpwd"/>
 
         <TextView
-            android:id="@+id/setpwd_btn"
+            android:id="@+id/setpwd_login_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pwd_completion"
