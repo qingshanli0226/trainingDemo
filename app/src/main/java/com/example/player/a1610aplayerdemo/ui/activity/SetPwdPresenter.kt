@@ -49,7 +49,7 @@ class SetPwdPresenter :BasePresenter<SetPasswordBean.DataBean>(){
     }
 
     override fun getHearder(): HashMap<String, String> {
-        var map = hashMapOf<String,String>()
+        /*var map = hashMapOf<String,String>()
         map.put("DeviceKey", PhoneUtils.getDeviceKye())
         val sdkInt = Build.VERSION.SDK_INT
         val sdk = "" + sdkInt
@@ -60,8 +60,8 @@ class SetPwdPresenter :BasePresenter<SetPasswordBean.DataBean>(){
         map.put("Android-channel","guoyun")
         map.put("User-Agent","Dalvik/2.1.0 (Linux; U; Android 6.0.1; MI 6 Build/V417IR)")
 
-
-        return map
+        */
+        return SharePresenterUtils.getHeardData()
     }
 
 }

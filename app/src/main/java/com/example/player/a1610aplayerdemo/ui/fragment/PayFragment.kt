@@ -1,9 +1,11 @@
 package com.example.player.a1610aplayerdemo.ui.fragment
 
+import android.transition.Visibility
 import android.view.View
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.base.BaseFragment
 import com.example.player.a1610aplayerdemo.ui.activity.LoginActivity
+import com.example.player.a1610aplayerdemo.utils.SharePresenterUtils
 import kotlinx.android.synthetic.main.fragment_pay.*
 import org.jetbrains.anko.support.v4.startActivity
 
@@ -20,5 +22,13 @@ class PayFragment :BaseFragment() {
         pay_login_btn.setOnClickListener {
             startActivity<LoginActivity>()
         }
+
+        var user=SharePresenterUtils.getUserInfo()
+        if (user!=null){
+            pay_login.visibility=View.GONE
+        }else{
+            pay_login.visibility=View.VISIBLE
+        }
+
     }
 }

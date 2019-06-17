@@ -7,9 +7,11 @@ import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.R.id.*
 import com.example.player.a1610aplayerdemo.base.BaseActivity
 import com.example.player.a1610aplayerdemo.base.IBaseView
+import com.example.player.a1610aplayerdemo.bean.LoginUserInfoBean
 import com.example.player.a1610aplayerdemo.bean.SetPasswordBean
 import com.example.player.a1610aplayerdemo.bean.SetPwdBean
 import com.example.player.a1610aplayerdemo.utils.EntityUtils
+import com.example.player.a1610aplayerdemo.utils.SharePresenterUtils
 import kotlinx.android.synthetic.main.activity_setpwd.*
 import org.greenrobot.eventbus.EventBus
 import org.jetbrains.anko.toast
@@ -55,6 +57,11 @@ class SetPasswordActivity : BaseActivity(), IBaseView<SetPasswordBean.DataBean> 
 
             if (bean!!.isLogin){
                 EventBus.getDefault().post(bean)
+                Log.i("databean",""+bean.gender)
+
+              //  SharePresenterUtils.saveUserInfo2(bean)
+                SharePresenterUtils.savePhone(bean.nickName)
+                SharePresenterUtils.saveAvatar(bean.avatar)
                 var intent=Intent()
                 intent.setClass(this,MainActivity::class.java)
                 startActivity(intent)

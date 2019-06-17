@@ -44,6 +44,7 @@
                 />
 
         <ImageView
+            android:id="@+id/me_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/me_setting"

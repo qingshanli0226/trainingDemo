@@ -29,6 +29,7 @@
         <activity android:name=".ui.activity.LoginActivity"/>
         <activity android:name=".ui.activity.RegisterActivity"/>
         <activity android:name=".ui.activity.SetPasswordActivity"/>
+        <activity android:name=".ui.activity.LogOutActivity"/>
     </application>
 
 </manifest>

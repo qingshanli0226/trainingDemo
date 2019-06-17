@@ -7,6 +7,7 @@ import com.example.player.a1610aplayerdemo.adapter.VipView_Adapter
 import com.example.player.a1610aplayerdemo.base.BaseFragment
 import com.example.player.a1610aplayerdemo.base.IBaseView
 import com.example.player.a1610aplayerdemo.bean.MemberBean
+import com.example.player.a1610aplayerdemo.utils.SharePresenterUtils
 import kotlinx.android.synthetic.main.fragment_vip.*
 
 /**
@@ -30,7 +31,10 @@ class VipFragment :BaseFragment(),IBaseView<MemberBean.DataBean> {
 
     override fun initdata() {
         super.initdata()
-
+        var user = SharePresenterUtils.getUserInfo()
+        if (user!=null){
+            //这里显示 登录之后的视图
+        }
         var manager = LinearLayoutManager(context)
         manager.orientation = LinearLayoutManager.VERTICAL
         vip_recycler.layoutManager=manager

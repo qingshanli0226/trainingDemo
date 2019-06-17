@@ -1,17 +1,16 @@
 package com.example.player.a1610aplayerdemo.bean;
 
-import java.io.Serializable;
-
 /**
  * Created by Lmz on 2019/06/17
+ *  用户登录的bean
  */
-public class SetPasswordBean implements Serializable {
+public class LoginUserInfoBean {
 
     /**
      * success : true
      * message :
      * code : success
-     * data : {"passportId":231478,"nickName":"15936319299","avatar":"http://ali-files.yooshow.com/app/yangyin/default.png","gender":0,"ranking":0,"score":0,"courseInfo":{"courseId":0,"cardId":0,"noPay":false,"existCourse":false},"login":true}
+     * data : {"passportId":231516,"nickName":"15936339282","avatar":"http://ali-files.yooshow.com/app/yangyin/default.png","gender":0,"birthdate":"","ranking":0,"score":0,"courseInfo":{"courseId":0,"cardId":0,"noPay":false,"existCourse":false},"vip":false,"login":true}
      */
 
     private boolean success;
@@ -51,15 +50,17 @@ public class SetPasswordBean implements Serializable {
         this.data = data;
     }
 
-    public static class DataBean implements Serializable {
+    public static class DataBean {
         /**
-         * passportId : 231478
-         * nickName : 15936319299
+         * passportId : 231516
+         * nickName : 15936339282
          * avatar : http://ali-files.yooshow.com/app/yangyin/default.png
          * gender : 0
+         * birthdate :
          * ranking : 0
          * score : 0
          * courseInfo : {"courseId":0,"cardId":0,"noPay":false,"existCourse":false}
+         * vip : false
          * login : true
          */
 
@@ -67,9 +68,11 @@ public class SetPasswordBean implements Serializable {
         private String nickName;
         private String avatar;
         private int gender;
+        private String birthdate;
         private int ranking;
         private int score;
         private CourseInfoBean courseInfo;
+        private boolean vip;
         private boolean login;
 
         public int getPassportId() {
@@ -104,6 +107,14 @@ public class SetPasswordBean implements Serializable {
             this.gender = gender;
         }
 
+        public String getBirthdate() {
+            return birthdate;
+        }
+
+        public void setBirthdate(String birthdate) {
+            this.birthdate = birthdate;
+        }
+
         public int getRanking() {
             return ranking;
         }
@@ -126,6 +137,14 @@ public class SetPasswordBean implements Serializable {
 
         public void setCourseInfo(CourseInfoBean courseInfo) {
             this.courseInfo = courseInfo;
+        }
+
+        public boolean isVip() {
+            return vip;
+        }
+
+        public void setVip(boolean vip) {
+            this.vip = vip;
         }
 
         public boolean isLogin() {
@@ -180,31 +199,6 @@ public class SetPasswordBean implements Serializable {
             public void setExistCourse(boolean existCourse) {
                 this.existCourse = existCourse;
             }
-
-            @Override
-            public String toString() {
-                return "CourseInfoBean{" +
-                        "courseId=" + courseId +
-                        ", cardId=" + cardId +
-                        ", noPay=" + noPay +
-                        ", existCourse=" + existCourse +
-                        '}';
-            }
-        }
-
-        @Override
-        public String toString() {
-            return "DataBean{" +
-                    "passportId=" + passportId +
-                    ", nickName='" + nickName + '\'' +
-                    ", avatar='" + avatar + '\'' +
-                    ", gender=" + gender +
-                    ", ranking=" + ranking +
-                    ", score=" + score +
-                    ", courseInfo=" + courseInfo +
-                    ", login=" + login +
-                    '}';
         }
     }
-
 }
