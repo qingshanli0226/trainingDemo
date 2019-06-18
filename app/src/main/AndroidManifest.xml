@@ -3,7 +3,7 @@
           package="com.example.player.a1610aplayerdemo">
 <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:name=".MyApplication"
             android:allowBackup="true"
@@ -30,6 +30,7 @@
         <activity android:name=".ui.activity.RegisterActivity"/>
         <activity android:name=".ui.activity.SetPasswordActivity"/>
         <activity android:name=".ui.activity.LogOutActivity"/>
+        <activity android:name=".ui.activity.GoodsInfoActivity"/>
     </application>
 
 </manifest>

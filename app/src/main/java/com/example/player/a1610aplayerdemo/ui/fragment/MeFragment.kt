@@ -7,6 +7,7 @@ import android.view.View
 import com.bumptech.glide.Glide
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.base.BaseFragment
+import com.example.player.a1610aplayerdemo.ui.activity.GoodsInfoActivity
 import com.example.player.a1610aplayerdemo.ui.activity.LogOutActivity
 import com.example.player.a1610aplayerdemo.ui.activity.LoginActivity
 import com.example.player.a1610aplayerdemo.utils.SharePresenterUtils
@@ -33,6 +34,11 @@ class MeFragment :BaseFragment() {
             //这里是退出
             var intent =Intent()
             intent.setClass(context,LogOutActivity::class.java)
+            startActivity(intent)
+        }
+        me_text_setting.setOnClickListener {
+            var intent =Intent()
+            intent.setClass(context,GoodsInfoActivity::class.java)
             startActivity(intent)
         }
     }
