@@ -1,8 +1,10 @@
 package com.example.player.a1610aplayerdemo.presenter;
 
 import android.util.Log;
+import com.example.player.a1610aplayerdemo.base.BasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
+import com.example.player.a1610aplayerdemo.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.service.BaseService;
 
 import com.example.player.a1610aplayerdemo.util.CreatorUtils;
@@ -14,56 +16,23 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 
-public class FindPresenter implements IBasePresenter<String> {
-
-    private IBaseView<String> iBaseView;
+public class FindPresenter extends BasePresenter<HomeBean.DataBean> {
 
 
     @Override
-    public void attachView(IBaseView<String> baseView) {
-            this.iBaseView = baseView;
+    public String getAPIPath1() {
+        return "loading";
     }
 
-
     @Override
-    public void getData() {
-        BaseService baseService = CreatorUtils.getRetrofit();
-        Observable<ResponseBody> homeData = baseService.getHomeData();
-        homeData.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ResponseBody>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(ResponseBody responseBody) {
-                        try {
-                            iBaseView.onLoadData(responseBody.string());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.i("我",e.getMessage());
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
+    public String getAPIPath2() {
+        return "getHome";
     }
 
-
-
     @Override
-    public void detachView() {
-
+    public Type getDataType() {
+        return HomeBean.class;
     }
 }

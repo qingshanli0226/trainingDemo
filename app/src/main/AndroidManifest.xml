@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.player.a1610aplayerdemo">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -13,18 +16,19 @@
             <activity
                 android:name=".ui.activity.SplashActivity"
                 android:theme="@style/AppTheme.FullScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                    <category android:name="android.intent.category.LAUNCHER"/>
+                </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.MainActivity">
-
-        </activity>
-        <activity android:name=".ui.activity.GuideActivity">
-
-        </activity>
+        <activity android:name=".ui.activity.MainActivity"/>
+        <activity android:name=".ui.activity.GuideActivity"/>
+        <activity android:name=".ui.activity.find_category_activity.CategoryMusicClassActivity"/>
+        <activity android:name=".ui.activity.find_category_activity.CategoryLiveActivity"/>
+        <activity android:name=".ui.activity.find_category_activity.CategoryTeacherActivity"/>
+        <activity android:name=".ui.activity.ItemClickActivity"/>
+        <activity android:name=".ui.activity.VideoActivity"/>
     </application>
 
 </manifest>

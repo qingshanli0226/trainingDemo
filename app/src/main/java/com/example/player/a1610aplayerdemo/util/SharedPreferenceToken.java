@@ -18,6 +18,13 @@ public class SharedPreferenceToken {
         edit.commit();
     }
 
+    public void ClearToken(){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("TokenSp",Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.clear();
+        edit.commit();
+    }
+
     public String getToken(){
         SharedPreferences sharedPreferences = context.getSharedPreferences("TokenSp",Context.MODE_PRIVATE);
         String token = sharedPreferences.getString("token","");

@@ -18,12 +18,23 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
+                                      <entry key="clipArt">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="paddingPercent" value="-10" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="clipartAsset">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/E:/新建文件夹/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_layers_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/E:/新建文件夹/plugins/android/lib/android.jar!/images/material_design_icons/av/ic_play_circle_outline_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -33,9 +44,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="tb8" />
+                                      <entry key="outputName" value="bof1" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="121111" />
+                                      <entry key="themeColor" value="b4b4b4" />
                                     </map>
                                   </option>
                                 </PersistentState>

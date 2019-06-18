@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="#fff"
+                android:layout_height="match_parent"
+>
+    <include layout="@layout/toolbar" android:id="@+id/one"/>
+
+
+
+    <RelativeLayout
+            android:id="@+id/two"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.31"
+            android:layout_below="@+id/one"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="240dp"
+
+        >
+            <ImageView android:layout_width="match_parent" android:layout_height="240dp"
+                       android:id="@+id/click_img"
+                       android:scaleType="centerCrop"
+                       android:layout_alignParentStart="true" android:layout_alignParentTop="true"
+                       android:layout_alignParentLeft="true"/>
+            <Button android:layout_width="50dp" android:layout_height="30dp"
+                    android:text="试看"
+                    android:background="@drawable/btn_look"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:id="@+id/click_btn"
+                    android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+
+                android:layout_alignParentStart="true" android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true">
+
+
+            <TextView
+
+                    android:layout_marginLeft="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:id="@+id/click_writer"
+                    tools:ignore="RtlHardcoded"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="20dp"
+
+                      android:textSize="12sp"
+                      android:lines="1"
+                      android:textColor="#000"
+                      android:layout_marginLeft="10dp"
+                      android:ellipsize="end"
+                      android:id="@+id/click_writerdata"
+                      android:layout_toEndOf="@+id/click_writer" android:layout_alignBaseline="@+id/click_writer"
+                      android:layout_toRightOf="@+id/click_writer"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:id="@+id/click_className"
+
+                    android:layout_alignParentBottom="true" android:layout_alignStart="@+id/click_writer"
+                    android:layout_alignLeft="@+id/click_writer"/>
+        </RelativeLayout>
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/click_writerImg"
+                fresco:roundAsCircle="true"
+
+                android:layout_alignParentStart="true" android:layout_marginStart="17dp"
+                android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="17dp"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="0.56">
+
+        <android.support.design.widget.TabLayout 
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.11"
+                fresco:tabTextColor="#000"
+                fresco:tabSelectedTextColor="#AC4548"
+                fresco:tabTextAppearance="@style/TabLayoutTextStyle"
+                android:id="@+id/click_tab"
+                tools:ignore="NestedWeights">
+        </android.support.design.widget.TabLayout>
+        <View android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.02"
+              android:background="#F3F3F3"/>
+
+        <android.support.v4.view.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.87"
+                android:id="@+id/click_vp"
+        />
+    </LinearLayout>
+
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+          android:background="#ccc"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+    />
+
+
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp"
+    android:layout_weight="0.10"
+
+    >
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                      android:layout_marginTop="5dp"
+                      android:layout_marginBottom="5dp"
+                android:orientation="vertical"
+
+        >
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                          android:layout_height="0dp"
+                          android:layout_weight="0.4"
+
+                          android:orientation="horizontal"
+            >
+                <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:id="@+id/click_vipprice"
+                          android:textColor="#000"
+                          android:paddingLeft="10dp"
+                          android:gravity="center"
+                          android:textSize="12sp"
+                />
+                <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:text="@string/itemclick_title2"
+                          android:layout_alignParentRight="true"
+                          android:layout_marginRight="10dp"
+                          android:textColor="#EC602B"
+                          android:gravity="center"
+                          android:textSize="12sp"
+                />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/layer"
+                    android:layout_weight="0.6"
+                    android:orientation="horizontal"
+            >
+                <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:textColor="#EC672E"
+                          android:gravity="center"
+                          android:textSize="16sp"
+                          android:id="@+id/click_price"
+                          android:paddingLeft="10dp"
+                />
+                <Button android:layout_width="120dp" android:layout_height="match_parent"
+                          android:text="立即购买"
+                          android:gravity="center"
+                          android:layout_alignParentRight="true"
+
+                            android:textColor="#fff"
+                        android:background="#EC672E"
+                          android:textSize="15sp"
+                />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

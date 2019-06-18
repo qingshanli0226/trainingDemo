@@ -1,7 +1,9 @@
-package com.example.player.a1610aplayerdemo.adapter;
+package com.example.player.a1610aplayerdemo.adapter.find_adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -15,16 +17,17 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.ui.activity.ItemClickActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindZListAdapter extends RecyclerView.Adapter<FindZListAdapter.MyHolder>{
+public class FindVipAdapter extends RecyclerView.Adapter<FindVipAdapter.MyHolder>{
 
-    List<HomeBean.DataBean.ZlListBean> list = new ArrayList<>();
+    List<HomeBean.DataBean.VipRecommendBean> list = new ArrayList<>();
     Context context;
 
-    public void refresh(List<HomeBean.DataBean.ZlListBean> list){
+    public void refresh(List<HomeBean.DataBean.VipRecommendBean> list){
         this.list = list;
         notifyDataSetChanged();
     }
@@ -32,11 +35,11 @@ public class FindZListAdapter extends RecyclerView.Adapter<FindZListAdapter.MyHo
     @Override
     public MyHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         context = viewGroup.getContext();
-        return new MyHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.find_item3,viewGroup,false));
+        return new MyHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.find_item4,viewGroup,false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MyHolder myHolder, int i) {
+    public void onBindViewHolder(@NonNull final MyHolder myHolder, final int i) {
         Glide.with(context)
                 .load(list.get(i).getImage())
                 .asBitmap()
@@ -51,6 +54,15 @@ public class FindZListAdapter extends RecyclerView.Adapter<FindZListAdapter.MyHo
                     }
                 });
         myHolder.textView.setText(list.get(i).getTitle());
+        myHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(myHolder.itemView.getContext(), ItemClickActivity.class);
+                intent.putExtra("dateId",String.valueOf(list.get(i).getDataId()));
+                intent.putExtra("dateType",String.valueOf(list.get(i).getDataType()));
+                myHolder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

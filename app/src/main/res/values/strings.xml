@@ -9,4 +9,9 @@
     <string name="course_title1">推荐</string>
     <string name="master_title">大师课</string>
     <string name="search_title">搜大师 搜课程</string>
+    <string name="category_title1">音乐课堂</string>
+    <string name="category_title2">在线直播</string>
+    <string name="category_title3">音乐教师种子培养计划</string>
+    <string name="itemclick_title_text">简介</string>
+    <string name="itemclick_title2"><![CDATA[戳此加入会员 >]]></string>
 </resources>

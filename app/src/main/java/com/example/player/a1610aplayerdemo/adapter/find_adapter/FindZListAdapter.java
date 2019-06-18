@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.adapter;
+package com.example.player.a1610aplayerdemo.adapter.find_adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -19,12 +19,12 @@ import com.example.player.a1610aplayerdemo.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindVipAdapter extends RecyclerView.Adapter<FindVipAdapter.MyHolder>{
+public class FindZListAdapter extends RecyclerView.Adapter<FindZListAdapter.MyHolder>{
 
-    List<HomeBean.DataBean.VipRecommendBean> list = new ArrayList<>();
+    List<HomeBean.DataBean.ZlListBean> list = new ArrayList<>();
     Context context;
 
-    public void refresh(List<HomeBean.DataBean.VipRecommendBean> list){
+    public void refresh(List<HomeBean.DataBean.ZlListBean> list){
         this.list = list;
         notifyDataSetChanged();
     }
@@ -32,7 +32,7 @@ public class FindVipAdapter extends RecyclerView.Adapter<FindVipAdapter.MyHolder
     @Override
     public MyHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         context = viewGroup.getContext();
-        return new MyHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.find_item4,viewGroup,false));
+        return new MyHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.find_item3,viewGroup,false));
     }
 
     @Override
