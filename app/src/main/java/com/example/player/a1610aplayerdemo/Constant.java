@@ -5,4 +5,5 @@ public class Constant {
     public final static String TOKEN = "token";
     public final static String DeviceKey = "D1B06377093263B9BDA0588D7D510741";
     public final static String URL = "url";
+    public final static String TITLE = "title";
 }

@@ -14,6 +14,7 @@ import com.example.player.a1610aplayerdemo.Constant;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.IMyClick;
 import com.example.player.a1610aplayerdemo.bean.DetailBean;
+import com.example.player.a1610aplayerdemo.ui.main.VideoActivity;
 import com.example.player.a1610aplayerdemo.ui.main.detail.DetailsActivity;
 
 import java.util.List;
@@ -71,8 +72,14 @@ public class ListFragment extends Fragment {
 
         @Override
         public void setListItemTitleClick(int i) {
+            DetailBean.ChaptersBean chaptersBean = chapters.get(i);
+            String name = chaptersBean.getName();
+            String url = "http://9890.vod.myqcloud.com/9890_9c1fa3e2aea011e59fc841df10c92278.f20.mp4";
             //跳转播放视频
-
+            Intent intent = new Intent(getActivity(), VideoActivity.class);
+            intent.putExtra(Constant.URL, url);
+            intent.putExtra(Constant.TITLE, name);
+            startActivity(intent);
         }
     };
 }
