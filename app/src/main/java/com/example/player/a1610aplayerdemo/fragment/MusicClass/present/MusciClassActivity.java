@@ -5,9 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.fragment.MusicClass.Music2Activity;
+import com.example.player.a1610aplayerdemo.fragment.MusicClass.adapter.Music2Activity;
 import com.example.player.a1610aplayerdemo.fragment.MusicClass.bean.MbBean;
 
 import java.util.ArrayList;

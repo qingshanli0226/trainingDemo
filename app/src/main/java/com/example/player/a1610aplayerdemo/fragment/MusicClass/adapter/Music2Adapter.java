@@ -35,12 +35,19 @@ public class Music2Adapter extends RecyclerView.Adapter<Music2Adapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolders myViewHolders, int i) {
+    public void onBindViewHolder(@NonNull MyViewHolders myViewHolders, final int i) {
         myViewHolders.tvname.setText(list.get(i).getAppName());
         myViewHolders.tvTcName.setText(list.get(i).getTeacherName());
         myViewHolders.tvPrice.setText(list.get(i).getPrice()+"");
         myViewHolders.textJS.setText(list.get(i).getTeacherTitle());
         Picasso.with(MyApp.instance).load(list.get(i).getImage()).into(myViewHolders.imageView);
+
+        myViewHolders.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onclick.OnClick(i);
+            }
+        });
     }
 
     @Override
@@ -62,5 +69,17 @@ public class Music2Adapter extends RecyclerView.Adapter<Music2Adapter.MyViewHold
             textJS=itemView.findViewById(R.id.tv_jieshao);
             imageView=itemView.findViewById(R.id.mb2_img);
         }
+    }
+    interface Onclick{
+        void OnClick(int position);
+    }
+    private Onclick onclick;
+
+    public void setOnclick(Onclick onclick) {
+        this.onclick = onclick;
+    }
+
+    public Music2Adapter(Onclick onclick) {
+        this.onclick = onclick;
     }
 }

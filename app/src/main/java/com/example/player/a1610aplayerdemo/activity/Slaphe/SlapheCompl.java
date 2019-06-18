@@ -45,7 +45,6 @@ public class SlapheCompl implements SlaphePresenter.ISlaphePresenter{
                         try {
                             String string = value.string();
                             iSlapheView.getSuccessData(string);
-
 //                            SharePresenterUtils.saveToke();
                             Log.d("ZYS", "onNext:Responbody "+string);
                         } catch (IOException e) {

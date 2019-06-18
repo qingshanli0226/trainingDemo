@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.fragment.MusicClass;
+package com.example.player.a1610aplayerdemo.fragment.MusicClass.adapter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.fragment.MusicClass.VideoActivity;
 import com.example.player.a1610aplayerdemo.fragment.MusicClass.adapter.Music2Adapter;
 import com.example.player.a1610aplayerdemo.fragment.MusicClass.bean.Mb2Bean;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreate;
@@ -24,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Music2Activity extends AppCompatActivity  {
+public class Music2Activity extends AppCompatActivity implements Music2Adapter.Onclick{
     int id;
     /**
      * 搜索
@@ -58,10 +59,9 @@ public class Music2Activity extends AppCompatActivity  {
 
                     @Override
                     public void onNext(Mb2Bean value) {
-                        List<Mb2Bean.DataBean> data = value.getData();
-                        adapter=new Music2Adapter();
+                        list = value.getData();
                         rv.setAdapter(adapter);
-                        adapter.refresh(data);
+                        adapter.refresh(list);
                     }
 
                     @Override
@@ -86,8 +86,17 @@ public class Music2Activity extends AppCompatActivity  {
         toolbar.setTitle("管乐");
         GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2);
         rv.setLayoutManager(gridLayoutManager);
+        adapter=new Music2Adapter(this);
+
     }
 
 
-
+    @Override
+    public void OnClick(int position) {
+        int id = list.get(position).getId();
+        Intent intent=new Intent();
+        intent.setClass(Music2Activity.this, VideoActivity.class);
+        intent.putExtra("musicId",id);
+        startActivity(intent);
+    }
 }

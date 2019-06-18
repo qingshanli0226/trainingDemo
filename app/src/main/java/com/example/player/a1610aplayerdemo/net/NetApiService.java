@@ -3,6 +3,7 @@ package com.example.player.a1610aplayerdemo.net;
 import com.example.player.a1610aplayerdemo.fragment.MusicClass.bean.Mb2Bean;
 import com.example.player.a1610aplayerdemo.fragment.MusicClass.bean.MbBean;
 import com.example.player.a1610aplayerdemo.fragment.Home.bean.SelectorBean;
+import com.example.player.a1610aplayerdemo.fragment.MusicClass.bean.VideoBean;
 import com.example.player.a1610aplayerdemo.fragment.membre.Bean.MenmberBean;
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
@@ -28,6 +29,8 @@ public interface NetApiService {
     Observable<MbBean> getMbBean(@Url String s);
     @GET()
     Observable<Mb2Bean> getMb2Bean(@Url String s);
+    @GET()
+    Observable<VideoBean> getVideo(@Url String s);
 //    @GET
 //    Observable<>
 }
