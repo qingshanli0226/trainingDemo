@@ -1,8 +1,6 @@
 package com.example.player.a1610aplayerdemo.curriculum.fragment;
 
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,8 +16,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.activity.VideoActivity;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.curriculum.adapter.BannerAdapter;
@@ -97,7 +97,7 @@ public class BannerFragment extends Fragment implements IBaseView<BannerBean> {
         Intent intent = new Intent();
         intent.setAction("com.banner.message");
         Bundle bundle = new Bundle();
-        bundle.putSerializable("bannerBean",bannerBean);
+        bundle.putSerializable("bannerBean", bannerBean);
         intent.putExtras(bundle);
         getActivity().sendBroadcast(intent);
         initData();
@@ -127,5 +127,22 @@ public class BannerFragment extends Fragment implements IBaseView<BannerBean> {
         super.onDestroy();
         RadioGroup radioGroup = getActivity().findViewById(R.id.home_radioG);
         radioGroup.setVisibility(View.VISIBLE);
+    }
+
+    @OnClick({R.id.banner_back, R.id.banner_play, R.id.banner_collect, R.id.banner_share})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.banner_back:
+                getFragmentManager().popBackStack();
+                break;
+            case R.id.banner_play:
+                Intent intent = new Intent(getActivity(),VideoActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.banner_collect:
+                break;
+            case R.id.banner_share:
+                break;
+        }
     }
 }

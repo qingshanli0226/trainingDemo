@@ -33,7 +33,7 @@ public class TokenActivity extends AppCompatActivity implements IBaseView {
         setContentView(R.layout.activity_token);
         ButterKnife.bind(this);
 
-        Picasso.with(this).load("http://ali-files.yooshow.com/2019/06/17/2ac137aa-954a-4ac9-836a-4475c24caf7b.jpg ").into(tokenGreetIv);
+        Picasso.with(this).load("http://ali-files.yooshow.com/2019/06/17/2ac137aa-954a-4ac9-836a-4475c24caf7b.jpg").into(tokenGreetIv);
 
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
 
