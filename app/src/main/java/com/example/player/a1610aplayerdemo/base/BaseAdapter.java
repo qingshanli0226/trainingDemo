@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
+public abstract class BaseAdapter<T> extends RecyclerView.Adapter<OldBaseViewHolder> {
 
     public List<T> data = new ArrayList<>();
 
@@ -25,26 +25,29 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
 
 
     @Override
-    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public OldBaseViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View rootView = inflater.inflate(getLayoutId(), viewGroup, false);
-        return new BaseViewHolder(rootView);
+        return new OldBaseViewHolder(rootView);
     }
 
     protected abstract int getLayoutId();
 
     @Override
-    public void onBindViewHolder(@NonNull BaseViewHolder baseViewHolder, final int i) {
-        convert(baseViewHolder, i);
-        baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(@NonNull OldBaseViewHolder oldBaseViewHolder, final int i) {
+        convert(oldBaseViewHolder, i);
+        oldBaseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onckitem.dianji(i);
+
+                if (onckitem != null){
+                    onckitem.dianji(i);
+                }
             }
         });
     }
 
-    protected abstract void convert(BaseViewHolder baseViewHolder, int i);
+    protected abstract void convert(OldBaseViewHolder oldBaseViewHolder, int i);
 
     @Override
     public int getItemCount() {

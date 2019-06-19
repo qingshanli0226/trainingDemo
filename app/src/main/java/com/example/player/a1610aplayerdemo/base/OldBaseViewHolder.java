@@ -5,10 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
 
-public class BaseViewHolder extends RecyclerView.ViewHolder{
+public class OldBaseViewHolder extends RecyclerView.ViewHolder{
 
     private SparseArray<View> views = new SparseArray<>();
-    public BaseViewHolder(@NonNull View itemView) {
+    public OldBaseViewHolder(@NonNull View itemView) {
         super(itemView);
     }
 

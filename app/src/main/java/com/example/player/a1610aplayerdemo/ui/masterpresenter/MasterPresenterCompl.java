@@ -1,50 +1,39 @@
-package com.example.player.a1610aplayerdemo.ui.tuijianpresenter;
+package com.example.player.a1610aplayerdemo.ui.masterpresenter;
 
+import com.example.player.a1610aplayerdemo.bean.MasterDateBean;
 import com.example.player.a1610aplayerdemo.bean.TuiJianDateBean;
-import com.example.player.a1610aplayerdemo.bean.VipDateBean;
 import com.example.player.a1610aplayerdemo.net.MVPObserver;
 import com.example.player.a1610aplayerdemo.net.MyNetFunction;
 import com.example.player.a1610aplayerdemo.net.ResEntity;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
-import com.example.player.a1610aplayerdemo.ui.vippresenter.VipInterface;
+import com.example.player.a1610aplayerdemo.ui.tuijianpresenter.TuiJianInterface;
 import com.example.player.a1610aplayerdemo.util.DeviceKye;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-public class TuiJianPresenterCompl implements TuiJianInterface.ITuiJianPresenter{
-
-    TuiJianInterface.TuiJianView tuiJianView;
-
-    public TuiJianPresenterCompl(TuiJianInterface.TuiJianView tuiJianView) {
+public class MasterPresenterCompl implements MasterInterface.IMasterPresenter{
+    MasterInterface.MasterView tuiJianView;
+    public MasterPresenterCompl(MasterInterface.MasterView tuiJianView) {
         this.tuiJianView = tuiJianView;
     }
-
     @Override
-    public void  getTuiJianData(String s) {
-
+    public void  getMasterData(String s) {
         Map<String, String> map = new HashMap<>();
-        map.put("courseId", s);
-        map.put("packageId", "0");
+        map.put("liveId", s);
 
         Map headmap = new HashMap<>();
         headmap.put("deviceKey", DeviceKye.getDeviceKye());
 
         RetrofitCreator.getApiService().getTuiJianDate(headmap,map)
                 .subscribeOn(Schedulers.io())
-                .map(new MyNetFunction<ResEntity<TuiJianDateBean>,TuiJianDateBean>())
+                .map(new MyNetFunction<ResEntity<MasterDateBean>,MasterDateBean>())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new MVPObserver<TuiJianDateBean>(){
+                .subscribe(new MVPObserver<MasterDateBean>(){
                     @Override
-                    public void onNext(TuiJianDateBean vipDateBean) {
+                    public void onNext(MasterDateBean vipDateBean) {
                         super.onNext(vipDateBean);
-
                         tuiJianView.onGetDataSuccess(vipDateBean);
                     }
                 });

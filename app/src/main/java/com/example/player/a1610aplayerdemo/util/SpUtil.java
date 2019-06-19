@@ -20,6 +20,15 @@ public class SpUtil {
 
     }
 
+    public static void saveId(String id) {
+
+        sp.edit().putString("getId", id).commit();
+
+    }
+    public static String getid() {//读取token
+        return sp.getString("getId", "");
+    }
+
     public static String getToken() {//读取token
         return sp.getString(Contants.TOKEN, "");
     }

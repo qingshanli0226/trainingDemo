@@ -13,7 +13,14 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".ui.activy.MasterActivity">
+        </activity>
+        <activity android:name=".logRegUI.RegiestActivity">
+        </activity>
+        <activity android:name=".logRegUI.LogActivity">
+        </activity>
         <activity android:name=".ui.activy.TuiJianClassActivity">
+
         </activity>
         <activity android:name=".ui.activy.ZhuanLanActivity">
         </activity>
@@ -30,9 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-                android:name=".ui.activy.MainActivity"
-                android:launchMode="singleTask">
+        <activity android:name=".ui.activy.MainActivity">
         </activity>
     </application>
 

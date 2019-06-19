@@ -11,6 +11,8 @@ public class Contants {
 
     public static final String CREATE_NEW = "account/createNew";
 
+
+
     public static final String GET_HOME = "loading/getHome";
 
     public static final String GET_VIP =  "masterPackage/getMasterPackagelist?minid=0&size=20";

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -16,6 +17,8 @@ import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseAdapter;
 import com.example.player.a1610aplayerdemo.bean.XuanKeDateBean;
+import com.example.player.a1610aplayerdemo.ui.activy.MasterActivity;
+import com.example.player.a1610aplayerdemo.ui.activy.MusicClassActivity;
 import com.example.player.a1610aplayerdemo.ui.activy.TuiJianClassActivity;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
@@ -195,7 +198,7 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return 6;
     }
 
-    class DaShiKeHolder extends RecyclerView.ViewHolder {
+    class DaShiKeHolder extends RecyclerView.ViewHolder implements BaseAdapter.Onckitem{
 
         RecyclerView channel;
 
@@ -211,10 +214,23 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MyApp.instance);
             linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             channel.setLayoutManager(linearLayoutManager);
+            channelAdp.setOnckitem(this);
             channel.setAdapter(channelAdp);
 
         }
 
+        @Override
+        public void dianji(int i) {
+            Log.d("www",dashikeList.get(i).getLiveId()+"");
+
+            Intent intent = new Intent(MyApp.instance, MasterActivity.class);
+            intent.putExtra("dashikeId",dashikeList.get(i).getLiveId()+"");
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            MyApp.instance.startActivity(intent);
+
+
+
+        }
     }
 
 
@@ -226,11 +242,26 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             channel = itemView.findViewById(R.id.category_gv);
         }
 
-        public void setDate(List<XuanKeDateBean.HomeCategoryBean> channelInfoBeans){
+        public void setDate(final List<XuanKeDateBean.HomeCategoryBean> channelInfoBeans){
 
             HomeCategoryAdp channelAdp = new HomeCategoryAdp();
             channelAdp.updateData(channelInfoBeans);
             channel.setAdapter(channelAdp);
+
+            channel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String showIndex = channelInfoBeans.get(position).getShowIndex()+"";
+                    if (position==0){
+                        Intent intent = new Intent(MyApp.instance, MusicClassActivity.class);
+                        intent.putExtra("musicclass_num1",showIndex);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        MyApp.instance.startActivity(intent);
+                    }
+
+                }
+            });
+
         }
     }
 
@@ -299,10 +330,11 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public void dianji(int i) {
 
             Intent intent = new Intent(MyApp.instance, TuiJianClassActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("courseId",tuijianlist.get(i).getCourseId()+"");
 
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             MyApp.instance.startActivity(intent);
-            Log.d("mmm",tuijianlist.get(i).getCourseId()+"--------");
+
 
         }
     }

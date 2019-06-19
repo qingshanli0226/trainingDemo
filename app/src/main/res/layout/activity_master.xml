@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.activy.TuiJianClassActivity">
+        tools:context=".ui.activy.MasterActivity">
+
     <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:background="#8E002E">
 
         <TextView android:layout_width="60dp" android:layout_height="match_parent" android:text="＜"
@@ -15,10 +16,11 @@
         <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true" android:id="@+id/tuijian_title" android:textColor="#ffffff"/>
     </RelativeLayout>
 
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="3">
-        <include layout="@layout/simple_player_view_player"></include>
 
-        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:id="@+id/tj_shikan" android:text="试看"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="3">
+
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:text="这是视频" android:gravity="center"/>
+
 
     </RelativeLayout>
 
@@ -28,27 +30,27 @@
                                                    android:layout_alignParentStart="true"
                                                    android:layout_marginStart="40dp"
                                                    app:roundAsCircle="true"
-                                                   android:id="@+id/tuijian_touxiang"
+                                                   android:id="@+id/dashike_touxiang"
                                                    android:layout_alignParentBottom="true"
                                                    android:layout_marginBottom="0dp"/>
 
         <TextView android:layout_width="200dp" android:layout_height="20dp"
-                  android:id="@+id/tuijian_ren"
+                  android:id="@+id/dashike_ren"
                   android:layout_alignParentTop="true" android:layout_alignParentStart="true"
                   android:layout_marginTop="0dp" android:layout_marginStart="113dp"/>
 
         <TextView android:layout_width="200dp" android:layout_height="20dp"
-                  android:id="@+id/tuijian_courseName"
+                  android:id="@+id/dashike_courseName"
                   android:layout_alignParentTop="true" android:layout_alignParentStart="true"
                   android:layout_marginTop="32dp" android:layout_marginStart="114dp"/>
 
     </RelativeLayout>
-    <android.support.design.widget.TabLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:id="@+id/tuijian_tab">
-        
+    <android.support.design.widget.TabLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:id="@+id/dashike_tab">
+
     </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager android:layout_width="match_parent"
-                                       android:id="@+id/tuijian_vpg"
+                                       android:id="@+id/dashike_vpg"
                                        android:layout_height="0dp" android:layout_weight="4">
 
     </android.support.v4.view.ViewPager>
@@ -61,7 +63,7 @@
 
         <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
 
-            <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:id="@+id/tuijian_jiaqian"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:id="@+id/dashike_jiaqian"/>
 
             <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="立即购买"
                     android:layout_centerVertical="true" android:layout_alignParentEnd="true"
@@ -71,6 +73,7 @@
 
 
     </LinearLayout>
+
 
 
 </LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.player.a1610aplayerdemo.ui.activy;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,7 +36,22 @@ public class YinDaoActivity extends AppCompatActivity implements TokenInterface.
         sm.setImageURI("http://ali-files.yooshow.com/2019/03/20/ecccd992-f2a7-4d33-a414-5348c34d28ab.png");
 
 
+        zdtz();
+    }
 
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what==1){
+                startActivity(new Intent(YinDaoActivity.this,MainActivity.class));
+            }
+        }
+    };
+
+    private void zdtz() {
+
+        handler.sendEmptyMessageDelayed(1,3000);
     }
 
 
@@ -47,7 +64,7 @@ public class YinDaoActivity extends AppCompatActivity implements TokenInterface.
 
     @Override
     public void onGetDataSuccess(@NotNull TokenDateBean bean) {
-        Log.d("xxxxxxx",bean.getAccessToken());
+
 
         SpUtil.saveToken(bean.getAccessToken());
 

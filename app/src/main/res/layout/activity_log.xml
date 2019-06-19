@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".logRegUI.LogActivity">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="60dp">
+        <TextView android:layout_width="40dp" android:layout_height="match_parent" android:text="＜" android:gravity="center" android:textColor="#000" android:onClick="fanhui"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:text="手机快捷登陆" android:layout_centerInParent="true" android:gravity="center" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:text="忘记密码?"
+                  android:gravity="center" android:layout_alignParentEnd="true" android:layout_alignParentTop="true"
+                  android:layout_marginEnd="15dp"/>
+    </RelativeLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="30dp"/>
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="60dp" android:text="你好" android:gravity="center" android:textSize="40sp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="60dp" android:text="欢迎来到央音在线" android:gravity="center" android:textSize="20sp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:text="立即注册" android:gravity="center" android:textSize="20sp" android:textColor="#0206ae" android:layout_marginLeft="10dp" android:onClick="toReg"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="30dp"></LinearLayout>
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="手机号:"/>
+
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="请输入您的手机号码" android:id="@+id/log_shoujihao"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="密码:"/>
+
+
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="请输入您的手机号码" android:id="@+id/log_mima"/>
+
+
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="30dp">
+    </LinearLayout>
+
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="登录" android:onClick="Log" android:background="#8F002E" android:textColor="#fff"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="200dp"></LinearLayout>
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="登陆遇到问题?"/>
+
+</LinearLayout>
