@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".twomenuActivity.activity.BannerActivity"
   >
-    <LinearLayout
+    <RelativeLayout
             android:id="@+id/vedioPagerLinerLayout"
             android:layout_width="match_parent"
             android:orientation="horizontal"
@@ -17,21 +17,20 @@
         <ImageView
                 android:layout_marginTop="10dp"
                 android:id="@+id/vedioPagerReturnBtn"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/ic_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_back2"
+                android:layout_width="40dp"
+                android:layout_height="match_parent" />
         <TextView
-                android:layout_marginTop="10dp"
                 android:id="@+id/vedioPagerTitle"
                 android:text="第一讲走近钢琴   第一节 认识钢琴键盘"
                 android:textColor="#EEEEEE"
                 android:textSize="17sp"
                 android:layout_width="200dp"
-                android:layout_marginLeft="100dp"
+                android:layout_centerInParent="true"
                 android:singleLine="true"
                 android:layout_height="wrap_content" />
-    </LinearLayout>
+    </RelativeLayout>
     <ImageView
             android:layout_below="@+id/vedioPagerLinerLayout"
             android:visibility="invisible"
@@ -41,13 +40,20 @@
             android:layout_height="250dp">
 
     </ImageView>
-    <ImageView
-            android:layout_below="@+id/vedioPagerLinerLayout"
-            android:id="@+id/vedioPageVedioImg"
-            android:src="@drawable/beijing"
-            android:scaleType="fitXY"
-            android:layout_width="match_parent"
-            android:layout_height="250dp" />
+
+  <include
+          android:layout_below="@+id/vedioPagerLinerLayout"
+          layout="@layout/simple_player_view_player"
+          android:layout_width="match_parent"
+          android:layout_height="250dp"
+          android:id="@+id/vedioPageVedioImg"/>
+    <!--<ImageView-->
+            <!--android:layout_below="@+id/vedioPagerLinerLayout"-->
+            <!--android:id="@+id/vedioPageVedioImg"-->
+            <!--android:src="@drawable/beijing"-->
+            <!--android:scaleType="fitXY"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="250dp" />-->
     <TextView
             android:alpha="0.8"
             android:layout_marginTop="185dp"
@@ -142,7 +148,8 @@
             android:id="@+id/vedioPageTabLayout"
             android:layout_marginTop="30dp"
             android:layout_below="@+id/vedioPageTeacherPhoto"
-            android:layout_width="match_parent"
+            android:layout_width="260dp"
+            android:layout_centerInParent="true"
             app:tabIndicatorColor="#8E002E"
             android:layout_height="50dp">
 
@@ -155,4 +162,6 @@
             android:layout_height="match_parent">
 
     </android.support.v4.view.ViewPager>
+
+
 </RelativeLayout>

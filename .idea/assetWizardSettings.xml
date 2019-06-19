@@ -44,9 +44,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_back" />
+                                      <entry key="outputName" value="ic_back2" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="636363" />
+                                      <entry key="themeColor" value="fafff8" />
                                     </map>
                                   </option>
                                 </PersistentState>

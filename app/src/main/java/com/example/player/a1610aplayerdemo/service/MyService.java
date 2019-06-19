@@ -35,10 +35,9 @@ public interface MyService {
    Observable<BannerBean> getTwoMenu(@Query("courseId")String courseId,@Query("packageId")String packageId);
 
 
-
-
    //http://api.immedc.com/restapi/category/getPerfesional?pid=1    音乐课堂
-
+    @GET(Contants.GET_MusicClass)
+    Observable<MusicClassBean> getMusicClass(@Query("pid")String pid);
 
 
 

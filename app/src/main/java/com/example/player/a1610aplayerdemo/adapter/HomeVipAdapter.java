@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.twomenuActivity.activity.BannerActivity;
 
 import java.util.List;
 
@@ -36,10 +38,20 @@ public class HomeVipAdapter extends RecyclerView.Adapter<HomeVipAdapter.MyVipVie
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyVipViewHolder myVipViewHolder, int i) {
+    public void onBindViewHolder(@NonNull MyVipViewHolder myVipViewHolder, final int i) {
        myVipViewHolder.textView.setText(vipRecommend.get(i).getTitle());
        myVipViewHolder.textView1.setText(vipRecommend.get(i).getText1());
         Glide.with(vContext).load(vipRecommend.get(i).getImage()).into(myVipViewHolder.imageView);
+
+
+        myVipViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(vContext, BannerActivity.class);
+                intent.putExtra("relation",vipRecommend.get(i).getDataId()+"");
+                vContext.startActivity(intent);
+            }
+        });
 
     }
 

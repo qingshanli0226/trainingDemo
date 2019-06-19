@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.twomenuActivity.activity.MusicClassActivity;
 
 import java.util.List;
 
@@ -39,7 +41,8 @@ public class HomeClassAdapter extends RecyclerView.Adapter<HomeClassAdapter.MyCl
           myClassViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                   
+                  Intent intent = new Intent(acontext, MusicClassActivity.class);
+                  acontext.startActivity(intent);
               }
           });
 
