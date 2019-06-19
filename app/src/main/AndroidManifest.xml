@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
             android:name=".commit.MyApplication"
@@ -13,6 +16,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".ui.home_activity.Player">
+        </activity>
         <activity android:name=".ui.home_activity.categoryactivity.activity.CategoryZeroActivity">
         </activity>
         <activity android:name=".ui.home_activity.zllistactivity.Home_Four">

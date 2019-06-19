@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.*;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.ui.home.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.ui.home_activity.Player;
 import com.example.player.a1610aplayerdemo.ui.home_activity.categoryactivity.activity.CategoryZeroActivity;
 import com.example.player.a1610aplayerdemo.ui.home_activity.zllistactivity.Home_Four;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -188,6 +189,14 @@ public class HomeAdapter extends XRecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         public void setData(List<HomeBean.DataBean.VipRecommendBean> list){
             gridView.setAdapter(new VipRecommendAdapter(context,list));
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent();
+                    intent.setClass(context, Player.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 

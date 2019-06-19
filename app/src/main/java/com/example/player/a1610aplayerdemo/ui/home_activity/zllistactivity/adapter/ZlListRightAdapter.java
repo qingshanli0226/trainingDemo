@@ -1,14 +1,17 @@
 package com.example.player.a1610aplayerdemo.ui.home_activity.zllistactivity.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.ui.home_activity.Player;
 import com.example.player.a1610aplayerdemo.ui.home_activity.zllistactivity.bean.ZlListRightBean;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
@@ -40,6 +43,15 @@ public class ZlListRightAdapter extends XRecyclerView.Adapter<ZlListRightAdapter
         Picasso.get().load(list.get(i).getImage()).into(myViewHolder.zllistright_image);
         myViewHolder.zllistright_tv1.setText(list.get(i).getTitle());
         myViewHolder.zllistright_tv2.setText(list.get(i).getIntroduce());
+//        myViewHolder.zllistright_tv3.setText(list.get(i).getPrice() + "元");
+        myViewHolder.zllistright_linearlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(context, Player.class);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -49,10 +61,12 @@ public class ZlListRightAdapter extends XRecyclerView.Adapter<ZlListRightAdapter
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
+        private LinearLayout zllistright_linearlayout;
         private ImageView zllistright_image;
         private TextView zllistright_tv1,zllistright_tv2,zllistright_tv3;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            zllistright_linearlayout = itemView.findViewById(R.id.zllistright_linearlayout);
             zllistright_image = itemView.findViewById(R.id.zllistright_image);
             zllistright_tv1 = itemView.findViewById(R.id.zllistright_tv1);
             zllistright_tv2 = itemView.findViewById(R.id.zllistright_tv2);
