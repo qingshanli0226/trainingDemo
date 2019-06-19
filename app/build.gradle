@@ -13,6 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         debug {
@@ -23,7 +24,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    dataBinding{
+        enabled = true
+    }
     configurations.all {
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
             def requested = details.requested
@@ -82,4 +85,5 @@ dependencies {
     implementation 'com.dou361.ijkplayer:jjdxm-ijkplayer:1.0.5'
     implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.6.0'
     implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.0'
+    implementation 'com.android.support:multidex:1.0.3'
 }

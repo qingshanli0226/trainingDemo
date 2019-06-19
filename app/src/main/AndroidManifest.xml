@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
             android:name=".MyApp"
             android:allowBackup="true"
@@ -13,10 +14,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".fragment.MusicClass.VideoActivity"
-                  android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"
-        >
+        <activity android:name=".mvvm.book.BookActivity">
+        </activity>
+        <activity
+                android:name=".fragment.MusicClass.VideoActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait">
         </activity>
         <activity android:name=".fragment.MusicClass.adapter.Music2Activity">
         </activity>

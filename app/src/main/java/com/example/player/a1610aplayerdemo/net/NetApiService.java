@@ -9,6 +9,7 @@ import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.http.*;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public interface NetApiService {
@@ -33,4 +34,6 @@ public interface NetApiService {
     Observable<VideoBean> getVideo(@Url String s);
 //    @GET
 //    Observable<>
+    @GET("{path}")
+    Observable<String> getData(@HeaderMap HashMap<String,String> headers,@Path("path") String path,@QueryMap HashMap<String, String> params);
 }
