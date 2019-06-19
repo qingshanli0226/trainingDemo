@@ -14,6 +14,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class MusicClassPresenter implements IBasePresenter<MusicClassBean.DataBean> {
     private IBaseView<MusicClassBean.DataBean> iBaseView;
+
     @Override
     public void getData() {
         CreatorRetorfitApi.getiRetrofitApiSerice().getMusicBean()
