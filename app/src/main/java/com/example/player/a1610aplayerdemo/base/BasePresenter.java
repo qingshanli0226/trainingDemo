@@ -63,7 +63,6 @@ public abstract class BasePresenter<T> implements IBasePresenter<T> {
                                     }
                                 });
     }
-
     @Override
     public void getDataByPost() {
         RetrofitCreate.getNetApiService().getDataByPost(getHearder(),getApiPath(),getApiPath2(),getParmars())
@@ -102,7 +101,6 @@ public abstract class BasePresenter<T> implements IBasePresenter<T> {
                     }
                 });
     }
-
     /**
      *   返回参数，如果网络请求不需要参数，可以不写
      * @return
