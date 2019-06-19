@@ -1,14 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".ui.Fragment.Fragment_StudyCentre">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+             tools:context=".ui.Fragment.Fragment_StudyCentre"
+        android:orientation="vertical">
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:layout_weight="3"
+            android:layout_height="0dp">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@mipmap/bg_top"
+                android:layout_height="match_parent">
+            <ImageView
+                    android:id="@+id/studyCenterPagerPhoto"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/default_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            <TextView
+                    android:layout_marginTop="5dp"
+                    android:textColor="#EEEEEE"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18sp"
+                    android:text="尚未登录"
+                    android:layout_alignLeft="@+id/studyCenterPagerPhoto"
+                    android:layout_below="@+id/studyCenterPagerPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="0dp">
+        <Button
+                android:id="@+id/studyCenterPagerLogin"
+                android:textColor="#EEEEEE"
+                android:background="@drawable/studentcentershape"
+                android:textSize="16sp"
+                android:text="登录"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+        <Button
 
-</FrameLayout>
+                android:id="@+id/studyCenterPagerRegister"
+                android:layout_marginLeft="50dp"
+                android:textColor="#EEEEEE"
+                android:background="@drawable/studentcentershape"
+                android:textSize="16sp"
+                android:text="注册"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+        <TextView
+                android:id="@+id/studyCenterPagerIntroduce"
+                android:layout_marginLeft="20dp"
+                android:textColor="#000000"
+                android:text="《央音在线》是中央音乐学院官方在线教育平台!"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="3"
+            android:layout_height="0dp">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageView
+                    android:id="@+id/studyCenterPagerWatch"
+                    android:src="@mipmap/study_center_promo_video_cover"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            <ImageView
+                    android:id="@+id/studyCenterPagerSoundOff"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/silence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="3"
+            android:layout_height="0dp">
+
+    </LinearLayout>
+
+
+</LinearLayout>

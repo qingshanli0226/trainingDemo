@@ -12,7 +12,7 @@
                 android:layout_centerVertical="true"
                 android:textSize="15sp"
                 android:textColor="#EEEEEE"
-                android:text="大师课"
+                android:text="@string/mastercalss"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -61,7 +61,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_below="@+id/masterRV_CourseName"
-                android:text="中央音乐学院钢琴系"
+                android:text="@string/master_aaw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         <TextView

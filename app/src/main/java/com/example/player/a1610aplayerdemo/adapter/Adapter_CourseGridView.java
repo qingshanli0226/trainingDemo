@@ -54,6 +54,7 @@ public class Adapter_CourseGridView extends BaseAdapter {
         holder.mTextView.setText(homeCategoryBean.getTitle());
         Glide.with(convertView.getContext()).load(homeCategoryBean.getBannerUrl()).into(holder.mImageView);
         return convertView;
+
     }
     class ViewHolder{
         ImageView mImageView;

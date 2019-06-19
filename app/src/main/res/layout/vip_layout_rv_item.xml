@@ -2,6 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:gravity="left"
+              android:layout_height="180dp">
+    <ImageView
+
+            android:layout_marginBottom="10dp"
+            android:id="@+id/vipPageRV_Image"
+            android:maxWidth="600dp"
+            android:maxHeight="280dp"
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 </LinearLayout>

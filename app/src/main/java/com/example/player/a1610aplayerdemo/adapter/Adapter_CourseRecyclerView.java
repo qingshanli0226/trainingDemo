@@ -168,6 +168,8 @@ public class Adapter_CourseRecyclerView extends RecyclerView.Adapter {
             this.mContext = context;
             mTextView = itemView.findViewById(R.id.specialMoreBtn);
             mGridView = itemView.findViewById(R.id.specialPageGridView);
+
+
         }
         public void setData(){
             Adapter_CourseSpecialGridView adapter_courseSpecialGridView = new Adapter_CourseSpecialGridView(mContext, mHomeBean);

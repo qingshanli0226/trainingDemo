@@ -13,5 +13,11 @@ public class Contants {
     public static final String TOKEN = "accessToken";
     //SP的名称
     public static final String SP = "YangYinOnline";
+    //获取视频
+    public static final String VEDIOURL = "course/getVideo2";
+    //获取音乐课堂分类
+    public static final String CATEGORY = "category/getPerfesional";
+    //获取音乐课堂中的具体某一科目数据
+    public static final String CATEGORY_COURSE = "course/getCourses";
 
 }

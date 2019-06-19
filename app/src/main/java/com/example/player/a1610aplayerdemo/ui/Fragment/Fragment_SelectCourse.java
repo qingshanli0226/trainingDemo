@@ -49,6 +49,7 @@ public class Fragment_SelectCourse extends Fragment implements CourseView, View.
     }
 
     @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -118,6 +119,7 @@ public class Fragment_SelectCourse extends Fragment implements CourseView, View.
             case R.id.cursePageSearchBtn:
                 //跳转到搜索页面
                 Toast.makeText(mContext, "进入搜索页面", Toast.LENGTH_SHORT).show();
+                //白茶清欢无别事 我在等风也等你 苦酒折柳今相离 无风无月也无你
                 break;
         }
     }

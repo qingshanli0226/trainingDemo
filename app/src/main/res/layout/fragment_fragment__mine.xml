@@ -1,14 +1,364 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".ui.Fragment.Fragment_Mine">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+        <RelativeLayout
+                android:id="@+id/minePageRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+            <ImageView
+                    android:src="@mipmap/bg_user_top_logined"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            <ImageView
+                    android:id="@+id/minePageImage"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/default_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="85dp"
+                    android:layout_toEndOf="@+id/minePageImage"
+                    android:id="@+id/minePageText"
+                    android:textSize="16sp"
+                    android:textColor="#EEEEEE"
+                    android:text="登录/注册"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            <LinearLayout
+                    android:visibility="invisible"
+                    android:id="@+id/minePageMessageBtn"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                <ImageView
+                        android:src="@mipmap/iv_my_message"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                <TextView
+                        android:textSize="15sp"
+                        android:text="消息"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                    android:visibility="invisible"
+                    android:id="@+id/minePageMyDataBtn"
+                    android:background="@drawable/mineshape"
+                    android:layout_below="@+id/minePageImage"
+                    android:layout_marginTop="15dp"
+                    android:alpha="0.5"
+                    android:layout_width="170dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content">
+                <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/iv_personal_info"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                <TextView
+                        android:textColor="#EEEEEE"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:text="我的资料"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                    android:visibility="invisible"
+                    android:id="@+id/minePageLatelyBtn"
+                    android:background="@drawable/mineshape"
+                    android:layout_below="@+id/minePageMyDataBtn"
+                    android:layout_marginTop="15dp"
+                    android:alpha="0.5"
+                    android:layout_width="170dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content">
+                <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/iv_my_watch"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                <TextView
+                        android:textColor="#EEEEEE"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:text="最近观看"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                    android:visibility="invisible"
+                    android:id="@+id/minePageCollectBtn"
+                    android:background="@drawable/mineshape"
+                    android:layout_toEndOf="@+id/minePageMyDataBtn"
+                    android:layout_alignTop="@+id/minePageMyDataBtn"
+                    android:alpha="0.5"
+                    android:layout_width="170dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/minePageMyDataBtn">
+                <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/iv_my_collected"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                <TextView
+                        android:textColor="#EEEEEE"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:text="我的收藏"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                    android:visibility="invisible"
+                    android:id="@+id/minePageShopBtn"
+                    android:background="@drawable/mineshape"
+                    android:layout_toEndOf="@+id/minePageLatelyBtn"
+                    android:layout_alignTop="@+id/minePageLatelyBtn"
+                    android:alpha="0.5"
+                    android:layout_width="170dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/minePageLatelyBtn">
+                <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/iv_my_purchased"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                <TextView
+                        android:textColor="#EEEEEE"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:text="我的购买（0）"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
 
-</FrameLayout>
+        </RelativeLayout>
+        <RelativeLayout
+                android:background="#8E002E"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+            <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:textColor="#EEEEEE"
+                    android:text="系统设置"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_height="match_parent">
+            <LinearLayout
+                    android:id="@+id/minePageAbout"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                <ImageView
+                        android:src="@mipmap/iv_about_us"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content" />
+                <TextView
+                        android:text="关于央音在线"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                    android:background="#E5DAE0"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+            <LinearLayout
+                    android:id="@+id/minePageServe"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                <ImageView
+                        android:src="@mipmap/iv_service_agreement"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content" />
+                <TextView
+                        android:text="服务协议"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                    android:background="#E5DAE0"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+            <LinearLayout
+                    android:id="@+id/minePageCopyRight"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                <ImageView
+                        android:src="@mipmap/iv_privacy_policy"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content" />
+                <TextView
+                        android:text="版权声明"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                    android:background="#E5DAE0"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+            <LinearLayout
+                    android:id="@+id/minePageDelete"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                <ImageView
+                        android:src="@mipmap/iv_clear_cache"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content" />
+                <TextView
+                        android:text="清除缓存"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                    android:background="#E5DAE0"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+            <LinearLayout
+                    android:id="@+id/minePageProblem"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                <ImageView
+                        android:src="@mipmap/iv_faq"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content" />
+                <TextView
+                        android:text="常见问题"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                    android:background="#E5DAE0"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+            <LinearLayout
+                    android:id="@+id/minePageNew"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                <ImageView
+                        android:src="@mipmap/iv_check_updates"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content" />
+                <TextView
+                        android:text="检查更新"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                    android:background="#E5DAE0"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+            <LinearLayout
+                    android:id="@+id/minePageRecommend"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                <ImageView
+                        android:src="@mipmap/iv_share"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content" />
+                <TextView
+                        android:text="推荐【央音在线】给好友"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                    android:background="#E5DAE0"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+            <LinearLayout
+                    android:id="@+id/minePageOpinion"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                <ImageView
+                        android:src="@mipmap/iv_feedback"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content" />
+                <TextView
+                        android:text="意见反馈"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                    android:background="#E5DAE0"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+            <Button
+                    android:visibility="invisible"
+                    android:id="@+id/minePageExitBtn"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:background="#8E002E"
+                    android:textColor="#EEEEEE"
+                    android:textSize="20sp"
+                    android:text="退出登录"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

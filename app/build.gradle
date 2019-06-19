@@ -8,7 +8,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.player.a1610aplayerdemo"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -50,4 +50,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'org.jetbrains.anko:anko:0.10.1'
     implementation 'com.github.OCNYang:PageTransformerHelp:v1.0.1'
+
+    implementation 'com.dou361.ijkplayer:jjdxm-ijkplayer:1.0.6'
 }
