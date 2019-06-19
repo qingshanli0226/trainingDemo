@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.example.player.a1610aplayerdemo.mvvm.databinding.book.BookBean"/>
+        <variable name="bookBean" type="com.example.player.a1610aplayerdemo.mvvm.databinding.book.BookBean"/>
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_book_height">
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:layout_alignParentLeft="true"
+                      android:layout_marginLeft="@dimen/view_margin_left"
+                      android:layout_centerVertical="true">
+            <TextView
+                    style="@style/commonTextStyle"
+                    android:text="@{bookBean.name}"/>
+            <TextView
+                    style="@style/commonTextStyle"
+                    android:text="@{bookBean.price}"/>
+            <TextView
+                    style="@style/commonTextStyle"
+                    android:text="@{bookBean.createdAt}"/>
+            <TextView
+                style="@style/commonTextStyle"
+                android:text='@{bookBean.id+""}'/>
+            <TextView
+                    style="@style/commonTextStyle"
+                    android:text="@{bookBean.school}"/>
+        </LinearLayout>
+
+        <ImageView android:layout_width="200dp"
+                   android:layout_height="200dp"
+                   android:layout_alignParentRight="true"
+                   android:scaleType="centerCrop"
+                   android:layout_centerVertical="true"
+                   app:url="@{bookBean.product_url}"/>
+    </RelativeLayout>
+</layout>

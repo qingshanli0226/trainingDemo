@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">1610APlayerDemo</string>
+    <string name="book_total_price">书本总价:</string>
 </resources>

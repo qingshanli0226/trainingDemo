@@ -31,7 +31,7 @@ public class RetrofitCreator {
                 .addConverterFactory(StringConverterFactory.create()) //数据解析
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient) //okhttpclient
-                .baseUrl("http://www.qubaobei.com/ios/cf/") //base url
+                .baseUrl("https://gitee.com/little_bird_oh_777/test_data_collection/raw/master/") //base url
                 .build();
 
         netApiService = retrofit.create(NetApiService.class);
