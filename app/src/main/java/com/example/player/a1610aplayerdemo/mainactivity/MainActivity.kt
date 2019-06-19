@@ -4,7 +4,9 @@ package com.example.player.a1610aplayerdemo.mainactivity
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
 import android.support.v4.view.ViewPager
+import android.view.MenuItem
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
@@ -33,15 +35,41 @@ class MainActivity : AppCompatActivity() {
     lateinit var rb_menmber : RadioButton
     lateinit var rb_aboutMe : RadioButton
     lateinit var m_vp : ViewPager
+    lateinit var m_bnv: BottomNavigationView
+
     // 申明自定义 adapter 类
   lateinit var mainVpAdapter:MainVpAdapter
 
+    // BottomNavigationView 的选择事件，可控制fragment的选择
+   private val  monna = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when(item.itemId){
+            R.id.i_rb_select ->{
+                m_vp.setCurrentItem(0)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.i_rb_study ->{
+                m_vp.setCurrentItem(1)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.i_rb_member ->{
+                m_vp.setCurrentItem(2)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.i_rb_aboutMe ->{
+                m_vp.setCurrentItem(3)
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
           init();
+
+        m_bnv.setOnNavigationItemSelectedListener(monna)
         initListener()
         initUser();
     }
@@ -58,8 +86,6 @@ class MainActivity : AppCompatActivity() {
         Pair("sdkVersion","${Build.VERSION.SDK_INT}"),
         Pair("brand",Build.BOARD), Pair("product",Build.PRODUCT)
     )
-
-
 
 
     RetrofitCreator.getInstance().retrofitApiService.getUserData(paramMap,paramMap2)
@@ -91,6 +117,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initListener() {
+
         //  radiogroup 中 radiobutton 的点击与 viewpager 中的页面联动
         m_rg.setOnCheckedChangeListener{ radioGroup: RadioGroup?, i: Int ->
             when(i){
@@ -111,7 +138,18 @@ class MainActivity : AppCompatActivity() {
             }
 
             //  选中对应的radiobutton
-            override fun onPageSelected(p0: Int)  = m_rg.check(m_rg.getChildAt(p0).id)
+            // = m_rg.check(m_rg.getChildAt(p0).id)
+            override fun onPageSelected(p0: Int) {
+                if (p0 == 0){
+                    m_bnv.selectedItemId = R.id.i_rb_select
+                }else if( p0 == 1){
+                    m_bnv.selectedItemId = R.id.i_rb_study
+                }else if( p0 == 2){
+                    m_bnv.selectedItemId = R.id.i_rb_member
+                }else if( p0 == 3){
+                    m_bnv.selectedItemId = R.id.i_rb_aboutMe
+                }
+            }
         })
     }
 
@@ -122,6 +160,7 @@ class MainActivity : AppCompatActivity() {
         rb_study = findViewById(R.id.rb_study)
         rb_menmber = findViewById(R.id.rb_member)
         rb_aboutMe = findViewById(R.id.rb_aboutMy)
+        m_bnv = findViewById(R.id.m_bnv)
     }
 
     private fun init() {
@@ -132,6 +171,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+
 
 
 

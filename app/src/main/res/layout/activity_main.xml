@@ -12,13 +12,29 @@
            android:layout_width="match_parent"
            android:layout_height="match_parent">
    </android.support.v4.view.ViewPager>
+
+
+   <android.support.design.widget.BottomNavigationView
+           android:id="@+id/m_bnv"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+           app:menu="@menu/bottmo_tb_menu"
+           app:itemTextColor="@drawable/radiobutton_select"
+           app:itemIconTint="@drawable/radiobutton_select"
+   android:background="#fff"
+   app:labelVisibilityMode="labeled">
+
+   </android.support.design.widget.BottomNavigationView>
+
 <RadioGroup
         android:id="@+id/m_rg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
        android:layout_alignParentBottom="true"
        android:orientation="horizontal"
-       android:background="#EEE8E8">
+       android:background="#EEE8E8"
+android:visibility="gone">
 
    <RadioButton
         android:id="@+id/rb_select_class"

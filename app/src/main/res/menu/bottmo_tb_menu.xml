@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/i_rb_select"
+        android:icon="@drawable/ic_select_class"
+        android:title="@string/main_rb_selectclass"/>
+    <item android:id="@+id/i_rb_study"
+          android:icon="@drawable/ic_select_class"
+          android:title="@string/main_rb_study"/>
+    <item android:id="@+id/i_rb_member"
+          android:icon="@drawable/ic_select_class"
+          android:title="@string/main_rb_member"/>
+    <item android:id="@+id/i_rb_aboutMe"
+          android:icon="@drawable/ic_select_class"
+          android:title="@string/main_rb_aboutme"/>
+
+</menu>

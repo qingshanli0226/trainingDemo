@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.secondfragment.twofragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.bean.ZlvideoBean;
+import com.example.player.a1610aplayerdemo.playvideoa_activity.PlayVideoActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +37,7 @@ class VideoRvAdapter extends RecyclerView.Adapter<VideoRvAdapter.MyHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder myHolder, int i) {
+    public void onBindViewHolder(@NonNull final MyHolder myHolder, int i) {
         ZlvideoBean.DataBean dataBean = list.get(i);
         myHolder.video_title1.setText(dataBean.getTitle());
         myHolder.video_title2.setText(dataBean.getIntroduce());
@@ -50,6 +52,14 @@ class VideoRvAdapter extends RecyclerView.Adapter<VideoRvAdapter.MyHolder>{
         String url = dataBean.getUrl();
         Log.i("WLL", "initAdapter: "+url);
 
+        myHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(m_context, PlayVideoActivity.class);
+                m_context.startActivity(intent);
+            }
+        });
     }
 
     @Override
