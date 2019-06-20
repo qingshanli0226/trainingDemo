@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseRecyclerViewAdapter<T, V extends View> extends RecyclerView.Adapter<BaseRecyclerViewAdapter.BaseViewHolder>{
+public abstract class BaseRecyclerViewAdapter<T,V extends View>  extends RecyclerView.Adapter<BaseRecyclerViewAdapter.BaseViewHolder>
+
+{
     private List<T> data = new ArrayList<>();
 
     public void updateData(List<T> dataList) {
@@ -26,12 +28,11 @@ public abstract class BaseRecyclerViewAdapter<T, V extends View> extends Recycle
         return new BaseViewHolder(itemView);
     }
 
+    @Override
+    public void onBindViewHolder(@NonNull final BaseRecyclerViewAdapter.BaseViewHolder baseViewHolder, final int i) {
+        refreshItemUi((V)baseViewHolder.itemView, data.get(i), i);
 
-    protected abstract V getItemView(Context context, int viewType);
-
-
-    public void onBindViewHolder(@NonNull final BaseViewHolder baseViewHolder, final int i) {
-        refreshItemUi((V)baseViewHolder.itemView,data.get(i),i);
+        //回调点击事件
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +42,9 @@ public abstract class BaseRecyclerViewAdapter<T, V extends View> extends Recycle
             }
         });
     }
+
+    protected abstract V getItemView(Context context, int viewType);
+
 
     protected abstract void refreshItemUi(View itemView, T t, int i);
 
@@ -58,7 +62,7 @@ public abstract class BaseRecyclerViewAdapter<T, V extends View> extends Recycle
 
 
     protected class  BaseViewHolder extends RecyclerView.ViewHolder{
-        public BaseViewHolder(@NonNull View itemView) {
+        public BaseViewHolder(View itemView) {
             super(itemView);
         }
     }

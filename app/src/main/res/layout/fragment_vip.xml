@@ -4,7 +4,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:orientation="vertical"
-              tools:context=".ui.fragment.VipFragment">
+              tools:context=".ui.huiyuan.VipFragment">
     <TextView android:layout_width="match_parent" android:layout_height="20dp"/>
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:textSize="30sp" android:text="会员  "/>
 

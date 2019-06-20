@@ -1,6 +1,5 @@
 package com.example.player.a1610aplayerdemo.ui.activy
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.example.player.a1610aplayerdemo.R
@@ -8,20 +7,20 @@ import com.example.player.a1610aplayerdemo.base.BaseActivity
 import com.example.player.a1610aplayerdemo.ui.adapter.VpgFragmentAdp
 import com.example.player.a1610aplayerdemo.ui.fragment.MyFragment
 import com.example.player.a1610aplayerdemo.ui.fragment.StudyCenterFragment
-import com.example.player.a1610aplayerdemo.ui.fragment.VipFragment
-import com.example.player.a1610aplayerdemo.ui.fragment.XuanKeFragment
+import com.example.player.a1610aplayerdemo.ui.huiyuan.VipFragment
+import com.example.player.a1610aplayerdemo.ui.xuanke.XuanKeFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.webView
 
 class MainActivity :  BaseActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var date = listOf<Fragment>(XuanKeFragment(), StudyCenterFragment(),VipFragment(),MyFragment())
+        var date = listOf<Fragment>(XuanKeFragment(), StudyCenterFragment(),
+            VipFragment(),MyFragment())
         novpg.adapter  = VpgFragmentAdp(supportFragmentManager,date)
 
-        grp.setOnCheckedChangeListener { group, checkedId ->
+        grp.setOnCheckedChangeListener {group, checkedId ->
             when(checkedId){
                 R.id.rb1 -> novpg.setCurrentItem(0)
                 R.id.rb2 -> novpg.setCurrentItem(1)

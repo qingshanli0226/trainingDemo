@@ -1,32 +1,21 @@
 package com.example.player.a1610aplayerdemo.ui.tokenpresenter;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Build;
-import android.telephony.TelephonyManager;
 import android.util.Log;
-import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.bean.TokenDateBean;
-import com.example.player.a1610aplayerdemo.bean.VipDateBean;
 import com.example.player.a1610aplayerdemo.net.MVPObserver;
 import com.example.player.a1610aplayerdemo.net.MyNetFunction;
 import com.example.player.a1610aplayerdemo.net.ResEntity;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
-import com.example.player.a1610aplayerdemo.ui.vippresenter.VipInterface;
 import com.example.player.a1610aplayerdemo.util.DeviceKye;
-import com.example.player.a1610aplayerdemo.util.Md5Utils;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import static android.support.v4.content.ContextCompat.getSystemService;
 
 public class TokenPresenterCompl implements TokenInterface.ItokenPresenter {
 

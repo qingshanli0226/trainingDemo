@@ -13,31 +13,42 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.activy.MasterActivity">
-        </activity>
-        <activity android:name=".logRegUI.RegiestActivity">
-        </activity>
-        <activity android:name=".logRegUI.LogActivity">
-        </activity>
-        <activity android:name=".ui.activy.TuiJianClassActivity">
+        <activity android:name=".ui.zhuanlan.ZhuanLanActivity"  android:launchMode="singleTask">
+
+
 
         </activity>
-        <activity android:name=".ui.activy.ZhuanLanActivity">
+        <activity android:name=".ui.zaixian.NowShowActivity">
         </activity>
-        <activity android:name=".ui.activy.MusicClassActivity">
+        <activity android:name=".ui.masterClazz.MasterActivity"  android:launchMode="singleTask">
+        </activity>
+        <activity android:name=".logRegUI.RegiestActivity"  android:launchMode="singleTask">
+        </activity>
+        <activity android:name=".logRegUI.LoginActivity"  android:launchMode="singleTask">
+        </activity>
+        <activity android:name=".ui.tuijian.TuiJianClassActivity" android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".ui.musicClazz.MusicClassActivity"  android:launchMode="singleTask">
+
         </activity>
         <activity android:name=".ui.activy.LoodingActivity">
         </activity>
+
         <activity
                 android:name=".ui.activy.YinDaoActivity"
                 android:launchMode="singleInstance">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
+
         </activity>
-        <activity android:name=".ui.activy.MainActivity">
+        <activity android:name=".ui.activy.MainActivity" android:launchMode="singleTask">
+
         </activity>
     </application>
 

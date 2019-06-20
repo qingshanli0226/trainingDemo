@@ -4,15 +4,12 @@ package com.example.player.a1610aplayerdemo.ui.fragment
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.base.BaseFragment
-import com.example.player.a1610aplayerdemo.logRegUI.LogActivity
+import com.example.player.a1610aplayerdemo.logRegUI.LoginActivity
 import kotlinx.android.synthetic.main.fragment_my.*
-import org.jetbrains.anko.support.v4.startActivity
 
 
 /**
@@ -30,7 +27,7 @@ class MyFragment : BaseFragment() {
     private fun iniView() {
         tolog.setOnClickListener {
 
-            startActivity(Intent(context, LogActivity::class.java))
+            startActivity(Intent(context, LoginActivity::class.java))
 
         }
 

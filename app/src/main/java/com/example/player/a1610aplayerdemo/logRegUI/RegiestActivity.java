@@ -23,12 +23,12 @@ public class RegiestActivity extends AppCompatActivity {
 
     public void fanhui(View view) {
 
-        startActivity(new Intent(RegiestActivity.this,LogActivity.class));
+        startActivity(new Intent(RegiestActivity.this, LoginActivity.class));
         finish();
     }
 
     public void toLog(View view) {
-        startActivity(new Intent(RegiestActivity.this,LogActivity.class));
+        startActivity(new Intent(RegiestActivity.this, LoginActivity.class));
         finish();
     }
 
