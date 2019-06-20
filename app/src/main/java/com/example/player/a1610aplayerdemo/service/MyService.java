@@ -36,8 +36,10 @@ public interface MyService {
 
 
    //http://api.immedc.com/restapi/category/getPerfesional?pid=1    音乐课堂
-    @GET(Contants.GET_MusicClass)
-    Observable<MusicClassBean> getMusicClass(@Query("pid")String pid);
+   @GET(Contants.GET_MusicClass)
+   Observable<MusicClassBean> getMusicClass(@Query("pid")String pid);
+
+    //mvvm
 
 
 
