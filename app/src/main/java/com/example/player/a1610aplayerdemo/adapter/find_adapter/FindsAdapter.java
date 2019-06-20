@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.adapter;
+package com.example.player.a1610aplayerdemo.adapter.find_adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;

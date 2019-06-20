@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.base
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 

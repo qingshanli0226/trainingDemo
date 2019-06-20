@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.adapter
+package com.example.player.a1610aplayerdemo.adapter.viewpager_adapter
 
 import android.content.Context
 import android.support.v4.view.PagerAdapter

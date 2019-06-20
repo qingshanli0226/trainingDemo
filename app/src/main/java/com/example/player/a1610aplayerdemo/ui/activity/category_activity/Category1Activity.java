@@ -47,9 +47,8 @@ public class Category1Activity extends BaseActivity implements IBaseView<MusicCl
     }
 
 
-
     @Override
-    public void onLoadData(MusicClassBean data) {
+    public void onLoadDataBean(MusicClassBean data) {
         Category1Adapter adapter = new Category1Adapter(data.getData(),this,R.layout.category1_item);
         GridLayoutManager manager = new GridLayoutManager(this,4);
         manager.setOrientation(GridLayoutManager.VERTICAL);

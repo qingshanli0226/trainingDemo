@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import com.example.player.a1610aplayerdemo.R
-import com.example.player.a1610aplayerdemo.adapter.GuidePagerAdapter
+import com.example.player.a1610aplayerdemo.adapter.viewpager_adapter.GuidePagerAdapter
 import com.example.player.a1610aplayerdemo.base.BaseActivity
 import com.example.player.a1610aplayerdemo.util.SharedPreferencesUtil
 

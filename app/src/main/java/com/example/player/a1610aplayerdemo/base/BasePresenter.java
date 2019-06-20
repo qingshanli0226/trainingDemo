@@ -1,46 +1,40 @@
-package com.example.player.a1610aplayerdemo.presenter.find_category_presenter;
+package com.example.player.a1610aplayerdemo.base;
 
 import android.util.Log;
-import com.example.player.a1610aplayerdemo.base.IBasePresenter;
-import com.example.player.a1610aplayerdemo.base.IBaseView;
-import com.example.player.a1610aplayerdemo.bean.EducationBean;
-import com.example.player.a1610aplayerdemo.bean.MusicClassBean;
 import com.example.player.a1610aplayerdemo.service.BaseService;
 import com.example.player.a1610aplayerdemo.util.CreatorUtils;
+import com.google.gson.Gson;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.ResponseBody;
 
-public class CategoryEducationPresenter implements IBasePresenter<EducationBean> {
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.List;
 
-    private IBaseView<EducationBean> iBaseView;
-
-
-    @Override
-    public void attachView(IBaseView<EducationBean> baseView) {
-        this.iBaseView = baseView;
-    }
+public abstract class BasePresenter<T> implements IBasePresenter<T> {
+    protected IBaseView<T> iBaseView;
 
 
     @Override
     public void getData() {
         BaseService baseService = CreatorUtils.getRetrofit();
-        Observable<EducationBean> homeData = baseService.getEducationData();
-        homeData.subscribeOn(Schedulers.io())
+        Observable<String> data = baseService.getData(getAPIPath1(), getAPIPath2(),getParmams());
+        data.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<EducationBean>() {
+                .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(EducationBean educationBean) {
-
-                        iBaseView.onLoadData(educationBean);
-
+                    public void onNext(String string) {
+                        iBaseView.onLoadDataBean((T) string);
                     }
 
                     @Override
@@ -55,11 +49,26 @@ public class CategoryEducationPresenter implements IBasePresenter<EducationBean>
                 });
     }
 
+    public HashMap<String, String> getParmams() {
+        return new HashMap<>();
+    }
 
+
+
+
+    public abstract String getAPIPath1();
+    public abstract String getAPIPath2();
+
+
+    public abstract Type getDataType();
+
+    @Override
+    public void attachView(IBaseView<T> iBaseView) {
+        this.iBaseView = iBaseView;
+    }
 
     @Override
     public void detachView() {
         iBaseView = null;
     }
-
 }

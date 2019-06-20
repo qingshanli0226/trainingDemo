@@ -12,7 +12,7 @@ import com.example.player.a1610aplayerdemo.service.BaseService;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.TokenBean;
-import com.example.player.a1610aplayerdemo.adapter.FindsAdapter;
+import com.example.player.a1610aplayerdemo.adapter.find_adapter.FindsAdapter;
 import com.example.player.a1610aplayerdemo.base.BaseFragment;
 import com.example.player.a1610aplayerdemo.presenter.FindPresenter;
 import com.example.player.a1610aplayerdemo.util.SharedPreferenceToken;
@@ -39,8 +39,8 @@ public class FindFragment extends BaseFragment implements IBaseView<String> {
         View view = inflater.inflate(R.layout.fragment_find, container, false);
         recyclerView1 = view.findViewById(R.id.recycler1);
         sharedPreferenceToken = new SharedPreferenceToken(getContext());
-        final String token = sharedPreferenceToken.getToken();
-        if (token==null){
+        String token = sharedPreferenceToken.getToken();
+        if (token.length()<1){
             getTokenData();
         }
         Fresco.initialize(getContext());
@@ -76,7 +76,7 @@ public class FindFragment extends BaseFragment implements IBaseView<String> {
 
                     @Override
                     public void onNext(TokenBean tokenBean) {
-
+                        sharedPreferenceToken.ClearToken();
                         sharedPreferenceToken.SaveToken(tokenBean.getData().getAccessToken());
                     }
 
@@ -99,9 +99,11 @@ public class FindFragment extends BaseFragment implements IBaseView<String> {
         findPresenter.detachView();
     }
 
-    @Override
-    public void onLoadData(String data) {
 
+
+
+    @Override
+    public void onLoadDataBean(String data) {
         Gson gson = new Gson();
         HomeBean homeBean = gson.fromJson(data, HomeBean.class);
         HomeBean.DataBean data1 = homeBean.getData();
@@ -112,8 +114,6 @@ public class FindFragment extends BaseFragment implements IBaseView<String> {
         recyclerView1.setAdapter(findsAdapter);
         recyclerView1.setLayoutManager(manager);
     }
-
-
 
     @Override
     public void onLoadError(int code, String message) {

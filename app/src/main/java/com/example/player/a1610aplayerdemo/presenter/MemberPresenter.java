@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.presenter;
 
 import android.util.Log;
+import com.example.player.a1610aplayerdemo.base.BasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.bean.MemberBean;
@@ -14,51 +15,33 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.HashMap;
 
-public class MemberPresenter implements IBasePresenter<MemberBean> {
-
-    private IBaseView<MemberBean> iBaseView;
+public class MemberPresenter extends BasePresenter<MemberBean.DataBean> {
 
 
     @Override
-    public void attachView(IBaseView<MemberBean> baseView) {
-            this.iBaseView = baseView;
+    public String getAPIPath1() {
+        return "masterPackage";
     }
 
-
     @Override
-    public void getData() {
-        BaseService baseService = CreatorUtils.getRetrofit();
-        Observable<MemberBean> memberData = baseService.getMemberData("0", "20");
-        memberData.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<MemberBean>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(MemberBean memberBean) {
-                            iBaseView.onLoadData(memberBean);
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.i("我",e.getMessage());
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
+    public String getAPIPath2() {
+        return "getMasterPackagelist";
     }
 
+    @Override
 
+    public HashMap<String, String> getParmams() {
+        HashMap<String,String> hashMap = new HashMap<>();
+        hashMap.put("minid","0");
+        hashMap.put("size","20");
+        return hashMap;
+    }
 
     @Override
-    public void detachView() {
-            iBaseView =null;
+    public Type getDataType() {
+        return MemberBean.class;
     }
 }

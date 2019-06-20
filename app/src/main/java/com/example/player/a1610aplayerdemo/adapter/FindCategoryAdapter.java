@@ -11,7 +11,6 @@ import com.example.player.a1610aplayerdemo.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.ui.activity.category_activity.Category1Activity;
 import com.example.player.a1610aplayerdemo.ui.activity.category_activity.Category2Activity;
-import com.example.player.a1610aplayerdemo.ui.activity.category_activity.Category5Activity;
 import com.example.player.a1610aplayerdemo.util.MyApplication;
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -41,14 +40,6 @@ public class FindCategoryAdapter extends RecyclerView.Adapter<FindCategoryAdapte
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(myHolder.itemView.getContext(), Category1Activity.class);
-                    myHolder.itemView.getContext().startActivity(intent);
-                }
-            });
-        }else if (i==4){
-            myHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(myHolder.itemView.getContext(), Category5Activity.class);
                     myHolder.itemView.getContext().startActivity(intent);
                 }
             });

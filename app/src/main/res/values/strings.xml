@@ -12,4 +12,9 @@
     <string name="member_title">会员</string>
     <string name="findCategory_5_title">国名音乐教育联盟</string>
     <string name="findCategory_1_title">音乐课堂</string>
+    <string name="category_title1">音乐课堂</string>
+    <string name="category_title2">在线直播</string>
+    <string name="category_title3">音乐教师种子培养计划</string>
+    <string name="itemclick_title_text">简介</string>
+    <string name="itemclick_title2"><![CDATA[戳此加入会员 >]]></string>
 </resources>

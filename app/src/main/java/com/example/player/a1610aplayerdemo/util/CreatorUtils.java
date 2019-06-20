@@ -18,6 +18,7 @@ public class CreatorUtils {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://api.immedc.com/restapi/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(StringConvterterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
