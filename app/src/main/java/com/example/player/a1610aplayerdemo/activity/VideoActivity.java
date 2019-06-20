@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.activity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,10 +14,15 @@ import com.example.player.a1610aplayerdemo.R;
 
 public class VideoActivity extends AppCompatActivity {
     private PlayerView player;
+    private String url;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
+
+        Intent intent = getIntent();
+        url = intent.getStringExtra("url");
+
         View rootView =  getLayoutInflater().from(this).inflate(R.layout.simple_player_view_player,null);
         setContentView(rootView);
         initPlayerView();
@@ -49,7 +55,7 @@ public class VideoActivity extends AppCompatActivity {
     }
 
     private void initPlayerView() {
-        String url = "http://vd4.bdstatic.com/mda-ja1irnhr4cgdbp8u/hd/mda-ja1irnhr4cgdbp8u.mp4";
+
         player = new PlayerView(this)
                 .setTitle("返回")
                 .setScaleType(PlayStateParams.fitparent)

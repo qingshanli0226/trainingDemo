@@ -137,6 +137,7 @@ public class BannerFragment extends Fragment implements IBaseView<BannerBean> {
                 break;
             case R.id.banner_play:
                 Intent intent = new Intent(getActivity(),VideoActivity.class);
+                intent.putExtra("url","http://vd4.bdstatic.com/mda-ja1irnhr4cgdbp8u/hd/mda-ja1irnhr4cgdbp8u.mp4");
                 startActivity(intent);
                 break;
             case R.id.banner_collect:
