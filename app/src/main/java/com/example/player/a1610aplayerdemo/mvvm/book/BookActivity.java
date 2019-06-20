@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.mvvm.databinding.book;
+package com.example.player.a1610aplayerdemo.mvvm.book;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;

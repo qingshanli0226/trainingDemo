@@ -1,7 +1,7 @@
-package com.example.player.a1610aplayerdemo.mvvm.databinding.book;
+package com.example.player.a1610aplayerdemo.mvvm.book;
 
-import com.example.player.a1610aplayerdemo.mvvm.databinding.base.IDataListener;
-import com.example.player.a1610aplayerdemo.mvvm.databinding.base.IMode;
+import com.example.player.a1610aplayerdemo.mvvm.base.IDataListener;
+import com.example.player.a1610aplayerdemo.mvvm.base.IMode;
 
 import java.util.List;
 

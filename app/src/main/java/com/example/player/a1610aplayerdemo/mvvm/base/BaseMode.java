@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.mvvm.databinding.base;
+package com.example.player.a1610aplayerdemo.mvvm.base;
 
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
 import com.google.gson.Gson;

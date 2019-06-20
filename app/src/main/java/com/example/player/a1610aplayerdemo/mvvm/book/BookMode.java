@@ -1,6 +1,6 @@
-package com.example.player.a1610aplayerdemo.mvvm.databinding.book;
+package com.example.player.a1610aplayerdemo.mvvm.book;
 
-import com.example.player.a1610aplayerdemo.mvvm.databinding.base.BaseMode;
+import com.example.player.a1610aplayerdemo.mvvm.base.BaseMode;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
