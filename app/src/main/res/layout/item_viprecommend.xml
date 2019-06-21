@@ -30,13 +30,12 @@
 
     </RelativeLayout>
 
-    <GridView
-            android:id="@+id/gv_vip"
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_vip"
             android:layout_width="match_parent"
             android:layout_height="340dp"
-            android:padding="5dp"
-            android:numColumns="2">
-    </GridView>
+            android:padding="5dp">
+    </android.support.v7.widget.RecyclerView>
 
     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
 

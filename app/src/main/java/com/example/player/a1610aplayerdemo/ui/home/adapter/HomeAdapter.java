@@ -1,33 +1,28 @@
 package com.example.player.a1610aplayerdemo.ui.home.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.annotation.NonNull;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.*;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.banner.BannerView;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.category.CategoryAdapter;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.category.CategoryView;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.courserecommends.CourserecommendsAdapter;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.courserecommends.CourserecommendsView;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.masterlives.MasterlivesAdapter;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.masterlives.MasterlivesView;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.viprecommend.VipRecommendAdapter;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.viprecommend.ViprecommendView;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.zllist.ZlListAdapter;
+import com.example.player.a1610aplayerdemo.ui.home.adapter.zllist.ZlListView;
 import com.example.player.a1610aplayerdemo.ui.home.bean.HomeBean;
-import com.example.player.a1610aplayerdemo.ui.home_activity.Player;
-import com.example.player.a1610aplayerdemo.ui.home_activity.categoryactivity.activity.CategoryZeroActivity;
-import com.example.player.a1610aplayerdemo.ui.home_activity.zllistactivity.Home_Four;
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.squareup.picasso.Picasso;
-import com.youth.banner.Banner;
-import com.youth.banner.BannerConfig;
-import com.youth.banner.Transformer;
-import com.youth.banner.loader.ImageLoader;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class HomeAdapter extends XRecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private Context context;
-    private List<HomeBean.DataBean> list;
-
+public class HomeAdapter extends BaseRecyclerViewAdapter<Object, View> {
     private static final int BANNNER = 0;
     private static final int CATEGORY = 1;
     private static final int VIPRECOMMEND = 2;
@@ -35,229 +30,105 @@ public class HomeAdapter extends XRecyclerView.Adapter<RecyclerView.ViewHolder> 
     private static final int COURSERECOMMENDS = 4;
     private static final int MASTERLIVES = 5;
 
-    public int currentType = BANNNER;
-    private LayoutInflater layoutInflater;
-
-    public HomeAdapter(Context context,List<HomeBean.DataBean> list){
-        this.context = context;
-        this.layoutInflater = LayoutInflater.from(context);
-        this.list = list;
+    @Override
+    protected View getItemView(Context context,int viewtype) {
+        switch (viewtype){
+            case BANNNER:
+                return new BannerView(context);
+            case CATEGORY:
+               return new CategoryView(context);
+            case VIPRECOMMEND:
+                return new ViprecommendView(context);
+            case ZLLIST:
+                return new ZlListView(context);
+            case COURSERECOMMENDS:
+                return new CourserecommendsView(context);
+            case MASTERLIVES:
+                return new MasterlivesView(context);
+                default:
+                    break;
+        }
+        return new MasterlivesView(context);
     }
 
     @Override
     public int getItemViewType(int position) {
         switch (position){
-            case BANNNER:
-                currentType = BANNNER;
-                break;
-            case CATEGORY:
-                currentType = CATEGORY;
-                break;
-            case VIPRECOMMEND:
-                currentType = VIPRECOMMEND;
-                break;
-            case ZLLIST:
-                currentType = ZLLIST;
-                break;
-            case COURSERECOMMENDS:
-                currentType = COURSERECOMMENDS;
-                break;
-            case MASTERLIVES:
-                currentType = MASTERLIVES;
-                break;
-        }
-        return currentType;
-    }
-
-
-    @NonNull
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        if (i == BANNNER){
-            return new BannerViewHolder(layoutInflater.inflate(R.layout.item_banner,viewGroup,false),context);
-        }else if (i == CATEGORY){
-            return new CategoryViewHolder(layoutInflater.inflate(R.layout.item_category,viewGroup,false),context);
-        }else if (i == VIPRECOMMEND){
-            return new VipRecommendViewHolder(layoutInflater.inflate(R.layout.item_viprecommend,viewGroup,false),context);
-        }else if (i == ZLLIST){
-            return new ZlListViewHolder(layoutInflater.inflate(R.layout.item_zllist,viewGroup,false),context);
-        }else if (i == COURSERECOMMENDS){
-            return new CourseRecommendsViewHolder(layoutInflater.inflate(R.layout.item_courserecommends,viewGroup,false),context);
-        }else if (i == MASTERLIVES){
-            return new MasterLivesViewHolder(layoutInflater.inflate(R.layout.item_masterlives,viewGroup,false),context);
-        }
-        return null;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        if (getItemViewType(i) == BANNNER){
-            BannerViewHolder viewHolder1 = (BannerViewHolder) viewHolder;
-            viewHolder1.setData(list.get(0).getHomeBanner());
-        }else if (getItemViewType(i) == CATEGORY){
-            CategoryViewHolder viewHolder1 = (CategoryViewHolder) viewHolder;
-            viewHolder1.setData(list.get(0).getHomeCategory());
-        }else if (getItemViewType(i) == VIPRECOMMEND){
-            VipRecommendViewHolder viewHolder1 = (VipRecommendViewHolder) viewHolder;
-            viewHolder1.setData(list.get(0).getVipRecommend());
-        }else if (getItemViewType(i) == ZLLIST){
-            ZlListViewHolder viewHolder1 = (ZlListViewHolder) viewHolder;
-            viewHolder1.setData(list.get(0).getZlList());
-        }else if (getItemViewType(i) == COURSERECOMMENDS){
-            CourseRecommendsViewHolder viewHolder1 = (CourseRecommendsViewHolder) viewHolder;
-            viewHolder1.setData(list.get(0).getCourseRecommends());
-        }else if (getItemViewType(i) == MASTERLIVES){
-            MasterLivesViewHolder viewHolder1 = (MasterLivesViewHolder) viewHolder;
-            viewHolder1.setData(list.get(0).getMasterLives());
+            case 0:
+                return BANNNER;
+            case 1:
+                return CATEGORY;
+            case 2:
+                return VIPRECOMMEND;
+            case 3:
+                return ZLLIST;
+            case 4:
+                return COURSERECOMMENDS;
+            case 5:
+                return MASTERLIVES;
+                default:
+                    return MASTERLIVES;
         }
     }
 
     @Override
-    public int getItemCount() {
-        return 6;
-    }
-
-    class MasterLivesViewHolder extends RecyclerView.ViewHolder {
-        private ListView listView;
-        private Context context;
-
-        public MasterLivesViewHolder(@NonNull View itemView,Context context) {
-            super(itemView);
-            listView = itemView.findViewById(R.id.lv_masterlives);
-            this.context = context;
+    protected void refreshItemUi(final View itemView, Object o, final int i) {
+        switch (i){
+            case 0:
+                List<HomeBean.DataBean.HomeBannerBean> bannerlist = (List<HomeBean.DataBean.HomeBannerBean>) o;
+                BannerView bannerView = (BannerView) itemView;
+                bannerView.setdata(bannerlist);
+                break;
+            case 1:
+                List<HomeBean.DataBean.HomeCategoryBean> categorylist = (List<HomeBean.DataBean.HomeCategoryBean>) o;
+                CategoryAdapter categoryadapter = new CategoryAdapter();
+                categoryadapter.updateData(categorylist);
+                RecyclerView categoryrv = itemView.findViewById(R.id.rv_category);
+                GridLayoutManager categorymanager = new GridLayoutManager(itemView.getContext(),4);
+                categoryrv.setLayoutManager(categorymanager);
+                categoryrv.setAdapter(categoryadapter);
+                break;
+            case 2:
+                List<HomeBean.DataBean.VipRecommendBean> viprecommendlist = (List<HomeBean.DataBean.VipRecommendBean>) o;
+                VipRecommendAdapter viprecommendadapter = new VipRecommendAdapter();
+                viprecommendadapter.updateData(viprecommendlist);
+                RecyclerView viprecommendrv = itemView.findViewById(R.id.rv_vip);
+                GridLayoutManager viprecommendmanager = new GridLayoutManager(itemView.getContext(),2);
+                viprecommendrv.setLayoutManager(viprecommendmanager);
+                viprecommendrv.setAdapter(viprecommendadapter);
+                break;
+            case 3:
+                List<HomeBean.DataBean.ZlListBean> zllistlist = (List<HomeBean.DataBean.ZlListBean>) o;
+                ZlListAdapter zllistadapter = new ZlListAdapter();
+                zllistadapter.updateData(zllistlist);
+                RecyclerView zllistrv = itemView.findViewById(R.id.rv_zllist);
+                GridLayoutManager zllistmanager = new GridLayoutManager(itemView.getContext(),2);
+                zllistrv.setLayoutManager(zllistmanager);
+                zllistrv.setAdapter(zllistadapter);
+                break;
+            case 4:
+                List<HomeBean.DataBean.CourseRecommendsBean> courserecommendslist = (List<HomeBean.DataBean.CourseRecommendsBean>) o;
+                CourserecommendsAdapter courserecommendsadapter = new CourserecommendsAdapter();
+                courserecommendsadapter.updateData(courserecommendslist);
+                RecyclerView courserecommendsrv = itemView.findViewById(R.id.rv_courserecommends);
+                LinearLayoutManager courserecommendsmanager = new LinearLayoutManager(itemView.getContext());
+                courserecommendsmanager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                courserecommendsrv.setLayoutManager(courserecommendsmanager);
+                courserecommendsrv.setAdapter(courserecommendsadapter);
+                break;
+            case 5:
+                List<HomeBean.DataBean.MasterLivesBean> masterliveslist = (List<HomeBean.DataBean.MasterLivesBean>) o;
+                MasterlivesAdapter masterlivesadapter = new MasterlivesAdapter();
+                masterlivesadapter.updateData(masterliveslist);
+                RecyclerView masterlivesrv = itemView.findViewById(R.id.rv_masterlives);
+                LinearLayoutManager masterlivesmanager = new LinearLayoutManager(itemView.getContext());
+                masterlivesmanager.setOrientation(LinearLayoutManager.VERTICAL);
+                masterlivesrv.setLayoutManager(masterlivesmanager);
+                masterlivesrv.setAdapter(masterlivesadapter);
+                break;
+            default:
+                break;
         }
-
-        public void setData(List<HomeBean.DataBean.MasterLivesBean> livesBeans){
-            listView.setAdapter(new MasterLivesAdpater(context,livesBeans));
-        }
-
-    }
-
-    class CourseRecommendsViewHolder extends RecyclerView.ViewHolder {
-        private RecyclerView recyclerView;
-        private Context context;
-
-        public CourseRecommendsViewHolder(@NonNull View itemView,Context context) {
-            super(itemView);
-            recyclerView = itemView.findViewById(R.id.rv_courserecommends);
-            this.context = context;
-        }
-
-        public void setData(List<HomeBean.DataBean.CourseRecommendsBean> list){
-            LinearLayoutManager manager = new LinearLayoutManager(context);
-            manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-            recyclerView.setLayoutManager(manager);
-            recyclerView.setAdapter(new CourseRecommendsAdapter(context,list));
-        }
-
-    }
-
-    class ZlListViewHolder extends RecyclerView.ViewHolder {
-        private GridView gridView;
-        private Context context;
-
-        public ZlListViewHolder(@NonNull View itemView,Context context) {
-            super(itemView);
-            gridView = itemView.findViewById(R.id.gv_zllist);
-            this.context = context;
-        }
-
-        public void setData(final List<HomeBean.DataBean.ZlListBean> listBeans){
-            gridView.setAdapter(new ZlListAdapter(context,listBeans));
-            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent();
-                    intent.putExtra("id",listBeans.get(position).getId() + "");
-                    intent.setClass(context, Home_Four.class);
-                    context.startActivity(intent);
-                }
-            });
-        }
-
-    }
-
-    class VipRecommendViewHolder extends RecyclerView.ViewHolder {
-        private GridView gridView;
-        private Context context;
-
-        public VipRecommendViewHolder(@NonNull View itemView,Context context) {
-            super(itemView);
-            gridView = itemView.findViewById(R.id.gv_vip);
-            this.context = context;
-        }
-
-        public void setData(List<HomeBean.DataBean.VipRecommendBean> list){
-            gridView.setAdapter(new VipRecommendAdapter(context,list));
-            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent();
-                    intent.setClass(context, Player.class);
-                    context.startActivity(intent);
-                }
-            });
-        }
-    }
-
-    class CategoryViewHolder extends RecyclerView.ViewHolder {
-        public GridView gvCategory;
-        public Context context;
-
-        public CategoryViewHolder(@NonNull View itemView,Context context) {
-            super(itemView);
-            gvCategory = itemView.findViewById(R.id.gv_category);
-            this.context = context;
-        }
-
-        public void setData(List<HomeBean.DataBean.HomeCategoryBean> list){
-            gvCategory.setAdapter(new CategoryAdapter(context,list));
-            gvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    if (position == 0){
-                        Intent intent = new Intent();
-                        intent.setClass(context, CategoryZeroActivity.class);
-                        context.startActivity(intent);
-                    }else {
-                        Toast.makeText(context, "" + position, Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
-
-    }
-
-    class BannerViewHolder extends RecyclerView.ViewHolder {
-        public Banner banner;
-        public Context context;
-
-        public BannerViewHolder(@NonNull View itemView,Context context) {
-            super(itemView);
-            banner = itemView.findViewById(R.id.banner);
-            this.context = context;
-        }
-
-        public void setData(List<HomeBean.DataBean.HomeBannerBean> list){
-            banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
-            List<String> imageUrs = new ArrayList<>();
-            for (int i = 0; i < list.size();i++){
-                imageUrs.add(list.get(i).getBannerUrl());
-            }
-            banner.setBannerAnimation(Transformer.Default);
-            banner.setImageLoader(new OnLoadUrl());
-            banner.setDelayTime(3000);
-            banner.setImages(imageUrs)
-                    .start();
-        }
-
-        class OnLoadUrl extends ImageLoader{
-            @Override
-            public void displayImage(Context context, Object path, ImageView imageView) {
-                Picasso.get().load(path + "").into(imageView);
-            }
-        }
-
     }
 
 }

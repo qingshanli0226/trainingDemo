@@ -22,11 +22,11 @@ public abstract class BaseRecyclerViewAdapter<T,V extends View> extends Recycler
     @NonNull
     @Override
     public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        V view = getItemView(viewGroup.getContext());
+        V view = getItemView(viewGroup.getContext(),i);
         return new BaseViewHolder(view);
     }
 
-    protected abstract V getItemView(Context context);
+    protected abstract V getItemView(Context context,int viewtype);
 
     @Override
     public int getItemCount() {
@@ -35,7 +35,7 @@ public abstract class BaseRecyclerViewAdapter<T,V extends View> extends Recycler
 
     @Override
     public void onBindViewHolder(@NonNull final BaseRecyclerViewAdapter.BaseViewHolder baseViewHolder, final int i) {
-        refreshItemUi((V)baseViewHolder.itemView,data.get(i));
+        refreshItemUi((V)baseViewHolder.itemView,data.get(i),i);
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +46,7 @@ public abstract class BaseRecyclerViewAdapter<T,V extends View> extends Recycler
         });
     }
 
-    protected abstract void refreshItemUi(V itemView, T t);
+    protected abstract void refreshItemUi(V itemView, T t,int i);
 
 
 

@@ -2,7 +2,7 @@ package com.example.player.a1610aplayerdemo.ui;
 
 import android.text.TextUtils;
 import com.example.player.a1610aplayerdemo.net.SP;
-import com.example.player.a1610aplayerdemo.ui.bean.Bean;
+import com.example.player.a1610aplayerdemo.ui.bean.TokenBean;
 
 public class AccountManager {
     private static AccountManager instance = new AccountManager();
@@ -14,13 +14,13 @@ public class AccountManager {
         return instance;
     }
 
-    private Bean.DataBean bean;
+    private TokenBean.DataBean bean;
 
-    public Bean.DataBean getCurrentUser() {
+    public TokenBean.DataBean getCurrentUser() {
         return bean;
     }
 
-    public void setCurrentUser(Bean.DataBean bean) {
+    public void setCurrentUser(TokenBean.DataBean bean) {
         this.bean = bean;
     }
 

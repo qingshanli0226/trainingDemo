@@ -1,6 +1,5 @@
 package com.example.player.a1610aplayerdemo.net;
 
-import com.example.player.a1610aplayerdemo.commit.Contants;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

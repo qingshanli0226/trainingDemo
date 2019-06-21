@@ -2,8 +2,7 @@ package com.example.player.a1610aplayerdemo.net;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import com.example.player.a1610aplayerdemo.commit.Contants;
-import com.example.player.a1610aplayerdemo.commit.MyApplication;
+import com.example.player.a1610aplayerdemo.MyApplication;
 
 public class SP {
     private static SharedPreferences sp;

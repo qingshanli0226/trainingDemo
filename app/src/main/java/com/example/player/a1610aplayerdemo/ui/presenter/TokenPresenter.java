@@ -6,11 +6,11 @@ import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import com.example.player.a1610aplayerdemo.base.ResEntity;
-import com.example.player.a1610aplayerdemo.commit.MyApplication;
+import com.example.player.a1610aplayerdemo.MyApplication;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
 import com.example.player.a1610aplayerdemo.net.SP;
 import com.example.player.a1610aplayerdemo.ui.AccountManager;
-import com.example.player.a1610aplayerdemo.ui.bean.Bean;
+import com.example.player.a1610aplayerdemo.ui.bean.TokenBean;
 import com.example.player.a1610aplayerdemo.utils.Md5Utils;
 
 import io.reactivex.Observer;
@@ -50,14 +50,14 @@ public class TokenPresenter implements TokenContract.ITokenUserInfo {
         RetrofitCreator.getMyServiceInterface().getUser(map)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe(new Observer<ResEntity<Bean.DataBean>>() {
+                .subscribe(new Observer<ResEntity<TokenBean.DataBean>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(ResEntity<Bean.DataBean> beanResEntity) {
+                    public void onNext(ResEntity<TokenBean.DataBean> beanResEntity) {
                             SP.Tokens(beanResEntity.getData().getAccessToken());
 
 

@@ -6,5 +6,6 @@ public interface IBaseView<T> {
 
     void onLoadData(List<T> data);
     void onLoadError(int code,String message);
+    void onLoadObject(T data);
 
 }

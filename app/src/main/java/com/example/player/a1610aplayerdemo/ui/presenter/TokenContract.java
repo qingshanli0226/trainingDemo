@@ -1,6 +1,6 @@
 package com.example.player.a1610aplayerdemo.ui.presenter;
 
-import com.example.player.a1610aplayerdemo.ui.bean.Bean;
+import com.example.player.a1610aplayerdemo.ui.bean.TokenBean;
 
 public class TokenContract {
 
@@ -9,7 +9,7 @@ public class TokenContract {
     }
 
     public interface ITokenInfoStatus{
-        void onSuccssful(Bean bean);
+        void onSuccssful(TokenBean tokenBean);
         void onFaild(String error);
     }
 

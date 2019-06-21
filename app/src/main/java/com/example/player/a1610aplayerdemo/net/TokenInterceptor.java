@@ -1,6 +1,5 @@
 package com.example.player.a1610aplayerdemo.net;
 
-import com.example.player.a1610aplayerdemo.commit.Contants;
 import com.example.player.a1610aplayerdemo.ui.AccountManager;
 import okhttp3.Interceptor;
 import okhttp3.Request;

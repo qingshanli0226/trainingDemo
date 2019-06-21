@@ -56,6 +56,13 @@ public abstract class BaseRecyclerFragment<T, V extends View> extends Fragment i
     }
 
     @Override
+    public void onLoadObject(T data){
+        list.clear();
+        list.add(data);
+        baseRecyclerViewAdapter.updateData(list);
+    }
+
+    @Override
     public void onLoadError(int code, String message) {
 
     }

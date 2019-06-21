@@ -7,12 +7,12 @@ import com.example.player.a1610aplayerdemo.ui.member.view.IMemberView;
 
 public class MemberAdapter extends BaseRecyclerViewAdapter<MemberBean.DataBean, IMemberView> {
     @Override
-    protected IMemberView getItemView(Context context) {
+    protected IMemberView getItemView(Context context,int i) {
         return new IMemberView(context);
     }
 
     @Override
-    protected void refreshItemUi(IMemberView itemView, MemberBean.DataBean dataBean) {
+    protected void refreshItemUi(IMemberView itemView, MemberBean.DataBean dataBean,int i) {
         itemView.updateImg(dataBean.getImage());
     }
 

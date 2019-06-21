@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.home_activity.zllistactivity.Home_Four">
+        tools:context=".ui.home.homeactivity.zllistactivity.Home_Four">
 
     <RelativeLayout
             android:layout_width="match_parent"

@@ -10,10 +10,10 @@ import android.view.Window;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.ui.home.fragment.Home_Fragment;
-import com.example.player.a1610aplayerdemo.ui.member.fragment.Member_Fragment;
+import com.example.player.a1610aplayerdemo.ui.home.fragment.HomeFragment;
+import com.example.player.a1610aplayerdemo.ui.member.fragment.MemberFragment;
 import com.example.player.a1610aplayerdemo.ui.presenter.TokenPresenter;
-import com.example.player.a1610aplayerdemo.ui.already.fragment.Already_Fragment;
+import com.example.player.a1610aplayerdemo.ui.alreadybought.fragment.AlreadyboughtFragment;
 import com.example.player.a1610aplayerdemo.ui.user.fragment.User_Fragment;
 
 import java.util.ArrayList;
@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
     private void data(){
-        list.add(new Home_Fragment());
-        list.add(new Member_Fragment());
-        list.add(new Already_Fragment());
+        list.add(new HomeFragment());
+        list.add(new MemberFragment());
+        list.add(new AlreadyboughtFragment());
         list.add(new User_Fragment());
     }
 

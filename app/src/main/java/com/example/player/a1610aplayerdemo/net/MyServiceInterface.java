@@ -1,11 +1,11 @@
 package com.example.player.a1610aplayerdemo.net;
 
 import com.example.player.a1610aplayerdemo.base.ResEntity;
-import com.example.player.a1610aplayerdemo.ui.bean.Bean;
+import com.example.player.a1610aplayerdemo.ui.bean.TokenBean;
 import com.example.player.a1610aplayerdemo.ui.home.bean.HomeBean;
-import com.example.player.a1610aplayerdemo.ui.home_activity.categoryactivity.bean.CategoryZeroBean;
-import com.example.player.a1610aplayerdemo.ui.home_activity.zllistactivity.bean.ZlListBean;
-import com.example.player.a1610aplayerdemo.ui.home_activity.zllistactivity.bean.ZlListRightBean;
+import com.example.player.a1610aplayerdemo.ui.home.homeactivity.categoryactivity.bean.CategoryZeroBean;
+import com.example.player.a1610aplayerdemo.ui.home.homeactivity.zllistactivity.bean.ZlListBean;
+import com.example.player.a1610aplayerdemo.ui.home.homeactivity.zllistactivity.bean.ZlListRightBean;
 import com.example.player.a1610aplayerdemo.ui.member.bean.MemberBean;
 import io.reactivex.Observable;
 import retrofit2.http.*;
@@ -18,7 +18,12 @@ public interface MyServiceInterface {
     @GET("loading/getHome")
     Observable<HomeBean> getData();
 
-    //TODO Home（主页）界面数据
+    /**
+     *
+     * @param map
+     * @return
+     * Home（主页）界面数据
+     */
     @GET("loading/getHome")
     Observable<ResEntity<HomeBean.DataBean>> getHomeBean(@HeaderMap Map<String,String> map);
 
@@ -73,6 +78,7 @@ public interface MyServiceInterface {
     Observable<ResEntity> foo(@Header("CH-TOKEN")String lang);
 
     @POST("account/createNew")
-    Observable<ResEntity<Bean.DataBean>> getUser(@QueryMap Map<String,String> headers);
+    @FormUrlEncoded
+    Observable<ResEntity<TokenBean.DataBean>> getUser(@FieldMap Map<String,String> headers);
 
 }

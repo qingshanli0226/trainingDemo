@@ -13,7 +13,6 @@ import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.ui.login.activity.LogIn_Activity;
 
 public class User_Fragment extends Fragment {
-
     private TextView logInUser;
 
     @Nullable
