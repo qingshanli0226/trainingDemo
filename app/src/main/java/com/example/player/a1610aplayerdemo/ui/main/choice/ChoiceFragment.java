@@ -1,5 +1,7 @@
 package com.example.player.a1610aplayerdemo.ui.main.choice;
 
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +17,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChoiceFragment extends BaseFragment<Object,View> {
+
+    @Override
+    public RecyclerView.LayoutManager getRecyclerViewManager(Context context) {
+        return null;
+    }
+
     @Override
     protected void setTitleBar(ImageView titlebar_left, ImageView titlebar_right, RelativeLayout titlebar_search, TextView titlebar_title) {
         titlebar_left.setImageResource(R.drawable   .ic_action_main_my);

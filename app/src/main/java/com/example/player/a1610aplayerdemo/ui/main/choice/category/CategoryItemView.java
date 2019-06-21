@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.ui.main.choice.category;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
+import com.example.player.a1610aplayerdemo.ui.main.choice.second.CategoryOneActivity;
 import com.squareup.picasso.Picasso;
 
 public class CategoryItemView extends LinearLayout {
@@ -50,6 +52,10 @@ public class CategoryItemView extends LinearLayout {
             @Override
             public void onClick(View view) {
                 Log.e("click", "onClick:种类 "+a);
+                if(a == 0){
+                    Intent intent = new Intent(getContext(), CategoryOneActivity.class);
+                    getContext().startActivity(intent);
+                }
             }
         });
     }

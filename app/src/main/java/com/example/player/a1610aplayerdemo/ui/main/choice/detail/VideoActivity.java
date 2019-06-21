@@ -1,11 +1,9 @@
-package com.example.player.a1610aplayerdemo.ui.main;
+package com.example.player.a1610aplayerdemo.ui.main.choice.detail;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
-import com.dou361.ijkplayer.listener.OnShowThumbnailListener;
 import com.dou361.ijkplayer.widget.IjkVideoView;
 import com.dou361.ijkplayer.widget.PlayStateParams;
 import com.dou361.ijkplayer.widget.PlayerView;

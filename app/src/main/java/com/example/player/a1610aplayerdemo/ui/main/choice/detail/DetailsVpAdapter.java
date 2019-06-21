@@ -1,11 +1,9 @@
-package com.example.player.a1610aplayerdemo.ui.main.detail;
+package com.example.player.a1610aplayerdemo.ui.main.choice.detail;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.example.player.a1610aplayerdemo.ui.main.detail.list.ListFragment;
-import com.example.player.a1610aplayerdemo.ui.main.detail.web.WebViewFragment;
 
 public class DetailsVpAdapter extends FragmentPagerAdapter {
     private String[] strings = new String[]{

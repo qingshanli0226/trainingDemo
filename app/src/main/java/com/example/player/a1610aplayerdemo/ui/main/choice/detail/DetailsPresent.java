@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.ui.main.detail;
+package com.example.player.a1610aplayerdemo.ui.main.choice.detail;
 
 import android.util.Log;
 import com.example.player.a1610aplayerdemo.Constant;
@@ -8,16 +8,11 @@ import com.example.player.a1610aplayerdemo.bean.Bean;
 import com.example.player.a1610aplayerdemo.bean.DetailBean;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
 import com.example.player.a1610aplayerdemo.utils.TokenSp;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
-import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 

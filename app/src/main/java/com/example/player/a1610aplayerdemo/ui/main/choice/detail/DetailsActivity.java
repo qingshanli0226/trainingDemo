@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.ui.main.detail;
+package com.example.player.a1610aplayerdemo.ui.main.choice.detail;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +14,8 @@ import com.example.player.a1610aplayerdemo.Constant;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.bean.DetailBean;
-import com.example.player.a1610aplayerdemo.ui.main.detail.list.ListFragment;
-import com.example.player.a1610aplayerdemo.ui.main.detail.web.WebViewFragment;
+import com.example.player.a1610aplayerdemo.ui.main.choice.detail.list.ListFragment;
+import com.example.player.a1610aplayerdemo.ui.main.choice.detail.web.WebViewFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

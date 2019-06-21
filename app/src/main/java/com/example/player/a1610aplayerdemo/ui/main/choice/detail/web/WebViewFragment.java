@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.ui.main.detail.web;
+package com.example.player.a1610aplayerdemo.ui.main.choice.detail.web;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

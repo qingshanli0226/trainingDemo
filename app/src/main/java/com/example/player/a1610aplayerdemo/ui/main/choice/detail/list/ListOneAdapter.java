@@ -1,7 +1,6 @@
-package com.example.player.a1610aplayerdemo.ui.main.detail.list;
+package com.example.player.a1610aplayerdemo.ui.main.choice.detail.list;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

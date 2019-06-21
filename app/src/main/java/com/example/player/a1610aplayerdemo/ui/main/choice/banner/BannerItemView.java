@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import com.example.player.a1610aplayerdemo.Constant;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
-import com.example.player.a1610aplayerdemo.ui.main.detail.DetailsActivity;
+import com.example.player.a1610aplayerdemo.ui.main.choice.detail.DetailsActivity;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
@@ -21,8 +21,6 @@ import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.content.Intent.getIntent;
 
 public class BannerItemView extends LinearLayout {
     private Banner choice_banner;

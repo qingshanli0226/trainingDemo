@@ -1,5 +1,6 @@
 package com.example.player.a1610aplayerdemo.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -33,6 +34,7 @@ import java.util.List;
 public abstract class BaseFragment<T,V extends View> extends Fragment implements IBaseView<T>  {
     private BaseAdapter baseAdapter;
     private IBasePresenter iBasePresenter;
+    private RecyclerView recyclerView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,8 +46,10 @@ public abstract class BaseFragment<T,V extends View> extends Fragment implements
 
     private void initView(View inflate) {
         //初始化recyclerview
-        RecyclerView recyclerView = inflate.findViewById(R.id.base_fragment_recy);
-        recyclerView.setLayoutManager(new LinearLayoutManager(inflate.getContext()));
+        recyclerView = inflate.findViewById(R.id.base_fragment_recy);
+        RecyclerView.LayoutManager manager = getRecyclerViewManager(inflate.getContext())!=null
+                ?getRecyclerViewManager(inflate.getContext()):new LinearLayoutManager(inflate.getContext());
+        recyclerView.setLayoutManager(manager);
         baseAdapter = getBaseAdapter();
         recyclerView.setAdapter(baseAdapter);
         RelativeLayout titlebar_search = inflate.findViewById(R.id.titlebar_search);
@@ -54,6 +58,8 @@ public abstract class BaseFragment<T,V extends View> extends Fragment implements
         ImageView titlebar_left = inflate.findViewById(R.id.titlebar_left);
         setTitleBar(titlebar_left,titlebar_right,titlebar_search,titlebar_title);
     }
+
+    public abstract RecyclerView.LayoutManager getRecyclerViewManager(Context context);
 
     protected abstract void setTitleBar(ImageView titlebar_left, ImageView titlebar_right, RelativeLayout titlebar_search, TextView titlebar_title);
 

@@ -42,4 +42,11 @@ public interface IServiceApi {
     @GET
     Observable<Bean<DetailBean>> getDetailsData(@HeaderMap Map<String,String> map, @Url String url);
 
+//    /restapi/category/getPerfesional?pid=1
+    /**
+     * 获取category第一个按钮的第二个界面的数据
+     */
+    @GET
+    Observable<Bean<List<CategoryOneBean>>> getCategoryOneData(@HeaderMap Map<String,String> map, @Url String url);
+
 }
