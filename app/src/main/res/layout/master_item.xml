@@ -7,56 +7,31 @@
 
     <com.othershe.library.NiceImageView
             android:id="@+id/master_niv"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="8dp"
-            app:corner_radius="15dp"/>
+            app:corner_radius="15dp" style="@style/master_item_niv"/>
 
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="5dp">
+            style="@style/master_item_ll">
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:textColor="#000" android:lines="1" android:ellipsize="end"
-                  android:id="@+id/master_title_tv" android:layout_marginLeft="5dp"/>
+        <TextView
+                android:id="@+id/master_title_tv" style="@style/master_item_text_one"/>
 
         <TextView
                 android:id="@+id/master_teacher_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textSize="12dp"
-                android:lines="1"
-                android:textColor="#ccc"/>
+                style="@style/master_item_text_two"/>
 
     </LinearLayout>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="2dp">
+            style="@style/master_item_ll_two">
 
         <TextView
                 android:id="@+id/master_teacherTitl_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textColor="#ccc"
-                android:textSize="12dp"/>
+                style="@style/master_item_text_three"/>
 
         <TextView
                 android:id="@+id/master_price_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textSize="12dp"
-                android:textColor="#980340"/>
+                style="@style/master_item_text_four"/>
 
     </LinearLayout>
 

@@ -9,7 +9,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.Toolbar
-            android:background="@color/colorModena"
+            android:background="@color/colorColor"
             style="@style/mw">
 
         <ImageView
@@ -24,50 +24,26 @@
     </android.support.v7.widget.Toolbar>
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="意见和建议"
-            android:layout_margin="8dp"
-            android:textStyle="bold"/>
+            android:text="@string/fragment_feedback_text_one"
+            style="@style/fragment_feedback_text_one"/>
 
     <EditText
             android:id="@+id/feedback_et1"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/feedback_edittext"
-            android:hint="请尽量详细描述您想要反馈的问题，也欢迎您提出宝贵意见。"
-            android:textSize="15sp"
-            android:gravity="left"
-            android:layout_marginRight="8dp"
-            android:layout_marginLeft="8dp"/>
+            android:hint="@string/fragment_feedback_text_two"
+            style="@style/fragment_feedback_edittext_one"/>
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="联系方式"
-            android:layout_margin="8dp"
-            android:textStyle="bold"/>
+            android:text="@string/fragment_feedback_text_three"
+            style="@style/fragment_feedback_text_one"/>
 
     <EditText
             android:id="@+id/feedback_et2"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/feedback_edittext"
-            android:hint="手机/微信号/QQ号，方便我们与您联系。"
-            android:textSize="15sp"
-            android:gravity="center_vertical"
-            android:layout_marginRight="8dp"
-            android:layout_marginLeft="8dp"/>
+            android:hint="@string/fragment_feedback_text_four"
+            style="@style/fragment_feedback_edittext_two"/>
 
     <Button
             android:id="@+id/feedback_btn"
-            android:layout_marginTop="20dp"
-            android:layout_width="85dp"
-            android:layout_height="30dp"
-            android:background="#900231"
-            android:text="提交"
-            android:textColor="@color/colorWhite"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"/>
+            android:text="@string/fragment_feedback_text_five"
+            style="@style/fragment_feedback_button"/>
 
 </LinearLayout>

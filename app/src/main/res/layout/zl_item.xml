@@ -8,16 +8,9 @@
 
     <com.othershe.library.NiceImageView
             android:id="@+id/zl_niv"
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            app:corner_radius="15dp"/>
+            app:corner_radius="15dp" style="@style/zl_item_niv"/>
 
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-              android:textColor="#000" android:lines="1" android:ellipsize="end"
-              android:id="@+id/zl_title_tv" android:layout_marginLeft="5dp"/>
+    <TextView
+            android:id="@+id/zl_title_tv" style="@style/zl_item_textview"/>
 
 </LinearLayout>

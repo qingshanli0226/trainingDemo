@@ -9,7 +9,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.Toolbar
-            android:background="@color/colorModena"
+            android:background="@color/colorColor"
             style="@style/mw">
 
         <ImageView
@@ -24,7 +24,7 @@
     </android.support.v7.widget.Toolbar>
 
     <RelativeLayout
-            android:layout_width="match_parent" android:layout_height="240dp">
+            style="@style/fragment_banner_relative">
 
         <ImageView
                 android:id="@+id/banner_image"
@@ -35,138 +35,75 @@
 
         <TextView
                 android:id="@+id/banner_play"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="试看"
-                android:textSize="15sp"
-                android:background="#8e2627"
-                android:textColor="#fff"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
-                android:layout_marginTop="66dp"/>
+                android:text="@string/fragment_banner_text_one"
+                style="@style/fragment_banner_text_one"/>
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#fff"
-                  android:text="收藏" android:id="@+id/banner_collect" android:layout_alignParentRight="true"
-                  android:layout_alignParentEnd="true" android:layout_marginEnd="6dp"
-                  android:layout_alignParentBottom="true" android:layout_marginBottom="69dp"
-                  android:layout_marginRight="6dp"/>
+        <TextView
+                android:text="@string/fragment_banner_text_two" android:id="@+id/banner_collect"
+                style="@style/fragment_banner_text_two"/>
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#fff"
-                  android:text="分享" android:id="@+id/banner_share" android:layout_alignParentRight="true"
-                  android:layout_alignParentEnd="true" android:layout_marginEnd="43dp"
-                  android:layout_marginRight="43dp" android:layout_above="@+id/banner_niv"
-                  android:layout_marginBottom="0dp"/>
+        <TextView
+                android:text="@string/fragment_banner_text_three" android:id="@+id/banner_share"
+                style="@style/fragment_banner_text_three"/>
 
         <com.othershe.library.NiceImageView
                 android:id="@+id/banner_niv"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="10dp"
                 app:is_circle="true"
-                android:layout_alignBottom="@+id/banner_collect"
-                android:layout_marginBottom="-72dp"/>
+                style="@style/fragment_banner_niv"/>
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:layout_alignParentStart="true"
-                  android:layout_marginStart="99dp" android:layout_alignParentLeft="true"
-                  android:layout_alignParentBottom="true" android:layout_marginBottom="35dp"
-                  android:layout_marginLeft="99dp" android:id="@+id/banner_text1"
-                  android:layout_marginTop="10dp" android:textColor="#000"/>
+        <TextView
+                android:id="@+id/banner_text1"
+                style="@style/fragment_banner_text_five"/>
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:layout_alignBottom="@+id/banner_collect"
-                  android:layout_marginBottom="-63dp"
-                  android:layout_marginTop="10dp" android:textColor="#000"
-                  android:layout_marginLeft="97dp" android:id="@+id/banner_text2"/>
+        <TextView
+                android:id="@+id/banner_text2" style="@style/fragment_banner_text_six"/>
 
     </RelativeLayout>
 
     <android.support.design.widget.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/banner_tab"
-            app:tabTextColor="#000"
-            app:tabSelectedTextColor="#ac4063"
-            app:tabIndicatorColor="#ac4063"
-            android:layout_marginLeft="150dp"
-            android:layout_marginRight="150dp"
-            android:layout_marginTop="10dp">
+            app:tabTextColor="@color/colorBlack"
+            app:tabSelectedTextColor="@color/colorColor"
+            app:tabIndicatorColor="@color/colorColor"
+            style="@style/fragment_banner_tablayout">
 
     </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
             android:id="@+id/banner_vp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            style="@style/home_activity_frameLauout">
     </android.support.v4.view.ViewPager>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            style="@style/mwv">
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
+                style="@style/home_activity_frameLauout_ll">
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    android:text="会员价0元(原价0元)"/>
+                    android:text="@string/fragment_banner_text_four"
+                    style="@style/home_activity_frameLauout_text_seven"/>
 
             <TextView
                     android:id="@+id/banner_huiyue"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:textSize="12dp"
-                    android:textColor="#ec632e"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:layout_marginRight="5dp"
-                    android:text="戳此加入会员>"/>
+                    android:text="@string/fragment_banner_text_five" style="@style/home_activity_frameLauout_eight"/>
 
         </LinearLayout>
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
+                style="@style/home_activity_frameLauout_ll_two">
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="免费"
-                    android:gravity="left"
-                    android:textColor="#ec612d"
-                    android:layout_gravity="center_vertical"/>
+                    android:text="@string/fragment_banner_text_six"
+                    style="@style/home_activity_frameLauout_text_eight"/>
 
-           <LinearLayout android:layout_width="match_parent"
-                         android:layout_height="wrap_content"
-           android:orientation="horizontal"
-           android:gravity="right">
+           <LinearLayout
+                   style="@style/home_activity_frameLauout_ll_three">
 
                <Button
                        android:id="@+id/banner_btn"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="立即购买"
-                       android:textColor="#fff"
-                       android:background="#ec612d"/>
+                       android:text="@string/fragment_banner_text_seven"
+                       style="@style/home_activity_frameLauout_button"/>
 
            </LinearLayout>
 

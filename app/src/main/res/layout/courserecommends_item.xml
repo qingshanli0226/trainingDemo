@@ -9,14 +9,10 @@
 
     <com.othershe.library.NiceImageView
             android:id="@+id/courseRecommends_niv"
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:layout_margin="5dp"
-            app:corner_radius="15dp"/>
+            app:corner_radius="15dp" style="@style/courserecommends_item_niv"/>
 
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-               android:textColor="#000" android:lines="1" android:ellipsize="end"
-              android:id="@+id/courseRecommends_title_tv" android:layout_marginLeft="5dp"
-    android:layout_marginTop="3dp"/>
+    <TextView
+            android:id="@+id/courseRecommends_title_tv"
+            style="@style/courserecommends_item_text"/>
 
 </LinearLayout>

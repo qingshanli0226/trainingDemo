@@ -4,7 +4,12 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="colorGray">#eae7e3</color>
+    <color name="colorGray">#cccccc</color>
     <color name="colorBlack">#000000</color>
-    <color name="colorModena">#8f0230</color>
+    <color name="colorColor">#8f0230</color>
+    <color name="colorCyan">#94faeb</color>
+    <color name="colorBrown">#a08459</color>
+    <color name="colorOrange">#ec612d</color>
+    <color name="colorPink">#fc7e7e</color>
+
 </resources>

@@ -19,7 +19,7 @@
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/curriculum_srl"
-            app:srlPrimaryColor="#27edbc"
+            app:srlPrimaryColor="@color/colorCyan"
             app:srlEnablePreviewInEditMode="true" style="@style/curriculum_srl">
 
         <ScrollView style="@style/mm">
@@ -43,18 +43,13 @@
                         style="@style/mwht">
 
                     <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="会员专享"
-                            android:textStyle="bold"
-                            android:textColor="#a08459"/>
+                            android:text="@string/fragment_curriculum_text_one"
+                            android:textColor="@color/colorBrown" style="@style/fragment_curriculum_text"/>
 
                     <TextView
                             android:id="@+id/vip_more_tv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="更多>"
+                            style="@style/mw"
+                            android:text="@string/fragment_curriculum_text_two"
                             android:gravity="right"/>
 
                 </LinearLayout>
@@ -66,34 +61,27 @@
                     </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
 
-                <TextView android:layout_width="match_parent" android:layout_height="40dp" android:background="@drawable/vip_image"
-                          android:layout_marginTop="10dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="10dp"
-                          android:text="每天不到1元钱 , 享受200位顶级名师指导" android:textColor="#fff" android:gravity="center"
-                          android:id="@+id/curriculum_register_tv"/>
+                <TextView
+                        android:text="@string/fragment_curriculum_text_three"
+                        android:id="@+id/curriculum_register_tv" style="@style/fragment_curriculum_text_two"/>
 
                 <LinearLayout
                         style="@style/mwht">
 
                     <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="专栏"
-                            android:textStyle="bold"
-                            android:textColor="#bf0256"/>
+                            style="@style/fragment_curriculum_text"
+                            android:text="@string/fragment_curriculum_text_four"
+                            android:textColor="@color/colorColor"/>
 
                     <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:text="专区"
-                            android:textColor="#000"/>
+                            style="@style/fragment_curriculum_text"
+                            android:text="@string/fragment_curriculum_text_five"
+                            android:textColor="@color/colorBlack"/>
 
                     <TextView
                             android:id="@+id/zl_more_tv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="更多>"
+                            style="@style/mw"
+                            android:text="@string/fragment_curriculum_text_two"
                             android:gravity="right"/>
 
                 </LinearLayout>
@@ -108,19 +96,14 @@
                 <LinearLayout style="@style/mwht">
 
                     <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="推荐"
-                            android:textStyle="bold"
-                            android:textColor="#bf0256"/>
+                            style="@style/fragment_curriculum_text"
+                            android:text="@string/fragment_curriculum_text_six"
+                            android:textColor="@color/colorColor"/>
 
                     <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:text="课程"
-                            android:textColor="#000"/>
+                            style="@style/fragment_curriculum_text"
+                            android:text="@string/fragment_curriculum_text_seven"
+                            android:textColor="@color/colorBlack"/>
 
                 </LinearLayout>
 
@@ -135,12 +118,9 @@
                         style="@style/mwht">
 
                     <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="大师课"
-                            android:textStyle="bold"
-                            android:textColor="#bf0256"/>
+                            style="@style/fragment_curriculum_text"
+                            android:text="@string/fragment_curriculum_text_eight"
+                            android:textColor="@color/colorColor"/>
                 </LinearLayout>
 
                 <LinearLayout style="@style/mwv">

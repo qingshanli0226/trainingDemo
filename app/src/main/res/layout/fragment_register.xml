@@ -8,7 +8,7 @@
         android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-            android:background="@color/colorModena"
+            android:background="@color/colorColor"
             style="@style/mw">
 
         <ImageView
@@ -17,121 +17,63 @@
                 android:src="@drawable/ic_back"/>
 
         <TextView
-                android:text="手机快捷登录"
+                android:text="@string/register_text_one"
                 style="@style/feedback_opinion"/>
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="忘记密码?"
-                android:layout_gravity="right"
-                android:textColor="#fff"
-                android:textSize="18sp"
-                android:layout_marginRight="5dp"/>
+                android:text="@string/register_text_two"
+                style="@style/register_text_one"/>
 
     </android.support.v7.widget.Toolbar>
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="您好,"
-            android:textSize="25sp"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="20dp"/>
+            android:text="@string/register_text_three"
+            style="@style/register_text_two"/>
 
     <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="18dp"
-            android:layout_marginLeft="20dp">
+            style="@style/register_text_ll_one">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="欢迎来到央音在线，立即"
-                android:textSize="15sp"/>
+                android:text="@string/register_text_four"
+                style="@style/register_text_text_three"/>
 
         <TextView
                 android:id="@+id/login_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="免费注册"
-                android:textColor="#900230"/>
+                android:text="@string/register_text_five"
+                style="@style/register_text_text_four"/>
 
     </LinearLayout>
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="手机号:"
-            android:textSize="15sp"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="20dp"
-            android:textColor="#000"/>
+            android:text="@string/register_text_six"
+            style="@style/register_text_five"/>
     
     <EditText
             android:id="@+id/account_edit"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp"
-            android:background="@drawable/register_edittext"
-            android:hint="请输入您的手机号"
-            android:textSize="15sp"
-            android:textColor="#181717"/>
+            android:hint="@string/register_text_seven"
+            style="@style/register_text_edittext"/>
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="密码:"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="20dp"
-            android:textColor="#000"/>
+            android:text="@string/register_text_eight"
+            style="@style/register_text_six"/>
 
     <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            style="@style/ww">
 
         <EditText
                 android:id="@+id/password_edit"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
-                android:background="@drawable/register_edittext"
-                android:hint="请输入密码"
-                android:textSize="15sp"
-                android:textColor="#181717"/>
+                android:hint="@string/register_text_nice"
+                style="@style/register_text_edittext"/>
 
         <TextView
                 android:id="@+id/show_hidden"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="#900230"
-                android:text="显示"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="84dp"
-                android:layout_marginRight="84dp"
-                android:layout_centerVertical="true"/>
+                android:text="@string/register_text_ten"
+                style="@style/register_text_seven"/>
 
     </RelativeLayout>
 
     <Button
             android:id="@+id/ok_button"
-            android:layout_marginTop="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp"
-            android:background="@drawable/register_button"
-            android:textSize="15sp"
-            android:text="登录"
-            android:textColor="#ffffff"/>
+            android:text="@string/register_text_eleven"
+            style="@style/register_text_button"/>
 </LinearLayout>

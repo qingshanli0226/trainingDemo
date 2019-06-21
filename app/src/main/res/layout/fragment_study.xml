@@ -9,25 +9,22 @@
     <!-- TODO: Update blank fragment layout -->
 
     <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srlPrimaryColor="#fc7e7e"
+            style="@style/mw"
+            app:srlPrimaryColor="@color/colorPink"
             app:srlEnablePreviewInEditMode="true">
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="会员" android:textSize="18sp" android:layout_gravity="center" android:textStyle="bold"/>
+        <TextView
+                android:text="@string/home_activity_radioButton_two" style="@style/study_fragment_textview"/>
 
     </android.support.v7.widget.Toolbar>
     
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/vip_srl"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            style="@style/mm">
 
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/vip_rv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                style="@style/mm">
         </android.support.v7.widget.RecyclerView>
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>

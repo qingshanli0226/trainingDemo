@@ -9,4 +9,53 @@
     <string name="my_ll_recommend">推荐【央音在线】给好友</string>
     <string name="my_ll_opinion">意见反馈</string>
 
+    <string name="home_activity_radioButton_one">发现</string>
+    <string name="home_activity_radioButton_two">会员</string>
+    <string name="home_activity_radioButton_three">已购</string>
+    <string name="home_activity_radioButton_four">我的</string>
+
+    <string name="main_activity_button">开始体验</string>
+    <string name="main_activity_text">跳过</string>
+
+    <string name="curriculum_vip_item_text">仅会员可看</string>
+
+    <string name="fragment_banner_text_one">试看</string>
+    <string name="fragment_banner_text_two">收藏</string>
+    <string name="fragment_banner_text_three">分享</string>
+    <string name="fragment_banner_text_four">会员价0元(原价0元)</string>
+    <string name="fragment_banner_text_five">戳此加入会员</string>
+    <string name="fragment_banner_text_six">免费</string>
+    <string name="fragment_banner_text_seven">立即购买</string>
+
+    <string name="fragment_curriculum_text_one">会员专享</string>
+    <string name="fragment_curriculum_text_two">更多></string>
+    <string name="fragment_curriculum_text_three">每天不到1元钱 , 享受200位顶级名师指导</string>
+    <string name="fragment_curriculum_text_four">专栏</string>
+    <string name="fragment_curriculum_text_five">专区</string>
+    <string name="fragment_curriculum_text_six">推荐</string>
+    <string name="fragment_curriculum_text_seven">课程</string>
+    <string name="fragment_curriculum_text_eight">大师课</string>
+
+    <string name="fragment_feedback_text_one">意见和建议</string>
+    <string name="fragment_feedback_text_two">请尽量详细描述您想要反馈的问题，也欢迎您提出宝贵意见。</string>
+    <string name="fragment_feedback_text_three">联系方式</string>
+    <string name="fragment_feedback_text_four">手机/微信号/QQ号，方便我们与您联系。</string>
+    <string name="fragment_feedback_text_five">提交</string>
+
+    <string name="fragment_message_text_one">您还没有登录</string>
+    <string name="fragment_message_text_two">登录后才能在[已购]中查看全部课程哦</string>
+
+    <string name="hour_item_text">简介</string>
+
+    <string name="register_text_one">手机快捷登录</string>
+    <string name="register_text_two">忘记密码?</string>
+    <string name="register_text_three">您好,</string>
+    <string name="register_text_four">欢迎来到央音在线，立即</string>
+    <string name="register_text_five">免费注册</string>
+    <string name="register_text_six">手机号:</string>
+    <string name="register_text_seven">请输入您的手机号</string>
+    <string name="register_text_eight">密码:</string>
+    <string name="register_text_nice">请输入密码</string>
+    <string name="register_text_ten">显示</string>
+    <string name="register_text_eleven">登录</string>
 </resources>

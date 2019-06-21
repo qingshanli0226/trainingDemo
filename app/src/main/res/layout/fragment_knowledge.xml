@@ -7,20 +7,15 @@
               android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
-    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView style="@style/mm">
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-        android:orientation="vertical">
+        <LinearLayout style="@style/mmv">
 
             <TextView
                     android:id="@+id/knowledge_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:textSize="18sp"
-                    android:textColor="#000"/>
+                    style="@style/fragment_knowledge_text"/>
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <TextView style="@style/ww"
                       android:id="@+id/knowledge_message"/>
 
         </LinearLayout>

@@ -8,8 +8,7 @@
         tools:context=".activity.TokenActivity">
 
     <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/mm"
             android:scaleType="centerCrop"
             android:id="@+id/token_greet_iv">
     </ImageView>

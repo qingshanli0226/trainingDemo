@@ -1,45 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
+              style="@style/mwv">
 
     <com.othershe.library.NiceImageView
             android:id="@+id/vip_niv"
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            app:corner_radius="15dp"/>
+            app:corner_radius="15dp" style="@style/curriculum_vip_item_niv"/>
 
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-              android:textColor="#000" android:lines="1" android:ellipsize="end"
-        android:id="@+id/vip_title_tv" android:layout_marginLeft="5dp"/>
+    <TextView
+            android:id="@+id/vip_title_tv" style="@style/curriculum_vip_item_text"/>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="3dp">
+            style="@style/curriculum_vip_item_ll">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="仅会员可看"
-                android:textColor="#a08459"
-                android:textSize="12dp"/>
+                android:text="@string/curriculum_vip_item_text"
+                style="@style/curriculum_vip_item_text_one"/>
 
         <TextView
                 android:id="@+id/vip_vip_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textSize="12dp"
-                android:textColor="#980340"/>
+                style="@style/curriculum_vip_item_text_two"/>
 
     </LinearLayout>
 

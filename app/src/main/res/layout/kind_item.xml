@@ -7,16 +7,10 @@
 
     <ImageView
             android:id="@+id/kind_iv"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"/>
+            style="@style/kind_item_image"/>
 
     <TextView
             android:id="@+id/kind_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000"
-            android:layout_gravity="center"
-            android:paddingTop="3dp"/>
+            style="@style/kind_item_textview"/>
 
 </LinearLayout>

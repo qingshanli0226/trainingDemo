@@ -2,30 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".VideoActivity"
+    style="@style/mmv"
+    tools:context=".activity.VideoActivity"
     android:id="@+id/app_video_box"
-    android:background="@android:color/black"
-    android:orientation="vertical">
+    android:background="@android:color/black">
 
     <com.dou361.ijkplayer.widget.IjkVideoView
         android:id="@+id/video_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        style="@style/mm"/>
 
     <LinearLayout
         android:id="@+id/ll_bg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/black"
-        android:orientation="vertical">
+        style="@style/mmv"
+        android:background="@android:color/black">
 
         <!-- 封面显示-->
         <ImageView
             android:id="@+id/iv_trumb"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/mm"
             android:scaleType="fitXY"
             android:visibility="visible"/>
     </LinearLayout>
@@ -33,25 +27,21 @@
     <!--重新播放-->
     <LinearLayout
         android:id="@+id/app_video_replay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/mmv"
         android:background="#33000000"
         android:gravity="center"
-        android:orientation="vertical"
         android:visibility="gone">
         <!-- 播放状态-->
         <TextView
             android:id="@+id/app_video_status_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ww"
             android:text="@string/small_problem"
             android:textColor="@android:color/white"
             android:textSize="14dp"/>
 
         <ImageView
             android:id="@+id/app_video_replay_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ww"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
             android:src="@drawable/simple_player_circle_outline_white_36dp"/>
@@ -59,16 +49,13 @@
     <!-- 网络提示-->
     <LinearLayout
         android:id="@+id/app_video_netTie"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/mmv"
         android:background="#33000000"
         android:gravity="center"
-        android:orientation="vertical"
         android:visibility="gone">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                style="@style/ww"
             android:layout_marginBottom="8dp"
             android:gravity="center"
             android:paddingLeft="8dp"
@@ -78,8 +65,7 @@
 
         <TextView
             android:id="@+id/app_video_netTie_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ww"
             android:background="@drawable/simple_player_btn"
             android:gravity="center"
             android:paddingLeft="8dp"
@@ -91,10 +77,8 @@
     <!--加载中-->
     <LinearLayout
         android:id="@+id/app_video_loading"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/mmv"
         android:gravity="center"
-        android:orientation="vertical"
         android:visibility="gone">
 
         <ProgressBar

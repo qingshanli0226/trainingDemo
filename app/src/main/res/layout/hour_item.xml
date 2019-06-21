@@ -7,23 +7,13 @@
 
     <TextView
             android:id="@+id/hour_tv1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="8dp"/>
+            style="@style/hour_item_textview"/>
 
     <TextView
             android:id="@+id/hour_tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="8dp"/>
+            style="@style/hour_item_textview"/>
 
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="right"
-            android:text="简介"/>
+            android:text="@string/hour_item_text" style="@style/hour_item_text"/>
 
 </LinearLayout>

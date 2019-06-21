@@ -10,60 +10,38 @@
 
     <FrameLayout
             android:id="@+id/home_frame"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            style="@style/home_activity_frameLauout">
     </FrameLayout>
 
     <RadioGroup android:id="@+id/home_radioG"
-                android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
+                style="@style/home_activity_radiogroup">
 
         <RadioButton
                 android:id="@+id/home_radioB_curriculum"
-                android:button="@null"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="发现"
-                android:drawableTop="@drawable/ic_curriculum"
+                android:text="@string/home_activity_radioButton_one"
                 android:textAlignment="center"
-                android:background="@drawable/navigation_bar">
+                style="@style/home_activity_radioButton">
         </RadioButton>
 
         <RadioButton
                 android:id="@+id/home_radioB_study"
-                android:button="@null"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="会员"
-                android:drawableTop="@drawable/ic_study"
+                style="@style/home_activity_radioButton"
                 android:textAlignment="center"
-                android:background="@drawable/navigation_bar">
+                android:text="@string/home_activity_radioButton_two">
         </RadioButton>
 
         <RadioButton
                 android:id="@+id/home_radioB_message"
-                android:button="@null"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="已购"
-                android:drawableTop="@drawable/ic_message"
+                style="@style/home_activity_radioButton"
                 android:textAlignment="center"
-                android:background="@drawable/navigation_bar">
+                android:text="@string/home_activity_radioButton_three">
         </RadioButton>
 
         <RadioButton
                 android:id="@+id/home_radioB_me"
-                android:button="@null"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="我的"
-                android:drawableTop="@drawable/ic_me"
+                style="@style/home_activity_radioButton"
                 android:textAlignment="center"
-                android:background="@drawable/navigation_bar">
+                android:text="@string/home_activity_radioButton_four">
         </RadioButton>
 
     </RadioGroup>
