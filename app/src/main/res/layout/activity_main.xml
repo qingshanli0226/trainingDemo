@@ -17,55 +17,58 @@
                 android:id="@+id/fl"
                 >
         </FrameLayout>
-        <RadioGroup android:layout_width="match_parent" android:layout_height="0dp"
+        <RadioGroup
+                android:layout_width="match_parent" android:layout_height="0dp"
         android:layout_weight="1"
                     android:id="@+id/rg"
                     android:orientation="horizontal"
 
         >
-                <RadioButton android:layout_width="0dp"
+                <RadioButton
+
+                        android:layout_width="0dp"
                              android:layout_height="match_parent"
                              android:layout_weight="1"
                              android:drawableTop="@drawable/select1"
                              android:button="@null"
-                             android:text="发现"
+                             android:text="@string/main_title1"
                              android:id="@+id/rb1"
                              android:textAlignment="center"
                              android:textColor="@color/text_cololr"
-                             android:padding="2dp"
+                             android:padding="@dimen/px_2"
                         />
                 <RadioButton android:layout_width="0dp"
                              android:layout_height="match_parent"
                              android:layout_weight="1"
                              android:drawableTop="@drawable/select4"
                              android:button="@null"
-                             android:text="会员"
+                             android:text="@string/main_title2"
                              android:id="@+id/rb2"
                              android:textAlignment="center"
                              android:textColor="@color/text_cololr"
-                             android:padding="2dp"
+                             android:padding="@dimen/px_2"
                 />
                 <RadioButton android:layout_width="0dp"
                              android:layout_height="match_parent"
                              android:layout_weight="1"
                              android:drawableTop="@drawable/select3"
                              android:button="@null"
-                             android:text="已购"
+                             android:text="@string/main_title3"
                              android:id="@+id/rb3"
                              android:textAlignment="center"
                              android:textColor="@color/text_cololr"
-                             android:padding="2dp"
+                             android:padding="@dimen/px_2"
                 />
                 <RadioButton android:layout_width="0dp"
                              android:layout_height="match_parent"
                              android:layout_weight="1"
                              android:drawableTop="@drawable/select2"
                              android:button="@null"
-                             android:text="我的"
+                             android:text="@string/main_title4"
                              android:id="@+id/rb4"
                              android:textAlignment="center"
                              android:textColor="@color/text_cololr"
-                             android:padding="2dp"
+                             android:padding="@dimen/px_2"
                 />
         </RadioGroup>
 </LinearLayout>

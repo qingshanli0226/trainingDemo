@@ -28,7 +28,7 @@
         <activity android:name=".ui.activity.find_category_activity.CategoryMusicClassActivity"/>
         <activity android:name=".ui.activity.find_category_activity.CategoryLiveActivity"/>
         <activity android:name=".ui.activity.find_category_activity.CategoryTeacherActivity"/>
-        <activity android:name=".ui.activity.ItemClickActivity"/>
+        <activity android:name=".ui.activity.DetailsPageActivity"/>
         <activity android:name=".ui.activity.VideoActivity"/>
 
     </application>

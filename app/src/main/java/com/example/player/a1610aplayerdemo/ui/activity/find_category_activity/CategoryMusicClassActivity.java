@@ -10,7 +10,7 @@ import com.example.player.a1610aplayerdemo.adapter.find_category_adapter.Categor
 import com.example.player.a1610aplayerdemo.base.BaseActivity;
 import com.example.player.a1610aplayerdemo.base.BasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
-import com.example.player.a1610aplayerdemo.bean.MusicClassBean;
+import com.example.player.a1610aplayerdemo.net.bean.MusicClassBean;
 import com.example.player.a1610aplayerdemo.presenter.find_category_presenter.CategoryMusicClassPresenter;
 import com.google.gson.Gson;
 

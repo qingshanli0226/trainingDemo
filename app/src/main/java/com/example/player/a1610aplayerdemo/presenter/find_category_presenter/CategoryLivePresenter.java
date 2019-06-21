@@ -1,8 +1,7 @@
 package com.example.player.a1610aplayerdemo.presenter.find_category_presenter;
 
 import com.example.player.a1610aplayerdemo.base.BasePresenter;
-import com.example.player.a1610aplayerdemo.bean.LiveBean;
-import com.example.player.a1610aplayerdemo.bean.MusicClassBean;
+import com.example.player.a1610aplayerdemo.net.bean.LiveBean;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;

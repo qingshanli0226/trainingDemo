@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.example.player.a1610aplayerdemo.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.net.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.R;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;

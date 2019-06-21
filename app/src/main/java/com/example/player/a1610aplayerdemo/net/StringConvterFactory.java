@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.util;
+package com.example.player.a1610aplayerdemo.net;
 
 import okhttp3.ResponseBody;
 import retrofit2.Converter;

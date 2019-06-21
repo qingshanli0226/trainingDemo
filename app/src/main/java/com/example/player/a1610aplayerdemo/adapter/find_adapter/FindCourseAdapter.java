@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.example.player.a1610aplayerdemo.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.net.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.R;
 
 import java.util.ArrayList;

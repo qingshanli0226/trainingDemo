@@ -3,7 +3,6 @@ package com.example.player.a1610aplayerdemo.adapter.find_adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -15,9 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.example.player.a1610aplayerdemo.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.net.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.ui.activity.ItemClickActivity;
+import com.example.player.a1610aplayerdemo.ui.activity.DetailsPageActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +56,7 @@ public class FindVipAdapter extends RecyclerView.Adapter<FindVipAdapter.MyHolder
         myHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(myHolder.itemView.getContext(), ItemClickActivity.class);
+                Intent intent = new Intent(myHolder.itemView.getContext(), DetailsPageActivity.class);
                 intent.putExtra("dateId",String.valueOf(list.get(i).getDataId()));
                 intent.putExtra("dateType",String.valueOf(list.get(i).getDataType()));
                 myHolder.itemView.getContext().startActivity(intent);

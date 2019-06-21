@@ -7,14 +7,14 @@
 >
 
     <RelativeLayout
-            android:background="#8E002E"
+            android:background="@color/toolbar_color"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/px_50"
     >
-        <ImageView android:layout_width="30dp"
-                   android:layout_height="30dp"
+        <ImageView android:layout_width="@dimen/px_30"
+                   android:layout_height="@dimen/px_30"
                    android:layout_centerVertical="true"
-                   android:layout_marginLeft="10dp"
+                   android:layout_marginLeft="@dimen/px_10"
                    android:id="@+id/return_img"
                    android:background="@drawable/return_icon"
         />
@@ -23,15 +23,15 @@
                   android:layout_height="wrap_content"
                   android:text="@string/category_title3"
                   android:layout_centerInParent="true"
-                  android:textColor="#fff"
-                  android:textSize="18sp"
+                  android:textColor="@color/white_color"
+                  android:textSize="@dimen/size_18"
         />
 
     </RelativeLayout>
 
     <android.support.design.widget.TabLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/px_40"
             android:id="@+id/teacher_tab"
     />
 

@@ -12,14 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.adapter.viewpager_adapter.ItemClickPagerAdapter;
+import com.example.player.a1610aplayerdemo.adapter.viewpager_adapter.DetailsTabViewPageAdapter;
 import com.example.player.a1610aplayerdemo.base.BaseActivity;
 import com.example.player.a1610aplayerdemo.base.BasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
-import com.example.player.a1610aplayerdemo.bean.DetailBean2;
-import com.example.player.a1610aplayerdemo.presenter.ItemClickPresenter;
-import com.example.player.a1610aplayerdemo.ui.fragment.ItemClickFragment.KnowledgeFragment;
-import com.example.player.a1610aplayerdemo.ui.fragment.ItemClickFragment.ListFragment;
+import com.example.player.a1610aplayerdemo.net.bean.DetailBean2;
+import com.example.player.a1610aplayerdemo.presenter.DetailsPagePresenter;
+import com.example.player.a1610aplayerdemo.ui.fragment.DetailsPageFragment.KnowledgeFragment;
+import com.example.player.a1610aplayerdemo.ui.fragment.DetailsPageFragment.ListFragment;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
 import org.jetbrains.annotations.Nullable;
@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemClickActivity extends BaseActivity implements IBaseView<String> {
+public class DetailsPageActivity extends BaseActivity implements IBaseView<String> {
 
     BasePresenter presenter;
     private ImageView return_img;
@@ -74,7 +74,7 @@ public class ItemClickActivity extends BaseActivity implements IBaseView<String>
         Intent intent = getIntent();
         String dateId = intent.getStringExtra("dateId");
         dateType = intent.getStringExtra("dateType");
-        presenter = new ItemClickPresenter(dateId, Integer.valueOf(dateType));
+        presenter = new DetailsPagePresenter(dateId, Integer.valueOf(dateType));
         presenter.attachView(this);
         presenter.getData();
     }
@@ -90,7 +90,7 @@ public class ItemClickActivity extends BaseActivity implements IBaseView<String>
         bo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ItemClickActivity.this,VideoActivity.class);
+                Intent intent = new Intent(DetailsPageActivity.this,VideoActivity.class);
                 intent.putExtra("mp4url","http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f30.mp4");
                 startActivity(intent);
             }
@@ -110,7 +110,7 @@ public class ItemClickActivity extends BaseActivity implements IBaseView<String>
         click_writerdata.setText(data1.getTeacherTitle());
         vipprice.setText("会员价"+data1.getCourseVipPrice()+"元(原价"+data1.getPriceText()+")");
         price.setText("原价"+data1.getPriceText());
-        ItemClickPagerAdapter adapter = null;
+        DetailsTabViewPageAdapter adapter = null;
         if (dateType.equals("2")){
             strlist  = new ArrayList<>();
             frglist  = new ArrayList<>();
@@ -124,7 +124,7 @@ public class ItemClickActivity extends BaseActivity implements IBaseView<String>
             ListFragment listFragment = new ListFragment();
             listFragment.setDataBean(data1);
             frglist.add(listFragment);
-            adapter  = new ItemClickPagerAdapter(getSupportFragmentManager(),strlist,frglist);
+            adapter  = new DetailsTabViewPageAdapter(getSupportFragmentManager(),strlist,frglist);
         }
         click_vp.setAdapter(adapter);
         click_tab.setupWithViewPager(click_vp);

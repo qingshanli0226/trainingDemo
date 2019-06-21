@@ -8,4 +8,18 @@
     <color name="item_list_zj_select">#D81B60</color>
     <color name="item_list_zj_noselect">#B4B4B4</color>
 
+
+    <color name="select_tab">#AC4548</color>
+    <color name="transparency_color">#00000000</color>
+    <color name="white_color">#fff</color>
+    <color name="orange_color">#EC602B</color>
+    <color name="black_color">#000</color>
+    <color name="gray1_color">#F3F3F3</color>
+    <color name="gray2_color">#ccc</color>
+    <color name="toolbar_color">#97013F</color>
+    <color name="wine_red_color">#A31559</color>
+    <color name="gold_color">#9B7F52</color>
+
+
+
 </resources>

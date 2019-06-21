@@ -1,13 +1,12 @@
-package com.example.player.a1610aplayerdemo.ui.fragment.ItemClickFragment;
+package com.example.player.a1610aplayerdemo.ui.fragment.DetailsPageFragment;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseFragment;
-import com.example.player.a1610aplayerdemo.bean.DetailBean2;
+import com.example.player.a1610aplayerdemo.net.bean.DetailBean2;
 
 
 public class KnowledgeFragment extends BaseFragment{

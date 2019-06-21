@@ -1,9 +1,11 @@
-package com.example.player.a1610aplayerdemo.util;
+package com.example.player.a1610aplayerdemo.net;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import com.example.player.a1610aplayerdemo.util.MyApplication;
+import com.example.player.a1610aplayerdemo.util.SharedPreferenceToken;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;

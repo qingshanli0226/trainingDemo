@@ -9,16 +9,16 @@
 
 
     <com.facebook.drawee.view.SimpleDraweeView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/px_60"
+            android:layout_height="@dimen/px_60"
             fresco:roundAsCircle = "true"
             android:id="@+id/simpleImg"
-            android:padding="5dp"
+            android:padding="@dimen/px_5"
     />
-    <TextView android:layout_width="80dp"
-              android:layout_height="20dp"
-              android:textSize="12dp"
+    <TextView android:layout_width="@dimen/px_80"
+              android:layout_height="@dimen/px_20"
+              android:textSize="@dimen/size_12"
               android:gravity="center"
               android:id="@+id/simpleTitle"
-              android:textColor="#000"/>
+              android:textColor="@color/black_color"/>
 </LinearLayout>

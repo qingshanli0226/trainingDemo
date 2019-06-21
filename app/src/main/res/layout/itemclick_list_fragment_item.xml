@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              android:layout_width="match_parent"
-                                             android:layout_height="50dp">
+                                             android:layout_height="@dimen/px_50">
 
 
-        <ImageView
-                android:layout_width="20dp"
-                   android:layout_height="20dp"
-                    android:background="@drawable/bof1"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:id="@+id/list_bo"
-        />
+    <ImageView
+            android:layout_width="@dimen/px_20"
+            android:layout_height="@dimen/px_20"
+            android:background="@drawable/bof1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/px_20"
+            android:id="@+id/list_bo"
+    />
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:textSize="13sp"
-              android:layout_marginLeft="20dp"
+              android:textSize="@dimen/size_13"
+              android:layout_marginLeft="@dimen/px_20"
               android:layout_centerVertical="true"
               android:id="@+id/list_zj"
               android:layout_toRightOf="@+id/list_bo"
     />
 
 
-
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
               android:gravity="center"
               android:layout_gravity="center"
-              android:textSize="15sp"
-              android:layout_marginLeft="15dp"
+              android:textSize="@dimen/size_15"
+              android:layout_marginLeft="@dimen/px_15"
               android:id="@+id/list_title"
               android:layout_centerVertical="true"
               android:layout_toRightOf="@+id/list_zj"
@@ -36,13 +36,13 @@
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:gravity="center"
-              android:textSize="13sp"
+              android:textSize="@dimen/size_13"
               android:layout_alignParentRight="true"
               android:layout_centerVertical="true"
               android:text="@string/itemclick_title_text"
               android:id="@+id/jianjie"
-              android:layout_marginRight="10dp"
+              android:layout_marginRight="@dimen/px_10"
               android:layout_alignParentEnd="true"
-              android:layout_marginEnd="10dp"/>
+              android:layout_marginEnd="@dimen/px_10"/>
 
 </RelativeLayout>

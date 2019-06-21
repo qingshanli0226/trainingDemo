@@ -8,39 +8,39 @@
 
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#97013F"
+            android:layout_height="@dimen/px_50"
+            android:background="@color/toolbar_color"
 
 
     >
                 <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="@dimen/px_30"
+                        android:layout_height="@dimen/px_30"
                         android:id="@+id/search_user"
                         android:background="@drawable/js_classify_images_classify_tx_icon"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="@dimen/px_10"
                 />
         
                 <LinearLayout 
                         android:gravity="center"
-                        android:layout_width="450dp"
-                        android:layout_height="30dp"
+                        android:layout_width="@dimen/px_450"
+                        android:layout_height="@dimen/px_30"
                         android:layout_toRightOf="@+id/search_user"
                         android:background="@drawable/search_back"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="@dimen/px_10"
                 >
                     <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
+                            android:layout_width="@dimen/px_20"
+                            android:layout_height="@dimen/px_20"
                             android:background="@drawable/blk_search_icon"
                     />
                     <TextView
 
-                            android:layout_width="wrap_content" android:layout_height="30dp"
+                            android:layout_width="wrap_content" android:layout_height="@dimen/px_30"
                             android:text="@string/search_title"
-                            android:textSize="15sp"
+                            android:textSize="@dimen/size_15"
                             android:gravity="center"
                     />
                 </LinearLayout>

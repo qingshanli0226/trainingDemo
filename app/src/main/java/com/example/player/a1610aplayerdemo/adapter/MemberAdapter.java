@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerAdapter;
-import com.example.player.a1610aplayerdemo.bean.MemberBean;
+import com.example.player.a1610aplayerdemo.net.bean.MemberBean;
 import com.example.player.a1610aplayerdemo.util.MyApplication;
 
 import java.util.List;

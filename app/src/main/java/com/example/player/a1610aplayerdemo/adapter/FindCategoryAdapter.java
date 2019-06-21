@@ -7,11 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.example.player.a1610aplayerdemo.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.net.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.ui.activity.category_activity.Category1Activity;
-import com.example.player.a1610aplayerdemo.ui.activity.category_activity.Category2Activity;
-import com.example.player.a1610aplayerdemo.util.MyApplication;
+import com.example.player.a1610aplayerdemo.ui.activity.find_category_activity.CategoryLiveActivity;
+import com.example.player.a1610aplayerdemo.ui.activity.find_category_activity.CategoryMusicClassActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
@@ -39,7 +38,7 @@ public class FindCategoryAdapter extends RecyclerView.Adapter<FindCategoryAdapte
             myHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(myHolder.itemView.getContext(), Category1Activity.class);
+                    Intent intent = new Intent(myHolder.itemView.getContext(), CategoryMusicClassActivity.class);
                     myHolder.itemView.getContext().startActivity(intent);
                 }
             });
@@ -47,7 +46,7 @@ public class FindCategoryAdapter extends RecyclerView.Adapter<FindCategoryAdapte
             myHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(myHolder.itemView.getContext(), Category2Activity.class);
+                    Intent intent = new Intent(myHolder.itemView.getContext(), CategoryLiveActivity.class);
                     myHolder.itemView.getContext().startActivity(intent);
                 }
             });

@@ -6,12 +6,12 @@
 
 
             <RelativeLayout
-                    android:background="#8E002E"
+                    android:background="@color/toolbar_color"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="@dimen/px_50"
             >
-                    <ImageView android:layout_width="30dp"
-                               android:layout_height="30dp"
+                    <ImageView android:layout_width="@dimen/px_30"
+                               android:layout_height="@dimen/px_30"
                                android:layout_centerVertical="true"
                                android:layout_marginLeft="10dp"
                                android:id="@+id/return_img"
@@ -21,8 +21,8 @@
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                           android:text="@string/category_title1"
                           android:layout_centerInParent="true"
-                          android:textColor="#fff"
-                          android:textSize="18sp"
+                          android:textColor="@color/white_color"
+                          android:textSize="@dimen/size_18"
                 />
 
             </RelativeLayout>

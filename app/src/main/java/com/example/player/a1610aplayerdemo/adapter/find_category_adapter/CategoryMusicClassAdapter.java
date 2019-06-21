@@ -1,14 +1,10 @@
 package com.example.player.a1610aplayerdemo.adapter.find_category_adapter;
 
 import android.content.Context;
-import android.widget.ImageView;
 import android.widget.TextView;
-import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerAdapter;
-import com.example.player.a1610aplayerdemo.bean.MemberBean;
-import com.example.player.a1610aplayerdemo.bean.MusicClassBean;
-import com.example.player.a1610aplayerdemo.util.MyApplication;
+import com.example.player.a1610aplayerdemo.net.bean.MusicClassBean;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 

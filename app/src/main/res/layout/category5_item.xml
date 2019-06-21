@@ -8,12 +8,12 @@
 
     <ImageView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="@dimen/px_300"
             android:id="@+id/category5Img"
 
     />
 
 
-    <View android:layout_width="match_parent" android:layout_height="5dp"
-          android:background="#fff"/>
+    <View android:layout_width="match_parent" android:layout_height="@dimen/px_5"
+          android:background="@color/white_color"/>
 </LinearLayout>

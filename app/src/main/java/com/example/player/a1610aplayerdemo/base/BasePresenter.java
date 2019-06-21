@@ -1,20 +1,15 @@
 package com.example.player.a1610aplayerdemo.base;
 
 import android.util.Log;
-import com.example.player.a1610aplayerdemo.service.BaseService;
-import com.example.player.a1610aplayerdemo.util.CreatorUtils;
-import com.google.gson.Gson;
+import com.example.player.a1610aplayerdemo.net.CreatorUtils;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.HashMap;
-import java.util.List;
 
 public abstract class BasePresenter<T> implements IBasePresenter<T> {
     protected IBaseView<T> iBaseView;

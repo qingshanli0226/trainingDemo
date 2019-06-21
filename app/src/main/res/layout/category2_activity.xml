@@ -7,18 +7,18 @@
 
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#97013F"
+            android:layout_height="@dimen/px_50"
+            android:background="@color/toolbar_color"
     >
             
-        <ImageView android:layout_width="30dp" android:layout_height="30dp"
+        <ImageView android:layout_width="@dimen/px_30" android:layout_height="@dimen/px_30"
                     android:background="@drawable/return_icon"
                    android:layout_centerVertical="true"
-                   android:layout_marginLeft="10dp"
+                   android:layout_marginLeft="@dimen/px_10"
                    android:id="@+id/return_img"
         />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="在线直播"
+                    android:text="@string/category2_title"
                       android:textColor="#fff"
                       android:textSize="16sp"
                       android:layout_centerInParent="true"

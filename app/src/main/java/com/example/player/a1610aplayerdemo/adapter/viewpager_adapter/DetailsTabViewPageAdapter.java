@@ -8,11 +8,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemClickPagerAdapter extends FragmentPagerAdapter{
+public class DetailsTabViewPageAdapter extends FragmentPagerAdapter{
     List<String> strlist = new ArrayList<>();
     List<Fragment> frglist = new ArrayList<>();
 
-    public ItemClickPagerAdapter(FragmentManager fm, List<String> strlist, List<Fragment> frglist) {
+    public DetailsTabViewPageAdapter(FragmentManager fm, List<String> strlist, List<Fragment> frglist) {
         super(fm);
         this.strlist = strlist;
         this.frglist = frglist;

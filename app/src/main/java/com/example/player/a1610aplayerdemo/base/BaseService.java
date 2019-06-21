@@ -1,8 +1,7 @@
-package com.example.player.a1610aplayerdemo.service;
+package com.example.player.a1610aplayerdemo.base;
 
-import com.example.player.a1610aplayerdemo.bean.*;
+import com.example.player.a1610aplayerdemo.net.bean.*;
 import io.reactivex.Observable;
-import okhttp3.ResponseBody;
 import retrofit2.http.*;
 
 import java.util.HashMap;

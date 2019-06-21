@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerAdapter;
-import com.example.player.a1610aplayerdemo.bean.MusicClassBean;
+import com.example.player.a1610aplayerdemo.net.bean.MusicClassBean;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 

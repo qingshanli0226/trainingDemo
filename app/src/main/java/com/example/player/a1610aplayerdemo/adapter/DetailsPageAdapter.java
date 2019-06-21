@@ -8,12 +8,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerAdapter;
-import com.example.player.a1610aplayerdemo.bean.DetailBean2;
+import com.example.player.a1610aplayerdemo.net.bean.DetailBean2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemClickListAdapter extends BaseRecyclerAdapter<DetailBean2.DataBean.ChaptersBean> {
+public class DetailsPageAdapter extends BaseRecyclerAdapter<DetailBean2.DataBean.ChaptersBean> {
 
     private TextView zj;
     private TextView bt;
@@ -23,7 +23,7 @@ public class ItemClickListAdapter extends BaseRecyclerAdapter<DetailBean2.DataBe
     private int position;
 
 
-    public ItemClickListAdapter(List<DetailBean2.DataBean.ChaptersBean> list, Context context, int layId) {
+    public DetailsPageAdapter(List<DetailBean2.DataBean.ChaptersBean> list, Context context, int layId) {
         super(list, context, layId);
         ischecklist = new ArrayList<>();
         for (int i = 0;i<list.size();i++){

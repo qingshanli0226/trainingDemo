@@ -10,8 +10,7 @@ import com.example.player.a1610aplayerdemo.adapter.MemberAdapter;
 import com.example.player.a1610aplayerdemo.base.BaseFragment;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
-import com.example.player.a1610aplayerdemo.bean.HomeBean;
-import com.example.player.a1610aplayerdemo.bean.MemberBean;
+import com.example.player.a1610aplayerdemo.net.bean.MemberBean;
 import com.example.player.a1610aplayerdemo.presenter.MemberPresenter;
 
 import com.google.gson.Gson;

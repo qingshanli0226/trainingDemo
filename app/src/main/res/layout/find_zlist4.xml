@@ -4,28 +4,30 @@
               xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
               android:orientation="vertical"
               android:gravity="center"
-                                             android:layout_height="wrap_content">
+
+              android:layout_height="wrap_content">
 
     <RelativeLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/px_10"
             android:layout_width="match_parent"
-                  android:gravity="center_vertical"
-                  android:layout_marginLeft="10dp"
-                  android:layout_height="40dp"
-
-            android:layout_marginStart="10dp">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="@string/zlist_title1"
-                  android:textColor="#BF0055"
-                  android:textSize="18sp"
-                  android:textStyle="bold"
-                  android:id="@+id/zhuanlan"
-                  android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/px_10"
+            android:layout_height="@dimen/px_40"
+            android:layout_marginStart="@dimen/px_10">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zlist_title1"
+                android:textColor="@color/wine_red_color"
+                android:textSize="@dimen/size_18"
+                android:textStyle="bold"
+                android:id="@+id/zhuanlan"
+                android:layout_centerVertical="true"
         />
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:text="@string/zlist_title2"
-                  android:textColor="#000"
-                  android:textSize="18sp"
+                  android:textColor="@color/black_color"
+                  android:textSize="@dimen/size_18"
                   android:textStyle="bold"
                   android:layout_toRightOf="@+id/zhuanlan"
                   android:layout_centerVertical="true"
@@ -34,11 +36,14 @@
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:text="@string/more"
-                  android:textSize="10sp"
+                  android:textSize="@dimen/size_10"
                   android:layout_alignParentRight="true"
                   android:layout_centerVertical="true"
-                  android:layout_marginRight="10dp"
-                  tools:ignore="RelativeOverlap,SmallSp" android:layout_alignParentEnd="true" android:layout_marginEnd="10dp"/>
+                  android:layout_marginRight="@dimen/px_10"
+                  tools:ignore="RelativeOverlap,SmallSp"
+                  android:layout_alignParentEnd="true"
+                  android:layout_marginEnd="@dimen/px_10"/>
+
 
     </RelativeLayout>
     <android.support.v7.widget.RecyclerView

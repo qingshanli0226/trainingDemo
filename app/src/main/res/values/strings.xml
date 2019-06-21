@@ -17,4 +17,12 @@
     <string name="category_title3">音乐教师种子培养计划</string>
     <string name="itemclick_title_text">简介</string>
     <string name="itemclick_title2"><![CDATA[戳此加入会员 >]]></string>
+    <string name="guide_title1">跳过</string>
+    <string name="guide_title2">立即体验</string>
+    <string name="itemclick_buy_title">立即购买</string>
+    <string name="main_title4">我的</string>
+    <string name="main_title3">已购</string>
+    <string name="main_title2">会员</string>
+    <string name="main_title1">发现</string>
+    <string name="category2_title">在线直播</string>
 </resources>

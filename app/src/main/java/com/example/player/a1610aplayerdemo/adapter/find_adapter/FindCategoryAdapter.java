@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.example.player.a1610aplayerdemo.bean.HomeBean;
+import com.example.player.a1610aplayerdemo.net.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.ui.activity.find_category_activity.CategoryLiveActivity;
 import com.example.player.a1610aplayerdemo.ui.activity.find_category_activity.CategoryMusicClassActivity;

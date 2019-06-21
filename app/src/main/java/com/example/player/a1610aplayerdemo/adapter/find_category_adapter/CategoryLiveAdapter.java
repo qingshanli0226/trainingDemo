@@ -6,10 +6,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerAdapter;
-import com.example.player.a1610aplayerdemo.bean.LiveBean;
-import com.example.player.a1610aplayerdemo.bean.MusicClassBean;
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.example.player.a1610aplayerdemo.net.bean.LiveBean;
 
 import java.util.List;
 

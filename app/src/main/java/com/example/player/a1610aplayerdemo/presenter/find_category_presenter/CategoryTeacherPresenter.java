@@ -1,11 +1,9 @@
 package com.example.player.a1610aplayerdemo.presenter.find_category_presenter;
 
 import com.example.player.a1610aplayerdemo.base.BasePresenter;
-import com.example.player.a1610aplayerdemo.bean.LiveBean;
-import com.example.player.a1610aplayerdemo.bean.TeacherTypeBean;
+import com.example.player.a1610aplayerdemo.net.bean.TeacherTypeBean;
 
 import java.lang.reflect.Type;
-import java.util.HashMap;
 
 public class CategoryTeacherPresenter extends BasePresenter<TeacherTypeBean.DataBean>{
     @Override

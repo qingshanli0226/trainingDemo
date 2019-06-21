@@ -1,8 +1,8 @@
-package com.example.player.a1610aplayerdemo.bean;
+package com.example.player.a1610aplayerdemo.net.bean;
 
 import java.util.List;
 
-public class EducationBean {
+public class MusicClassBean {
 
     /**
      * success : true

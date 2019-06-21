@@ -1,18 +1,18 @@
 package com.example.player.a1610aplayerdemo.presenter;
 
 import com.example.player.a1610aplayerdemo.base.BasePresenter;
-import com.example.player.a1610aplayerdemo.bean.DetailBean2;
+import com.example.player.a1610aplayerdemo.net.bean.DetailBean2;
 import okhttp3.ResponseBody;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 
-public class ItemClickPresenter extends BasePresenter<ResponseBody>{
+public class DetailsPagePresenter extends BasePresenter<ResponseBody>{
 
     private String courseId;
     private int type;
 
-    public ItemClickPresenter(String courseId, int type) {
+    public DetailsPagePresenter(String courseId, int type) {
         this.courseId = courseId;
         this.type = type;
     }

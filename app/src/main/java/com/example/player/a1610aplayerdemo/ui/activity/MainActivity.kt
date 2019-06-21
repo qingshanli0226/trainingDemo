@@ -11,9 +11,7 @@ import com.example.player.a1610aplayerdemo.ui.fragment.BuyFragment
 import com.example.player.a1610aplayerdemo.ui.fragment.FindFragment
 import com.example.player.a1610aplayerdemo.ui.fragment.MemberFragment
 import com.example.player.a1610aplayerdemo.ui.fragment.PersonageFragment
-import com.example.player.a1610aplayerdemo.util.CreatorUtils
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Retrofit
 
 class MainActivity : BaseActivity() {
 

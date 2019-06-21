@@ -1,20 +1,8 @@
 package com.example.player.a1610aplayerdemo.presenter;
 
-import android.util.Log;
 import com.example.player.a1610aplayerdemo.base.BasePresenter;
-import com.example.player.a1610aplayerdemo.base.IBasePresenter;
-import com.example.player.a1610aplayerdemo.base.IBaseView;
-import com.example.player.a1610aplayerdemo.bean.MemberBean;
-import com.example.player.a1610aplayerdemo.service.BaseService;
-import com.example.player.a1610aplayerdemo.util.CreatorUtils;
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
+import com.example.player.a1610aplayerdemo.net.bean.MemberBean;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.HashMap;
 
