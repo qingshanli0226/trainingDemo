@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.ui.main.choice.detail;
+package com.example.player.a1610aplayerdemo.ui.main.choice.second.detail;
 
 import android.util.Log;
 import com.example.player.a1610aplayerdemo.Constant;

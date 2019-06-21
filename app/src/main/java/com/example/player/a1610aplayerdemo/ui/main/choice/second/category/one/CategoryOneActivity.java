@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.ui.main.choice.second;
+package com.example.player.a1610aplayerdemo.ui.main.choice.second.category.one;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;

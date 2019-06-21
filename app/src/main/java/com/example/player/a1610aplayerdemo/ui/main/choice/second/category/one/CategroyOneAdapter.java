@@ -1,12 +1,9 @@
-package com.example.player.a1610aplayerdemo.ui.main.choice.second;
+package com.example.player.a1610aplayerdemo.ui.main.choice.second.category.one;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import com.example.player.a1610aplayerdemo.base.BaseAdapter;
 import com.example.player.a1610aplayerdemo.bean.CategoryOneBean;
-
-import java.util.List;
 
 public class CategroyOneAdapter extends BaseAdapter<CategoryOneBean,CategroyOneView> {
     @Override

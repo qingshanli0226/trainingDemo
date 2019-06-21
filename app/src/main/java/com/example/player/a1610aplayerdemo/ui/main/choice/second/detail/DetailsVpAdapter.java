@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.ui.main.choice.detail;
+package com.example.player.a1610aplayerdemo.ui.main.choice.second.detail;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;

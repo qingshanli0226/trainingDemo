@@ -13,11 +13,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.choice.second.CategoryOneActivity">
+        <activity android:name=".ui.main.choice.second.category.two.CategoryTwoActivity">
         </activity>
-        <activity android:name=".ui.main.choice.detail.DetailsActivity"/>
+        <activity android:name=".ui.main.choice.second.category.one.CategoryOneActivity">
+        </activity>
+        <activity android:name=".ui.main.choice.second.detail.DetailsActivity"/>
         <activity
-                android:name=".ui.main.choice.detail.VideoActivity"
+                android:name=".ui.main.choice.second.detail.VideoActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:screenOrientation="portrait"/>
         <activity android:name=".ui.main.MainActivity">

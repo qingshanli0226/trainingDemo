@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.ui.main.choice.detail;
+package com.example.player.a1610aplayerdemo.ui.main.choice.second.detail;
 
 import android.content.Intent;
 import android.os.Bundle;

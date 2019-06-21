@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.ui.main.choice.detail.list;
+package com.example.player.a1610aplayerdemo.ui.main.choice.second.detail.list;
 
 import android.content.Context;
 import android.view.LayoutInflater;

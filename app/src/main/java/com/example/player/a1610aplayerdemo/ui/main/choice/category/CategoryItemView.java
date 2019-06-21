@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.bean.MainBean;
-import com.example.player.a1610aplayerdemo.ui.main.choice.second.CategoryOneActivity;
+import com.example.player.a1610aplayerdemo.ui.main.choice.second.category.one.CategoryOneActivity;
 import com.squareup.picasso.Picasso;
 
 public class CategoryItemView extends LinearLayout {
