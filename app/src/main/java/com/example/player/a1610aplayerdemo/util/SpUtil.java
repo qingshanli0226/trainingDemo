@@ -33,4 +33,13 @@ public class SpUtil {
         return sp.getString(Contants.TOKEN, "");
     }
 
+    public static void savevideoid(String id) {
+
+        sp.edit().putString("getvideoId", id).commit();
+
+    }
+    public static String getvideoid() {//读取token
+        return sp.getString("getvideoId", "");
+    }
+
 }

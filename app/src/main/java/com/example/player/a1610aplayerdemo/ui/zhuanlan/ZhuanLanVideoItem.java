@@ -32,5 +32,11 @@ public class ZhuanLanVideoItem extends LinearLayout {
     public void updateImg(String picUrl) {
         Picasso.get().load(picUrl).into(video_img);
     }
+    public void updatetitle(String picUrl) {
+        video_title.setText(picUrl);
+    }
+    public void updateprice(String picUrl) {
+        video_price.setText(picUrl);
+    }
 
 }

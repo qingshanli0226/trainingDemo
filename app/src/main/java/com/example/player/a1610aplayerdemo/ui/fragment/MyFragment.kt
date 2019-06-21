@@ -8,7 +8,7 @@ import android.view.View
 
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.base.BaseFragment
-import com.example.player.a1610aplayerdemo.logRegUI.LoginActivity
+import com.example.player.a1610aplayerdemo.logregistui.LoginActivity
 import kotlinx.android.synthetic.main.fragment_my.*
 
 

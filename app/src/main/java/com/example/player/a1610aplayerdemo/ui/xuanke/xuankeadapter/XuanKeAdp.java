@@ -16,9 +16,11 @@ import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseAdapter;
 import com.example.player.a1610aplayerdemo.bean.XuanKeDateBean;
-import com.example.player.a1610aplayerdemo.ui.masterClazz.MasterActivity;
-import com.example.player.a1610aplayerdemo.ui.musicClazz.MusicClassActivity;
+import com.example.player.a1610aplayerdemo.ui.mastercourse.MasterActivity;
+import com.example.player.a1610aplayerdemo.ui.musiccourse.MusicClassActivity;
 import com.example.player.a1610aplayerdemo.ui.tuijian.TuiJianClassActivity;
+import com.example.player.a1610aplayerdemo.ui.zaixianzhibo.NowShowActivity;
+import com.example.player.a1610aplayerdemo.ui.zhuanlan.ZhuanLanActivity;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.Transformer;
@@ -251,9 +253,14 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     String showIndex = channelInfoBeans.get(position).getShowIndex()+"";
+                    Log.d("ssseee",showIndex);
                     if (position==0){
                         Intent intent = new Intent(MyApp.instance, MusicClassActivity.class);
                         intent.putExtra("musicclass_num1",showIndex);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        MyApp.instance.startActivity(intent);
+                    }else if (position ==1){
+                        Intent intent = new Intent(MyApp.instance, NowShowActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         MyApp.instance.startActivity(intent);
                     }
@@ -296,11 +303,25 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             zhuangv = itemView.findViewById(R.id.zhuanlan_gv);
         }
 
-        public void setDate(List<XuanKeDateBean.ZlListBean> channelInfoBeans){
+        public void setDate(final List<XuanKeDateBean.ZlListBean> channelInfoBeans){
 
             ZhuanLanAdp channelAdp = new ZhuanLanAdp();
             channelAdp.updateData(channelInfoBeans);
             zhuangv.setAdapter(channelAdp);
+
+            zhuangv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    String showIndex = channelInfoBeans.get(position).getId()+"";
+
+                    Intent intent = new Intent(MyApp.instance, ZhuanLanActivity.class);
+                    intent.putExtra("zhuanlanvideo",showIndex);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    MyApp.instance.startActivity(intent);
+
+                }
+            });
 
         }
 

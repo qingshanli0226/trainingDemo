@@ -15,8 +15,8 @@ import retrofit2.http.HeaderMap
 interface NetApiService {
 
 
-    @GET("{path}")
-    fun getData(@HeaderMap headers: HashMap<String, String>, @Path("path") path: String, @QueryMap params: HashMap<String, String>): Observable<String>
+    @GET("{path1}/{path2}")
+    fun getData(@HeaderMap headers: HashMap<String, String>, @Path("path1") path1: String, @Path("path2") path2: String,@QueryMap params: HashMap<String, String>): Observable<String>
 
     @POST(Contants.CREATE_NEW)
     @FormUrlEncoded
@@ -39,6 +39,11 @@ interface NetApiService {
 
     @GET("category/getPerfesional")
     fun getMusicClassDate(@HeaderMap head : Map<String, String>,@QueryMap map:Map<String,String>): Observable<ResEntity<List<MusicClassBean>>>
+
+
+    @GET("zhuanLan/getdetail")
+    fun getZhuanLanDate(@HeaderMap head : Map<String, String>,@QueryMap map:Map<String,String>): Observable<ResEntity<ZhuanLanDateBean>>
+
 
 
     @POST("account/signIn")

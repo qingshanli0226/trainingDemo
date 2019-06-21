@@ -18,18 +18,18 @@
 
 
         </activity>
-        <activity android:name=".ui.zaixian.NowShowActivity">
+        <activity android:name=".ui.zaixianzhibo.NowShowActivity">
         </activity>
-        <activity android:name=".ui.masterClazz.MasterActivity"  android:launchMode="singleTask">
+        <activity android:name=".ui.mastercourse.MasterActivity" android:launchMode="singleTask">
         </activity>
-        <activity android:name=".logRegUI.RegiestActivity"  android:launchMode="singleTask">
+        <activity android:name=".logregistui.RegiestActivity" android:launchMode="singleTask">
         </activity>
-        <activity android:name=".logRegUI.LoginActivity"  android:launchMode="singleTask">
+        <activity android:name=".logregistui.LoginActivity" android:launchMode="singleTask">
         </activity>
         <activity android:name=".ui.tuijian.TuiJianClassActivity" android:configChanges="orientation|keyboardHidden|screenSize"
                   android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ui.musicClazz.MusicClassActivity"  android:launchMode="singleTask">
+        <activity android:name=".ui.musiccourse.MusicClassActivity" android:launchMode="singleTask">
 
         </activity>
         <activity android:name=".ui.activy.LoodingActivity">

@@ -3,7 +3,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".ui.zhuanlan.zhuanlanFragment.ZhuanlanMsgFragment">
+             tools:context=".ui.zhuanlan.zhuanlanfragment.ZhuanlanMsgFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
