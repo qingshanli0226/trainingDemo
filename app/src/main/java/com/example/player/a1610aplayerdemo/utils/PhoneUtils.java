@@ -1,6 +1,5 @@
-package com.example.player.a1610aplayerdemo.activity.Slaphe;
+package com.example.player.a1610aplayerdemo.utils;
 import android.annotation.SuppressLint;
-import android.os.Build;
 import android.telephony.TelephonyManager;
 import com.example.player.a1610aplayerdemo.MyApp;
 public class PhoneUtils {

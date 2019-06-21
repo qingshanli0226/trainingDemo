@@ -1,14 +1,11 @@
-package com.example.player.a1610aplayerdemo.fragment.membre.Bean;
+package com.example.player.a1610aplayerdemo.fragment.membre.Bean.presenter;
 
-import com.example.player.a1610aplayerdemo.net.NetFunction;
-import com.example.player.a1610aplayerdemo.net.ResEntity;
+import com.example.player.a1610aplayerdemo.fragment.membre.Bean.bean.MenmberBean;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreate;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-
-import java.util.List;
 
 public class MemberPresenterCompl implements MemberPresenter.IMenberPresenter{
     MemberPresenter.IMemberView iMemberView;

@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.fragment.MusicClass.present;
+package com.example.player.a1610aplayerdemo.fragment.MusicClass.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.fragment.MusicClass.bean.MbBean;
@@ -66,7 +65,7 @@ public class MusciAdapter extends RecyclerView.Adapter<MusciAdapter.MyViewHolder
             textView=itemView.findViewById(R.id.tv_img);
         }
     }
-    interface ItemClick{
+    public interface ItemClick{
         void onClick(int position);
     }
     private ItemClick  itemClick;

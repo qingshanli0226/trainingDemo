@@ -14,6 +14,7 @@ import android.view.View
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.base.BaseFragment
 import com.example.player.a1610aplayerdemo.fragment.Home.adapter.SelectorAdapter
+import com.example.player.a1610aplayerdemo.fragment.Home.adapter.SelectorAdapter1
 import com.example.player.a1610aplayerdemo.fragment.Home.bean.SelectorBean
 import com.example.player.a1610aplayerdemo.fragment.Home.present.SelectPresenter
 import com.example.player.a1610aplayerdemo.fragment.Home.present.SelectorPresentCompl
@@ -34,7 +35,7 @@ class HomeFragment : BaseFragment(),SelectPresenter.ISelectorView{
 
     var presenter=SelectorPresentCompl(this)
     val myadapter=SelectorAdapter()
-
+    val myadapter1=SelectorAdapter1()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var  layoutManager=LinearLayoutManager(context)
@@ -42,8 +43,8 @@ class HomeFragment : BaseFragment(),SelectPresenter.ISelectorView{
         xry.setLayoutManager(layoutManager)
 //        xry.layoutManager
 //        xry.setOnClickListener(View.OnClickListener {  })
-        xry.adapter=myadapter
-
+//        xry.adapter=myadapter
+        xry.adapter=myadapter1
 //        hashMapOf<String,String>()
 
     }
@@ -57,12 +58,12 @@ class HomeFragment : BaseFragment(),SelectPresenter.ISelectorView{
 
     //    val adp=xSe
     override fun onGetDataSuccess(bean: SelectorBean) {
-        myadapter.addBannerData(bean.homeBanner)
-        myadapter.addBean(bean.homeCategory)
-        myadapter.addZhuanLan(bean.zlList)
-        myadapter.addTuiJian(bean.courseRecommends)
-        myadapter.addVip(bean.vipRecommend)
-        myadapter.addDaShi(bean.masterLives)
+//        List(val )
+//        myadapter.addBean(bean.homeCategory)
+//        myadapter.addZhuanLan(bean.zlList)
+//        myadapter.addTuiJian(bean.courseRecommends)
+//        myadapter.addVip(bean.vipRecommend)
+//        myadapter.addDaShi(bean.masterLives)
     }
 
     override fun onGetDataFailed(errorMsg: String) {

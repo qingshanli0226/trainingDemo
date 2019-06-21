@@ -7,7 +7,8 @@
             android:id="@+id/banner"
             android:layout_width="match_parent"
             app:is_auto_play="true"
-            app:indicator_height="5dp"
+            app:indicator_height="@dimen/layout_indicator_height"
             android:layout_height="match_parent">
     </com.youth.banner.Banner>
+
 </LinearLayout>

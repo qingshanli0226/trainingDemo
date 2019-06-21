@@ -11,4 +11,13 @@
     <dimen name="big_text_size">30sp</dimen>
     <dimen name="view_margin_top">10dp</dimen>
     <dimen name="item_book_height">100dp</dimen>
+    <dimen name="video_player_height">200dp</dimen>
+    <dimen name="height_0dp">0dp</dimen>
+    <dimen name="text_marginLeft_video">30dp</dimen>
+    <dimen name="layout_height_sixty">60dp</dimen>
+    <dimen name="layout_height_onehundr">100dp</dimen>
+    <dimen name="layout_height_oneeight">100dp</dimen>
+    <dimen name="layout_indicator_height">5dp</dimen>
+    <dimen name="layout_height_seventy">70dp</dimen>
+    <dimen name="layout_height_fifteen">15dp</dimen>
 </resources>

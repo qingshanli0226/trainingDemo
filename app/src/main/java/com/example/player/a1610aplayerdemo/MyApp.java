@@ -2,7 +2,7 @@ package com.example.player.a1610aplayerdemo;
 
 import android.app.Application;
 import android.support.multidex.MultiDex;
-import com.example.player.a1610aplayerdemo.activity.Slaphe.SharePresenterUtils;
+import com.example.player.a1610aplayerdemo.utils.SharePresenterUtils;
 
 public class MyApp extends Application {
     public static Application instance;

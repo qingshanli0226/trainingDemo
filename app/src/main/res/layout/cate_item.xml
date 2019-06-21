@@ -3,7 +3,7 @@
               android:orientation="vertical"
                                              android:layout_width="wrap_content"
                                              android:layout_height="wrap_content">
-    <ImageView android:layout_width="60dp" android:layout_height="60dp" android:id="@+id/gory_img" android:layout_marginLeft="5dp"/>
-    <TextView android:layout_width="70dp" android:layout_height="15dp" android:layout_marginTop="5dp" android:id="@+id/gory_txt" android:textColor="#000000" android:gravity="center"/>
+    <ImageView android:layout_width="@dimen/layout_height_sixty" android:layout_height="@dimen/layout_height_sixty" android:id="@+id/gory_img" android:layout_marginLeft="@dimen/layout_indicator_height"/>
+    <TextView android:layout_width="@dimen/layout_height_seventy" android:layout_height="@dimen/layout_height_fifteen" android:layout_marginTop="@dimen/layout_indicator_height" android:id="@+id/gory_txt" android:textColor="#000000" android:gravity="center"/>
 
 </LinearLayout>

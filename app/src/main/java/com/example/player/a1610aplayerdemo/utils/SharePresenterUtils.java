@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.activity.Slaphe;
+package com.example.player.a1610aplayerdemo.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

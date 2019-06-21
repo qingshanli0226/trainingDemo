@@ -13,31 +13,31 @@
 
     <include layout="@layout/simple_player_view_player"
     android:layout_width="match_parent"
-    android:layout_height="200dp"/>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="100dp"
+    android:layout_height="@dimen/video_player_height"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/layout_height_onehundr"
     android:orientation="horizontal">
 
-            <ImageView android:layout_width="100dp" android:layout_height="180dp"
+            <ImageView android:layout_width="@dimen/layout_height_onehundr" android:layout_height="@dimen/layout_height_oneeight"
                        android:src="@drawable/ic_launcher_background"
                        android:id="@+id/image_avater"
                        android:layout_gravity="bottom"
             />
 
-   <LinearLayout android:layout_width="0dp" android:layout_height="match_parent"
+   <LinearLayout android:layout_width="@dimen/height_0dp" android:layout_height="match_parent"
         android:layout_weight="3"
    android:orientation="vertical">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+    <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/height_0dp"
     android:layout_weight="1">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:id="@+id/tv_name"
                   android:text="111"/>
         <TextView
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="@dimen/text_marginLeft_video"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:id="@+id/tv_detil"
                 android:text="111"/>
     </LinearLayout>
-       <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+       <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/height_0dp"
                      android:layout_weight="2">
            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                      android:id="@+id/tv_dec"

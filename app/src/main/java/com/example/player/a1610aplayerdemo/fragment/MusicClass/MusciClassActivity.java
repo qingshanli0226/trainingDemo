@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.fragment.MusicClass.present;
+package com.example.player.a1610aplayerdemo.fragment.MusicClass;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,13 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.fragment.MusicClass.adapter.MusciAdapter;
 import com.example.player.a1610aplayerdemo.fragment.MusicClass.adapter.Music2Activity;
 import com.example.player.a1610aplayerdemo.fragment.MusicClass.bean.MbBean;
+import com.example.player.a1610aplayerdemo.fragment.MusicClass.present.MusicContact;
+import com.example.player.a1610aplayerdemo.fragment.MusicClass.present.MusicPresenterCompl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MusciClassActivity extends AppCompatActivity implements MusicContact.MbView,MusciAdapter.ItemClick {
+public class MusciClassActivity extends AppCompatActivity implements MusicContact.MbView, MusciAdapter.ItemClick {
 
     private MusicPresenterCompl musicPresenterCompl;
     private RecyclerView mcRv;

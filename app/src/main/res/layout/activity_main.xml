@@ -8,13 +8,13 @@
         tools:context=".activity.MainActivity"
 android:orientation="vertical">
     <include layout="@layout/toolbar"/>
-    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp"
+    <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/height_0dp"
     android:layout_weight="1"
                  android:id="@+id/main_frameLayout"
     ></FrameLayout>
     <com.roughike.bottombar.BottomBar
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/layout_height_sixty"
             android:id="@+id/bottomBar"
             app:bb_behavior="shifting"
             android:background="#8E002E"

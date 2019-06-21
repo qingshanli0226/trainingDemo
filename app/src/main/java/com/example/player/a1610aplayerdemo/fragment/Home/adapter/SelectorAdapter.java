@@ -12,7 +12,7 @@ import android.widget.*;
 import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.fragment.Home.bean.SelectorBean;
-import com.example.player.a1610aplayerdemo.fragment.MusicClass.present.MusciClassActivity;
+import com.example.player.a1610aplayerdemo.fragment.MusicClass.MusciClassActivity;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.Transformer;
@@ -212,6 +212,10 @@ public class SelectorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     if (position == 0) {
                         Intent intent=new Intent();
                         intent.setClass(context, MusciClassActivity.class);
+                        context.startActivity(intent);
+                    }else if (position==1){
+                        Intent intent=new Intent();
+//                        intent.setClass(context,);
                         context.startActivity(intent);
                     }
                 }

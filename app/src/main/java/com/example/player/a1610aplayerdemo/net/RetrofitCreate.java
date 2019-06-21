@@ -1,7 +1,7 @@
 package com.example.player.a1610aplayerdemo.net;
 
 import com.example.player.a1610aplayerdemo.Contants;
-import com.google.gson.Gson;
+import com.example.player.a1610aplayerdemo.Token.TokenInterceptor;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;

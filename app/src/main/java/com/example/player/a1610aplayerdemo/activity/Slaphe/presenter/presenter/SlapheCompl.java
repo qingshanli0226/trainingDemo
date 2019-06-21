@@ -1,22 +1,20 @@
-package com.example.player.a1610aplayerdemo.activity.Slaphe;
+package com.example.player.a1610aplayerdemo.activity.Slaphe.presenter.presenter;
 
 import android.os.Build;
 import android.util.Log;
-import com.example.player.a1610aplayerdemo.net.NetFunction;
-import com.example.player.a1610aplayerdemo.net.ResEntity;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreate;
+import com.example.player.a1610aplayerdemo.utils.PhoneUtils;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
-import retrofit2.Retrofit;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SlapheCompl implements SlaphePresenter.ISlaphePresenter{
+public class SlapheCompl implements SlaphePresenter.ISlaphePresenter {
     private SlaphePresenter.ISlapheView iSlapheView;
 
     public SlapheCompl(SlaphePresenter.ISlapheView iSlapheView) {
@@ -27,7 +25,7 @@ public class SlapheCompl implements SlaphePresenter.ISlaphePresenter{
     public void getData() {
         Map<String,String> map=new HashMap<>();
         map.put("device", Build.DEVICE);
-        map.put("deviceKey",PhoneUtils.getDeviceKey());
+        map.put("deviceKey", PhoneUtils.getDeviceKey());
         int sdkInt=Build.VERSION.SDK_INT;
         String sdk=""+sdkInt;
         map.put("sdkVersion",sdk);

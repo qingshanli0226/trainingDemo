@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.fragment.MusicClass;
+package com.example.player.a1610aplayerdemo.fragment.MusicClass.fragment;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;

@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.fragment.membre.Bean;
+package com.example.player.a1610aplayerdemo.fragment.membre.Bean.bean;
 
 import java.util.List;
 

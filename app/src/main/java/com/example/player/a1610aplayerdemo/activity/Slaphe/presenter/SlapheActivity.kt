@@ -1,25 +1,23 @@
-package com.example.player.a1610aplayerdemo.activity
+package com.example.player.a1610aplayerdemo.activity.Slaphe.presenter
 
-import android.annotation.SuppressLint
-import android.content.SharedPreferences
 import android.support.v4.view.ViewCompat
 import android.support.v4.view.ViewPropertyAnimatorListener
 import android.view.View
-import android.widget.Toast
 import com.example.player.a1610aplayerdemo.R
-import com.example.player.a1610aplayerdemo.activity.Slaphe.SharePresenterUtils
-import com.example.player.a1610aplayerdemo.activity.Slaphe.SlapheCompl
-import com.example.player.a1610aplayerdemo.activity.Slaphe.SlaphePresenter
+import com.example.player.a1610aplayerdemo.activity.MainActivity
+import com.example.player.a1610aplayerdemo.utils.SharePresenterUtils
+import com.example.player.a1610aplayerdemo.activity.Slaphe.presenter.presenter.SlapheCompl
+import com.example.player.a1610aplayerdemo.activity.Slaphe.presenter.presenter.SlaphePresenter
 import com.example.player.a1610aplayerdemo.base.BaseActivity
 import com.example.player.a1610aplayerdemo.bean.FirstBean
-import com.example.player.a1610aplayerdemo.bean.FirstInBean
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_slaphe.*
 import org.jetbrains.anko.toast
 
-class SlapheActivity: BaseActivity(),ViewPropertyAnimatorListener,SlaphePresenter.ISlapheView {
+class SlapheActivity: BaseActivity(),ViewPropertyAnimatorListener,
+    SlaphePresenter.ISlapheView {
 //    val presenter by lazy { SlapheCompl() }
-    val  presenter=SlapheCompl(this)
+    val  presenter= SlapheCompl(this)
     override fun initlistener() {
         super.initlistener()
         presenter.getData()

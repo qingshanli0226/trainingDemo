@@ -1,4 +1,6 @@
-package com.example.player.a1610aplayerdemo.fragment.membre.Bean
+package com.example.player.a1610aplayerdemo.fragment.membre.Bean.presenter
+
+import com.example.player.a1610aplayerdemo.fragment.membre.Bean.bean.MenmberBean
 
 class MemberPresenter {
     internal interface IMenberPresenter {

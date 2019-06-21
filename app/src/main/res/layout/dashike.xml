@@ -3,7 +3,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <TextView android:layout_width="match_parent" android:layout_height="30dp" android:text="大师课" android:textColor="#AA004A" android:textSize="20sp"/>
+    <TextView android:layout_width="match_parent" android:layout_height="@dimen/big_text_size" android:text="大师课" android:textColor="#AA004A" android:textSize="@dimen/common_text_size"/>
 
 
     <ListView android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/dashi_lv">

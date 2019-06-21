@@ -6,7 +6,7 @@ public class MusicContact {
     interface MbPresent{
         void getData();
     }
-    interface MbView{
+    public interface MbView{
         void getSuccessData(MbBean mbBean);
         void getFailData(String e);
     }

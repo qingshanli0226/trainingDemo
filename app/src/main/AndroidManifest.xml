@@ -14,7 +14,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".mvvm.book.BookActivity">
+        <activity android:name=".fragment.Home.TestActivity">
+        </activity>
+        <activity android:name="example.bw.com.yk0407.mvvm.book.BookActivity">
         </activity>
         <activity
                 android:name=".fragment.MusicClass.VideoActivity"
@@ -23,12 +25,12 @@
         </activity>
         <activity android:name=".fragment.MusicClass.adapter.Music2Activity">
         </activity>
-        <activity android:name=".fragment.MusicClass.present.MusciClassActivity">
+        <activity android:name=".fragment.MusicClass.MusciClassActivity">
         </activity>
         <activity android:name=".activity.StudyActivity">
         </activity>
         <activity
-                android:name=".activity.SlapheActivity"
+                android:name=".activity.Slaphe.presenter.SlapheActivity"
                 android:theme="@style/AppTheme.FullScorn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

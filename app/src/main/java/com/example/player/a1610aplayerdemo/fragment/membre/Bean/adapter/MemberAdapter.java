@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.fragment.membre.Bean;
+package com.example.player.a1610aplayerdemo.fragment.membre.Bean.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.example.player.a1610aplayerdemo.MyApp;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.fragment.membre.Bean.bean.MenmberBean;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

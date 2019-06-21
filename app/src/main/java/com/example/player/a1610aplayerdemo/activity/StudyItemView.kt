@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.adapter
+package com.example.player.a1610aplayerdemo.activity
 
 import android.content.Context
 import android.util.AttributeSet

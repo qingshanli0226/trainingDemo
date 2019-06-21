@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.net;
+package com.example.player.a1610aplayerdemo.utils;
 
 import android.util.Log;
 import android.widget.Toast;
