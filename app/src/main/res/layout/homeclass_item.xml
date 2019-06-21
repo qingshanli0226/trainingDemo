@@ -8,8 +8,8 @@
             android:id="@+id/class_image"
             android:src="@mipmap/ic_launcher"
             android:layout_marginTop="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/itemwidth"
+            android:layout_height="@dimen/item"
             android:layout_gravity="center"
     />
     <TextView

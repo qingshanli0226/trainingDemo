@@ -3,14 +3,8 @@ package com.example.player.a1610aplayerdemo.login;
 
 import com.example.player.a1610aplayerdemo.base.BasePersenter;
 import com.example.player.a1610aplayerdemo.base.BaseView;
-import com.example.player.a1610aplayerdemo.bean.LoginTokenBean;
 import com.example.player.a1610aplayerdemo.service.MyService;
-import com.example.player.a1610aplayerdemo.util.MyRetorfit;
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
+import com.example.player.a1610aplayerdemo.service.util.MyRetorfit;
 import okhttp3.*;
 
 import java.io.IOException;

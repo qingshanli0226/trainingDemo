@@ -25,7 +25,6 @@ public class BaseFragment<T,V extends View> extends Fragment implements BaseView
         RecyclerView recyclerView = view.findViewById(R.id.homeClass_RV);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-
         return null;
     }
 

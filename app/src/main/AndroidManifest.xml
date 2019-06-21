@@ -15,24 +15,24 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".twomenuActivity.activity.MusicClassActivity">
+        <activity android:name=".secondUI.activity.MusicClassActivity">
         </activity>
-        <activity android:name=".twomenuActivity.activity.BannerZeroActivity">
+        <activity android:name=".secondUI.activity.BannerZeroActivity">
         </activity>
-        <activity android:name=".twomenuActivity.activity.BannerActivity">
+        <activity android:name=".secondUI.activity.BannerActivity">
         </activity>
-        <activity android:name=".activity.RegisterActivity">
+        <activity android:name="com.example.player.a1610aplayerdemo.ui.activity.RegisterActivity">
         </activity>
         <activity android:name=".login.LoginActivity">
         </activity>
-        <activity android:name=".activity.WelcomeActivity">
+        <activity android:name="com.example.player.a1610aplayerdemo.ui.activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity">
+        <activity android:name="com.example.player.a1610aplayerdemo.ui.activity.MainActivity">
         </activity>
     </application>
 

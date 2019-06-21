@@ -4,17 +4,12 @@ import android.util.Log;
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
 import com.example.player.a1610aplayerdemo.home.view.HomeView;
 import com.example.player.a1610aplayerdemo.service.MyService;
-import com.example.player.a1610aplayerdemo.util.Contants;
-import com.example.player.a1610aplayerdemo.util.MyRetorfit;
-import com.google.gson.GsonBuilder;
+import com.example.player.a1610aplayerdemo.service.util.MyRetorfit;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomePersenter implements HomeData {
 

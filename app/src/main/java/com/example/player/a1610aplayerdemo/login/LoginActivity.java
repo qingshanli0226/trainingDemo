@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.activity.RegisterActivity;
+import com.example.player.a1610aplayerdemo.ui.activity.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 

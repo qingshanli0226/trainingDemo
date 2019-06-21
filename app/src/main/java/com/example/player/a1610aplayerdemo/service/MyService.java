@@ -1,11 +1,10 @@
 package com.example.player.a1610aplayerdemo.service;
 
 import com.example.player.a1610aplayerdemo.bean.HomeBean;
-import com.example.player.a1610aplayerdemo.bean.LoginTokenBean;
 import com.example.player.a1610aplayerdemo.bean.VipBean;
-import com.example.player.a1610aplayerdemo.twomenuActivity.bean.BannerBean;
-import com.example.player.a1610aplayerdemo.twomenuActivity.bean.MusicClassBean;
-import com.example.player.a1610aplayerdemo.util.Contants;
+import com.example.player.a1610aplayerdemo.secondUI.bean.BannerBean;
+import com.example.player.a1610aplayerdemo.secondUI.bean.MusicClassBean;
+import com.example.player.a1610aplayerdemo.service.util.Contants;
 import io.reactivex.Observable;
 import okhttp3.Call;
 import okhttp3.RequestBody;
