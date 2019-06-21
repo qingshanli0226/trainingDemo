@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.mainactivity
+package com.example.player.a1610aplayerdemo.activity.main
 
 
 import android.os.Build
@@ -6,19 +6,15 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.view.ViewPager
-import android.view.MenuItem
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.Toast
 import com.example.player.a1610aplayerdemo.R
-import com.example.player.a1610aplayerdemo.mainactivity.adapter.MainVpAdapter
+import com.example.player.a1610aplayerdemo.activity.main.adapter.MainVpAdapter
 import com.example.player.a1610aplayerdemo.net.Contance
-import com.example.player.a1610aplayerdemo.net.NetFunction
 import com.example.player.a1610aplayerdemo.net.ResEntity
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator
 import com.example.player.a1610aplayerdemo.token.SpUtils
 import com.example.player.a1610aplayerdemo.token.UserBean
-import com.google.gson.annotations.SerializedName
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable

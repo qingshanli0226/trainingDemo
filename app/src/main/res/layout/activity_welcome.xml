@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".welcomeactivity.WelcomeActivity">
+        tools:context=".activity.welcome.WelcomeActivity">
 
     <RelativeLayout
             android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                 android:layout_width="60dp"
                 android:layout_height="30dp"
                 android:background="#DAD3D3"
-                android:text="跳过->"
+                android:text="@string/welcome_jump_over"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
@@ -54,7 +54,7 @@
                 android:id="@+id/ljjr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="立即进入"
+                android:text="@string/welcome_immediately_into"
                android:layout_alignParentBottom="true"
                 android:layout_marginBottom="100dp"
                 android:layout_centerHorizontal="true"
@@ -73,14 +73,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/gangqin"
-        android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"/>
         <TextView
                 android:id="@+id/tv_tiao0"
                 android:layout_width="60dp"
                 android:layout_height="30dp"
 
-                android:text="跳过->"
-                android:textColor="#fff"
+                android:text="@string/welcome_jump_over"
+                android:textColor="@color/colorWhite"
                android:layout_alignParentRight="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"

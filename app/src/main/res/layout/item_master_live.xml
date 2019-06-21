@@ -13,7 +13,7 @@ android:layout_marginTop="10dp">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="大师课"
+                android:text="@string/master_course"
                 android:textStyle="bold"
                 android:paddingLeft="10dp"
                 android:textSize="20sp"

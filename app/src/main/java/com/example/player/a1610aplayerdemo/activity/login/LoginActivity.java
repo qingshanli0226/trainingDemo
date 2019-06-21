@@ -1,9 +1,8 @@
-package com.example.player.a1610aplayerdemo.loginactivity;
+package com.example.player.a1610aplayerdemo.activity.login;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -19,19 +18,15 @@ import android.view.View;
 import android.widget.*;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.MToolBar;
-import com.example.player.a1610aplayerdemo.loginactivity.bean.CheckBean;
-import com.example.player.a1610aplayerdemo.loginactivity.bean.SignInBean;
-import com.example.player.a1610aplayerdemo.mainactivity.MainActivity;
-import com.example.player.a1610aplayerdemo.net.Contance;
-import com.example.player.a1610aplayerdemo.net.NetFunction;
-import com.example.player.a1610aplayerdemo.net.ResEntity;
-import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
+import com.example.player.a1610aplayerdemo.activity.login.bean.CheckBean;
+import com.example.player.a1610aplayerdemo.activity.login.bean.SignInBean;
+import com.example.player.a1610aplayerdemo.activity.main.MainActivity;
+import com.example.player.a1610aplayerdemo.net.*;
 import com.example.player.a1610aplayerdemo.token.SpUtils;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import retrofit2.http.HeaderMap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -199,29 +194,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         // TODO validate success, do something
-        Map<String,String> headMap = new HashMap<>();
-        String token = SpUtils.getSpUtils().getToken();
-        if (token == null){
-            return ;
-        }else {
-            Log.i("loginE", "submit: "+token);
-            headMap.put(Contance.CH_TOKEN,token);
-            headMap.put("DeviceKey",Contance.DEVICEKEY);
-            headMap.put("Android-VersionCode","43");
-            headMap.put("Android-channel","guoyun");
-            headMap.put("Tingyun_Process","true");
-            headMap.put("Content-Type","application/x-www-form-urlencoded");
-            headMap.put("charset","UTF-8");
-            headMap.put("User-Agent","Dalvik/2.1.0 (Linux; U; Android 5.1.1; redmi note 3 Build/LMY47I)");
 
-        }
         Map<String,String> paramMap = new HashMap<>();
         paramMap.put("loginName",phone);
         paramMap.put("password",pwd);
 
 
          RetrofitCreator.getInstance().getRetrofitApiService()
-                 .getSingIn(headMap,paramMap)
+                 .getSingIn(HeadParam.getHeadMap(),paramMap)
                  .subscribeOn(Schedulers.io())
                  .map(new NetFunction<ResEntity<SignInBean.DataBean>,SignInBean.DataBean>())
                  .observeOn(AndroidSchedulers.mainThread())

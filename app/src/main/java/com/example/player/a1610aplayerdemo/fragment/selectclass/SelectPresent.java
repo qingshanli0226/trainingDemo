@@ -29,7 +29,7 @@ class SelectPresent implements IBasePresenter<GetHomeBean.DataBean> {
         Map<String,String> headMap = new HashMap<>();
         String token = SpUtils.getSpUtils().getToken();
         if (token==null){
-            token = "D7C1676C00907C27B80ECBAB4F90902E";
+           return;
         }
         headMap.put(Contance.CH_TOKEN,token);
 

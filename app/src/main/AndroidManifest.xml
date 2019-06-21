@@ -16,16 +16,16 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".playvideoa_activity.PlayVideoActivity"
+        <activity android:name=".activity.playvideo.PlayVideoActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
                   android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".loginactivity.LoginActivity">
+        <activity android:name=".activity.login.LoginActivity">
         </activity>
         <activity android:name=".fragment.selectclass.zl.zlvideoactivity.ZLvideoActivity">
         </activity>
         <activity
-                android:name=".welcomeactivity.WelcomeActivity"
+                android:name="com.example.player.a1610aplayerdemo.activity.welcome.WelcomeActivity"
                 android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".mainactivity.MainActivity"
+                android:name="com.example.player.a1610aplayerdemo.activity.main.MainActivity"
                 android:launchMode="singleTask">
         </activity>
     </application>

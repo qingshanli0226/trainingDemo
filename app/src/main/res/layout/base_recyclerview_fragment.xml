@@ -9,7 +9,7 @@
            android:layout_width="match_parent"
            android:layout_height="50dp"
            android:id="@+id/basef_tb"
-           android:background="#81110B">
+           android:background="@color/color_toolbar_dull_red">
    </com.example.player.a1610aplayerdemo.base.MToolBar>
 
 <android.support.v7.widget.RecyclerView

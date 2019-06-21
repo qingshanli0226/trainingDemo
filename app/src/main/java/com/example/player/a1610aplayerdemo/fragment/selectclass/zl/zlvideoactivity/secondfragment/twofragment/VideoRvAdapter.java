@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.bean.ZlvideoBean;
-import com.example.player.a1610aplayerdemo.playvideoa_activity.PlayVideoActivity;
+import com.example.player.a1610aplayerdemo.activity.playvideo.PlayVideoActivity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.mainactivity.adapter
+package com.example.player.a1610aplayerdemo.activity.main.adapter
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager

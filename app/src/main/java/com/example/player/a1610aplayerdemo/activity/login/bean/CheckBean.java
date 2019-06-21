@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.loginactivity.bean;
+package com.example.player.a1610aplayerdemo.activity.login.bean;
 
 public class CheckBean {
     /**

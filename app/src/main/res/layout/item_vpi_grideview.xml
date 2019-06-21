@@ -27,13 +27,13 @@ android:orientation="vertical">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
         android:text="仅会员可看"
-        android:textColor="#AAA057"/>
+        android:textColor="@color/color_golden"/>
         <TextView
                 android:id="@+id/item_vip_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="会员5折"
-        android:textColor="#F44336"
+        android:textColor="@color/color_red"
         android:layout_alignParentRight="true"
         android:paddingRight="10dp"/>
 

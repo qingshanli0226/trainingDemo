@@ -11,8 +11,8 @@ android:orientation="vertical">
     android:background="@drawable/circlebackground"
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
-    android:text="每天不到1元钱，享受200位顶级名师指导"
-    android:textColor="#ffffff"
+    android:text="@string/zl_btn_tv"
+    android:textColor="@color/colorWhite"
     android:layout_marginTop="10dp"/>
 
     <RelativeLayout
@@ -24,7 +24,7 @@ android:orientation="vertical">
                 android:id="@+id/zhuanglian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="专栏"
+                android:text="@string/zl_tv"
                 android:textStyle="bold"
                 android:paddingLeft="10dp"
                 android:textSize="20sp"
@@ -32,7 +32,7 @@ android:orientation="vertical">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="专区"
+                android:text="@string/zl_tv_division"
                 android:textStyle="bold"
                 android:paddingLeft="10dp"
                 android:textSize="20sp"
@@ -42,8 +42,8 @@ android:orientation="vertical">
                 android:id="@+id/tv_zl_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="更多 ＞"
-                android:textColor="#757570"
+                android:text="@string/more"
+                android:textColor="@color/colorGray8"
                 android:layout_alignParentRight="true"
                 android:paddingRight="10dp"/>
     </RelativeLayout>

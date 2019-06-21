@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-             android:layout_height="wrap_content"
+             android:layout_height="match_parent"
              tools:context=".fragment.AboutMyFragment"
 android:orientation="vertical">
 
@@ -30,7 +30,7 @@ android:orientation="vertical">
                 android:id="@+id/my_login_or_register_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="登录/注册"
+                android:text="@string/aboutMe_loginOrRegister"
                 android:textColor="#ffffff"
                 android:textSize="19sp"
                 android:layout_toRightOf="@+id/my_avatar"
@@ -60,28 +60,30 @@ android:orientation="vertical">
 <ScrollView
         android:id="@+id/my_scrollView"
         android:layout_width="match_parent" 
-        android:layout_height="wrap_content"
-       >
+        android:layout_height="match_parent"
+      android:background="@color/colorWhite" >
     <LinearLayout
             android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="常见问题"
+                android:text="@string/aboutMe_tv_FAQ"
                 android:textSize="19sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:drawableLeft="@drawable/my1"
                 android:gravity="center_vertical"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                />
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#888"
+                android:background="@color/colorGray8"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
         />
@@ -89,7 +91,7 @@ android:orientation="vertical">
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="检查更新"
+                android:text="@string/aboutMe_tv_checkUp"
                 android:textSize="19sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -100,7 +102,7 @@ android:orientation="vertical">
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#888"
+                android:background="@color/colorGray8"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
         />
@@ -108,7 +110,7 @@ android:orientation="vertical">
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="推荐【央音在线】给好友"
+                android:text="@string/aboutMe_tv_recommend"
                 android:textSize="19sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -119,14 +121,14 @@ android:orientation="vertical">
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#888"
+                android:background="@color/colorGray8"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
         />
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="意见反馈"
+                android:text="@string/aboutMe_tv_feedback"
                 android:textSize="19sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -137,7 +139,7 @@ android:orientation="vertical">
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#888"
+                android:background="@color/colorGray8"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
         />

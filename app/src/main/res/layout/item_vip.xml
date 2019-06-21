@@ -12,16 +12,16 @@ android:orientation="vertical">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-        android:text="会员专享"
+        android:text="@string/vip_tv"
         android:paddingLeft="10dp"
         android:textSize="20sp"
-        android:textColor="#AAA057"/>
+        android:textColor="@color/color_golden"/>
         <TextView
                 android:id="@+id/tv_vpi_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="更多 ＞"
-                android:textColor="#AAA057"
+                android:text="@string/more"
+                android:textColor="@color/color_golden"
         android:layout_alignParentRight="true"
         android:paddingRight="10dp"/>
     </RelativeLayout>

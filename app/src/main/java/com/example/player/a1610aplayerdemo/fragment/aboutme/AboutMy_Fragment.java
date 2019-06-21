@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.loginactivity.LoginActivity;
+import com.example.player.a1610aplayerdemo.activity.login.LoginActivity;
 
 
 /**
