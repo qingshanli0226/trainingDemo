@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.curriculum;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,14 +25,12 @@ import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
+import com.example.player.a1610aplayerdemo.curriculum.activity.BannerActivity;
 import com.example.player.a1610aplayerdemo.curriculum.adapter.*;
 import com.example.player.a1610aplayerdemo.curriculum.bean.Bean;
 import com.example.player.a1610aplayerdemo.curriculum.fragment.BannerFragment;
 import com.example.player.a1610aplayerdemo.curriculum.presenter.CurriculumPresenter;
-import com.example.player.a1610aplayerdemo.my.fragment.FeedbackFragment;
-import com.scwang.smartrefresh.header.BezierCircleHeader;
 import com.scwang.smartrefresh.header.WaterDropHeader;
-import com.scwang.smartrefresh.header.WaveSwipeHeader;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
@@ -259,13 +258,8 @@ public class CurriculumFragment extends Fragment implements IBaseView, OnBannerL
             SharedPreferences.Editor editor = spBannner.edit();
             editor.putString("courseId",homeBannerBeans.get(position).getRelationInfo());
             editor.commit();
-            RadioGroup radioGroup = getActivity().findViewById(R.id.home_radioG);
-            radioGroup.setVisibility(View.GONE);
-            getFragmentManager()
-                    .beginTransaction()
-                    .addToBackStack(null)  //将当前fragment加入到返回栈中
-                    .replace(R.id.home_frame,new BannerFragment())
-                    .commit();
+            Intent intent = new Intent(getActivity(),BannerActivity.class);
+            getActivity().startActivity(intent);
         }else{
             WebView webView = new WebView(getActivity());
             webView.setWebViewClient(new WebViewClient());

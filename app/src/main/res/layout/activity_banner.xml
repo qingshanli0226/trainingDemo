@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".curriculum.activity.BannerActivity"
+        android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+            android:background="@color/colorColor"
+            style="@style/mw">
+
+        <ImageView
+                android:id="@+id/banner_back"
+                style="@style/my_textView_wwt"
+                android:src="@drawable/ic_back"/>
+
+        <TextView
+                android:id="@+id/banner_title"
+                style="@style/feedback_opinion"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+            style="@style/fragment_banner_relative">
+
+        <ImageView
+                android:id="@+id/banner_image"
+                style="@style/curriculum_banner"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true" android:layout_marginTop="0dp">
+        </ImageView>
+
+        <TextView
+                android:id="@+id/banner_play"
+                android:text="@string/fragment_banner_text_one"
+                style="@style/fragment_banner_text_one"/>
+
+        <TextView
+                android:text="@string/fragment_banner_text_two" android:id="@+id/banner_collect"
+                style="@style/fragment_banner_text_two"/>
+
+        <TextView
+                android:text="@string/fragment_banner_text_three" android:id="@+id/banner_share"
+                style="@style/fragment_banner_text_three"/>
+
+        <com.othershe.library.NiceImageView
+                android:id="@+id/banner_niv"
+                app:is_circle="true"
+                style="@style/fragment_banner_niv"/>
+
+        <TextView
+                android:id="@+id/banner_text1"
+                style="@style/fragment_banner_text_five"/>
+
+        <TextView
+                android:id="@+id/banner_text2" style="@style/fragment_banner_text_six"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+            android:id="@+id/banner_tab"
+            app:tabTextColor="@color/colorBlack"
+            app:tabSelectedTextColor="@color/colorColor"
+            app:tabIndicatorColor="@color/colorColor"
+            style="@style/fragment_banner_tablayout">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/banner_vp"
+            style="@style/home_activity_frameLauout">
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+            style="@style/mwv">
+
+        <LinearLayout
+                style="@style/home_activity_frameLauout_ll">
+
+            <TextView
+                    android:text="@string/fragment_banner_text_four"
+                    style="@style/home_activity_frameLauout_text_seven"/>
+
+            <TextView
+                    android:id="@+id/banner_huiyue"
+                    android:text="@string/fragment_banner_text_five" style="@style/home_activity_frameLauout_eight"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/home_activity_frameLauout_ll_two">
+
+            <TextView
+                    android:text="@string/fragment_banner_text_six"
+                    style="@style/home_activity_frameLauout_text_eight"/>
+
+            <LinearLayout
+                    style="@style/home_activity_frameLauout_ll_three">
+
+                <Button
+                        android:id="@+id/banner_btn"
+                        android:text="@string/fragment_banner_text_seven"
+                        style="@style/home_activity_frameLauout_button"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

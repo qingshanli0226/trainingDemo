@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.my;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,15 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.my.fragment.FeedbackFragment;
-import com.example.player.a1610aplayerdemo.my.fragment.RegisterFragment;
+import com.example.player.a1610aplayerdemo.my.activity.FeedbackActivity;
+import com.example.player.a1610aplayerdemo.my.activity.RegisterActivity;
 import com.othershe.library.NiceImageView;
 
 /**
@@ -43,8 +43,6 @@ public class MeFragment extends Fragment {
     LinearLayout myLlOpinion;
     Unbinder unbinder;
 
-    private RadioGroup radioGroup;
-
     public MeFragment() {
         // Required empty public constructor
     }
@@ -54,7 +52,6 @@ public class MeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        radioGroup = getActivity().findViewById(R.id.home_radioG);
         View view = inflater.inflate(R.layout.fragment_me, container, false);
         unbinder = ButterKnife.bind(this, view);
         return view;
@@ -72,12 +69,8 @@ public class MeFragment extends Fragment {
             case R.id.my_niv_portrait:
                 break;
             case R.id.my_niv_register:
-                radioGroup.setVisibility(View.GONE);
-                getFragmentManager()
-                        .beginTransaction()
-                        .addToBackStack(null)  //将当前fragment加入到返回栈中
-                        .replace(R.id.home_frame,new RegisterFragment())
-                        .commit();
+                Intent intent2 = new Intent(getActivity(),RegisterActivity.class);
+                getActivity().startActivity(intent2);
                 break;
             case R.id.my_iv_set:
                 break;
@@ -90,12 +83,8 @@ public class MeFragment extends Fragment {
             case R.id.my_ll_recommend:
                 break;
             case R.id.my_ll_opinion:
-                radioGroup.setVisibility(View.GONE);
-                getFragmentManager()
-                        .beginTransaction()
-                        .addToBackStack(null)  //将当前fragment加入到返回栈中
-                        .replace(R.id.home_frame,new FeedbackFragment())
-                        .commit();
+                Intent intent = new Intent(getActivity(),FeedbackActivity.class);
+                getActivity().startActivity(intent);
                 break;
         }
     }
