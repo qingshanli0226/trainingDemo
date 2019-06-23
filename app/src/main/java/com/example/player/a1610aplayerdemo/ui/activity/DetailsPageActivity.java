@@ -48,7 +48,7 @@ public class DetailsPageActivity extends BaseActivity implements IBaseView<Strin
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_itemclick;
+        return R.layout.activity_detailspage;
     }
 
     @Override

@@ -25,4 +25,5 @@
     <string name="main_title2">会员</string>
     <string name="main_title1">发现</string>
     <string name="category2_title">在线直播</string>
+    <string name="itemclick_video_title">试看</string>
 </resources>
