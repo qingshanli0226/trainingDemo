@@ -30,6 +30,7 @@ public abstract class BaseRecyclerViewAdapter<T,v extends View> extends Recycler
 
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder viewHolder, final int i) {
+
         setItemViewHolder((v)viewHolder.itemView,list.get(i),i);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {

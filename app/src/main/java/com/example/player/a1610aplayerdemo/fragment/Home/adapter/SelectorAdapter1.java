@@ -51,6 +51,10 @@ public class SelectorAdapter1 extends BaseRecyclerViewAdapter<Object, View> {
         }
     }
 
+    @Override
+    public void setItemClickItem(IItemClickItem<Object> itemClickItem) {
+        super.setItemClickItem(itemClickItem);
+    }
 
     @Override
     public int getItemViewType(int position) {
