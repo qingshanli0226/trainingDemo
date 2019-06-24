@@ -1,0 +1,67 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:1-22:12
+	package
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:3:11-43
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:1-22:12
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:1-22:12
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:5:5-20:19
+	android:supportsRtl
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:11:13-39
+	android:label
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:9:13-45
+	android:roundIcon
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:10:13-58
+	android:icon
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:8:13-47
+	android:allowBackup
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:7:13-39
+	android:theme
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:12:13-44
+	android:name
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:6:13-43
+activity#com.example.camera.pay.PayActivity
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:13:9-19:20
+	android:name
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:13:19-46
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:14:13-18:29
+action#android.intent.action.MAIN
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:15:17-68
+	android:name
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:15:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:17:17-76
+	android:name
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml:17:27-74
+uses-sdk
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\pay\src\main\AndroidManifest.xml

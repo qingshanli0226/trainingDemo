@@ -1,0 +1,67 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:1-20:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:1-20:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:1-20:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:1-20:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:1-20:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:1-20:12
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:1-20:12
+	package
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:2:11-50
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:1-20:12
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:1-20:12
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:4:5-19:19
+	android:supportsRtl
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:10:13-39
+	android:label
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:8:13-45
+	android:roundIcon
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:9:13-58
+	android:icon
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:7:13-47
+	android:allowBackup
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:6:13-39
+	android:theme
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:11:13-44
+	android:name
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:5:13-45
+activity#com.example.compontentlibrary.LoginActivity
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:12:19-48
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:14:17-68
+	android:name
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:16:17-76
+	android:name
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml:16:27-74
+uses-sdk
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+		ADDED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
+		INJECTED from D:\MyApplictions\android8\yangyin\trainingDemo\login\src\main\AndroidManifest.xml
