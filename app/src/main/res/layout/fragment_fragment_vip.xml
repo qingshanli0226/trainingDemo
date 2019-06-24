@@ -3,12 +3,8 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".ui.cartfragment.VipFragment">
+             tools:context=".ui.fragment.FragmentVip">
 
-    <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/frameLayout_Vip">
-    </FrameLayout>
+
 
 </LinearLayout>

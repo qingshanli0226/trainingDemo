@@ -8,10 +8,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.ui.adapter.FGAdapter
-import com.example.player.a1610aplayerdemo.ui.fragment.BlankFragment01
-import com.example.player.a1610aplayerdemo.ui.fragment.BlankFragment02
-import com.example.player.a1610aplayerdemo.ui.fragment.BlankFragment03
-import com.example.player.a1610aplayerdemo.ui.fragment.BlankFragment04
+import com.example.player.a1610aplayerdemo.ui.fragment.*
 
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
@@ -42,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             .initialise()//提交初始化
 
         list.add(BlankFragment01())
-        list.add(BlankFragment02())
+        list.add(FragmentVip())
         list.add(BlankFragment03())
         list.add(BlankFragment04())
 

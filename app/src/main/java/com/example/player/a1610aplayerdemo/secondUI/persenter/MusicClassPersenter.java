@@ -55,6 +55,11 @@ public class MusicClassPersenter implements BasePersenter {
     }
 
     @Override
+    public void attachview(BaseView baseView) {
+
+    }
+
+    @Override
     public void destoryView() {
 
     }

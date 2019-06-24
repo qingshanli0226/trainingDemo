@@ -13,7 +13,6 @@ import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.ui.cartfragment.BuyFragment;
 import com.example.player.a1610aplayerdemo.ui.cartfragment.CartFragMentAdapter;
 import com.example.player.a1610aplayerdemo.ui.cartfragment.VipFragment;
-import com.example.player.a1610aplayerdemo.ui.vip.VipPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class BlankFragment03 extends Fragment {
-    private VipPresenter vipPresenter;
+
     private BottomNavigationBar buttonBar;
     private ViewPager vp;
     private List<Fragment> list=new ArrayList<>();

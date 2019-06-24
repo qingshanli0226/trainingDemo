@@ -45,6 +45,11 @@ public class LoginPresenter implements BasePersenter {
     }
 
     @Override
+    public void attachview(BaseView baseView) {
+
+    }
+
+    @Override
     public void destoryView() {
 
     }

@@ -13,40 +13,19 @@ import com.example.player.a1610aplayerdemo.R;
 
 import java.util.List;
 
-public class BaseFragment<T,V extends View> extends Fragment implements BaseView<T> {
-    private BasePersenter basePersenter;
+public abstract class BaseFragment<T, V extends View> extends Fragment {
+
+    private RecyclerView recyclerView;
+    private BaseRecyclerViewAdapter baseRecyclerViewAdapter;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-           super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.homeclass_view, null);
-        RecyclerView recyclerView = view.findViewById(R.id.homeClass_RV);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        return null;
+        View view = this.getContentView(inflater,container);
+        return view;
     }
 
-
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
-
-
-    private void initData(){
-
-    }
-
-    @Override
-    public void onLoadData(T datalist) {
-
-    }
-
-    @Override
-    public void onLoadError(int code, String str) {
-
-    }
+    protected abstract View getContentView(LayoutInflater layoutInflater, ViewGroup viewGroup);
 }

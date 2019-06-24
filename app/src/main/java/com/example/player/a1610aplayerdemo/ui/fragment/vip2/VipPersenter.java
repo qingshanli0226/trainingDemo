@@ -1,42 +1,47 @@
-package com.example.player.a1610aplayerdemo.secondUI.persenter;
+package com.example.player.a1610aplayerdemo.ui.fragment.vip2;
 
 import com.example.player.a1610aplayerdemo.base.BasePersenter;
 import com.example.player.a1610aplayerdemo.base.BaseView;
+import com.example.player.a1610aplayerdemo.bean.VipBean;
 import com.example.player.a1610aplayerdemo.service.MyService;
-import com.example.player.a1610aplayerdemo.secondUI.bean.BannerBean;
 import com.example.player.a1610aplayerdemo.service.util.MyRetorfit;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class VedioPersenter implements BasePersenter {
+public class VipPersenter implements BasePersenter<VipBean> {
 
-    private BaseView baseView;
+    BaseView<VipBean> baseView;
 
-    public VedioPersenter(BaseView baseView) {
-        this.baseView = baseView;
+    @Override
+    public void getData() {
+
     }
 
-    public void getVedioData(String courseId,String packageId){
+    public void getVipData(String minid, String size){
         MyService service = new MyRetorfit().getService();
-        service.getTwoMenu(courseId,packageId)
+        service.getVipInfo(minid,size)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<BannerBean>() {
+                .subscribe(new Observer<VipBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(BannerBean bannerBean) {
-                        baseView.onLoadData(bannerBean);
+                    public void onNext(VipBean vipBean) {
+                       if (vipBean.getCode().equals("success")){
+                             baseView.onLoadData(vipBean);
+                       }else {
+                           vipBean.getMessage();
+                       }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                            baseView.onLoadError(119,e.toString());
+                        baseView.onLoadError(12,e.toString());
 
                     }
 
@@ -45,23 +50,15 @@ public class VedioPersenter implements BasePersenter {
 
                     }
                 });
-
-
     }
 
     @Override
-    public void getData() {
-
-    }
-
-    @Override
-    public void attachview(BaseView baseView) {
-
-
+    public void attachview(BaseView<VipBean> baseView) {
+        this.baseView=baseView;
     }
 
     @Override
     public void destoryView() {
-
+                baseView=null;
     }
 }
