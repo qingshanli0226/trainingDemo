@@ -1,6 +1,7 @@
 package com.example.player.a1610aplayerdemo.net;
 
 import com.example.player.a1610aplayerdemo.bean.*;
+import com.example.player.a1610aplayerdemo.ui.my.login.LoginPresenter;
 import io.reactivex.Observable;
 import retrofit2.http.*;
 
@@ -48,5 +49,17 @@ public interface IServiceApi {
      */
     @GET
     Observable<Bean<List<CategoryOneBean>>> getCategoryOneData(@HeaderMap Map<String,String> map, @Url String url);
+
+
+    /**
+     * 获取登录后的信息
+     * @param map
+     * @param map1
+     * @return
+     */
+    @POST("/restapi/account/signIn")
+    @FormUrlEncoded
+    Observable<Bean<SignInBean>> getLoginUserData(@HeaderMap Map<String,String> map,@FieldMap Map<String,String> map1);
+
 
 }

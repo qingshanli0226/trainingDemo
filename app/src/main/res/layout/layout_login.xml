@@ -20,22 +20,87 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="60dp"
             android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+            android:layout_height="wrap_content">
 
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="欢迎来到央音在线，立即"
-            android:textSize="20dp"
-    />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="欢迎来到央音在线，立即"
+                android:textSize="20dp"
+        />
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="免费注册"
                 android:textSize="20dp"
                 android:textColor="@color/colorBlue"
+                android:id="@+id/noMoney"
         />
     </LinearLayout>
 
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"
+    >
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手机号:"
+                android:textSize="20sp"
+        />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_phone"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"
+    >
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密    码:"
+                android:textSize="20sp"
+        />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_pwd"
+        />
+    </LinearLayout>
+
+    <Button
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="登录"
+            android:textSize="22sp"
+            android:background="@drawable/advertising"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/btn_login"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlue"
+            android:text="忘记密码？"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:id="@+id/forgetPwd"
+    />
 </LinearLayout>

@@ -23,6 +23,7 @@
         <activity android:name=".ui.main.choice.second.category.one.CategoryOneActivity">
         </activity>
         <activity android:name=".ui.main.choice.second.detail.DetailsActivity"/>
+        <activity android:name=".ui.my.login.LoginActivity"/>
         <activity
                 android:name=".ui.main.choice.second.detail.VideoActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
