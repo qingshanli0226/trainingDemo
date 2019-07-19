@@ -6,8 +6,10 @@ import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.bean.Bean;
 import com.example.player.a1610aplayerdemo.bean.SignInBean;
+import com.example.player.a1610aplayerdemo.bean.User;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
 import com.example.player.a1610aplayerdemo.utils.TokenSp;
+import com.example.player.a1610aplayerdemo.utils.UserSp;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -25,7 +27,7 @@ public class LoginPresenter {
         this.loginView = loginView;
     }
 
-    public void getData(String name, String pwd) {
+    public void getData(final String name, final String pwd) {
         String token = TokenSp.getInstance().getToken();
         Map<String, String> map = new HashMap<>();
         map.put("Android-channel", "guoyun");
@@ -52,6 +54,9 @@ public class LoginPresenter {
                     public void onNext(Bean<SignInBean> signInBeanBean) {
                         if(signInBeanBean.isSuccess()){
                             loginView.loginSuccess(signInBeanBean.getData());
+                            UserSp.getInstance().setUserSp(name,pwd);
+                            String avatar = signInBeanBean.getData().getAvatar();
+                            UserSp.getInstance().setUser(new User(name,avatar));
                         }else{
                             loginView.loginFail();
                         }

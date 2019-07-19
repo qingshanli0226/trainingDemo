@@ -11,12 +11,16 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.bean.SignInBean;
+import com.example.player.a1610aplayerdemo.ui.my.login.ILoginView;
 import com.example.player.a1610aplayerdemo.ui.my.login.LoginActivity;
+import com.example.player.a1610aplayerdemo.ui.my.login.LoginPresenter;
+import com.example.player.a1610aplayerdemo.utils.UserSp;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyFragment extends Fragment {
+public class MyFragment extends Fragment{
 
     private ListView listView;
     private TextView tv;
@@ -53,4 +57,12 @@ public class MyFragment extends Fragment {
         listBeans.add(new MyListBean(R.drawable.ic_action_main_study,"推荐《央音在线》给好友"));
         listBeans.add(new MyListBean(R.drawable.ic_action_main_vip,"意见反馈"));
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+
 }

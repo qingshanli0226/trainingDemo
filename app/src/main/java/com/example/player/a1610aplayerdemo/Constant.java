@@ -8,4 +8,7 @@ public class Constant {
     public final static String TITLE = "title";
     public final static String LOGIN_NAME = "loginName";
     public final static String PASSWORD = "password";
+    public final static String USER_SP = "userSp";
+    public final static String USER_NAME = "user_name";
+    public final static String USER_PWD = "user_pwd";
 }

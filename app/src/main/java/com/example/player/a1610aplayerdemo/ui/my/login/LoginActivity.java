@@ -80,7 +80,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
         loginPresenter.getData(phone,pwd);
-
     }
 
     @Override
