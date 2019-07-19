@@ -1,5 +1,7 @@
 package com.example.player.a1610aplayerdemo.home.view;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerFragment;
 import com.example.player.a1610aplayerdemo.base.BaseRecyclerViewAdapter;
@@ -18,5 +20,11 @@ public class OneFragment extends BaseRecyclerFragment<NetDataBean.DataBean, View
     @Override
     public IBasePresenter getPresenter() {
         return new HomePresenter();
+    }
+
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 }
