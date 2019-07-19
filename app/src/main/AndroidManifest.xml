@@ -22,9 +22,9 @@
         </activity>
         <activity android:name=".secondUI.activity.BannerActivity">
         </activity>
-        <activity android:name="com.example.player.a1610aplayerdemo.ui.activity.RegisterActivity">
+        <activity android:name="com.example.player.a1610aplayerdemo.ui.register.RegisterActivity">
         </activity>
-        <activity android:name=".login.LoginActivity">
+        <activity android:name=".ui.login.LoginActivity">
         </activity>
         <activity android:name="com.example.player.a1610aplayerdemo.ui.activity.WelcomeActivity">
             <intent-filter>

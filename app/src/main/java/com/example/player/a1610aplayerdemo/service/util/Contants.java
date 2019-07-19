@@ -15,4 +15,8 @@ public class Contants {
 
     public static final String GET_TwoMenu="course/getVideo2";
     public static final String GET_MusicClass="category/getPerfesional";
+    //注册
+    public static final String GET_Register="account/signIn";
+
+
 }

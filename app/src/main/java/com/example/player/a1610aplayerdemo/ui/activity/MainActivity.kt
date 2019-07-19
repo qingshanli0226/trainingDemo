@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
-
     private val list = ArrayList<Fragment>()
 //!!当前对象不为空
 //？当前对象可以为空

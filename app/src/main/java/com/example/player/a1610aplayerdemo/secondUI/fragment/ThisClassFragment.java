@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
 import com.example.player.a1610aplayerdemo.base.BaseView;
@@ -19,8 +18,9 @@ import com.example.player.a1610aplayerdemo.secondUI.persenter.VedioPersenter;
  */
 public class ThisClassFragment extends Fragment implements BaseView<BannerBean> {
 
-    private TextView textTitle;
-    private WebView webview;
+
+    private TextView courseName;
+    private TextView courseIntroduce;
 
     public ThisClassFragment() {
         // Required empty public constructor
@@ -39,17 +39,20 @@ public class ThisClassFragment extends Fragment implements BaseView<BannerBean> 
     }
 
     private void initView(View view) {
-        textTitle = (TextView) view.findViewById(R.id.textTitle);
-        webview = (WebView) view.findViewById(R.id.webview);
+        courseName = (TextView) view.findViewById(R.id.courseName);
+        courseIntroduce = (TextView) view.findViewById(R.id.courseIntroduce);
 
         Intent intent = getActivity().getIntent();
         String relation = intent.getStringExtra("relation");
-        new VedioPersenter(this).getVedioData(relation,"0");
+        new VedioPersenter(this).getVedioData(relation, "0");
 
     }
 
     @Override
     public void onLoadData(BannerBean datalist) {
+        courseName.setText( datalist.getData().getCourseName()+"");
+        courseIntroduce.setText(datalist.getData().getCourseIntroduce()+"");
+
 
     }
 

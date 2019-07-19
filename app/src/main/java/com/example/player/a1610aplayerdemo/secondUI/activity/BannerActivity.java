@@ -91,7 +91,6 @@ public class BannerActivity extends AppCompatActivity implements BaseView<Banner
         final BannerBean.DataBean data = datalist.getData();
         Log.d("二级菜单Bunner",datalist.getCode());
 
-
         Glide.with(this).load(data.getTeacherAvatar()).apply(RequestOptions.bitmapTransform(new RoundedCorners(50))).into(vedioPageTeacherPhoto);
         vedioPagerTitle.setText(data.getName());
         vedioPageTeacherName.setText(data.getTeacherName());

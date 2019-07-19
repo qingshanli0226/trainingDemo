@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.login.LoginActivity;
+import com.example.player.a1610aplayerdemo.ui.login.LoginActivity;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.login;
+package com.example.player.a1610aplayerdemo.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
-import com.example.player.a1610aplayerdemo.ui.activity.RegisterActivity;
+import com.example.player.a1610aplayerdemo.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 

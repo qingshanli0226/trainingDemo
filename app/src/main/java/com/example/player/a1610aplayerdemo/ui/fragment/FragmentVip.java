@@ -1,7 +1,6 @@
 package com.example.player.a1610aplayerdemo.ui.fragment;
 
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -36,7 +35,6 @@ public class FragmentVip extends BaseFragment<VipBean, View> implements BaseView
         return view;
     }
 
-
     @Override
     public void onLoadData(VipBean datalist) {
         Log.d("vipsuccess", datalist.getCode() + "0");
@@ -45,14 +43,10 @@ public class FragmentVip extends BaseFragment<VipBean, View> implements BaseView
         recyclerView.setAdapter(vipAdapter);
     }
 
-
-
-
     @Override
     public void onLoadError(int code, String str) {
-        Log.d("errorvip", str + "2");
+        Log.d("errorvip",str + "2");
     }
-
 
     private void initView(View view) {
         recyclerView = (RecyclerView) view.findViewById(R.id.vipf_Rv);
