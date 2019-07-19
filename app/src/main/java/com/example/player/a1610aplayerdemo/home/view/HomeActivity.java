@@ -20,8 +20,13 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home);
+        
+        initData();
 
         initView();
+    }
+
+    private void initData() {
     }
 
     private void initView() {
