@@ -11,6 +11,4 @@ public class SiteUrl {
     public static String CURRICULUM = "restapi/loading/getHome";
     //获取VIP界面
     public static String VIP = "restapi/masterPackage/getMasterPackagelist?minid=0&size=20";
-    //获取banner
-
 }

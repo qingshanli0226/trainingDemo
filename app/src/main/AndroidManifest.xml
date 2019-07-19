@@ -34,6 +34,10 @@
         </activity>
         <activity android:name=".curriculum.activity.BannerActivity">
         </activity>
+        <activity android:name=".my.activity.LoginActivity">
+        </activity>
+        <activity android:name=".my.activity.CipherActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".my.activity.RegisterActivity"
+        tools:context=".my.activity.LoginActivity"
         android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -18,12 +18,8 @@
                 android:src="@drawable/ic_back"/>
 
         <TextView
-                android:text="@string/register_text_one"
+                android:text="@string/login_text_one"
                 style="@style/feedback_opinion"/>
-
-        <TextView
-                android:text="@string/register_text_two"
-                style="@style/register_text_one"/>
 
     </android.support.v7.widget.Toolbar>
 
@@ -40,7 +36,7 @@
 
         <TextView
                 android:id="@+id/login_text"
-                android:text="@string/register_text_five"
+                android:text="@string/register_text_eleven"
                 style="@style/register_text_text_four"/>
 
     </LinearLayout>
@@ -50,33 +46,47 @@
             style="@style/register_text_five"/>
 
     <EditText
-            android:id="@+id/account_edit"
-            android:hint="@string/register_text_seven"
-            android:inputType="number"
-            style="@style/register_text_edittext"/>
+        android:id="@+id/phone_edit"
+        android:hint="@string/register_text_seven"
+        android:inputType="number"
+        style="@style/register_text_edittext"/>
 
     <TextView
-            android:text="@string/register_text_eight"
+            android:text="@string/login_text_three"
             style="@style/register_text_six"/>
 
     <RelativeLayout
             style="@style/ww">
 
         <EditText
-                android:id="@+id/password_edit"
-                android:hint="@string/register_text_nice"
+                android:id="@+id/verification_edit"
+                android:hint="@string/login_text_four"
                 style="@style/register_text_edittext"/>
 
         <TextView
                 android:id="@+id/show_hidden"
-                android:text="@string/register_text_ten"
+                android:text="@string/login_text_five"
                 style="@style/register_text_seven"/>
 
     </RelativeLayout>
 
+    <LinearLayout
+            style="@style/register_text_ll_one">
+
+        <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_text_six"/>
+
+        <TextView
+                android:text="@string/login_text_sevent"
+                style="@style/register_text_text_four"/>
+
+    </LinearLayout>
+
     <Button
-            android:id="@+id/ok_button"
-            android:text="@string/register_text_eleven"
+            android:id="@+id/next_button"
+            android:text="@string/login_text_eight"
             style="@style/register_text_button"/>
 
 </LinearLayout>

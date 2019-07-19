@@ -58,4 +58,14 @@
     <string name="register_text_nice">请输入密码</string>
     <string name="register_text_ten">显示</string>
     <string name="register_text_eleven">登录</string>
+
+    <string name="login_text_one">手机号注册</string>
+    <string name="login_text_two">已有账户请</string>
+    <string name="login_text_three">验证码</string>
+    <string name="login_text_four">请输入验证码</string>
+    <string name="login_text_five">获取验证码</string>
+    <string name="login_text_six">我已认真阅读并同意</string>
+    <string name="login_text_sevent">服务协议</string>
+    <string name="login_text_eight">下一步</string>
+
 </resources>

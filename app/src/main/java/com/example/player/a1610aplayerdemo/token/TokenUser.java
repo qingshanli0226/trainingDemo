@@ -10,7 +10,7 @@ import okhttp3.Response;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class TokenInterceptor implements Interceptor {
+public class TokenUser implements Interceptor {
     private SharedPreferences sp;
 
     @Override
@@ -19,8 +19,13 @@ public class TokenInterceptor implements Interceptor {
         sp = MVPApplication.instance.getSharedPreferences("tokenKey",Context.MODE_PRIVATE);
         String token = sp.getString("token","空值");
 
+        HashMap<String,String> hashMap = new HashMap<>();
+        hashMap.put("CH-TOKEN",token);
+        hashMap.put("",")");
+
         Request request = chain.request();
-        Request newRequest = request.newBuilder().addHeader("CH-TOKEN",token).build();
+        Request newRequest = request.newBuilder().addHeader("CH-TOKEN",token)
+                .addHeader("User-Agent","Dalvik/1.6.0 (Linux; U; Android 4.4.2; MI 6  Build/NMF26X").build();
 
         return chain.proceed(newRequest);
     }
