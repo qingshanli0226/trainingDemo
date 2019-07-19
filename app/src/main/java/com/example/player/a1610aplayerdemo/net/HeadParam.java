@@ -10,8 +10,8 @@ public class HeadParam {
 
     public static Map<String,String> getHeadMap (){
         String token = SpUtils.getSpUtils().getToken();
-        headMap.put(Contance.CH_TOKEN,token);
-        headMap.put("DeviceKey",Contance.DEVICEKEY);
+        headMap.put(Contant.CH_TOKEN,token);
+        headMap.put("DeviceKey", Contant.DEVICEKEY);
         headMap.put("Android-VersionCode","43");
         headMap.put("Android-channel","guoyun");
         headMap.put("Tingyun_Process","true");

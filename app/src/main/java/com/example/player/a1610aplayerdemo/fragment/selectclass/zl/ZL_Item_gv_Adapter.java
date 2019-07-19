@@ -14,6 +14,7 @@ import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivi
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Handler;
 
 
 public class ZL_Item_gv_Adapter extends BaseAdapter {
@@ -76,5 +77,4 @@ public class ZL_Item_gv_Adapter extends BaseAdapter {
 class MyZLViewHolder {
     ImageView course_img;
     TextView course_title;
-
 }

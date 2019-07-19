@@ -14,7 +14,7 @@ public class TokenInterceptor implements Interceptor {
         Request request = chain.request();//去拿到request请求对象
 
             //在请求头部添加一个keyvalue形式的参数，将token值添加进去.
-        Request  newRequest = request.newBuilder().addHeader("CH-TOKEN" ,Contance.TOKEN ).build();
+        Request  newRequest = request.newBuilder().addHeader("CH-TOKEN" , Contant.TOKEN ).build();
             return chain.proceed(newRequest); //将生成带token的newRequest做为请求参数进行网络请求
 
     }

@@ -53,4 +53,12 @@ dependencies {
     implementation 'com.dou361.ijkplayer:jjdxm-ijkplayer:1.0.5'
     implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.6.0'
     implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.0'
+
+    // logger 打印
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1' //非必要依赖， log依赖，如果需要打印OkHttpLog需要添加
+
+    //友盟
+    implementation 'com.umeng.umsdk:analytics:7.5.4'
+    implementation  'com.umeng.umsdk:common:1.5.4'
 }

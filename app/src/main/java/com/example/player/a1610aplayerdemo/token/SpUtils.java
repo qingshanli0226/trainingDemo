@@ -3,11 +3,11 @@ package com.example.player.a1610aplayerdemo.token;
 import android.content.Context;
 import android.content.SharedPreferences;
 import com.example.player.a1610aplayerdemo.MyApplication;
-import com.example.player.a1610aplayerdemo.net.Contance;
+import com.example.player.a1610aplayerdemo.net.Contant;
 
 public class SpUtils {
     private static SpUtils spUtils = new SpUtils();
-    private SharedPreferences sharedPreferences = MyApplication.m_context.getSharedPreferences(Contance.TOKEN, Context.MODE_PRIVATE);
+    private SharedPreferences sharedPreferences = MyApplication.m_context.getSharedPreferences(Contant.TOKEN, Context.MODE_PRIVATE);
 
     private SpUtils(){
 
@@ -19,12 +19,12 @@ public class SpUtils {
 
     public void  saveToken(String token){
         SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putString(Contance.TOKEN,token);
+        edit.putString(Contant.TOKEN,token);
         edit.commit();
     }
 
     public String getToken(){
-        String token = sharedPreferences.getString(Contance.TOKEN, "");
+        String token = sharedPreferences.getString(Contant.TOKEN, "");
         return token;
     }
 }

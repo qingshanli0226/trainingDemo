@@ -9,7 +9,7 @@
     <string name="main_rb_study">学习</string>
     <string name="main_rb_member">会员</string>
     <string name="main_rb_aboutme">我的</string>
-    
+
     <string name="login_howdy">您好，</string>
     <string name="login_tv_register">\n欢迎来到央音在线，立即免费注册</string>
     <string name="login_tv_phone">手机号：</string>]
@@ -18,25 +18,36 @@
     <string name="login_ed_psd_hint">请输入密码</string>
     <string name="login_btn_login">登录</string>
     <string name="login_tv_problem">登录遇到问题？</string>
-    
+
     <string name="welcome_immediately_into">立即进入</string>
     <string name="welcome_jump_over">跳过-></string>
-    
+
     <string name="aboutMe_loginOrRegister">登录/注册</string>
     <string name="aboutMe_tv_FAQ">常见问题</string>
     <string name="aboutMe_tv_checkUp">检查更新</string>
     <string name="aboutMe_tv_recommend">推荐【央音在线】给好友</string>
     <string name="aboutMe_tv_feedback">意见反馈</string>
-    
+
     <string name="course_tv_recommemd">推荐</string>
     <string name="course_tv_course">课程</string>
 
     <string name="master_course">大师课</string>
-    
+
     <string name="vip_tv">会员专享</string>
     <string name="more">更多 ＞</string>
-    
+
     <string name="zl_btn_tv">每天不到1元钱，享受200位顶级名师指导</string>
     <string name="zl_tv">专栏</string>
     <string name="zl_tv_division">专区</string>
+
+    <string name="register_howdy">您好，</string>
+    <string name="register_tv_login">\n欢迎来到央音在线，已有账户请登录</string>
+    <string name="register_tv_phone">手机号：</string>]
+    <string name="register_ed_hint">请输入您的手机号码</string>
+    <string name="register_tv_code">验证码：</string>
+    <string name="register_ed_code_hint">请输入验证码</string>
+    <string name="register_btn_gain_conde">获取验证码</string>
+    <string name="register_consent">我已认真阅读并同意服务协议</string>
+    <string name="register_btn_next">下一步</string>
+    <string name="register_tv_problem">登录遇到问题？</string>
 </resources>

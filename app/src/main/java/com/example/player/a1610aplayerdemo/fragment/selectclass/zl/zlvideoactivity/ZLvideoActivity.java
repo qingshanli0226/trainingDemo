@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.base.MToolBar;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.adapter.SecondeVpAdapter;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.bean.ZlintroduceBean;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.bean.ZlvideoBean;
@@ -32,10 +33,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ZLvideoActivity extends AppCompatActivity implements View.OnClickListener {
+public class ZLvideoActivity extends AppCompatActivity {
 
-    private TextView tb_video_title;
-    private TextView tb_back_tv;
+    private MToolBar mToolBar;
     private ImageView zltitle_img;
     private TabLayout zl_tablayout;
     private ViewPager zl_vp;
@@ -51,7 +51,7 @@ int c = 0;
         setContentView(R.layout.activity_zlvideo);
 
         Intent intent = getIntent();
-       id = intent.getStringExtra("id");
+        id = intent.getStringExtra("id");
         Toast.makeText(this, ""+id, Toast.LENGTH_SHORT).show();
 
         initView();
@@ -77,7 +77,7 @@ int c = 0;
         if (token ==null){
             return;
         }
-        headMap.put(Contance.CH_TOKEN,token);
+        headMap.put(Contant.CH_TOKEN,token);
         RetrofitCreator.getInstance().getRetrofitApiService()
                 .getZlIntroDuce(headMap,id)
                 .subscribeOn(Schedulers.io())
@@ -94,6 +94,7 @@ int c = 0;
                         data = dataBean;
                         Log.i("aaa", "onNext: zldata"+dataBean.getBarTitle());
                          initIntro(dataBean);
+
                     }
 
                     @Override
@@ -109,7 +110,7 @@ int c = 0;
 
 
         Map<String,String> vHeadMap = new HashMap<>();
-        vHeadMap.put(Contance.CH_TOKEN,token);
+        vHeadMap.put(Contant.CH_TOKEN,token);
         Map<String,String> queryMap = new HashMap<>();
       //  zlId=20&page=1&size=20
         queryMap.put("zlId",id);
@@ -159,9 +160,9 @@ int c = 0;
     }
 
     private void initIntro(ZlintroduceBean.DataBean dataBean) {
-        tb_video_title.setText(dataBean.getBarTitle());
-        Glide.with(this).load(dataBean.getImage()).placeholder(R.drawable.gray_radius).into(zltitle_img);
 
+        Glide.with(this).load(dataBean.getImage()).placeholder(R.drawable.gray_radius).into(zltitle_img);
+        mToolBar.setTitle(dataBean.getTitle());
         One_Fragment one_fragment = (One_Fragment) fragments.get(0);
         Bundle bundle = new Bundle();
         bundle.putParcelable("data",data);
@@ -185,17 +186,19 @@ int c = 0;
     };
 
     private void initView() {
-        tb_video_title = (TextView) findViewById(R.id.tb_video_title);
-        tb_back_tv = (TextView) findViewById(R.id.tb_back_tv);
         zltitle_img = (ImageView) findViewById(R.id.zltitle_img);
         zl_tablayout = (TabLayout) findViewById(R.id.zl_tablayout);
         zl_vp = (ViewPager) findViewById(R.id.zl_vp);
 
-        tb_back_tv.setOnClickListener(this);
+        mToolBar = findViewById(R.id.zl_videoToolBar);
+        mToolBar.setLeftImg(R.drawable.ic_back_img);
+        mToolBar.setrightListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ZLvideoActivity.this, ""+mToolBar.tb_title.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
-    @Override
-    public void onClick(View view) {
-        finish();
-    }
 }

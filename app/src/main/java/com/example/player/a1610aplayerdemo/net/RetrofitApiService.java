@@ -2,6 +2,8 @@ package com.example.player.a1610aplayerdemo.net;
 
 
 
+import com.example.player.a1610aplayerdemo.activity.register.bean.GetValidCodeBean;
+import com.example.player.a1610aplayerdemo.activity.register.bean.SingUpBean;
 import com.example.player.a1610aplayerdemo.fragment.member.Bean_Member;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.bean.GetHomeBean;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.zl.zlvideoactivity.bean.ZlintroduceBean;
@@ -24,7 +26,7 @@ public interface RetrofitApiService {
   @GET("masterPackage/getMasterPackagelist")
   Observable<Bean_Member> getMenmberData(@HeaderMap Map<String,String> heandMap,@Query("minid")String mindid,@Query("size")String size);
 
-  @GET(Contance.GET_HOME)
+  @GET(Contant.GET_HOME)
   Observable<ResEntity<GetHomeBean.DataBean>> getSelectData(@HeaderMap Map<String,String> headMap);
 
   @GET("zhuanLan/getdetail")
@@ -32,7 +34,7 @@ public interface RetrofitApiService {
 
   @GET("zhuanLan/getArticleList")  //zlId=20&page=1&size=20
   Observable<ResEntity<List<ZlvideoBean.DataBean>>> getVideoList(@HeaderMap Map<String,String> headMap, @QueryMap Map<String,String> queryMap);
-
+//  检查手机号是否被注册过
   @POST("account/checkExists")
   @FormUrlEncoded
   Observable<CheckBean> getCheckUser (@HeaderMap Map<String,String> headMap,@FieldMap Map<String,String> paramMap);
@@ -40,5 +42,18 @@ public interface RetrofitApiService {
   @POST("account/signIn")
   @FormUrlEncoded
   Observable<ResEntity<SignInBean.DataBean>> getSingIn (@HeaderMap Map<String,String> headMap, @FieldMap Map<String,String> paramMap);
+// 注册
+  @POST("account/getValidCode")
+  @FormUrlEncoded
+  Observable<GetValidCodeBean> getValidCode (@HeaderMap Map<String,String> headMap, @FieldMap Map<String,String> paramMap);
+  //account/checkValidCode
+  // 检查验证码  手机号   token
 
+  @POST("account/checkValidCode")
+  @FormUrlEncoded
+  Observable<CheckBean> checkValidCode (@HeaderMap Map<String,String> headMap, @FieldMap Map<String,String> paramMap);
+  //account/signUp
+  @POST("account/signUp")
+  @FormUrlEncoded
+  Observable<SingUpBean> singUp (@HeaderMap Map<String,String> headMap, @FieldMap Map<String,String> paramMap);
 }

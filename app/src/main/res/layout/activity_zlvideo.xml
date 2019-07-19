@@ -7,25 +7,12 @@
         android:layout_height="match_parent"
         tools:context=".fragment.selectclass.zl.zlvideoactivity.ZLvideoActivity"
 android:orientation="vertical">
-
-    <RelativeLayout
+    <com.example.player.a1610aplayerdemo.base.MToolBar
+            android:id="@+id/zl_videoToolBar"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-        <TextView
-                android:id="@+id/tb_video_title"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-        android:text="走进鲁特琴的世界"
-        android:gravity="center"
-        android:layout_centerInParent="true"/>
-        <TextView
-                android:id="@+id/tb_back_tv"
-                android:layout_width="25dp"
-                android:layout_height="match_parent"
-                android:text="＜"
-                android:gravity="center"
-        android:layout_marginLeft="10dp"/>
-    </RelativeLayout>
+
+    </com.example.player.a1610aplayerdemo.base.MToolBar>
 
     <ImageView
             android:id="@+id/zltitle_img"

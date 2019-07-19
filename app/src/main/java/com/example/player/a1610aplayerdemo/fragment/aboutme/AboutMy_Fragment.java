@@ -47,7 +47,7 @@ public class AboutMy_Fragment extends Fragment implements View.OnClickListener {
     private void initAvatar() {
 
         RequestOptions requestOptions = RequestOptions.circleCropTransform();
-        Glide.with(getActivity()).load(R.drawable.ic_launcher_background)
+        Glide.with(getActivity()).load(R.drawable.yy)
                 .apply(requestOptions).into(my_avatar);
     }
 

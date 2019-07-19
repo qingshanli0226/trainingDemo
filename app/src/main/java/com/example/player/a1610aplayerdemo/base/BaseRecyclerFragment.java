@@ -19,7 +19,7 @@ import java.util.List;
 public abstract class BaseRecyclerFragment<T,V extends View> extends Fragment implements IBaseView<T> {
  private IBasePresenter iBasePresenter;
  private BaseRecyclerViewAdapter baseRecyclerViewAdapter;
- public static MToolBar tollbar;
+ public  MToolBar tollbar;
 
     @Nullable
     @Override

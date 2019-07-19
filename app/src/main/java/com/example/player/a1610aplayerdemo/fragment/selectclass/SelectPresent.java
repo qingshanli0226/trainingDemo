@@ -4,7 +4,7 @@ import android.util.Log;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
 import com.example.player.a1610aplayerdemo.fragment.selectclass.bean.GetHomeBean;
-import com.example.player.a1610aplayerdemo.net.Contance;
+import com.example.player.a1610aplayerdemo.net.Contant;
 import com.example.player.a1610aplayerdemo.net.NetFunction;
 import com.example.player.a1610aplayerdemo.net.ResEntity;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
@@ -14,9 +14,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 class SelectPresent implements IBasePresenter<GetHomeBean.DataBean> {
@@ -31,7 +29,7 @@ class SelectPresent implements IBasePresenter<GetHomeBean.DataBean> {
         if (token==null){
            return;
         }
-        headMap.put(Contance.CH_TOKEN,token);
+        headMap.put(Contant.CH_TOKEN,token);
 
         RetrofitCreator.getInstance().getRetrofitApiService()
                 .getSelectData(headMap)

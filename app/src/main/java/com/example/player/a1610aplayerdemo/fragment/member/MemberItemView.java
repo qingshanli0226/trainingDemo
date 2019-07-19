@@ -17,6 +17,7 @@ class MemberItemView extends LinearLayout {
     ImageView imageView;
     Context m_context;
 
+
     public MemberItemView(Context context) {
         super(context);
         m_context = context;

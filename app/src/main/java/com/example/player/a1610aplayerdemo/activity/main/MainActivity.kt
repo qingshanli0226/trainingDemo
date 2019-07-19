@@ -10,7 +10,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import com.example.player.a1610aplayerdemo.R
 import com.example.player.a1610aplayerdemo.activity.main.adapter.MainVpAdapter
-import com.example.player.a1610aplayerdemo.net.Contance
+import com.example.player.a1610aplayerdemo.net.Contant
 import com.example.player.a1610aplayerdemo.net.ResEntity
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator
 import com.example.player.a1610aplayerdemo.token.SpUtils
@@ -71,13 +71,13 @@ class MainActivity : AppCompatActivity() {
     }
 //  进入主页面， 获取用户信息， 可以拿到token
     private fun initUser() {
-        var paramMap:Map<String,String> = mapOf(Pair("DeviceKey",Contance.DEVICEKEY),
+        var paramMap:Map<String,String> = mapOf(Pair("DeviceKey", Contant.DEVICEKEY),
             Pair("Android-VersionCode","43"),
             Pair("Android-channel","guoyun"),Pair("Tingyun_Process","true")
         )
 
     var paramMap2:Map<String,String> = mapOf(
-        Pair("DeviceKey",Contance.DEVICEKEY),
+        Pair("DeviceKey", Contant.DEVICEKEY),
         Pair("device",Build.DEVICE),
         Pair("sdkVersion","${Build.VERSION.SDK_INT}"),
         Pair("brand",Build.BOARD), Pair("product",Build.PRODUCT)

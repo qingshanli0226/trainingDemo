@@ -1,10 +1,9 @@
 package com.example.player.a1610aplayerdemo.fragment.member;
 
-import android.content.SharedPreferences;
 import android.util.Log;
 import com.example.player.a1610aplayerdemo.base.IBasePresenter;
 import com.example.player.a1610aplayerdemo.base.IBaseView;
-import com.example.player.a1610aplayerdemo.net.Contance;
+import com.example.player.a1610aplayerdemo.net.Contant;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
 import com.example.player.a1610aplayerdemo.token.SpUtils;
 import io.reactivex.Observer;
@@ -27,7 +26,7 @@ public class MemberPresenter implements IBasePresenter<Bean_Member.DataBean> {
         if (token==null){
             token = "D7C1676C00907C27B80ECBAB4F90902E";
         }
-        headMap.put(Contance.CH_TOKEN,token);
+        headMap.put(Contant.CH_TOKEN,token);
 
         RetrofitCreator.getInstance().getRetrofitApiService()
                 .getMenmberData(headMap,"0","20")

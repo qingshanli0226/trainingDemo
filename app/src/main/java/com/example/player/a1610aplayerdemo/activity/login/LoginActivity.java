@@ -17,12 +17,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.activity.register.RegisterActivity;
 import com.example.player.a1610aplayerdemo.base.MToolBar;
 import com.example.player.a1610aplayerdemo.activity.login.bean.CheckBean;
 import com.example.player.a1610aplayerdemo.activity.login.bean.SignInBean;
 import com.example.player.a1610aplayerdemo.activity.main.MainActivity;
 import com.example.player.a1610aplayerdemo.net.*;
 import com.example.player.a1610aplayerdemo.token.SpUtils;
+import com.umeng.analytics.MobclickAgent;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -46,6 +48,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         initView();
         initRegisterText();
         initToolbar();
+
+        // 友盟统计
+        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
     }
 
     private void initRegisterText() {
@@ -57,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick( @NonNull View view) {
-                Toast.makeText(LoginActivity.this, ""+style.toString(), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         };
         int length = tv_ljRegister.getText().length();
@@ -115,7 +120,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (token == null){
                 return ;
             }else {
-                headMap.put(Contance.CH_TOKEN,token);
+                headMap.put(Contant.CH_TOKEN,token);
             }
             Map<String,String> paramMap = new HashMap<>();
             paramMap.put("loginName",ed_login_phone.getText().toString().trim());
@@ -236,4 +241,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                  });
 
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // 友盟
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        // 友盟
+        MobclickAgent.onPause(this);
+    }
+
 }

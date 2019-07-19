@@ -44,7 +44,9 @@
                 android:layout_height="50dp"
                 android:src="@drawable/ic_save_img"
                 android:layout_alignParentRight="true"
-                android:visibility="gone"/>
+                android:gravity="center_vertical"
+                android:visibility="gone"
+       />
 
     </RelativeLayout>
 </LinearLayout>

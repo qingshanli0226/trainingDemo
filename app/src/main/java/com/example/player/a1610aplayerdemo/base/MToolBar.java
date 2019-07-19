@@ -20,7 +20,7 @@ import com.example.player.a1610aplayerdemo.R;
 
 public class MToolBar extends Toolbar {
 
-    private  View view;
+    private View view;
     public TextView tb_title;
     public EditText tb_editext;
     public ImageView leftImg;
@@ -43,22 +43,21 @@ public class MToolBar extends Toolbar {
         super(context, attrs, defStyleAttr);
 
         initView();
-        if (attrs != null){
+        if (attrs != null) {
             @SuppressLint("RestrictedApi") TintTypedArray a = TintTypedArray.obtainStyledAttributes(getContext(), attrs, R.styleable.MToolBar, defStyleAttr, 0);
             Drawable rightIcon = a.getDrawable(R.styleable.MToolBar_rightimg);
-            if (rightIcon != null){
+            if (rightIcon != null) {
                 setRightIcon(rightIcon);
-
             }
 
             boolean ishsowEdit = a.getBoolean(R.styleable.MToolBar_isShowedit, false);
-            if (ishsowEdit){
+            if (ishsowEdit) {
                 showEditextView();
                 hideTitleView();
             }
 
             String title = a.getString(R.styleable.MToolBar_title);
-            if (title != null){
+            if (title != null) {
                 showTitleView();
                 setTitle(title);
             }
@@ -68,24 +67,21 @@ public class MToolBar extends Toolbar {
 
     }
 
-    public void setRightButtOnClickListener(OnClickListener listener){
-        rightImg.setOnClickListener(listener);
-    }
 
     public void setLeftImg(int id) {
         leftImg.setVisibility(VISIBLE);
         leftImg.setImageResource(id);
     }
 
-    public void setRightIcon(Drawable rightIcon){
-       rightImg.setImageDrawable(rightIcon);
-       rightImg.setVisibility(VISIBLE);
-   }
+    public void setRightIcon(Drawable rightIcon) {
+        rightImg.setImageDrawable(rightIcon);
+        rightImg.setVisibility(VISIBLE);
+    }
 
     private void initView() {
-        if (view ==null){
+        if (view == null) {
             view = LayoutInflater.from(getContext())
-                    .inflate(R.layout.mtoolbar,null);
+                    .inflate(R.layout.mtoolbar, null);
 
             tb_title = view.findViewById(R.id.tb_title);
             tb_editext = view.findViewById(R.id.tb_edit);
@@ -94,86 +90,109 @@ public class MToolBar extends Toolbar {
             tb_rl = view.findViewById(R.id.m_toolbar);
             ringhtText = view.findViewById(R.id.tb_righText);
 
-           LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                   ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL);
+            LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL);
 
-           addView(view,layoutParams);
+            addView(view, layoutParams);
         }
     }
 
 
-    public void showRightText(){
-        if (ringhtText != null){
+    public void showRightText() {
+        if (ringhtText != null) {
             ringhtText.setVisibility(VISIBLE);
         }
     }
 
-    public void setrightText(String text){
-        if (ringhtText != null){
+    public void hideLeftIcon(){
+        if (leftImg != null){
+            leftImg.setVisibility(GONE);
+        }
+    }
+
+    public void showLeftIcon(){
+        if (leftImg != null){
+            leftImg.setVisibility(VISIBLE);
+        }
+    }
+
+    public void showRightIcon(){
+        if (rightImg != null){
+            rightImg.setVisibility(VISIBLE);
+        }
+    }
+
+    public void hideRightIcon(){
+        if (rightImg != null){
+            rightImg.setVisibility(GONE);
+        }
+    }
+
+    public void setrightText(String text) {
+        if (ringhtText != null) {
             if (ringhtText.isShown()) {
                 ringhtText.setText(text);
-            }else {
+            } else {
                 showRightText();
             }
             ringhtText.setText(text);
         }
     }
 
-    public void hideRightText(){
-        if (ringhtText != null){
+    public void hideRightText() {
+        if (ringhtText != null) {
             ringhtText.setVisibility(VISIBLE);
         }
     }
 
-   public void showEditextView(){
-        if (tb_editext != null){
+    public void showEditextView() {
+        if (tb_editext != null) {
             tb_editext.setVisibility(VISIBLE);
-
-           //  添加Try catch 是为了防止堆内存 溢出  导致程序蹦掉，  因为超出8MB就会自己挂掉
-          try {
-               hideTitleView();
-          }catch (StackOverflowError e){
-              e.getMessage();
+            //  添加Try catch 是为了防止堆内存 溢出  导致程序蹦掉，  因为超出8MB就会自己挂掉
+            try {
+                hideTitleView();
+            } catch (StackOverflowError e) {
+                e.getMessage();
             }
 
         }
     }
 
-    public void hideEditextView(){
-        if (tb_editext != null){
+    public void hideEditextView() {
+        if (tb_editext != null) {
             tb_editext.setVisibility(GONE);
 
 
             try {
                 showTitleView();
-            }catch (StackOverflowError e){
+            } catch (StackOverflowError e) {
                 e.getMessage();
             }
 
         }
     }
 
-    public void showTitleView(){
-        if (tb_title != null){
+    public void showTitleView() {
+        if (tb_title != null) {
             tb_title.setVisibility(VISIBLE);
 
 
             try {
                 hideEditextView();
-            }catch (StackOverflowError e){
+            } catch (StackOverflowError e) {
                 e.getMessage();
             }
 
         }
     }
 
-    public void hideTitleView(){
-        if (tb_title != null){
+    public void hideTitleView() {
+        if (tb_title != null) {
             tb_title.setVisibility(GONE);
 
             try {
                 showEditextView();
-            }catch (StackOverflowError e){
+            } catch (StackOverflowError e) {
                 e.getMessage();
             }
 
@@ -194,12 +213,29 @@ public class MToolBar extends Toolbar {
     @Override
     public void setTitle(CharSequence title) {
         showTitleView();
-        if (tb_title != null){
+        if (tb_title != null) {
             tb_title.setText(title);
         }
     }
 
-    public void setRightIcon(int yy) {
+    public void setRightIcon(int id) {
+        rightImg.setVisibility(VISIBLE);
+        rightImg.setImageResource(id);
+    }
+
+    public void setrightListener(OnClickListener onClickListener) {
+        if (rightImg != null) {
+            rightImg.setOnClickListener(onClickListener);
+        } else if (ringhtText != null) {
+            ringhtText.setOnClickListener(onClickListener);
+        }
 
     }
+
+    public void setleftListener(OnClickListener onClickListener) {
+        if (leftImg != null) {
+            leftImg.setOnClickListener(onClickListener);
+        }
+    }
+
 }

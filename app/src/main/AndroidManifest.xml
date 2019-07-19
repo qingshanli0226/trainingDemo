@@ -7,25 +7,33 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
             android:name=".MyApplication"
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/gangqin"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".activity.playvideo.PlayVideoActivity"
-                  android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait">
+        <activity android:name=".activity.register.bean.PasswordLoginActivity">
+        </activity>
+        <activity android:name=".activity.register.RegisterActivity">
+        </activity>
+        <activity
+                android:name=".activity.playvideo.PlayVideoActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait">
         </activity>
         <activity android:name=".activity.login.LoginActivity">
         </activity>
         <activity android:name=".fragment.selectclass.zl.zlvideoactivity.ZLvideoActivity">
         </activity>
         <activity
-                android:name="com.example.player.a1610aplayerdemo.activity.welcome.WelcomeActivity"
+                android:name=".activity.welcome.WelcomeActivity"
                 android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -34,9 +42,14 @@
             </intent-filter>
         </activity>
         <activity
-                android:name="com.example.player.a1610aplayerdemo.activity.main.MainActivity"
+                android:name=".activity.main.MainActivity"
                 android:launchMode="singleTask">
         </activity>
+
+
+        <meta-data android:value="5d1966d93fc195280f000a74" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="a1610aplayerdemo" android:name="UMENG_CHANNEL"/>
+
     </application>
 
 </manifest>
