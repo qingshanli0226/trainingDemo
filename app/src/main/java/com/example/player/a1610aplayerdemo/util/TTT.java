@@ -4,5 +4,4 @@ public class TTT {
     public void getUP(){
         String string = "123";
     }
-
 }

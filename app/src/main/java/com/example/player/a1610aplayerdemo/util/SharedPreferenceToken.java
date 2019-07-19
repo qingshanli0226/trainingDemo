@@ -14,7 +14,8 @@ public class SharedPreferenceToken {
     public void SaveToken(String token){
         SharedPreferences sharedPreferences = context.getSharedPreferences("TokenSp",Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putString("token",token);
+        edit.putString("ddddd",token);
+
         edit.commit();
     }
 
