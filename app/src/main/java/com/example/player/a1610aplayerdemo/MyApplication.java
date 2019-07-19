@@ -12,14 +12,12 @@ public class MyApplication extends Application {
         super.onCreate();
         m_context = this;
 
-        UMConfigure.setLogEnabled(true);
+         UMConfigure.setLogEnabled(true);
          UMConfigure.setEncryptEnabled(true);
          UMConfigure.init(this,UMConfigure.DEVICE_TYPE_PHONE,null);
 
-         init();
+      
     }
 
-    private void init() {
-        int num = 100;
-    }
+
 }
