@@ -19,17 +19,11 @@ class MusicClassActivity : AppCompatActivity(),MusicClassInterface.MusicClassVie
     override fun onGetDataFailed(errorMsg: String) {
 
     }
-
     override fun onGetDataSuccess(bean: List<MusicClassBean>) {
-
         adp.updateData(bean)
         music_gv.adapter = adp
-
     }
-
     var adp = MusicClassAdp()
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_music_class)

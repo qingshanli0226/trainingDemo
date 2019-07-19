@@ -20,8 +20,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    dataBinding{
-        enabled=true
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -54,7 +54,7 @@ dependencies {
     api("com.jcodecraeer:xrecyclerview:1.5.9") {
         exclude group: 'com.android.support'
     }
-
+    implementation 'com.github.bumptech.glide:glide:4.4.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
     implementation 'com.facebook.fresco:fresco:1.11.0'
@@ -68,8 +68,8 @@ dependencies {
 
 
 
-
-
+    implementation 'com.umeng.umsdk:analytics:8.0.0'
+    implementation 'com.umeng.umsdk:common:2.0.0'
 
 
 

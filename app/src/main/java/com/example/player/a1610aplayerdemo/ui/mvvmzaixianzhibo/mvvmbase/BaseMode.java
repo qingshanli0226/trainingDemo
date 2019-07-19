@@ -1,6 +1,9 @@
-package com.example.player.a1610aplayerdemo.baseclassextraction;
+package com.example.player.a1610aplayerdemo.ui.mvvmzaixianzhibo.mvvmbase;
 
+import android.util.Log;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
+import com.example.player.a1610aplayerdemo.ui.mvvmzaixianzhibo.mvvmbase.IDataListener;
+import com.example.player.a1610aplayerdemo.ui.mvvmzaixianzhibo.mvvmbase.IMode;
 import com.google.gson.Gson;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -10,7 +13,7 @@ import io.reactivex.schedulers.Schedulers;
 import java.lang.reflect.Type;
 import java.util.HashMap;
 
-public abstract class BaseMode<T> implements IMode<T>{
+public abstract class BaseMode<T> implements IMode<T> {
     @Override
     public void getDate(final IDataListener<T> listener) {
 
@@ -19,12 +22,11 @@ public abstract class BaseMode<T> implements IMode<T>{
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<String>() {
                     @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
+                    public void onSubscribe(Disposable d) { }
 
                     @Override
                     public void onNext(String s) {
+
                         T date;
                         date  = new Gson().fromJson(s,getDataType());
                         listener.onGetData(date);
@@ -38,8 +40,6 @@ public abstract class BaseMode<T> implements IMode<T>{
 
                     }
                 });
-
-
     }
 
     public HashMap<String, String> getParmams() {

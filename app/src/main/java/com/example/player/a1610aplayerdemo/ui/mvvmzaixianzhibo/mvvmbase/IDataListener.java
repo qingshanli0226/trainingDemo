@@ -1,4 +1,4 @@
-package com.example.player.a1610aplayerdemo.baseclassextraction;
+package com.example.player.a1610aplayerdemo.ui.mvvmzaixianzhibo.mvvmbase;
 
 public interface IDataListener<T> {
     void onGetData(T date);

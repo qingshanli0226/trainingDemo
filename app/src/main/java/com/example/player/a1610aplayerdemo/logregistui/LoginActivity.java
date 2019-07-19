@@ -3,34 +3,48 @@ package com.example.player.a1610aplayerdemo.logregistui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 import com.example.player.a1610aplayerdemo.R;
+import com.example.player.a1610aplayerdemo.baseclassextraction.IBasePresenter;
+import com.example.player.a1610aplayerdemo.baseclassextraction.IBaseView;
 import com.example.player.a1610aplayerdemo.bean.LogDateBean;
+import com.example.player.a1610aplayerdemo.logregistui.longinpresenter.LoginPresenterComple;
 import com.example.player.a1610aplayerdemo.net.MVPObserver;
 import com.example.player.a1610aplayerdemo.net.MyNetFunction;
 import com.example.player.a1610aplayerdemo.net.ResEntity;
 import com.example.player.a1610aplayerdemo.net.RetrofitCreator;
+import com.example.player.a1610aplayerdemo.ui.activy.LoodingActivity;
+import com.example.player.a1610aplayerdemo.ui.activy.MainActivity;
 import com.example.player.a1610aplayerdemo.util.DeviceKye;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class LoginActivity extends AppCompatActivity {
-
+public class LoginActivity extends AppCompatActivity implements IBaseView<LogDateBean> {
     private EditText logShoujihao;
     private EditText logMima;
+
+    IBasePresenter iBasePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log);
 
+        iBasePresenter = new LoginPresenterComple();
+        iBasePresenter.attachView(this);
+
+
         initView();
+
     }
+
+
 
     public void fanhui(View view) {
         finish();
@@ -41,21 +55,10 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(new Intent(LoginActivity.this,RegiestActivity.class));
         finish();
     }
-
     public void Log(View view) {
-
         String sjh = logShoujihao.getText().toString();
         String mima = logMima.getText().toString();
-
-        getLog(sjh,mima);
-    }
-
-    private void getLog(String sjh, String mima) {
-
-
         Map<String, String> map = new HashMap<>();
-        map.put("loginName", sjh);
-        map.put("password", mima);
         map.put("Android-VersionCode", "43");
         map.put("Accept-Encoding", "gzip");
         map.put("User-Agent", "Dalvik/2.1.0 (Linux; U; Android 5.1.1; sm-j700f Build/LMY47I)");
@@ -63,12 +66,12 @@ public class LoginActivity extends AppCompatActivity {
         map.put("Android-channel", "guoyun");
         map.put("Host", "api.immedc.com");
         map.put("Tingyun_Process", "true");
+        map.put("deviceKey", DeviceKye.getDeviceKye());
 
-        Map headmap = new HashMap<>();
-        headmap.put("deviceKey", DeviceKye.getDeviceKye());
-
-
-        RetrofitCreator.getApiService().getLogDate(headmap,map)
+        Map filemap = new HashMap<>();
+        filemap.put("loginName", sjh);
+        filemap.put("password", mima);
+        RetrofitCreator.getApiService().getLogDate(map,filemap)
                 .subscribeOn(Schedulers.io())
                 .map(new MyNetFunction<ResEntity<LogDateBean>,LogDateBean>())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -77,17 +80,44 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onNext(LogDateBean logDateBean) {
                         super.onNext(logDateBean);
+                        boolean login = logDateBean.isLogin();
+                        if (login){
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                        }else {
 
-                        Log.d("xx","success");
-
-
+                        }
                     }
                 });
-
     }
 
     private void initView() {
         logShoujihao = (EditText) findViewById(R.id.log_shoujihao);
         logMima = (EditText) findViewById(R.id.log_mima);
+    }
+
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+    }
+
+    @Override
+    public void onLoadDataList(List<LogDateBean> date) {
+
+    }
+
+    @Override
+    public void onLoadDateBean(LogDateBean date) {
+
+
+
+    }
+
+    @Override
+    public void onLoadEeeor(int code, String message) {
+
     }
 }

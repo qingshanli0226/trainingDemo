@@ -9,6 +9,8 @@ import com.example.player.a1610aplayerdemo.ui.fragment.MyFragment
 import com.example.player.a1610aplayerdemo.ui.fragment.StudyCenterFragment
 import com.example.player.a1610aplayerdemo.ui.huiyuan.VipFragment
 import com.example.player.a1610aplayerdemo.ui.xuanke.XuanKeFragment
+import com.umeng.analytics.MobclickAgent
+import com.umeng.commonsdk.UMConfigure
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity :  BaseActivity() {
@@ -28,7 +30,13 @@ class MainActivity :  BaseActivity() {
                 R.id.rb4 -> novpg.setCurrentItem(3)
             }
         }
+
+        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL)
+
+        MobclickAgent.setSessionContinueMillis(2000)
+
     }
+
 
     override fun getLayoutId(): Int {
 
@@ -36,4 +44,13 @@ class MainActivity :  BaseActivity() {
     }
 
 
+    override fun onResume() {
+        super.onResume()
+        MobclickAgent.onResume(this);
+    }
+
+    override fun onPause() {
+        super.onPause()
+        MobclickAgent.onResume(this);
+    }
 }

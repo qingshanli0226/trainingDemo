@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
             android:name=".MyApp"
@@ -13,42 +17,59 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.zhuanlan.ZhuanLanActivity"  android:launchMode="singleTask">
+        <activity android:name=".logregistui.AddPassWordActivity" android:launchMode="singleTask">
+        </activity>
 
+        <meta-data
+                android:name="UMENG_APPKEY"
+                android:value="5d157191570df3e515001299"/>
+        <meta-data
+                android:name="UMENG_CHANNEL"
+                android:value="a1610aplayerdemo"/>
 
-
+        <activity android:name=".ui.setting.SettingActivity" android:launchMode="singleTask">
         </activity>
-        <activity android:name=".ui.zaixianzhibo.NowShowActivity">
+        <activity
+                android:name=".ui.zhuanlan.ZhuanLanActivity"
+                android:launchMode="singleTask">
         </activity>
-        <activity android:name=".ui.mastercourse.MasterActivity" android:launchMode="singleTask">
+        <activity android:name=".ui.mvvmzaixianzhibo.NowShowActivity">
         </activity>
-        <activity android:name=".logregistui.RegiestActivity" android:launchMode="singleTask">
+        <activity
+                android:name=".ui.mastercourse.MasterActivity"
+                android:launchMode="singleTask">
         </activity>
-        <activity android:name=".logregistui.LoginActivity" android:launchMode="singleTask">
+        <activity
+                android:name=".logregistui.RegiestActivity"
+                android:launchMode="singleTask">
         </activity>
-        <activity android:name=".ui.tuijian.TuiJianClassActivity" android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait">
+        <activity
+                android:name=".logregistui.LoginActivity"
+                android:launchMode="singleTask">
         </activity>
-        <activity android:name=".ui.musiccourse.MusicClassActivity" android:launchMode="singleTask">
-
+        <activity
+                android:name=".ui.tuijian.TuiJianClassActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait" android:launchMode="singleTask">
+        </activity>
+        <activity
+                android:name=".ui.musiccourse.MusicClassActivity"
+                android:launchMode="singleTask">
         </activity>
         <activity android:name=".ui.activy.LoodingActivity">
         </activity>
-
         <activity
                 android:name=".ui.activy.YinDaoActivity"
                 android:launchMode="singleInstance">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
-
         </activity>
-        <activity android:name=".ui.activy.MainActivity" android:launchMode="singleTask">
-
+        <activity
+                android:name=".ui.activy.MainActivity"
+                android:launchMode="singleTask">
         </activity>
     </application>
 

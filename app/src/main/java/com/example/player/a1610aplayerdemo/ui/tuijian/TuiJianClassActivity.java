@@ -2,6 +2,7 @@ package com.example.player.a1610aplayerdemo.ui.tuijian;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -27,6 +28,7 @@ import com.example.player.a1610aplayerdemo.util.DeviceKye;
 import com.example.player.a1610aplayerdemo.util.SpUtil;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.squareup.picasso.Picasso;
+import com.umeng.socialize.UMShareAPI;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -51,6 +53,7 @@ public class TuiJianClassActivity extends AppCompatActivity {
     private TabLayout tuijianTab;
     private TextView tuijianJiaqian;
     private Button tjShikan;
+    TuiJianVpgAdp tuiJianVpgAdp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,13 +67,15 @@ public class TuiJianClassActivity extends AppCompatActivity {
 
         lv.add(new BenKeKnowFragment());
         lv.add(new KeShiFragment());
+
         tt.add("本课知识");
         tt.add("课时列表");
 
 
-        TuiJianVpgAdp tuiJianVpgAdp = new TuiJianVpgAdp(getSupportFragmentManager(), lv, tt);
 
         initView();
+
+        tuiJianVpgAdp = new TuiJianVpgAdp(getSupportFragmentManager(), lv, tt);
 
         tuijianVpg.setAdapter(tuiJianVpgAdp);
 
@@ -78,7 +83,10 @@ public class TuiJianClassActivity extends AppCompatActivity {
 
         iniDate(id);
 
+
     }
+
+
 
     private void iniDate(String s) {
 
@@ -102,6 +110,7 @@ public class TuiJianClassActivity extends AppCompatActivity {
                         iniBean(tuiJianDateBean);
                     }
                 });
+
     }
 
     private void iniBean(final TuiJianDateBean tuiJianDateBean) {
@@ -116,7 +125,6 @@ public class TuiJianClassActivity extends AppCompatActivity {
 
         tuijianJiaqian.setText(tuiJianDateBean.getPriceText());
 
-
         player = new PlayerView(TuiJianClassActivity.this).setTitle("bt")
                 .setScaleType(PlayStateParams.fitparent)
                 .forbidTouch(false)
@@ -128,9 +136,13 @@ public class TuiJianClassActivity extends AppCompatActivity {
                                 .into(ivThumbnail);
                     }
                 })
-                .setPlaySource("http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8");
+                .setPlaySource("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
 
+
+       // playVideo(tuiJianDateBean);
     }
+
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -156,10 +168,16 @@ public class TuiJianClassActivity extends AppCompatActivity {
 
                 player.startPlay();
 
+                tjShikan.setVisibility(View.GONE);
             }
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
 
     public void fanhui(View view) {
         finish();
@@ -176,5 +194,9 @@ public class TuiJianClassActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         player.onDestroy();
+    }
+
+    public void shareQQ(View view) {
+
     }
 }

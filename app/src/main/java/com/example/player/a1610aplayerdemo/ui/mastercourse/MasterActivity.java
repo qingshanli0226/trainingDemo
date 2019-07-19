@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import com.example.player.a1610aplayerdemo.R;
@@ -24,7 +25,6 @@ import java.util.Map;
 
 public class MasterActivity extends AppCompatActivity {
 
-    MasterInterface.IMasterPresenter presenter;
     private TextView tuijianTitle;
     private SimpleDraweeView dashikeTouxiang;
     private TextView dashikeRen;
@@ -41,7 +41,6 @@ public class MasterActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String id = intent.getStringExtra("dashikeId");
 
-
         initView();
 
         getMasterData(id);
@@ -53,26 +52,32 @@ public class MasterActivity extends AppCompatActivity {
     }
 
 
-
-
-
     private void  getMasterData(String s) {
+
         Map<String, String> map = new HashMap<>();
-        map.put("liveId", s);
+        map.put("liveId",s);
 
         Map headmap = new HashMap<>();
         headmap.put("deviceKey", DeviceKye.getDeviceKye());
+        headmap.put("User-Agent", "Dalvik/2.1.0 (Linux; U; Android 5.1.1; sm-j700f Build/LMY47I)");
+        headmap.put("X-Tingyun-Id","oNIzcYZpC5c;c=2;r=832521379");
+        headmap.put("Tingyun_Process","true");
+        headmap.put("Android-VersionCode","43");
+        headmap.put("Android-channel","guoyun");
+        headmap.put("Cache-Control","max-age=604800000");
+
 
         RetrofitCreator.getApiService().getMasterDate(headmap,map)
                 .subscribeOn(Schedulers.io())
-                .map(new MyNetFunction<ResEntity<MasterDateBean>,MasterDateBean>())
                 .observeOn(AndroidSchedulers.mainThread())
+                .map(new MyNetFunction<ResEntity<MasterDateBean>,MasterDateBean>())
                 .subscribe(new MVPObserver<MasterDateBean>(){
                     @Override
-                    public void onNext(MasterDateBean vipDateBean) {
-                        super.onNext(vipDateBean);
+                    public void onNext(MasterDateBean masterDateBean) {
+                        super.onNext(masterDateBean);
 
-                        iviv(vipDateBean);
+                        Log.d("ett",masterDateBean.getCourseTitle());
+                        iviv(masterDateBean);
 
                     }
                 });

@@ -19,7 +19,7 @@ import com.example.player.a1610aplayerdemo.bean.XuanKeDateBean;
 import com.example.player.a1610aplayerdemo.ui.mastercourse.MasterActivity;
 import com.example.player.a1610aplayerdemo.ui.musiccourse.MusicClassActivity;
 import com.example.player.a1610aplayerdemo.ui.tuijian.TuiJianClassActivity;
-import com.example.player.a1610aplayerdemo.ui.zaixianzhibo.NowShowActivity;
+import com.example.player.a1610aplayerdemo.ui.mvvmzaixianzhibo.NowShowActivity;
 import com.example.player.a1610aplayerdemo.ui.zhuanlan.ZhuanLanActivity;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
@@ -217,13 +217,10 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             channel.setLayoutManager(linearLayoutManager);
             channelAdp.setOnckitem(this);
             channel.setAdapter(channelAdp);
-
         }
-
         @Override
         public void dianji(int i) {
             Log.d("www",dashikeList.get(i).getLiveId()+"");
-
             Intent intent = new Intent(MyApp.instance, MasterActivity.class);
             intent.putExtra("dashikeId",dashikeList.get(i).getLiveId()+"");
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -271,7 +268,6 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-
     class VipHolder extends RecyclerView.ViewHolder {
 
         GridView vipgv;
@@ -291,8 +287,6 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
     }
-
-
 
     class ZhuanLanHolder extends RecyclerView.ViewHolder {
 
@@ -324,7 +318,6 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             });
 
         }
-
     }
 
     class TuiJianHolder extends RecyclerView.ViewHolder implements BaseAdapter.Onckitem {
@@ -358,9 +351,6 @@ public class XuanKeAdp extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         }
     }
-
-
-
 
 
     class BannerViewHolder extends RecyclerView.ViewHolder {

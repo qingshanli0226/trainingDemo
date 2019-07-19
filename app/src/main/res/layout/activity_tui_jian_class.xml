@@ -42,10 +42,16 @@
                   android:layout_alignParentTop="true" android:layout_alignParentStart="true"
                   android:layout_marginTop="32dp" android:layout_marginStart="114dp"/>
 
+
+        <Button android:layout_width="40dp" android:layout_height="30dp" android:text="分享"
+                android:onClick="shareQQ"
+                android:layout_alignParentEnd="true" android:layout_alignParentTop="true"/>
+
     </RelativeLayout>
-    <android.support.design.widget.TabLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:id="@+id/tuijian_tab">
+    <android.support.design.widget.TabLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:id="@+id/tuijian_tab" app:tabTextColor="#000000">
         
     </android.support.design.widget.TabLayout>
+
 
     <android.support.v4.view.ViewPager android:layout_width="match_parent"
                                        android:id="@+id/tuijian_vpg"

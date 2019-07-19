@@ -1,5 +1,10 @@
 package com.example.player.a1610aplayerdemo.bean;
 
+import android.databinding.BindingAdapter;
+import android.widget.ImageView;
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
+
 public class NowZhiBoDateBean {
 
     /**
@@ -416,6 +421,13 @@ public class NowZhiBoDateBean {
         this.liveStatus = liveStatus;
     }
 
+    @BindingAdapter("bind:url")
+    public static void loadImageUrl(ImageView imageView, String url){
+
+        Glide.with(imageView.getContext()).load(url).into(imageView);
+
+    }
+
     public static class ShareViewBean {
         /**
          * sharePic : http://ali-files.yooshow.com/app/yangyin/default-red-share.png
@@ -461,4 +473,7 @@ public class NowZhiBoDateBean {
             this.shareContent = shareContent;
         }
     }
+
+
+
 }
