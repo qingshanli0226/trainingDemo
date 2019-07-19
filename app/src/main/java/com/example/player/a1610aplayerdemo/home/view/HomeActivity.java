@@ -21,12 +21,13 @@ public class HomeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_home);
         
-        initData();
+
 
         initView();
     }
 
     private void initData() {
+        //
     }
 
     private void initView() {
